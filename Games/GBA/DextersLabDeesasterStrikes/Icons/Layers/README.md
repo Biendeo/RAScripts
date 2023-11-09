@@ -1,0 +1,1 @@
+This directory contains raw images used by `../generate_icons.py`.

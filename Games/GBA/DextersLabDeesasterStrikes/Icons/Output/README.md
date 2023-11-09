@@ -1,0 +1,1 @@
+All images in this directory were generated using `../generate_icons.py`, please refer to that script to generate all the images.

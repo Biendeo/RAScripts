@@ -731,7 +731,7 @@ function get_dee_dee_bit(level, dee_dee_num) {
     if (level == LEVEL_TUTORIAL)
         level = LEVEL_AVIATION_HANGAR_A
     level_offset = 4 * dee_dee_num
-    return bit((level - 1) % 8, DEE_DEES_COLLECTED_ADDRESS + level_offset)
+    return bit(level - 1, DEE_DEES_COLLECTED_ADDRESS + level_offset)
 }
 
 function get_tool_bit(tool) {
@@ -744,7 +744,7 @@ function get_machine_bit(level, machine_num) {
     if (level == LEVEL_TUTORIAL)
         level = LEVEL_AVIATION_HANGAR_A
     level_offset = 4 * machine_num
-    return bit((level - 1) % 8, MACHINES_REPAIRED_ADDRESS + level_offset)
+    return bit(level - 1, MACHINES_REPAIRED_ADDRESS + level_offset)
 }
 
 function machines_repaired_count() {
@@ -840,7 +840,7 @@ rich_presence_display("Dexter in {0} 🧑‍🔬: {1} 💖: {2}% 👩: {3} 🖥�
     rich_presence_value("VALUE", health() * 0.78125),
     rich_presence_value("VALUE", total_dee_dees_collected()),
     rich_presence_value("VALUE", machines_repaired_count()),
-    rich_presence_value("TIME", total_time(), format="FRAMES")
+    rich_presence_value("TIME", total_time(), format = "FRAMES")
 )
 
 // === TOOLS ===
@@ -855,7 +855,7 @@ function is_tool_acquired_in_level(tool_num, level_num) {
 
 // [0] Achievement Name
 // [1] Achievement ID
-// [1] Level the tool is in
+// [2] Level the tool is in
 TOOL_ACHIEVEMENT_DETAILS = {
     TOOL_WRENCH:         ["Hand Provided Torque Spanner", 369938, LEVEL_GREENHOUSE_B],
     TOOL_HAMMER:         ["Stone Age Shaper", 369939, LEVEL_ROBOTICS_LAB_D],
@@ -889,11 +889,11 @@ function is_level_dee_dees_collected(level_num) {
         dee_dee_changed_this_frame = dee_dee_changed_this_frame || (prev_get_dee_dee_bit == 0 && current_get_dee_dee_bit == 1)
         dee_dees_collected = dee_dees_collected + current_get_dee_dee_bit
     }
+    is_in_level = (level() == level_num)
     return are_cheats_off() &&
         is_demo_mode_off() &&
-        level() == level_num &&
         dee_dee_changed_this_frame &&
-        measured(dee_dees_collected == 4)
+        measured(dee_dees_collected == 4, when = is_in_level)
 }
 
 // [0] Achievement Name
@@ -962,12 +962,11 @@ function is_level_machines_repaired(world_num, machines_in_levels) {
             }
         }
     }
+    is_in_world = (level() >= first_level_num && level() <= last_level_num)
     return are_cheats_off() &&
         is_demo_mode_off() &&
-        level() >= first_level_num &&
-        level() <= last_level_num &&
         machines_changed_this_frame &&
-        measured(machines_repaired == total_machines)
+        measured(machines_repaired == total_machines, when = is_in_world)
 }
 
 // [0] Achievement Name
@@ -979,8 +978,8 @@ MACHINE_ACHIEVEMENT_DETAILS = {
     WORLD_ROBOTICS_LAB:          ["Checked In Babbage", 369959, [1, 1, 1, 2]],
     WORLD_CHEMISTRY_LAB:         ["Faraday to Celebrate", 369964, [1, 1, 0, 1]],
     WORLD_LAB_OF_THE_LOST:       ["Archimedes Found It Easy as Pi", 369969, [2, 2, 2, 2]],
-    WORLD_NUCLEAR_POWER_STATION: ["Fleming's Right Hand Rule",  369974, [2, 2, 1, 2]],
-    WORLD_SPACE_PORT:            ["Strong Like Armstrong", 369975, [1, 2, 1, 2]],
+    WORLD_NUCLEAR_POWER_STATION: ["Fleming's Right Hand Rule",  369974, [2, 2, 0, 2]],
+    WORLD_SPACE_PORT:            ["Strong Like Armstrong", 369975, [1, 2, 2, 2]],
     WORLD_DEXTERS_HOUSE:         ["Eiffel Won't Fall", 369983, [1, 1, 0, 0]]
 }
 
@@ -1022,7 +1021,7 @@ ROBOT_ADDRESSES_IN_LEVEL = {
     LEVEL_ROBOTICS_LAB_B:          [0x03DDDC, 0x03D2E4, 0x03DA7C, 0x03DD04, 0x03E2EC, 0x03DC2C, 0x03DF8C, 0x03EA84, 0x03E8D4],
     LEVEL_ROBOTICS_LAB_C:          [0x03C204, 0x03C3B4, 0x03C48C, 0x03C564],
     LEVEL_ROBOTICS_LAB_D:          [0x03EF94, 0x03D7F4, 0x03EA84, 0x03EB5C, 0x03D20C, 0x03EEBC],
-    LEVEL_CHEMISTRY_LAB_A:         [0x03EEBC, 0x03CEAC, 0x03DA7C, 0x03D9A4, 0x03D56C, 0x03D644, 0x03DD04, 0x03DC2C, 0x03DDDC, 0x03DF8C, 0x03DEB4, 0x03DB54, 0x03E064, 0x03CF84],
+    LEVEL_CHEMISTRY_LAB_A:         [0x03D71C, 0x03EEBC, 0x03CEAC, 0x03DA7C, 0x03D9A4, 0x03D56C, 0x03D644, 0x03DD04, 0x03DC2C, 0x03DDDC, 0x03DF8C, 0x03DEB4, 0x03DB54, 0x03E064, 0x03CF84],
     LEVEL_CHEMISTRY_LAB_B:         [0x03E13C, 0x03C8C4, 0x03DDDC, 0x03DEB4, 0x03D9A4, 0x03DA7C, 0x03DD04, 0x03DB54, 0x03DC2C, 0x03DF8C],
     LEVEL_CHEMISTRY_LAB_C:         [0x03E8D4, 0x03F144, 0x03E724, 0x03E7FC, 0x03ED0C, 0x03EDE4, 0x03B1FC, 0x03E9AC, 0x03EF94, 0x03F06C],
     LEVEL_CHEMISTRY_LAB_D:         [0x03D20C, 0x03D2E4, 0x03D3BC, 0x03D494, 0x03D56C, 0x03DC2C, 0x03DB54, 0x03D71C, 0x03D134, 0x03D7F4, 0x03DA7C, 0x03B484, 0x03B3AC, 0x03B2D4, 0x03B2D4],
@@ -1051,18 +1050,19 @@ function are_robots_defeated(world_num) {
             current_robot_health = word(data)
             array_push(conditions, once(
                 level() == first_level_num + i &&
-                current_robot_health > prev_robot_health &&
-                current_robot_health > 0xF0FF // Picking some arbitrary value to detect an underflow and not just the initial level health
+                prev(level()) == first_level_num + i &&
+                current_robot_health != prev_robot_health &&
+                (current_robot_health == 0 || current_robot_health > 0xF0FF) // Picking some arbitrary value to detect an underflow and not just the initial level health
             ))
             total_robots = total_robots + 1
         }
     }
+    is_in_world = (level() >= first_level_num && level() <= last_level_num)
     return measured(
         tally(total_robots, conditions),
-        when=(once(prev(level()) == LEVEL_HUB && level() == first_level_num))
+        when = (once(prev(level()) == LEVEL_HUB && level() == first_level_num))
     ) &&
-        never(level() < first_level_num) &&
-        never(level() > last_level_num) &&
+        never(!is_in_world) &&
         never(lives() < prev(lives())) &&
         never(!are_cheats_off()) &&
         never(!is_demo_mode_off())

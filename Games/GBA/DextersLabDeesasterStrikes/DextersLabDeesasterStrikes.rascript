@@ -427,7 +427,7 @@ function cheats_applied() => dword(0x03A614)
 // $03A618: Cheat Expriy Time (4 bytes)
 //          Starts at 1800 when a cheat is applied (except extra lives and double ammo).
 //          Drops by 1 every in-game frame (30 seconds total), and disables cheats when 0.
-function cheat_expiry_time() => dword(0x03A614)
+function cheat_expiry_time() => dword(0x03A618)
 
 // $03A640: ? Some Specific Repair Flag (1 byte)
 //          Set to 0x02 when you repair one of the Greenhouse B machines?

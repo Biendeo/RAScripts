@@ -424,6 +424,11 @@ function inventory() => byte(0x03A5DC)
 //          18 - Dexter-roo (LLRR LLRL RRRR LLLR)
 function cheats_applied() => dword(0x03A614)
 
+// $03A618: Cheat Expriy Time (4 bytes)
+//          Starts at 1800 when a cheat is applied (except extra lives and double ammo).
+//          Drops by 1 every in-game frame (30 seconds total), and disables cheats when 0.
+function cheat_expiry_time() => dword(0x03A614)
+
 // $03A640: ? Some Specific Repair Flag (1 byte)
 //          Set to 0x02 when you repair one of the Greenhouse B machines?
 function some_specific_repair_flag() => byte(0x03A640)
@@ -761,6 +766,11 @@ function are_cheats_off() {
     return cheats_applied() == CHEATS_OFF
 }
 
+// Cheats only last temporarily, but this checks that they haven't been used since the title screen
+function have_cheats_always_been_off() {
+    return disable_when(!are_cheats_off(), control_status() == CONTROL_STATUS_MAIN_MENU)
+}
+
 function is_demo_mode_off() {
     return demo_mode() == 0
 }
@@ -782,7 +792,7 @@ function is_warping() {
 }
 
 function is_tutorial_fully_complete() {
-    return are_cheats_off() &&
+    return have_cheats_always_been_off() &&
         is_demo_mode_off() &&
         level() == LEVEL_TUTORIAL &&
         is_tool_currently_acquired(TOOL_PLIERS) &&
@@ -798,7 +808,7 @@ achievement(
 )
 
 function did_lives_just_hit_nine() {
-    return are_cheats_off() &&
+    return have_cheats_always_been_off() &&
         is_demo_mode_off() &&
         level() != LEVEL_HUB &&
         lives() == 9 &&
@@ -812,7 +822,7 @@ achievement(
 )
 
 function is_game_completed() {
-    return are_cheats_off() &&
+    return have_cheats_always_been_off() &&
         is_demo_mode_off() &&
         cutscene() == CUTSCENE_WIN_GAME
 }
@@ -826,7 +836,7 @@ achievement(
 leaderboard(
     title = "Game Completion Time",
     description = "Fastest time to beat the game",
-    start  = total_time() > 0 && level() == LEVEL_HUB,
+    start  = total_time() > 0 && level() == LEVEL_HUB && have_cheats_always_been_off(),
     cancel = (cutscene() == CUTSCENE_EXIT_GAME || cutscene() == CUTSCENE_GAME_OVER || !are_cheats_off()),
     submit = cutscene() == CUTSCENE_WIN_GAME,
     value = measured(total_time()),
@@ -834,6 +844,7 @@ leaderboard(
 )
 
 rich_presence_conditional_display(control_status() == CONTROL_STATUS_MAIN_MENU, "Dexter in Main Menu")
+rich_presence_conditional_display(!is_demo_mode_off(), "Dexter in Demo")
 rich_presence_display("Dexter in {0} 🧑‍🔬: {1} 💖: {2}% 👩: {3} 🖥️: {4} ⏱️: {5} ",
     rich_presence_lookup("Level", level(), LEVEL_TO_NAME),
     rich_presence_value("VALUE", lives()),
@@ -846,7 +857,7 @@ rich_presence_display("Dexter in {0} 🧑‍🔬: {1} 💖: {2}% 👩: {3} 🖥�
 // === TOOLS ===
 
 function is_tool_acquired_in_level(tool_num, level_num) {
-    return are_cheats_off() &&
+    return have_cheats_always_been_off() &&
         is_demo_mode_off() &&
         level() == level_num &&
         prev(bit(tool_num, TOOLS_COLLECTED_ADDRESS)) == 0 &&
@@ -890,7 +901,7 @@ function is_level_dee_dees_collected(level_num) {
         dee_dees_collected = dee_dees_collected + current_get_dee_dee_bit
     }
     is_in_level = (level() == level_num)
-    return are_cheats_off() &&
+    return have_cheats_always_been_off() &&
         is_demo_mode_off() &&
         dee_dee_changed_this_frame &&
         measured(dee_dees_collected == 4, when = is_in_level)
@@ -963,7 +974,7 @@ function is_level_machines_repaired(world_num, machines_in_levels) {
         }
     }
     is_in_world = (level() >= first_level_num && level() <= last_level_num)
-    return are_cheats_off() &&
+    return have_cheats_always_been_off() &&
         is_demo_mode_off() &&
         machines_changed_this_frame &&
         measured(machines_repaired == total_machines, when = is_in_world)
@@ -1064,7 +1075,7 @@ function are_robots_defeated(world_num) {
     ) &&
         never(!is_in_world) &&
         never(lives() < prev(lives())) &&
-        never(!are_cheats_off()) &&
+        have_cheats_always_been_off() &&
         never(!is_demo_mode_off())
 }
 

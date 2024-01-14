@@ -1,4 +1,4 @@
-// Rayman: Hoodlum's Revenge
+// Rayman: Hoodlums' Revenge
 // #ID = 9367
 // md5: 7b06540616a35ca1cf4465f1fabe50b6
 
@@ -32,7 +32,15 @@ function is_in_level_transition() => byte(0x007FF8)
 //          0x0802c5dd when game over
 //          0x0802c549, 0802c58d and 0x0802c539 in the US ROM
 //          0x00000000 otherwise
+//          This is probably a pointer to some function.
 function end_level_behavior_function_pointer() => dword(0x008184)
+
+// $008720: Screen Detector (4 bytes)
+//          0x08030119 when in map screen
+//          0x08025b9d when in game over screen
+//          0x08030075 and 0x08025af9 in US version
+//          Varies between levels
+function screen_detector() => dword(0x008720)
 
 // $008CC8: Language (4 bytes)
 //          0x00 - English
@@ -42,13 +50,6 @@ function end_level_behavior_function_pointer() => dword(0x008184)
 //          0x04 - Italian
 //          0x05 - Dutch
 function language() => word(0x008CC8)
-
-// $008720: Screen Detector (4 bytes)
-//          0x08030119 when in map screen
-//          0x08025b9d when in game over screen
-//          0x08030075 and 0x08025af9 in US version
-//          Varies between levels
-function screen_detector() => dword(0x008720)
 
 // $00a170: Current Level (1 byte)
 //          0x00 - Fairy Council
@@ -91,7 +92,11 @@ function language_saved() => byte(0x00AA24)
 // $00aa88: Profile Save Data Array (400 bytes)
 //          This array contains all the data relating to each save file. There are 4 objects, each of size 0x64 (offset by 0x64 for each of the saves).
 //          Structure:
-//            0x00-0x00b - Not sure
+//            0x00-0x02 - Not sure
+//            0x03-0x06 - Score
+//            0x07-0x08 - Lums
+//            0x09-0x0a - Teensies
+//            0x0b - Unused
 //            0x0c-0x13 - Profile name (8 characters ASCII, not zero-terminated)
 //            0x14-0x63 - Array of level save data (4 byte structures, 20 array size)
 //          Level data structure:
@@ -190,18 +195,18 @@ function y_position() => dword(0x02CE8C)
 //          Rayman has a jump height of 0x1ef0.
 function z_position() => dword(0x02CE90)
 
-// $047d60: Player Health (4 bytes)
-//          0x00 to 0x63 (max health)
-//          Presentation is only updated when health changes (either picking up a lum or taking damage).
-function player_health() => dword(0x047D60)
-
 // $047d48: Status Flag (4 bytes)
 //          0x00000000 - In menus or game over screen
 //          0x0000003d - In most levels
 //          0x0003fffd - Paused in most levels
 //          0x00000f7d - In boss fights
 //          0x00ffff7d - Paused in boss fights
-function status_flag() => dword(0x047d48)
+function status_flag() => dword(0x047D48)
+
+// $047d60: Player Health (4 bytes)
+//          0x00 to 0x63 (max health)
+//          Presentation is only updated when health changes (either picking up a lum or taking damage).
+function player_health() => dword(0x047D60)
 
 // $047d64: Max Health (4 bytes)
 //          Always 0x64, changing this changes how far right the presentation bar goes
@@ -390,7 +395,7 @@ function is_in_game_over() {
 
 achievement(
     title = "Rolling with the Punches", points = 10,
-    description = "Make Murphy proud and achieve a combo of at least 5000 points",
+    description = "Make Murfy proud and achieve a combo of at least 5000 points",
     trigger = current_combo() >= 5000 && is_player_in_control() == 0x01
 )
 
@@ -554,4 +559,4 @@ rich_presence_conditional_display(player_character() == CHARACTER_GLOBOX, "Globo
     rich_presence_value("VALUE", total_lums_in_level() - lums_remaining()),
     rich_presence_value("VALUE", total_lums_in_level())
 )
-rich_presence_display("Playing Rayman Hoodlum's Revenge")
+rich_presence_display("Playing Rayman Hoodlums' Revenge")

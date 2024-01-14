@@ -294,6 +294,25 @@ LEVEL_TO_THREE_STAMP_SCORE = {
     LEVEL_MELEE_MAYHEM           : 26000
 }
 
+LEVEL_TO_SCORE_ACHIEVEMENT_ID = {
+    LEVEL_FAIRY_COUNCIL          : 389149,
+    LEVEL_CLEARLEAF_FOREST       : 389150,
+    LEVEL_CLEARLEAF_FALLS        : 389151,
+    LEVEL_VERTIGINOUS_RIDDLE     : 389160,
+    LEVEL_DUNGEON_OF_MURK        : 389152,
+    LEVEL_RIVERS_OF_MURK         : 389154,
+    LEVEL_BOG_OF_MURK            : 389153,
+    LEVEL_HOODLUM_MOOR           : 389155,
+    LEVEL_LAND_OF_THE_LIVID_DEAD : 389156,
+    LEVEL_SULPHUROUS_SEA         : 389164,
+    LEVEL_MENHIRS_OF_POWER       : 389157,
+    LEVEL_CLOUDS_OF_PERIL        : 389158,
+    LEVEL_CLOUDY_CACHE           : 389161,
+    LEVEL_HEART_OF_THE_WORLD     : 389159,
+    LEVEL_SCALDING_CASCADE       : 389163,
+    LEVEL_MELEE_MAYHEM           : 389162
+}
+
 // Levels that don't need achievements are ommitted (i.e. boss levels)
 LEVEL_TO_LUM_COUNT = {
     LEVEL_FAIRY_COUNCIL          : 48,
@@ -314,6 +333,25 @@ LEVEL_TO_LUM_COUNT = {
     LEVEL_MELEE_MAYHEM           : 92
 }
 
+LEVEL_TO_LUM_ACHIEVEMENT_ID = {
+    LEVEL_FAIRY_COUNCIL          : 389165,
+    LEVEL_CLEARLEAF_FOREST       : 389166,
+    LEVEL_CLEARLEAF_FALLS        : 389167,
+    LEVEL_VERTIGINOUS_RIDDLE     : 389176,
+    LEVEL_DUNGEON_OF_MURK        : 389169,
+    LEVEL_RIVERS_OF_MURK         : 389170,
+    LEVEL_BOG_OF_MURK            : 389169,
+    LEVEL_HOODLUM_MOOR           : 389171,
+    LEVEL_LAND_OF_THE_LIVID_DEAD : 389172,
+    LEVEL_SULPHUROUS_SEA         : 389180,
+    LEVEL_MENHIRS_OF_POWER       : 389173,
+    LEVEL_CLOUDS_OF_PERIL        : 389174,
+    LEVEL_CLOUDY_CACHE           : 389177,
+    LEVEL_HEART_OF_THE_WORLD     : 389175,
+    LEVEL_SCALDING_CASCADE       : 389179,
+    LEVEL_MELEE_MAYHEM           : 389178
+}
+
 // Levels that don't need achievements are ommitted (i.e. no teensies)
 LEVEL_TO_TEENSIE_COUNT = {
     LEVEL_FAIRY_COUNCIL          : 4,
@@ -325,6 +363,18 @@ LEVEL_TO_TEENSIE_COUNT = {
     LEVEL_MENHIRS_OF_POWER       : 4,
     LEVEL_CLOUDS_OF_PERIL        : 4,
     LEVEL_HEART_OF_THE_WORLD     : 4
+}
+
+LEVEL_TO_TEENSIE_ACHIEVEMENT_ID = {
+    LEVEL_FAIRY_COUNCIL          : 389181,
+    LEVEL_CLEARLEAF_FOREST       : 389182,
+    LEVEL_CLEARLEAF_FALLS        : 389183,
+    LEVEL_RIVERS_OF_MURK         : 389184,
+    LEVEL_HOODLUM_MOOR           : 389185,
+    LEVEL_LAND_OF_THE_LIVID_DEAD : 389186,
+    LEVEL_MENHIRS_OF_POWER       : 389187,
+    LEVEL_CLOUDS_OF_PERIL        : 389188,
+    LEVEL_HEART_OF_THE_WORLD     : 389189
 }
 
 // All levels have one achievement, time is in frames
@@ -349,6 +399,29 @@ LEVEL_TO_ACHIEVEMENT_TIMES = {
     LEVEL_SCALDING_CASCADE       : 8400,
     LEVEL_MELEE_MAYHEM           : 14400,
     LEVEL_REFLUXS_LAIR           : 2400
+}
+
+LEVEL_TO_TIME_ACHIEVEMENT_ID = {
+    LEVEL_FAIRY_COUNCIL          : 389190,
+    LEVEL_CLEARLEAF_FOREST       : 389191,
+    LEVEL_CLEARLEAF_FALLS        : 389192,
+    LEVEL_INFERNAL_MACHINE       : 389193,
+    LEVEL_VERTIGINOUS_RIDDLE     : 389205,
+    LEVEL_DUNGEON_OF_MURK        : 389194,
+    LEVEL_RIVERS_OF_MURK         : 389197,
+    LEVEL_BOG_OF_MURK            : 389195,
+    LEVEL_BEGONIAX_BAYOU         : 389196,
+    LEVEL_HOODLUM_MOOR           : 389198,
+    LEVEL_LAND_OF_THE_LIVID_DEAD : 389199,
+    LEVEL_SULPHUROUS_SEA         : 389209,
+    LEVEL_MENHIRS_OF_POWER       : 389200,
+    LEVEL_PIT_OF_ENDLESS_FIRE    : 389201,
+    LEVEL_CLOUDS_OF_PERIL        : 389202,
+    LEVEL_CLOUDY_CACHE           : 389206,
+    LEVEL_HEART_OF_THE_WORLD     : 389203,
+    LEVEL_SCALDING_CASCADE       : 389208,
+    LEVEL_MELEE_MAYHEM           : 389207,
+    LEVEL_REFLUXS_LAIR           : 389204
 }
 
 CHARACTER_RAYMAN = 0x00
@@ -394,7 +467,7 @@ function is_in_game_over() {
 // === MISC ACHIEVEMENTS ===
 
 achievement(
-    title = "Rolling with the Punches", points = 10,
+    title = "Rolling with the Punches", points = 10, id = 389210,
     description = "Make Murfy proud and achieve a combo of at least 5000 points",
     trigger = current_combo() >= 5000 && is_player_in_control() == 0x01
 )
@@ -403,39 +476,39 @@ achievement(
 // There's four bosses evenly through the game, these are your easy progression achievements.
 
 achievement(
-    title = "Decommissioned Machinery", points = 5,
+    title = "Decommissioned Machinery", points = 5, id = 389141,
     description = "Deprive the world of plum juice production by turning off the Infernal Machine",
     trigger = did_level_just_complete(LEVEL_INFERNAL_MACHINE)
 )
 
 achievement(
-    title = "Controlled Demolition", points = 5,
+    title = "Controlled Demolition", points = 5, id = 389142,
     description = "Destroy the Infernal Machine while picking up the Heavy Metal Fist powerup at most 2 times",
     trigger = did_level_just_complete(LEVEL_INFERNAL_MACHINE)
         && disable_when(repeated(3, prev(powerup()) == POWERUP_NONE && powerup() == POWERUP_HEAVY_METAL_FIST), is_in_game_over() || is_in_map_screen())
 )
 
 achievement(
-    title = "Ding Dong the Witch Is Dead", points = 5,
+    title = "Ding Dong the Witch Is Dead", points = 5, id = 389143,
     description = "Refuse to be her Prince Charming and defeat Begoniax",
     trigger = did_level_just_complete(LEVEL_BEGONIAX_BAYOU)
 )
 
 achievement(
-    title = "Frog Allergy", points = 5,
+    title = "Frog Allergy", points = 5, id = 389144,
     description = "Defeat Begoniax with her only turning into a frog at most 2 times",
     trigger = did_level_just_complete(LEVEL_BEGONIAX_BAYOU)
         && disable_when(repeated(3, prev(begoniax_frog_state()) == 0x02 && begoniax_frog_state() == 0x04), is_in_game_over() || is_in_map_screen())
 )
 
 achievement(
-    title = "Knaaren or Knever", points = 5,
+    title = "Knaaren or Knever", points = 5, id = 389145,
     description = "End the levels of Endless Fire by ending the endable Firemonster",
     trigger = did_level_just_complete(LEVEL_PIT_OF_ENDLESS_FIRE)
 )
 
 achievement(
-    title = "Achoooo!", points = 5,
+    title = "Achoooo!", points = 5, id = 389146,
     description = "Defeat the Firemonster by grabbing the Fire Protection powerup only once, hitting him twice, and never switching to Globox",
     trigger = did_level_just_complete(LEVEL_PIT_OF_ENDLESS_FIRE)
         && disable_when(
@@ -446,14 +519,14 @@ achievement(
 )
 
 achievement(
-    title = "Acid Reflux", points = 25,
+    title = "Acid Reflux", points = 25, id = 389147,
     description = "Stop the plum juice guzzling Reflux and save the day",
     trigger = did_level_just_complete(LEVEL_REFLUXS_LAIR)
 )
 
 // For this achievement I also wanted to make it so the player beat Reflux he picks up any barrels, but that's really difficult and not even the TAS does that.
 achievement(
-    title = "Plum Preservation", points = 5,
+    title = "Plum Preservation", points = 5, id = 389148,
     description = "Defeat Reflux by grabbing the Heavy Metal Fist powerup at most 2 times",
     trigger = did_level_just_complete(LEVEL_REFLUXS_LAIR)
         && disable_when(
@@ -466,8 +539,9 @@ achievement(
 for level_id in LEVEL_TO_THREE_STAMP_SCORE {
     level_name = LEVEL_TO_NAME[level_id]
     score_target = LEVEL_TO_THREE_STAMP_SCORE[level_id]
+    achievement_id = LEVEL_TO_SCORE_ACHIEVEMENT_ID[level_id]
     achievement(
-        title = format("Three Stamps in {0}", level_name), points = 10,
+        title = format("Three Stamps in {0}", level_name), points = 10, id = achievement_id,
         description = format("Get three stamps in {0} by achieving a score of {1}", level_name, score_target),
         trigger = did_level_just_complete(level_id) && (current_score() + current_combo()) >= score_target
     )
@@ -476,8 +550,9 @@ for level_id in LEVEL_TO_THREE_STAMP_SCORE {
 for level_id in LEVEL_TO_LUM_COUNT {
     level_name = LEVEL_TO_NAME[level_id]
     lum_count = LEVEL_TO_LUM_COUNT[level_id]
+    achievement_id = LEVEL_TO_LUM_ACHIEVEMENT_ID[level_id]
     achievement(
-        title = format("Lums in {0}", level_name), points = 5,
+        title = format("Lums in {0}", level_name), points = 5, id = achievement_id,
         description = format("Finish {0} after collecting all {1} lums", level_name, lum_count),
         trigger = did_level_just_complete(level_id) && lums_remaining() == 0
     )
@@ -486,8 +561,9 @@ for level_id in LEVEL_TO_LUM_COUNT {
 for level_id in LEVEL_TO_TEENSIE_COUNT {
     level_name = LEVEL_TO_NAME[level_id]
     teensie_count = LEVEL_TO_TEENSIE_COUNT[level_id]
+    achievement_id = LEVEL_TO_TEENSIE_ACHIEVEMENT_ID[level_id]
     achievement(
-        title = format("Teensies in {0}", level_name), points = 5,
+        title = format("Teensies in {0}", level_name), points = 5, id = achievement_id,
         description = format("Finish {0} after rescuing all {1} Teensies", level_name, teensie_count),
         trigger = did_level_just_complete(level_id) && teensies_remaining() == 0
     )
@@ -497,8 +573,9 @@ for level_id in LEVEL_TO_ACHIEVEMENT_TIMES {
     level_name = LEVEL_TO_NAME[level_id]
     achievement_time = LEVEL_TO_ACHIEVEMENT_TIMES[level_id]
     seconds = achievement_time / 60
+    achievement_id = LEVEL_TO_TIME_ACHIEVEMENT_ID[level_id]
     achievement(
-        title = format("Quick Finish in {0}", level_name), points = 10,
+        title = format("Quick Finish in {0}", level_name), points = 10, id = achievement_id,
         description = format("Finish {0} within {1} seconds", level_name, seconds),
         trigger = disable_when(repeated(achievement_time, is_player_in_control() == 0x01), !is_in_level(level_id) || is_in_map_screen())
             && is_in_level(level_id)
@@ -544,19 +621,21 @@ for level_id in LEVEL_TO_ACHIEVEMENT_TIMES {
 rich_presence_conditional_display(is_in_map_screen(), "Looking at the map screen")
 rich_presence_conditional_display(is_in_game_over(), "Looking at the game over screen")
 rich_presence_conditional_display(status_flag() == 0x00000000, "Looking at a menu")
-rich_presence_conditional_display(player_character() == CHARACTER_RAYMAN, "Rayman in {0} 💖: {1}% 🧝: {2}/{3} 🟡: {4}/{5}",
+rich_presence_conditional_display(player_character() == CHARACTER_RAYMAN, "Rayman in {0} 💖: {1}% 🧝: {2}/{3} 🟡: {4}/{5} 🔢: {6}",
     rich_presence_lookup("Level", level(), LEVEL_TO_NAME),
     rich_presence_value("VALUE", player_health() + 1),
     rich_presence_value("VALUE", total_teensies_in_level() - teensies_remaining()),
     rich_presence_value("VALUE", total_teensies_in_level()),
     rich_presence_value("VALUE", total_lums_in_level() - lums_remaining()),
-    rich_presence_value("VALUE", total_lums_in_level())
+    rich_presence_value("VALUE", total_lums_in_level()),
+    rich_presence_value("VALUE", current_score())
 )
-rich_presence_conditional_display(player_character() == CHARACTER_GLOBOX, "Globox in {0} 🧝: {1}/{2} 🟡: {3}/{4}",
+rich_presence_conditional_display(player_character() == CHARACTER_GLOBOX, "Globox in {0} 🧝: {1}/{2} 🟡: {3}/{4} 🔢: {5}",
     rich_presence_lookup("Level", level(), LEVEL_TO_NAME),
     rich_presence_value("VALUE", total_teensies_in_level() - teensies_remaining()),
     rich_presence_value("VALUE", total_teensies_in_level()),
     rich_presence_value("VALUE", total_lums_in_level() - lums_remaining()),
-    rich_presence_value("VALUE", total_lums_in_level())
+    rich_presence_value("VALUE", total_lums_in_level()),
+    rich_presence_value("VALUE", current_score())
 )
 rich_presence_display("Playing Rayman Hoodlums' Revenge")

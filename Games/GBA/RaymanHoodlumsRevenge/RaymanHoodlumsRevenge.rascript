@@ -177,11 +177,6 @@ function reflux_barrel_top_state() => byte(0x00C972)
 //          0x03 - Destroyed or mid-drink
 function reflux_barrel_right_state() => byte(0x00C9BA)
 
-// $0142d1: Begoniax Frog State (1 byte)
-//          0x02 - Alive
-//          0x04 - Frog
-function begoniax_frog_state() => byte(0x0142D1)
-
 // $02ce88: X Position (4 bytes)
 //          Up-left is negative, down-right is positive.
 function x_position() => dword(0x02CE88)
@@ -194,6 +189,10 @@ function y_position() => dword(0x02CE8C)
 //          Most platforms are multiples of 0x1000.
 //          Rayman has a jump height of 0x1ef0.
 function z_position() => dword(0x02CE90)
+
+// $02cf28: Begoniax Details Pointer (4 bytes)
+//          p->+0x29 is her state (0x02 is normal, 0x04 is frog mode)
+function begoniax_details_pointer() => dword(0x02CF28)
 
 // $047d48: Status Flag (4 bytes)
 //          0x00000000 - In menus or game over screen
@@ -338,7 +337,7 @@ LEVEL_TO_LUM_ACHIEVEMENT_ID = {
     LEVEL_CLEARLEAF_FOREST       : 389166,
     LEVEL_CLEARLEAF_FALLS        : 389167,
     LEVEL_VERTIGINOUS_RIDDLE     : 389176,
-    LEVEL_DUNGEON_OF_MURK        : 389169,
+    LEVEL_DUNGEON_OF_MURK        : 389168,
     LEVEL_RIVERS_OF_MURK         : 389170,
     LEVEL_BOG_OF_MURK            : 389169,
     LEVEL_HOODLUM_MOOR           : 389171,
@@ -382,7 +381,7 @@ LEVEL_TO_ACHIEVEMENT_TIMES = {
     LEVEL_FAIRY_COUNCIL          : 3600,
     LEVEL_CLEARLEAF_FOREST       : 7200,
     LEVEL_CLEARLEAF_FALLS        : 6600,
-    LEVEL_INFERNAL_MACHINE       : 3060,
+    LEVEL_INFERNAL_MACHINE       : 3120,
     LEVEL_VERTIGINOUS_RIDDLE     : 1800,
     LEVEL_DUNGEON_OF_MURK        : 13500,
     LEVEL_RIVERS_OF_MURK         : 10500,
@@ -462,6 +461,10 @@ function is_in_game_over() {
 //     return end_level_behavior_function_pointer() == 0x0802c5dd || end_level_behavior_function_pointer() == 0x0802c539
 }
 
+function virtual_working_ram_to_physical(address) {
+    return address - 0x02000000 + 0x8000
+}
+
 // == ACHIEVEMENTS ==
 
 // === MISC ACHIEVEMENTS ===
@@ -498,7 +501,7 @@ achievement(
     title = "Frog Allergy", points = 5, id = 389144,
     description = "Defeat Begoniax with her only turning into a frog at most 2 times",
     trigger = did_level_just_complete(LEVEL_BEGONIAX_BAYOU)
-        && disable_when(repeated(3, prev(begoniax_frog_state()) == 0x02 && begoniax_frog_state() == 0x04), is_in_game_over() || is_in_map_screen())
+        && disable_when(repeated(3, prev(byte(virtual_working_ram_to_physical(begoniax_details_pointer() + 0x29))) == 0x02 && byte(virtual_working_ram_to_physical(begoniax_details_pointer() + 0x29)) == 0x04), is_in_game_over() || is_in_map_screen())
 )
 
 achievement(

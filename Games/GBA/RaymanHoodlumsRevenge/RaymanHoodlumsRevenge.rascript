@@ -495,8 +495,8 @@ function format_int_with_commas(i) {
 
 achievement(
     title = "Rolling with the Punches", points = 10, id = 389210,
-    description = "Make Murfy proud and achieve a combo of at least 5,000 points",
-    trigger = current_combo() >= 5000 && is_player_in_control() == 0x01
+    description = "Make Murfy proud and achieve a combo of at least 3,000 points",
+    trigger = current_combo() >= 3000 && is_player_in_control() == 0x01
 )
 
 // === BOSS PROGRESSION ACHIEVEMENTS ===
@@ -510,9 +510,12 @@ achievement(
 
 achievement(
     title = "Controlled Demolition", points = 5, id = 389142,
-    description = "Destroy the Infernal Machine while picking up the Heavy Metal Fist powerup at most 2 times",
-    trigger = did_level_just_complete(LEVEL_INFERNAL_MACHINE)
-        && disable_when(repeated(3, prev(powerup()) == POWERUP_NONE && powerup() == POWERUP_HEAVY_METAL_FIST), is_in_game_over() || is_in_map_screen())
+    description = "Damage the Infernal Machine 12 times in a single usage of the Heavy Metal Fist powerup",
+    trigger = measured(repeated(12, prev(boss_health()) > boss_health()))
+        && never(is_in_game_over())
+        && never(is_in_map_screen())
+        && never(level() != LEVEL_INFERNAL_MACHINE)
+        && never(prev(powerup()) != POWERUP_HEAVY_METAL_FIST && powerup() == POWERUP_HEAVY_METAL_FIST)
 )
 
 achievement(

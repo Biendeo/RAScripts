@@ -4,7 +4,7 @@
 
 // == CODE NOTES ==
 
-// $004ab8: Input (2 bytes)
+// $004ab8: [16-bit] Input
 //          Each bit is 1 while unpressed and 0 while pressed
 //          0 - A
 //          1 - B
@@ -18,15 +18,15 @@
 //          9 - L
 function input() => word(0x004AB8)
 
-// $005a68: Input Increment (2 bytes)
+// $005a68: [16-bit] Input Increment
 //          Goes up by 1 for most actions (Rayman jumping/landing/locking on), also goes up in menus.
 function input_increment() => word(0x005A68)
 
-// $007ff8: Is In Level Transition (1 byte)
+// $007ff8: [8-bit] Is In Level Transition
 //          0x01 when the screen is completely black when transitioning screens, 0x00 when not.
 function is_in_level_transition() => byte(0x007FF8)
 
-// $008184: End Level Behavior Function Pointer (4 bytes)
+// $008184: [32-bit] End Level Behavior Function Pointer
 //          0x0802c5ed when the level is completed and transitioning
 //          0x0802c631 when finishing the final boss fight
 //          0x0802c5dd when game over
@@ -35,14 +35,14 @@ function is_in_level_transition() => byte(0x007FF8)
 //          This is probably a pointer to some function.
 function end_level_behavior_function_pointer() => dword(0x008184)
 
-// $008720: Screen Detector (4 bytes)
+// $008720: [32-bit] Screen Detector
 //          0x08030119 when in map screen
 //          0x08025b9d when in game over screen
 //          0x08030075 and 0x08025af9 in US version
 //          Varies between levels
 function screen_detector() => dword(0x008720)
 
-// $008CC8: Language (4 bytes)
+// $008CC8: [32-bit] Language
 //          0x00 - English
 //          0x01 - French
 //          0x02 - German
@@ -51,7 +51,7 @@ function screen_detector() => dword(0x008720)
 //          0x05 - Dutch
 function language() => word(0x008CC8)
 
-// $00a170: Current Level (1 byte)
+// $00A170: [32-bit] Current Level
 //          0x00 - Fairy Council
 //          0x01 - Clearleaf Forest
 //          0x02 - Clearleaf Falls
@@ -59,7 +59,7 @@ function language() => word(0x008CC8)
 //          0x04 - Dungeon of Murk
 //          0x05 - Bog of Murk
 //          0x06 - Begoniax Bayou
-//          0x07 - Rivers of Murk
+//          0x07 - River of Murk
 //          0x08 - Hoodlum Moor
 //          0x09 - Land of the Livid Dead
 //          0x0a - Menhirs of Power
@@ -74,22 +74,22 @@ function language() => word(0x008CC8)
 //          0x13 - Sulphurous Sea
 function level() => byte(0x00A170)
 
-// $00aa10: Current Save Slot Name (8 bytes)
+// $00aa10: [Array of 8 bytes] Current Save Slot Name
 //          ASCII string of profile (not zero terminated)
 function current_save_slot_name() => byte(0x00AA10)
 
-// $00aa1c: Current Save Slot Pointer (4 bytes)
+// $00aa1c: [32-bit] Current Save Slot Pointer (4 bytes)
 function current_save_slot_pointer() => byte(0x00AA1C)
 
-// $00aa23: Credits Unlocked (1 byte)
+// $00aa23: [8-bit] Credits Unlocked (1 byte)
 //          This is used in the battery save and not directly read otherwise
 function credits_unlocked() => byte(0x00AA23)
 
-// $00aa24: Language Saved (1 byte)
+// $00aa24: [8-bit] Language Saved (1 byte)
 //          This is used in the battery save and not directly read otherwise
 function language_saved() => byte(0x00AA24)
 
-// $00aa88: Profile Save Data Array (400 bytes)
+// $00aa88: [Array of 400 bytes] Profile Save Data Array
 //          This array contains all the data relating to each save file. There are 4 objects, each of size 0x64 (offset by 0x64 for each of the saves).
 //          Structure:
 //            0x00-0x02 - Not sure
@@ -110,51 +110,51 @@ function profile_save_data_array() => byte(0x00AA88)
 //          0x00 to 0x03
 function currently_selected_save_slot() => byte(0x00AC18)
 
-// $00b0b8: Current Combo (4 bytes)
+// $00b0b8: [32-bit] Current Combo
 //          0x00 to 0x03
 function current_combo() => dword(0x00B0B8)
 
-// $00b0bc: Current Score (4 bytes)
+// $00B0BC: [32-bit] Current Score
 function current_score() => dword(0x00B0BC)
 
-// $00b0c0: Total Teensies In Level (4 bytes)
+// $00B0C0: [32-bit] Total Teensies In Level
 function total_teensies_in_level() => dword(0x00B0C0)
 
-// $00b0c4: Total Lums In Level (4 bytes)
+// $00B0C4: [32-bit] Total Lums In Level
 function total_lums_in_level() => dword(0x00B0C4)
 
-// $00b0c8: Teensies Remaining (4 bytes)
+// $00B0C8: [32-bit] Teensies Remaining
 function teensies_remaining() => dword(0x00B0C8)
 
-// $00b0cc: Lums Remaining (4 bytes)
+// $00B0CC: [32-bit] Lums Remaining
 function lums_remaining() => dword(0x00B0CC)
 
-// $00b0d0: Combo Presentation (4 bytes)
+// $00b0d0: [32-bit] Combo Presentation
 function combo_presentation() => dword(0x00B0D0)
 
-// $00b0d4: Score Presentation (4 bytes)
+// $00b0d4: [32-bit]  Score Presentation
 //          The current numerical value used by the on-screen score, is not the actual value.
 function score_presentation() => dword(0x00B0D4)
 
-// $00b0e6: Combo Frames Remaining (1 byte)
+// $00b0e6: [8-bit]  Combo Frames Remaining
 //          Sets to 0x78 when score is gotten, reduces by 1 per frame, score is committed when value is 0x00.
 function combo_frames_remaining() => byte(0x00B0E6)
 
-// $00b0e7: Combo Frames Remaining Initial (1 byte)
+// $00b0e7: [8-bit]  Combo Frames Remaining Initial
 //          Sets to 0x5f on the first bit of combo (when showing the word "combo"), flickers visible on even frames.
 function combo_frames_remaining_initial() => byte(0x00B0E7)
 
-// $00b0e8: Is Player In Control (1 byte)
+// $00B0E8: [8-bit] Is Player In Control
 //          0x00 if in menu or cutscene
 //          0x01 if in control
 function is_player_in_control() => byte(0x00B0E8)
 
-// $00b0ed: Player Character (1 byte)
+// $00B0ED: [8-bit] Player Character
 //          0x00 - Rayman
 //          0x01 - Globox
 function player_character() => byte(0x00B0ED)
 
-// $00b0fc: Powerup (4 bytes)
+// $00B0FC: [32-bit] Powerup
 //          0x00 - No powerup
 //          0x06 - Throttle Copter
 //          0x12 - Fire Protection
@@ -162,39 +162,40 @@ function player_character() => byte(0x00B0ED)
 //          0x34 - Frog
 function powerup() => byte(0x00B0FC)
 
-// $00c92a: Reflux Barrel Left State (1 byte)
+// $00c92a: [8-bit] Reflux Barrel Left State
 //          0x00 - Sitting there
 //          0x03 - Destroyed or mid-drink
 function reflux_barrel_left_state() => byte(0x00C92A)
 
-// $00c972: Reflux Barrel Top State (1 byte)
+// $00c972: [8-bit] Reflux Barrel Top State
 //          0x00 - Sitting there
 //          0x03 - Destroyed or mid-drink
 function reflux_barrel_top_state() => byte(0x00C972)
 
-// $00c9ba: Reflux Barrel Right State (1 byte)
+// $00c9ba: [8-bit] Reflux Barrel Right State
 //          0x00 - Sitting there
 //          0x03 - Destroyed or mid-drink
 function reflux_barrel_right_state() => byte(0x00C9BA)
 
-// $02ce88: X Position (4 bytes)
+// $02ce88: [32-bit] X Position
 //          Up-left is negative, down-right is positive.
 function x_position() => dword(0x02CE88)
 
-// $02ce8c: Y Position (4 bytes)
+// $02ce8c: [32-bit] Y Position
 //          Up-right is negative, down-left is positive.
 function y_position() => dword(0x02CE8C)
 
-// $02ce90: Z Position (4 bytes)
+// $02ce90: [32-bit] Z Position
 //          Most platforms are multiples of 0x1000.
 //          Rayman has a jump height of 0x1ef0.
 function z_position() => dword(0x02CE90)
 
-// $02cf28: Begoniax Details Pointer (4 bytes)
-//          p->+0x29 is her state (0x02 is normal, 0x04 is frog mode)
+
+// $02CF28: [32-bit] Begoniax Details Pointer
+//          *p + 0x29 is her state (0x02 is normal, 0x04 is frog mode)
 function begoniax_details_pointer() => dword(0x02CF28)
 
-// $047d48: Status Flag (4 bytes)
+// $047D48: [32-bit] Status Flag
 //          0x00000000 - In menus or game over screen
 //          0x0000003d - In most levels
 //          0x0003fffd - Paused in most levels
@@ -202,20 +203,20 @@ function begoniax_details_pointer() => dword(0x02CF28)
 //          0x00ffff7d - Paused in boss fights
 function status_flag() => dword(0x047D48)
 
-// $047d60: Player Health (4 bytes)
+// $047D60: [32-bit] Player Health
 //          0x00 to 0x63 (max health)
 //          Presentation is only updated when health changes (either picking up a lum or taking damage).
 function player_health() => dword(0x047D60)
 
-// $047d64: Max Health (4 bytes)
+// $047d64: [32-bit] Max Health
 //          Always 0x64, changing this changes how far right the presentation bar goes
 function max_health() => dword(0x047D64)
 
-// $047d78: Boss Health (4 bytes)
+// $047D78: [32-bit] Boss Health
 //          0x00 to 0x63 (max health)
 function boss_health() => dword(0x047D78)
 
-// $047d7c: Boss Max Health (4 bytes)
+// $047d7c: [32-bit] Boss Max Health
 //          Usually 0x64
 function boss_max_health() => dword(0x047D7C)
 
@@ -458,11 +459,34 @@ function is_in_map_screen() {
 
 function is_in_game_over() {
     return screen_detector() == 0x08025b9d || screen_detector() == 0x08025af9
-//     return end_level_behavior_function_pointer() == 0x0802c5dd || end_level_behavior_function_pointer() == 0x0802c539
 }
 
 function virtual_working_ram_to_physical(address) {
     return address - 0x02000000 + 0x8000
+}
+
+function format_int_with_commas(i) {
+    is_negative = i < 0
+    if (is_negative == true) {
+        i = i * -1
+    }
+    s = ""
+    for index in range(0, 100) {
+        if (i > 0) {
+            s = (i % 10) + s
+            i = i / 10
+            if (index % 3 == 2 && i > 0) {
+                s = "," + s
+            }
+        }
+    }
+    if (is_negative == true) {
+        s = "-" + s
+    }
+    if (s == "") {
+        return "0"
+    }
+    return s
 }
 
 // == ACHIEVEMENTS ==
@@ -471,7 +495,7 @@ function virtual_working_ram_to_physical(address) {
 
 achievement(
     title = "Rolling with the Punches", points = 10, id = 389210,
-    description = "Make Murfy proud and achieve a combo of at least 5000 points",
+    description = "Make Murfy proud and achieve a combo of at least 5,000 points",
     trigger = current_combo() >= 5000 && is_player_in_control() == 0x01
 )
 
@@ -545,7 +569,7 @@ for level_id in LEVEL_TO_THREE_STAMP_SCORE {
     achievement_id = LEVEL_TO_SCORE_ACHIEVEMENT_ID[level_id]
     achievement(
         title = format("Three Stamps in {0}", level_name), points = 10, id = achievement_id,
-        description = format("Get three stamps in {0} by achieving a score of {1}", level_name, score_target),
+        description = format("Get three stamps in {0} by achieving a score of {1}", level_name, format_int_with_commas(score_target)),
         trigger = did_level_just_complete(level_id) && (current_score() + current_combo()) >= score_target
     )
 }
@@ -624,7 +648,7 @@ for level_id in LEVEL_TO_ACHIEVEMENT_TIMES {
 rich_presence_conditional_display(is_in_map_screen(), "Looking at the map screen")
 rich_presence_conditional_display(is_in_game_over(), "Looking at the game over screen")
 rich_presence_conditional_display(status_flag() == 0x00000000, "Looking at a menu")
-rich_presence_conditional_display(player_character() == CHARACTER_RAYMAN, "Rayman in {0} 💖: {1}% 🧝: {2}/{3} 🟡: {4}/{5} 🔢: {6}",
+rich_presence_conditional_display(player_character() == CHARACTER_RAYMAN, "Rayman in {0} Health: {1}% Teensies: {2}/{3} Lums: {4}/{5} Score: {6}",
     rich_presence_lookup("Level", level(), LEVEL_TO_NAME),
     rich_presence_value("VALUE", player_health() + 1),
     rich_presence_value("VALUE", total_teensies_in_level() - teensies_remaining()),
@@ -633,7 +657,7 @@ rich_presence_conditional_display(player_character() == CHARACTER_RAYMAN, "Rayma
     rich_presence_value("VALUE", total_lums_in_level()),
     rich_presence_value("VALUE", current_score())
 )
-rich_presence_conditional_display(player_character() == CHARACTER_GLOBOX, "Globox in {0} 🧝: {1}/{2} 🟡: {3}/{4} 🔢: {5}",
+rich_presence_conditional_display(player_character() == CHARACTER_GLOBOX, "Globox in {0} Teensies: {1}/{2} Lums: {3}/{4} Score: {5}",
     rich_presence_lookup("Level", level(), LEVEL_TO_NAME),
     rich_presence_value("VALUE", total_teensies_in_level() - teensies_remaining()),
     rich_presence_value("VALUE", total_teensies_in_level()),

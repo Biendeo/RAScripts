@@ -1,2 +1,4 @@
 .venv
 .vscode
+# Singstar persists your voice so don't upload these!
+Games/PS2/Singstar/SaveStates

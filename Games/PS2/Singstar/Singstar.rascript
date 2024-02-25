@@ -1099,6 +1099,15 @@ achievement(
     description = "Achieve a score of 9,000 or more on any song on the hard difficulty",
     trigger = did_song_just_finish()
         && is_total_score_above_value(9000)
+        && (
+            (
+                is_in_star_maker_mode()
+                    && star_maker_mode_difficulty() == DIFFICULTY_HARD
+            ) || (
+                is_in_sing_mode_song()
+                    && sing_mode_difficulty() == DIFFICULTY_HARD
+            )
+        )
 )
 
 function is_in_specific_song(song_id) {

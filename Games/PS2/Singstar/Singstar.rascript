@@ -2,112 +2,7 @@
 // #ID = 22438
 // md5: ee9a20185951b550e420ca8efc01ae4e
 
-// == CODE NOTES ==
-
-function phrase_bonus() => dword(dword(dword(0x0029f290) + 0xcc) + 0x38)
-// function phrase_bonus_song_2() => dword(dword(0x002f3f74) + 0x0228)
-function phrase_bonus_song_2() => dword(dword(dword(0x002f3898) + 0x9c) + 0x318)
-function phrase_bonus_song_3() => dword(dword(dword(0x002f3898) + 0x9c) + 0x318)
-
-function total_score() => dword(dword(dword(0x0029f290) + 0xcc) + 0x3c)
-// function total_score_song_2() => dword(dword(0x002f3f74) + 0x022c) // Worked for a while but then didn't
-function total_score_song_2() => dword(dword(dword(0x002f3898) + 0x9c) + 0x31c)
-function total_score_song_3() => dword(dword(dword(0x002f3898) + 0x9c) + 0x31c)
-
-function is_in_fmv() => dword(0x0029d5a4) == 0x01
-
-// Matches song pointer constant
-
-// function is_in_song() => dword(0x0029d5a4) == 0x01
-function prev_is_in_song() => prev(dword(0x0029d5a4)) == 0x01
-
-function is_sing_mode_short_song_enabled() => dword(dword(0x005af244) + 0x88) == 0x01
-
-function is_star_maker_mode_short_song_enabled() => dword(0x002f38a0) == 0x01
-
-function is_in_star_maker_cutscene() => dword(0x0029ebc0) == 0x0002ee00
-
-// Matches difficulty constant
-function sing_mode_difficulty() => dword(dword(0x005af244) + 0xbc)
-
-// Matches difficulty constant
-function star_maker_mode_difficulty() => dword(0x002f389c)
-
-// In frames (assuming 50Hz)
-function song_position() => dword(0x00331c40)
-
-function is_mic_on() => dword(0x00330848) == 0x01
-
-function star_maker_mode_buzz() => dword(0x002f38a4)
-
-function star_maker_mode_rating() => dword(0x002f38ac)
-
-function star_maker_mode_week() => dword(0x002f38b0)
-
-// What song am I in?
-function is_in_star_maker_mode() => dword(0x002f3888) == 0x01
-
-function prev_is_in_star_maker_mode() => prev(dword(0x002f3888)) == 0x01
-
-function is_in_star_maker_mode_song_1() => is_in_star_maker_mode() && dword(dword(0x002f3898) + 0x0134) == 0x00
-
-function is_after_star_maker_mode_song_1() => is_in_star_maker_mode() && is_in_end_song_results() && dword(dword(0x002f3898) + 0x0134) == 0x01
-
-function loaded_song_id_star_maker_mode_song_1() => dword(dword(0x002f3898) + 0x0140 + (0 * 0x1c))
-
-function is_in_star_maker_mode_song_2() => is_in_star_maker_mode() && dword(dword(0x002f3898) + 0x0134) == 0x01
-
-function is_after_star_maker_mode_song_2() => is_in_star_maker_mode() && is_in_end_song_results() && dword(dword(0x002f3898) + 0x0134) == 0x02
-
-function loaded_song_id_star_maker_mode_song_2() => dword(dword(0x002f3898) + 0x0140 + (1 * 0x1c))
-
-function is_in_star_maker_mode_song_3() => is_in_star_maker_mode() && dword(dword(0x002f3898) + 0x0134) == 0x02
-
-function is_after_star_maker_mode_song_3() => is_in_star_maker_mode() && is_in_end_song_results() && dword(dword(0x002f3898) + 0x0134) == 0x03
-
-function loaded_song_id_star_maker_mode_song_3() => dword(dword(0x002f3898) + 0x0140 + (2 * 0x1c))
-
-function is_in_sing_mode_song() => !is_in_star_maker_mode()
-
-function loaded_song_id_sing_mode() => dword(dword(0x005af244) + 0x84)
-
-function star_maker_mode_callback_pointer() => dword(0x002f388c)
-
-function score_screen_detector() => dword(0x0036a3d0)
-
-function star_maker_state() => dword(0x002f38a8)
-
-function star_maker_playlist_song_1_score() => dword(dword(0x005af244) + 0x0124 + 0x1c * 0 + 0x14)
-function star_maker_playlist_song_2_score() => dword(dword(0x005af244) + 0x0124 + 0x1c * 1 + 0x14)
-function star_maker_playlist_song_3_score() => dword(dword(0x005af244) + 0x0124 + 0x1c * 2 + 0x14)
-
-function is_in_song() {
-    return (
-        score_screen_detector() == 0x50000000 // In song
-            || score_screen_detector() == 0x3a800000 // In song first frame
-    ) && (
-        dword(0x00330848) == 0x01 // Is mic paused
-            || dword(0x0029f4a0) == 0x01 // Is game paused
-    )
-    // TODO Investigate, Livin' La Vida Loca at the end will have two 0s here on the last frame.
-}
-
-function is_in_song_frame_0() {
-    return !is_in_song() // In song
-        && song_position() == 0
-}
-
-function is_in_end_song_loading() {
-    return score_screen_detector() == 0x50000000 // In end song screen
-        && song_position() > 1000 // Some songs stop the mic+video before it's actually finished
-}
-
-function is_in_end_song_results() {
-    // This might be exactly the same which simplifies everything.
-    return score_screen_detector() == 0x3f4ac000 // In end song screen
-}
-
-// == CONSTANTS ==
+// == RICH PRESENCE ==
 
 DIFFICULTY_EASY   = 0x00
 DIFFICULTY_NORMAL = 0x01
@@ -119,21 +14,6 @@ DIFFICULTY_TO_NAME = {
     DIFFICULTY_HARD   : "Hard"
 }
 
-STAR_MAKER_STATE_NONE                  = 0x00
-STAR_MAKER_STATE_CAREER_START          = 0x01
-STAR_MAKER_STATE_WEEK_2                = 0x02
-STAR_MAKER_STATE_WANNABE_RANK          = 0x03
-STAR_MAKER_STATE_AFTER_RECORDING_GIG_1 = 0x04
-STAR_MAKER_STATE_PRO_RANK              = 0x05
-STAR_MAKER_STATE_AFTER_RECORDING_GIG_2 = 0x06
-STAR_MAKER_STATE_AFTER_MOVING          = 0x07
-STAR_MAKER_STATE_RISING_STAR_RANK      = 0x08
-STAR_MAKER_STATE_STAR_RANK             = 0x09
-STAR_MAKER_STATE_AFTER_HARMONY_HALL    = 0x0a
-STAR_MAKER_STATE_SUPERSTAR_RANK        = 0x0b
-STAR_MAKER_STATE_END_GAME              = 0x0c
-
-// These are pointers to in memory about the songs.
 SONG_WORLD_OF_OUR_OWN                 = 0x007f87c0
 SONG_MURDER_ON_THE_DANCEFLOOR         = 0x007f9d50
 SONG_THANK_YOU                        = 0x007fac10
@@ -196,6 +76,72 @@ SONG_TO_ID = {
     SONG_ONE_LOVE                         : 0x1b,
     SONG_ETERNAL_FLAME                    : 0x1c,
     SONG_50_50                            : 0x1d
+}
+
+SONG_TO_NAME = {
+    SONG_WORLD_OF_OUR_OWN                 : "World Of Our Own",
+    SONG_MURDER_ON_THE_DANCEFLOOR         : "Murder On The Dancefloor",
+    SONG_THANK_YOU                        : "Thank You",
+    SONG_GET_THE_PARTY_STARTED            : "Get The Party Started",
+    SONG_SCANDALOUS                       : "Scandalous",
+    SONG_ACE_OF_SPADES                    : "Ace Of Spades",
+    SONG_DOWNTOWN                         : "Downtown",
+    SONG_LIKE_A_VIRGIN                    : "Like A Virgin",
+    SONG_NEVER_GONNA_GIVE_YOU_UP          : "Never Gonna Give You Up",
+    SONG_OH_PRETTY_WOMAN                  : "Oh Pretty Woman",
+    SONG_GROOVE_IS_IN_THE_HEART           : "Groove Is In The Heart",
+    SONG_JUST_A_LITTLE                    : "Just A Little",
+    SONG_TAKE_ON_ME                       : "Take On Me",
+    SONG_KUNG_FU_FIGHTING                 : "Kung Fu Fighting",
+    SONG_IF_YOURE_NOT_THE_ONE             : "If You're Not The One",
+    SONG_SUSPICIOUS_MINDS                 : "Suspicious Minds",
+    SONG_HEART_OF_GLASS                   : "Heart Of Glass",
+    SONG_CARELESS_WHISPER                 : "Careless Whisper",
+    SONG_ROUND_ROUND                      : "Round Round",
+    SONG_YMCA                             : "Y.M.C.A.",
+    SONG_CRASHED_THE_WEDDING              : "Crashed The Wedding",
+    SONG_COMPLICATED                      : "Complicated",
+    SONG_LIVIN_LA_VIDA_LOCA               : "Livin' La Vida Loca",
+    SONG_DONT_STOP_MOVIN                  : "Don't Stop Movin'",
+    SONG_SUPERSTAR                        : "Superstar",
+    SONG_I_BELIEVE_IN_A_THING_CALLED_LOVE : "I Believe In A Thing Called Love",
+    SONG_GIRLS_AND_BOYS                   : "Girls & Boys",
+    SONG_ONE_LOVE                         : "One Love",
+    SONG_ETERNAL_FLAME                    : "Eternal Flame",
+    SONG_50_50                            : "50/50"
+}
+
+SONG_TO_ARTIST_NAME = {
+    SONG_WORLD_OF_OUR_OWN                 : "Westlife",
+    SONG_MURDER_ON_THE_DANCEFLOOR         : "Sophie Ellis Bextor",
+    SONG_THANK_YOU                        : "Dido",
+    SONG_GET_THE_PARTY_STARTED            : "Pink",
+    SONG_SCANDALOUS                       : "Mis-Teeq",
+    SONG_ACE_OF_SPADES                    : "Motörhead",
+    SONG_DOWNTOWN                         : "Petula Clark",
+    SONG_LIKE_A_VIRGIN                    : "Madonna",
+    SONG_NEVER_GONNA_GIVE_YOU_UP          : "Rick Astley",
+    SONG_OH_PRETTY_WOMAN                  : "Roy Orbison",
+    SONG_GROOVE_IS_IN_THE_HEART           : "Deee-Lite",
+    SONG_JUST_A_LITTLE                    : "Liberty X",
+    SONG_TAKE_ON_ME                       : "A-ha",
+    SONG_KUNG_FU_FIGHTING                 : "Carl Douglas",
+    SONG_IF_YOURE_NOT_THE_ONE             : "Daniel Bedingfield",
+    SONG_SUSPICIOUS_MINDS                 : "Elvis Presley",
+    SONG_HEART_OF_GLASS                   : "Blondie",
+    SONG_CARELESS_WHISPER                 : "George Michael",
+    SONG_ROUND_ROUND                      : "Sugababes",
+    SONG_YMCA                             : "Village People",
+    SONG_CRASHED_THE_WEDDING              : "Busted",
+    SONG_COMPLICATED                      : "Avril Lavigne",
+    SONG_LIVIN_LA_VIDA_LOCA               : "Ricky Martin",
+    SONG_DONT_STOP_MOVIN                  : "S Club",
+    SONG_SUPERSTAR                        : "Jamelia",
+    SONG_I_BELIEVE_IN_A_THING_CALLED_LOVE : "The Darkness",
+    SONG_GIRLS_AND_BOYS                   : "Good Charlotte",
+    SONG_ONE_LOVE                         : "Blue",
+    SONG_ETERNAL_FLAME                    : "Atomic Kitten",
+    SONG_50_50                            : "Lemar"
 }
 
 SONG_TO_LENGTH = {
@@ -282,6 +228,451 @@ SONG_TO_SHORT_LENGTH_FORMATTED = {}
 for song in SONG_TO_SHORT_LENGTH {
     SONG_TO_SHORT_LENGTH_FORMATTED[song] = format_song_length(SONG_TO_SHORT_LENGTH[song])
 }
+
+STAR_MAKER_RATING_UNKNOWN     = 0x00
+STAR_MAKER_RATING_WANNABE     = 0x01
+STAR_MAKER_RATING_RISING_STAR = 0x02
+STAR_MAKER_RATING_PRO         = 0x03
+STAR_MAKER_RATING_STAR        = 0x04
+STAR_MAKER_RATING_SUPERSTAR   = 0x05
+
+STAR_MAKER_RATING_TO_NAME = {
+    STAR_MAKER_RATING_UNKNOWN     : "Unknown",
+    STAR_MAKER_RATING_WANNABE     : "Wannabe",
+    STAR_MAKER_RATING_RISING_STAR : "Rising Star",
+    STAR_MAKER_RATING_PRO         : "Pro",
+    STAR_MAKER_RATING_STAR        : "Star",
+    STAR_MAKER_RATING_SUPERSTAR   : "Superstar"
+}
+
+function is_in_star_maker_mode() => dword(0x002f3888) == 0x01
+function is_in_sing_mode_song() => !is_in_star_maker_mode()
+
+function is_in_star_maker_cutscene() => dword(0x0029ebc0) == 0x0002ee00
+
+function loaded_song_details() => dword(0x005af244)
+
+function loaded_song_id_sing_mode() => dword(loaded_song_details() + 0x84)
+function loaded_song_id_star_maker_mode_song_1() => dword(loaded_song_details() + 0x0124 + (0 * 0x1c))
+function loaded_song_id_star_maker_mode_song_2() => dword(loaded_song_details() + 0x0124 + (1 * 0x1c))
+function loaded_song_id_star_maker_mode_song_3() => dword(loaded_song_details() + 0x0124 + (2 * 0x1c))
+
+function star_maker_mode_playlist_index() => dword(loaded_song_details() + 0x0118)
+function is_in_star_maker_mode_song_1() => is_in_star_maker_mode() && star_maker_mode_playlist_index() == 0x00
+function is_in_star_maker_mode_song_2() => is_in_star_maker_mode() && star_maker_mode_playlist_index() == 0x01
+function is_in_star_maker_mode_song_3() => is_in_star_maker_mode() && star_maker_mode_playlist_index() == 0x02
+
+function is_mic_on() => dword(0x00330848) == 0x01
+function is_game_paused() => dword(0x0029f4a0) == 0x01
+
+function score_screen_detector() => dword(0x0036a3d0)
+SCORE_SCREEN_DETECTOR_IN_SONG = 0x50000000
+SCORE_SCREEN_DETECTOR_IN_SONG_FIRST_FRAME = 0x3a800000
+SCORE_SCREEN_DETECTOR_END_SONG = 0x3f4ac000
+
+function is_in_song() {
+    return (
+        score_screen_detector() == SCORE_SCREEN_DETECTOR_IN_SONG
+            || score_screen_detector() == SCORE_SCREEN_DETECTOR_IN_SONG_FIRST_FRAME
+    ) && (
+        is_mic_on()
+            || is_game_paused()
+    )
+}
+
+function sing_mode_difficulty() => dword(loaded_song_details() + 0xbc)
+function star_maker_mode_difficulty() => dword(0x002f389c)
+function song_position() => dword(0x00331c40)
+
+function star_maker_mode_rating() => dword(0x002f38ac)
+function star_maker_mode_buzz() => dword(0x002f38a4)
+function star_maker_mode_week() => dword(0x002f38b0)
+
+function is_sing_mode_short_song_enabled() => dword(loaded_song_details() + 0x88) == 0x01
+function is_star_maker_mode_short_song_enabled() => dword(0x002f38a0) == 0x01
+
+function first_song_score_details() => dword(0x0029f290)
+
+function phrase_bonus() => dword(dword(first_song_score_details() + 0xcc) + 0x38)
+function phrase_bonus_song_2() => dword(dword(loaded_song_details() + 0x80) + 0x318)
+function phrase_bonus_song_3() => phrase_bonus_song_2()
+
+function total_score() => dword(dword(first_song_score_details() + 0xcc) + 0x3c)
+function total_score_song_2() => dword(dword(loaded_song_details() + 0x80) + 0x31c)
+function total_score_song_3() => total_score_song_2()
+
+rich_presence_conditional_display(is_in_star_maker_mode() && is_in_star_maker_cutscene(), "In a Star Maker cutscene")
+for song_func in [
+    [is_in_star_maker_mode_song_1() && is_in_song(), loaded_song_id_star_maker_mode_song_1(), total_score()],
+    [is_in_star_maker_mode_song_2() && is_in_song(), loaded_song_id_star_maker_mode_song_2(), total_score_song_2()],
+    [is_in_star_maker_mode_song_3() && is_in_song(), loaded_song_id_star_maker_mode_song_3(), total_score_song_3()]
+] {
+    rich_presence_conditional_display(song_func[0] && is_star_maker_mode_short_song_enabled() && song_position() > 0, "Star Maker Mode: {0} (Short) by {1} - Difficulty: {2}, Score: {3}, Time: {4}/{5}",
+        rich_presence_lookup("SongName", song_func[1], SONG_TO_NAME),
+        rich_presence_lookup("ArtistName", song_func[1], SONG_TO_ARTIST_NAME),
+        rich_presence_lookup("Difficulty", star_maker_mode_difficulty(), DIFFICULTY_TO_NAME),
+        
+        rich_presence_macro("Number", song_func[2]),
+        rich_presence_macro("Seconds", song_position() / 50),
+        rich_presence_lookup("SongLengthShort", song_func[1], SONG_TO_SHORT_LENGTH_FORMATTED)
+    )
+    rich_presence_conditional_display(song_func[0] && song_position() > 0, "Star Maker Mode: {0} by {1} - Difficulty: {2}, Score: {3}, Time: {4}/{5}",
+        rich_presence_lookup("SongName", song_func[1], SONG_TO_NAME),
+        rich_presence_lookup("ArtistName", song_func[1], SONG_TO_ARTIST_NAME),
+        rich_presence_lookup("Difficulty", star_maker_mode_difficulty(), DIFFICULTY_TO_NAME),
+        rich_presence_macro("Number", song_func[2]),
+        rich_presence_macro("Seconds", song_position() / 50),
+        rich_presence_lookup("SongLength", song_func[1], SONG_TO_LENGTH_FORMATTED)
+    )
+}
+rich_presence_conditional_display(is_in_sing_mode_song() && is_sing_mode_short_song_enabled() && song_position() > 0, "Sing Mode: {0} (Short) by {1} - Difficulty: {2}, Score: {3}, Time: {4}/{5}",
+    rich_presence_lookup("SongName", loaded_song_id_sing_mode(), SONG_TO_NAME),
+    rich_presence_lookup("ArtistName", loaded_song_id_sing_mode(), SONG_TO_ARTIST_NAME),
+    rich_presence_lookup("Difficulty", sing_mode_difficulty(), DIFFICULTY_TO_NAME),
+    rich_presence_macro("Number", total_score()),
+    rich_presence_macro("Seconds", song_position() / 50),
+    rich_presence_lookup("SongLengthShort", loaded_song_id_sing_mode(), SONG_TO_SHORT_LENGTH_FORMATTED)
+)
+rich_presence_conditional_display(is_in_sing_mode_song() && song_position() > 0, "Sing Mode: {0} by {1} - Difficulty: {2}, Score: {3}, Time: {4}/{5}",
+    rich_presence_lookup("SongName", loaded_song_id_sing_mode(), SONG_TO_NAME),
+    rich_presence_lookup("ArtistName", loaded_song_id_sing_mode(), SONG_TO_ARTIST_NAME),
+    rich_presence_lookup("Difficulty", sing_mode_difficulty(), DIFFICULTY_TO_NAME),
+    rich_presence_macro("Number", total_score()),
+    rich_presence_macro("Seconds", song_position() / 50),
+    rich_presence_lookup("SongLength", loaded_song_id_sing_mode(), SONG_TO_LENGTH_FORMATTED)
+)
+rich_presence_conditional_display(is_in_star_maker_mode(), "Star Maker Mode: Difficulty: {0}, Rating: {1}, Buzz: {2}, Week: {3}",
+    rich_presence_lookup("Difficulty", star_maker_mode_difficulty(), DIFFICULTY_TO_NAME),
+    rich_presence_lookup("StarMakerRating", star_maker_mode_rating(), STAR_MAKER_RATING_TO_NAME),
+    rich_presence_macro("Number", star_maker_mode_buzz()),
+    rich_presence_macro("Number", star_maker_mode_week())
+)
+rich_presence_display("Looking through menus")
+
+
+// == LEADERBOARDS ==
+
+// IDs are an array representing [long+easy, long+medium, long+hard, short+easy, short+medium, short+hard]
+SONG_TO_LEADERBOARD_IDS = {
+    SONG_WORLD_OF_OUR_OWN                 : [88912, 88913, 88914, 89035, 89036, 89037],
+    SONG_MURDER_ON_THE_DANCEFLOOR         : [88915, 88916, 88917, 89056, 89057, 89058],
+    SONG_THANK_YOU                        : [88918, 88919, 88920, 89077, 89078, 89079],
+    SONG_GET_THE_PARTY_STARTED            : [88921, 88922, 88923, 89044, 89045, 89046],
+    SONG_SCANDALOUS                       : [88924, 88925, 88926, 89050, 89051, 89052],
+    SONG_ACE_OF_SPADES                    : [88927, 88928, 88929, 89005, 89006, 89007],
+    SONG_DOWNTOWN                         : [88930, 88931, 88932, 89008, 89009, 89010],
+    SONG_LIKE_A_VIRGIN                    : [88933, 88934, 88935, 89011, 89012, 89013],
+    SONG_NEVER_GONNA_GIVE_YOU_UP          : [88936, 88937, 88938, 89002, 89003, 89004],
+    SONG_OH_PRETTY_WOMAN                  : [88939, 88940, 88941, 89023, 89024, 89025],
+    SONG_GROOVE_IS_IN_THE_HEART           : [88942, 88943, 88944, 89026, 89027, 89028],
+    SONG_JUST_A_LITTLE                    : [88945, 88946, 88947, 89029, 89030, 89031],
+    SONG_TAKE_ON_ME                       : [88948, 88949, 88950, 89032, 89033, 89034],
+    SONG_KUNG_FU_FIGHTING                 : [88951, 88952, 88953, 89038, 89039, 89040],
+    SONG_IF_YOURE_NOT_THE_ONE             : [88954, 88955, 88956, 89041, 89042, 89043],
+    SONG_SUSPICIOUS_MINDS                 : [88957, 88958, 88959, 89014, 89015, 89016],
+    SONG_HEART_OF_GLASS                   : [88960, 88961, 88962, 89017, 89018, 89019],
+    SONG_CARELESS_WHISPER                 : [88963, 88964, 88965, 89020, 89021, 89022],
+    SONG_ROUND_ROUND                      : [88966, 88967, 88968, 89053, 89054, 89055],
+    SONG_YMCA                             : [88969, 88970, 88971, 89059, 89060, 89061],
+    SONG_CRASHED_THE_WEDDING              : [88972, 88973, 88974, 89062, 89063, 89064],
+    SONG_COMPLICATED                      : [88975, 88976, 88977, 89065, 89066, 89067],
+    SONG_LIVIN_LA_VIDA_LOCA               : [88978, 88979, 88980, 89068, 89069, 89070],
+    SONG_DONT_STOP_MOVIN                  : [88981, 88982, 88983, 89071, 89072, 89073],
+    SONG_SUPERSTAR                        : [88984, 88985, 88986, 89074, 89075, 89076],
+    SONG_I_BELIEVE_IN_A_THING_CALLED_LOVE : [88987, 88988, 88989, 89080, 89081, 89082],
+    SONG_GIRLS_AND_BOYS                   : [88990, 88991, 88992, 89083, 89084, 89085],
+    SONG_ONE_LOVE                         : [88993, 88994, 88995, 89086, 89087, 89088],
+    SONG_ETERNAL_FLAME                    : [88996, 88997, 88998, 89089, 89090, 89091],
+    SONG_50_50                            : [88999, 89000, 89001, 89047, 89048, 89049]
+}
+
+function is_in_specific_song_and_difficulty_short(song_id, difficulty_id) {
+    return (
+        is_in_star_maker_mode_song_1()
+        && loaded_song_id_star_maker_mode_song_1() == song_id
+        && star_maker_mode_difficulty() == difficulty_id
+        && is_star_maker_mode_short_song_enabled()
+    ) || (
+        is_in_star_maker_mode_song_2()
+        && loaded_song_id_star_maker_mode_song_2() == song_id
+        && star_maker_mode_difficulty() == difficulty_id
+        && is_star_maker_mode_short_song_enabled()
+    ) || (
+        is_in_star_maker_mode_song_3()
+        && loaded_song_id_star_maker_mode_song_3() == song_id
+        && star_maker_mode_difficulty() == difficulty_id
+        && is_star_maker_mode_short_song_enabled()
+    ) || (
+        is_in_sing_mode_song()
+        && loaded_song_id_sing_mode() == song_id
+        && sing_mode_difficulty() == difficulty_id
+        && is_sing_mode_short_song_enabled()
+    )
+}
+
+function is_in_specific_song_and_difficulty_long(song_id, difficulty_id) {
+    return (
+        is_in_star_maker_mode_song_1()
+        && loaded_song_id_star_maker_mode_song_1() == song_id
+        && star_maker_mode_difficulty() == difficulty_id
+        && !is_star_maker_mode_short_song_enabled()
+    ) || (
+        is_in_star_maker_mode_song_2()
+        && loaded_song_id_star_maker_mode_song_2() == song_id
+        && star_maker_mode_difficulty() == difficulty_id
+        && !is_star_maker_mode_short_song_enabled()
+    ) || (
+        is_in_star_maker_mode_song_3()
+        && loaded_song_id_star_maker_mode_song_3() == song_id
+        && star_maker_mode_difficulty() == difficulty_id
+        && !is_star_maker_mode_short_song_enabled()
+    ) || (
+        is_in_sing_mode_song()
+        && loaded_song_id_sing_mode() == song_id
+        && sing_mode_difficulty() == difficulty_id
+        && !is_sing_mode_short_song_enabled()
+    )
+}
+
+function start_leaderboard(song_id, song_difficulty, is_short) {
+    if (is_short == true) {
+        song_condition = is_in_specific_song_and_difficulty_short(song_id, song_difficulty)
+    } else {
+        song_condition = is_in_specific_song_and_difficulty_long(song_id, song_difficulty)
+    }
+    return (
+        score_screen_detector() == SCORE_SCREEN_DETECTOR_IN_SONG
+            || score_screen_detector() == SCORE_SCREEN_DETECTOR_IN_SONG_FIRST_FRAME
+    )
+        && is_mic_on()
+        && song_position() == 2 // World Of Our Own just starts counting before it's even finished loading!
+        && prev(song_position()) == 1
+        && song_condition
+}
+
+function is_in_song_frame_0() {
+    return !is_in_song()
+        && song_position() == 0
+}
+
+function is_in_end_song_loading() {
+    return score_screen_detector() == SCORE_SCREEN_DETECTOR_IN_SONG
+        && song_position() > 1000 // Some songs stop the mic+video before it's actually finished
+}
+
+function is_in_end_song_results() {
+    return score_screen_detector() == SCORE_SCREEN_DETECTOR_END_SONG
+}
+
+function cancel_leaderboard() {
+    return !is_in_song()
+        && !is_in_end_song_loading()
+        && !is_in_end_song_results()
+        || is_in_song_frame_0()
+}
+
+function did_song_just_finish() {
+    return prev(score_screen_detector()) == SCORE_SCREEN_DETECTOR_IN_SONG && score_screen_detector() == SCORE_SCREEN_DETECTOR_END_SONG
+}
+
+function submit_leaderboard() {
+    return did_song_just_finish()
+}
+
+function star_maker_playlist_song_1_score() => dword(loaded_song_details() + 0x0124 + 0x1c * 0 + 0x14)
+function star_maker_playlist_song_2_score() => dword(loaded_song_details() + 0x0124 + 0x1c * 1 + 0x14)
+function star_maker_playlist_song_3_score() => dword(loaded_song_details() + 0x0124 + 0x1c * 2 + 0x14)
+
+function leaderboard_value() {
+    return max_of(
+        measured(total_score(), when=is_in_star_maker_mode() && is_in_song() && star_maker_mode_playlist_index() == 0x00),
+        measured(star_maker_playlist_song_1_score(), when=is_in_star_maker_mode() && is_in_end_song_results() && star_maker_mode_playlist_index() == 0x01),
+        measured(total_score_song_2(), when=is_in_star_maker_mode() && is_in_song() && star_maker_mode_playlist_index() == 0x01),
+        measured(star_maker_playlist_song_2_score(), when=is_in_star_maker_mode() && is_in_end_song_results() && star_maker_mode_playlist_index() == 0x02),
+        measured(total_score_song_3(), when=is_in_star_maker_mode() && is_in_song() && star_maker_mode_playlist_index() == 0x02),
+        measured(star_maker_playlist_song_3_score(), when=is_in_star_maker_mode() && is_in_end_song_results() && star_maker_mode_playlist_index() == 0x03),
+        measured(total_score(), when=!is_in_star_maker_mode())
+    )
+}
+
+for song_id in SONG_TO_NAME {
+    for song_difficulty in DIFFICULTY_TO_NAME {
+        song_name = SONG_TO_NAME[song_id]
+        difficulty_name = DIFFICULTY_TO_NAME[song_difficulty]
+        long_leaderboard_id = SONG_TO_LEADERBOARD_IDS[song_id][song_difficulty]
+        leaderboard(
+            title = format("{0} - {1} - Highest Score", song_name, difficulty_name),
+            description = format("Highest score for {0} on {1}", song_name, difficulty_name),
+            id = long_leaderboard_id,
+            start = start_leaderboard(song_id, song_difficulty, false),
+            cancel = cancel_leaderboard(),
+            submit = submit_leaderboard(),
+            value = leaderboard_value(),
+            format = "VALUE"
+        )
+        short_leaderboard_id = SONG_TO_LEADERBOARD_IDS[song_id][song_difficulty + 3]
+        leaderboard(
+            title = format("{0} (Short) - {1} - Highest Score", song_name, difficulty_name),
+            description = format("Highest score for {0} (Short) on {1}", song_name, difficulty_name),
+            id = short_leaderboard_id,
+            start = start_leaderboard(song_id, song_difficulty, true),
+            cancel = cancel_leaderboard(),
+            submit = submit_leaderboard(),
+            value = leaderboard_value(),
+            format = "VALUE"
+        )
+    }
+}
+
+
+// == STAR MAKER MODE ACHIEVEMENTS ==
+
+STAR_MAKER_RATING_TO_BUZZ_NEEDED = {
+    STAR_MAKER_RATING_WANNABE     : 500,
+    STAR_MAKER_RATING_RISING_STAR : 1000,
+    STAR_MAKER_RATING_PRO         : 1500,
+    STAR_MAKER_RATING_STAR        : 2000,
+    STAR_MAKER_RATING_SUPERSTAR   : 2500
+}
+
+STAR_MAKER_RATING_TO_ACHIEVEMENT_NAME = {
+    STAR_MAKER_RATING_WANNABE     : "So Tell Me What You Want What You Really Really Want",
+    STAR_MAKER_RATING_RISING_STAR : "Leaping through the Sky like a Tiger",
+    STAR_MAKER_RATING_PRO         : "Like Being You, You're So Professional",
+    STAR_MAKER_RATING_STAR        : "There's a Starman Waiting in the Sky",
+    STAR_MAKER_RATING_SUPERSTAR   : "Cause You've Got All Eyes on You No Matter Where You Are"
+}
+
+STAR_MAKER_RATING_TO_ACHIEVEMENT_ID = {
+    STAR_MAKER_RATING_WANNABE     : 397599,
+    STAR_MAKER_RATING_RISING_STAR : 397600,
+    STAR_MAKER_RATING_PRO         : 397601,
+    STAR_MAKER_RATING_STAR        : 397602,
+    STAR_MAKER_RATING_SUPERSTAR   : 397603
+}
+
+function format_int_with_commas(i) {
+    is_negative = i < 0
+    if (is_negative == true) {
+        i = i * -1
+    }
+    s = ""
+    for index in range(0, 100) {
+        if (i > 0) {
+            s = (i % 10) + s
+            i = i / 10
+            if (index % 3 == 2 && i > 0) {
+                s = "," + s
+            }
+        }
+    }
+    if (is_negative == true) {
+        s = "-" + s
+    }
+    if (s == "") {
+        return "0"
+    }
+    return s
+}
+
+function star_maker_mode_callback_pointer() => dword(0x002f388c)
+
+function star_maker_state() => dword(0x002f38a8)
+STAR_MAKER_STATE_NONE                  = 0x00
+STAR_MAKER_STATE_CAREER_START          = 0x01
+STAR_MAKER_STATE_WEEK_2                = 0x02
+STAR_MAKER_STATE_WANNABE_RANK          = 0x03
+STAR_MAKER_STATE_AFTER_RECORDING_GIG_1 = 0x04
+STAR_MAKER_STATE_PRO_RANK              = 0x05
+STAR_MAKER_STATE_AFTER_RECORDING_GIG_2 = 0x06
+STAR_MAKER_STATE_AFTER_MOVING          = 0x07
+STAR_MAKER_STATE_RISING_STAR_RANK      = 0x08
+STAR_MAKER_STATE_STAR_RANK             = 0x09
+STAR_MAKER_STATE_AFTER_HARMONY_HALL    = 0x0a
+STAR_MAKER_STATE_SUPERSTAR_RANK        = 0x0b
+STAR_MAKER_STATE_END_GAME              = 0x0c
+
+function is_after_star_maker_mode_song_1() => is_in_star_maker_mode() && is_in_end_song_results() && star_maker_mode_playlist_index() == 0x01
+function is_after_star_maker_mode_song_2() => is_in_star_maker_mode() && is_in_end_song_results() && star_maker_mode_playlist_index() == 0x02
+function is_after_star_maker_mode_song_3() => is_in_star_maker_mode() && is_in_end_song_results() && star_maker_mode_playlist_index() == 0x03
+
+for star_maker_rating in STAR_MAKER_RATING_TO_ACHIEVEMENT_NAME {
+    rating_name = STAR_MAKER_RATING_TO_NAME[star_maker_rating]
+    buzz = STAR_MAKER_RATING_TO_BUZZ_NEEDED[star_maker_rating]
+    achievement_id = STAR_MAKER_RATING_TO_ACHIEVEMENT_ID[star_maker_rating]
+
+    achievement(
+        title = STAR_MAKER_RATING_TO_ACHIEVEMENT_NAME[star_maker_rating], points = 5, id = achievement_id,
+        description = format("Reach rating {0} with a buzz of {1} in Star Maker mode", rating_name, format_int_with_commas(buzz)),
+        trigger = is_in_star_maker_mode()
+            && star_maker_mode_callback_pointer() == prev(star_maker_mode_callback_pointer()) // Load game prevention
+            && star_maker_mode_buzz() >= buzz
+            && prev(star_maker_mode_buzz()) < buzz
+    )
+}
+
+for is_hard in [false, true] {
+    if (is_hard == true) {
+        difficulty_string = "hard difficulty"
+        title_string = " (Hard)"
+        difficulty_condition = star_maker_mode_difficulty() == DIFFICULTY_HARD
+        achievement_id_index = 1
+    } else {
+        difficulty_string = "any difficulty"
+        title_string = ""
+        difficulty_condition = always_true()
+        achievement_id_index = 0
+    }
+
+    achievement_ids = [397604, 397608]
+    achievement(
+        title = format("My First Recording Deal{0}", title_string), points = 5, id = achievement_ids[achievement_id_index],
+        description = format("Achieve a score of at least 6,500 on your first recording gig on {0} in Star Maker Mode", difficulty_string),
+        trigger = is_in_star_maker_mode()
+            && difficulty_condition
+            && star_maker_state() == STAR_MAKER_STATE_WANNABE_RANK
+            && is_after_star_maker_mode_song_1()
+            && total_score() >= 6500
+    )
+
+    achievement_ids = [397605, 397609]
+    achievement(
+        title = format("My Second Recording Deal{0}", title_string), points = 5, id = achievement_ids[achievement_id_index],
+        description = format("Achieve a score of at least 6,500 on your second recording gig on {0} in Star Maker Mode", difficulty_string),
+        trigger = is_in_star_maker_mode() 
+            && difficulty_condition
+            && star_maker_state() == STAR_MAKER_STATE_PRO_RANK
+            && is_after_star_maker_mode_song_1()
+            && total_score() >= 6500
+    )
+
+    achievement_ids = [397606, 397610]
+    achievement(
+        title = format("In Perfect Unison{0}", title_string), points = 5, id = achievement_ids[achievement_id_index],
+        description = format("Achieve a score of at least 5,000 on all three songs at Harmony Hall on {0} in Star Maker Mode", difficulty_string),
+        trigger = is_in_star_maker_mode()
+            && difficulty_condition
+            && star_maker_state() == STAR_MAKER_STATE_STAR_RANK
+            && is_after_star_maker_mode_song_3()
+            && star_maker_playlist_song_1_score() >= 5000
+            && star_maker_playlist_song_2_score() >= 5000
+            && star_maker_playlist_song_3_score() >= 5000
+    )
+
+    achievement_ids = [397607, 397611]
+    achievement(
+        title = format("World Famous{0}", title_string), points = 5, id = achievement_ids[achievement_id_index],
+        description = format("Achieve a score of at least 20,000 total across all three songs at Blue Bay Stadium on {0} in Star Maker Mode", difficulty_string),
+        trigger = is_in_star_maker_mode()
+            && difficulty_condition
+            && star_maker_state() == STAR_MAKER_STATE_SUPERSTAR_RANK
+            && is_after_star_maker_mode_song_3()
+            && (star_maker_playlist_song_1_score() + star_maker_playlist_song_2_score() + star_maker_playlist_song_3_score()) >= 20000
+    )
+}
+
+
+// == SONG ACHIEVEMENTS ==
 
 SONG_TO_EASY_SCORE_RECORD = {
     SONG_WORLD_OF_OUR_OWN                 : 7520,
@@ -380,72 +771,6 @@ SONG_TO_PHRASE_COUNT = {
     SONG_ONE_LOVE                         : 66,
     SONG_ETERNAL_FLAME                    : 44,
     SONG_50_50                            : 92
-}
-
-SONG_TO_NAME = {
-    SONG_WORLD_OF_OUR_OWN                 : "World Of Our Own",
-    SONG_MURDER_ON_THE_DANCEFLOOR         : "Murder On The Dancefloor",
-    SONG_THANK_YOU                        : "Thank You",
-    SONG_GET_THE_PARTY_STARTED            : "Get The Party Started",
-    SONG_SCANDALOUS                       : "Scandalous",
-    SONG_ACE_OF_SPADES                    : "Ace Of Spades",
-    SONG_DOWNTOWN                         : "Downtown",
-    SONG_LIKE_A_VIRGIN                    : "Like A Virgin",
-    SONG_NEVER_GONNA_GIVE_YOU_UP          : "Never Gonna Give You Up",
-    SONG_OH_PRETTY_WOMAN                  : "Oh Pretty Woman",
-    SONG_GROOVE_IS_IN_THE_HEART           : "Groove Is In The Heart",
-    SONG_JUST_A_LITTLE                    : "Just A Little",
-    SONG_TAKE_ON_ME                       : "Take On Me",
-    SONG_KUNG_FU_FIGHTING                 : "Kung Fu Fighting",
-    SONG_IF_YOURE_NOT_THE_ONE             : "If You're Not The One",
-    SONG_SUSPICIOUS_MINDS                 : "Suspicious Minds",
-    SONG_HEART_OF_GLASS                   : "Heart Of Glass",
-    SONG_CARELESS_WHISPER                 : "Careless Whisper",
-    SONG_ROUND_ROUND                      : "Round Round",
-    SONG_YMCA                             : "Y.M.C.A.",
-    SONG_CRASHED_THE_WEDDING              : "Crashed The Wedding",
-    SONG_COMPLICATED                      : "Complicated",
-    SONG_LIVIN_LA_VIDA_LOCA               : "Livin' La Vida Loca",
-    SONG_DONT_STOP_MOVIN                  : "Don't Stop Movin'",
-    SONG_SUPERSTAR                        : "Superstar",
-    SONG_I_BELIEVE_IN_A_THING_CALLED_LOVE : "I Believe In A Thing Called Love",
-    SONG_GIRLS_AND_BOYS                   : "Girls & Boys",
-    SONG_ONE_LOVE                         : "One Love",
-    SONG_ETERNAL_FLAME                    : "Eternal Flame",
-    SONG_50_50                            : "50/50"
-}
-
-SONG_TO_ARTIST_NAME = {
-    SONG_WORLD_OF_OUR_OWN                 : "Westlife",
-    SONG_MURDER_ON_THE_DANCEFLOOR         : "Sophie Ellis Bextor",
-    SONG_THANK_YOU                        : "Dido",
-    SONG_GET_THE_PARTY_STARTED            : "Pink",
-    SONG_SCANDALOUS                       : "Mis-Teeq",
-    SONG_ACE_OF_SPADES                    : "Motörhead",
-    SONG_DOWNTOWN                         : "Petula Clark",
-    SONG_LIKE_A_VIRGIN                    : "Madonna",
-    SONG_NEVER_GONNA_GIVE_YOU_UP          : "Rick Astley",
-    SONG_OH_PRETTY_WOMAN                  : "Roy Orbison",
-    SONG_GROOVE_IS_IN_THE_HEART           : "Deee-Lite",
-    SONG_JUST_A_LITTLE                    : "Liberty X",
-    SONG_TAKE_ON_ME                       : "A-ha",
-    SONG_KUNG_FU_FIGHTING                 : "Carl Douglas",
-    SONG_IF_YOURE_NOT_THE_ONE             : "Daniel Bedingfield",
-    SONG_SUSPICIOUS_MINDS                 : "Elvis Presley",
-    SONG_HEART_OF_GLASS                   : "Blondie",
-    SONG_CARELESS_WHISPER                 : "George Michael",
-    SONG_ROUND_ROUND                      : "Sugababes",
-    SONG_YMCA                             : "Village People",
-    SONG_CRASHED_THE_WEDDING              : "Busted",
-    SONG_COMPLICATED                      : "Avril Lavigne",
-    SONG_LIVIN_LA_VIDA_LOCA               : "Ricky Martin",
-    SONG_DONT_STOP_MOVIN                  : "S Club",
-    SONG_SUPERSTAR                        : "Jamelia",
-    SONG_I_BELIEVE_IN_A_THING_CALLED_LOVE : "The Darkness",
-    SONG_GIRLS_AND_BOYS                   : "Good Charlotte",
-    SONG_ONE_LOVE                         : "Blue",
-    SONG_ETERNAL_FLAME                    : "Atomic Kitten",
-    SONG_50_50                            : "Lemar"
 }
 
 SONG_TO_EASY_SCORE_ACHIEVEMENT_NAME = {
@@ -614,367 +939,6 @@ SONG_TO_PHRASE_COUNT_ACHIEVEMENT_NAME = {
 }
 
 SONG_TO_ACHIEVEMENT_IDS = {
-    SONG_WORLD_OF_OUR_OWN                 : [88912, 88913, 88914, 89035, 89036, 89037],
-    SONG_MURDER_ON_THE_DANCEFLOOR         : [88915, 88916, 88917, 89056, 89057, 89058],
-    SONG_THANK_YOU                        : [88918, 88919, 88920, 89077, 89078, 89079],
-    SONG_GET_THE_PARTY_STARTED            : [88921, 88922, 88923, 89044, 89045, 89046],
-    SONG_SCANDALOUS                       : [88924, 88925, 88926, 89050, 89051, 89052],
-    SONG_ACE_OF_SPADES                    : [88927, 88928, 88929, 89005, 89006, 89007],
-    SONG_DOWNTOWN                         : [88930, 88931, 88932, 89008, 89009, 89010],
-    SONG_LIKE_A_VIRGIN                    : [88933, 88934, 88935, 89011, 89012, 89013],
-    SONG_NEVER_GONNA_GIVE_YOU_UP          : [88936, 88937, 88938, 89002, 89003, 89004],
-    SONG_OH_PRETTY_WOMAN                  : [88939, 88940, 88941, 89023, 89024, 89025],
-    SONG_GROOVE_IS_IN_THE_HEART           : [88942, 88943, 88944, 89026, 89027, 89028],
-    SONG_JUST_A_LITTLE                    : [88945, 88946, 88947, 89029, 89030, 89031],
-    SONG_TAKE_ON_ME                       : [88948, 88949, 88950, 89032, 89033, 89034],
-    SONG_KUNG_FU_FIGHTING                 : [88951, 88952, 88953, 89038, 89039, 89040],
-    SONG_IF_YOURE_NOT_THE_ONE             : [88954, 88955, 88956, 89041, 89042, 89043],
-    SONG_SUSPICIOUS_MINDS                 : [88957, 88958, 88959, 89014, 89015, 89016],
-    SONG_HEART_OF_GLASS                   : [88960, 88961, 88962, 89017, 89018, 89019],
-    SONG_CARELESS_WHISPER                 : [88963, 88964, 88965, 89020, 89021, 89022],
-    SONG_ROUND_ROUND                      : [88966, 88967, 88968, 89053, 89054, 89055],
-    SONG_YMCA                             : [88969, 88970, 88971, 89059, 89060, 89061],
-    SONG_CRASHED_THE_WEDDING              : [88972, 88973, 88974, 89062, 89063, 89064],
-    SONG_COMPLICATED                      : [88975, 88976, 88977, 89065, 89066, 89067],
-    SONG_LIVIN_LA_VIDA_LOCA               : [88978, 88979, 88980, 89068, 89069, 89070],
-    SONG_DONT_STOP_MOVIN                  : [88981, 88982, 88983, 89071, 89072, 89073],
-    SONG_SUPERSTAR                        : [88984, 88985, 88986, 89074, 89075, 89076],
-    SONG_I_BELIEVE_IN_A_THING_CALLED_LOVE : [88987, 88988, 88989, 89080, 89081, 89082],
-    SONG_GIRLS_AND_BOYS                   : [88990, 88991, 88992, 89083, 89084, 89085],
-    SONG_ONE_LOVE                         : [88993, 88994, 88995, 89086, 89087, 89088],
-    SONG_ETERNAL_FLAME                    : [88996, 88997, 88998, 89089, 89090, 89091],
-    SONG_50_50                            : [88999, 89000, 89001, 89047, 89048, 89049]
-}
-
-// == FUNCTIONS ==
-
-function did_song_just_finish_old(song_id, is_short_version) {
-    if (is_short_version == false) {
-        return song_position() == SONG_TO_LENGTH[song_id] && prev(song_position()) == SONG_TO_LENGTH[song_id] - 1
-    } else {
-        return song_position() == SONG_TO_SHORT_LENGTH[song_id] && prev(song_position()) == SONG_TO_SHORT_LENGTH[song_id] - 1
-    }
-}
-
-// KEEPER
-// This reliably tracks Song -> LoadingResults -> Results
-function did_song_just_finish() {
-    return prev(score_screen_detector()) == 0x50000000 && score_screen_detector() == 0x3f4ac000
-}
-
-// KEEPER
-// This reliably tracks RestOfGame -> Song
-function did_song_just_start() {
-    return song_position() == 0x02
-        && prev(song_position()) == 0x01
-        && is_mic_on()
-}
-
-function is_in_specific_song(song_id) {
-    return (
-        is_in_star_maker_mode_song_1()
-        && loaded_song_id_star_maker_mode_song_1() == song_id
-    ) || (
-        is_in_star_maker_mode_song_2()
-        && loaded_song_id_star_maker_mode_song_2() == song_id
-    ) || (
-        is_in_star_maker_mode_song_3()
-        && loaded_song_id_star_maker_mode_song_3() == song_id
-    ) || (
-        is_in_sing_mode_song()
-        && loaded_song_id_sing_mode() == song_id
-    )
-}
-
-function is_in_specific_song_and_difficulty(song_id, difficulty_id) {
-    return (
-        is_in_star_maker_mode_song_1()
-        && loaded_song_id_star_maker_mode_song_1() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-    ) || (
-        is_in_star_maker_mode_song_2()
-        && loaded_song_id_star_maker_mode_song_2() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-    ) || (
-        is_in_star_maker_mode_song_3()
-        && loaded_song_id_star_maker_mode_song_3() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-    ) || (
-        is_in_sing_mode_song()
-        && loaded_song_id_sing_mode() == song_id
-        && sing_mode_difficulty() == difficulty_id
-    )
-}
-
-function is_in_specific_song_and_difficulty(song_id, difficulty_id) {
-    return (
-        is_in_star_maker_mode_song_1()
-        && loaded_song_id_star_maker_mode_song_1() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-    ) || (
-        is_in_star_maker_mode_song_2()
-        && loaded_song_id_star_maker_mode_song_2() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-    ) || (
-        is_in_star_maker_mode_song_3()
-        && loaded_song_id_star_maker_mode_song_3() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-    ) || (
-        is_in_sing_mode_song()
-        && loaded_song_id_sing_mode() == song_id
-        && sing_mode_difficulty() == difficulty_id
-    )
-}
-
-function is_in_specific_song_long(song_id) {
-    return (
-        is_in_star_maker_mode_song_1()
-        && loaded_song_id_star_maker_mode_song_1() == song_id
-        && !is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_star_maker_mode_song_2()
-        && loaded_song_id_star_maker_mode_song_2() == song_id
-        && !is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_star_maker_mode_song_3()
-        && loaded_song_id_star_maker_mode_song_3() == song_id
-        && !is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_sing_mode_song()
-        && loaded_song_id_sing_mode() == song_id
-        && !is_sing_mode_short_song_enabled()
-    )
-}
-
-function is_in_specific_song_and_difficulty_long(song_id, difficulty_id) {
-    return (
-        is_in_star_maker_mode_song_1()
-        && loaded_song_id_star_maker_mode_song_1() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-        && !is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_star_maker_mode_song_2()
-        && loaded_song_id_star_maker_mode_song_2() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-        && !is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_star_maker_mode_song_3()
-        && loaded_song_id_star_maker_mode_song_3() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-        && !is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_sing_mode_song()
-        && loaded_song_id_sing_mode() == song_id
-        && sing_mode_difficulty() == difficulty_id
-        && !is_sing_mode_short_song_enabled()
-    )
-}
-
-function is_in_specific_song_short(song_id) {
-    return (
-        is_in_star_maker_mode_song_1()
-        && loaded_song_id_star_maker_mode_song_1() == song_id
-        && is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_star_maker_mode_song_2()
-        && loaded_song_id_star_maker_mode_song_2() == song_id
-        && is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_star_maker_mode_song_3()
-        && loaded_song_id_star_maker_mode_song_3() == song_id
-        && is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_sing_mode_song()
-        && loaded_song_id_sing_mode() == song_id
-        && is_sing_mode_short_song_enabled()
-    )
-}
-
-function is_in_specific_song_and_difficulty_short(song_id, difficulty_id) {
-    return (
-        is_in_star_maker_mode_song_1()
-        && loaded_song_id_star_maker_mode_song_1() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-        && is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_star_maker_mode_song_2()
-        && loaded_song_id_star_maker_mode_song_2() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-        && is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_star_maker_mode_song_3()
-        && loaded_song_id_star_maker_mode_song_3() == song_id
-        && star_maker_mode_difficulty() == difficulty_id
-        && is_star_maker_mode_short_song_enabled()
-    ) || (
-        is_in_sing_mode_song()
-        && loaded_song_id_sing_mode() == song_id
-        && sing_mode_difficulty() == difficulty_id
-        && is_sing_mode_short_song_enabled()
-    )
-}
-
-function format_int_with_commas(i) {
-    is_negative = i < 0
-    if (is_negative == true) {
-        i = i * -1
-    }
-    s = ""
-    for index in range(0, 100) {
-        if (i > 0) {
-            s = (i % 10) + s
-            i = i / 10
-            if (index % 3 == 2 && i > 0) {
-                s = "," + s
-            }
-        }
-    }
-    if (is_negative == true) {
-        s = "-" + s
-    }
-    if (s == "") {
-        return "0"
-    }
-    return s
-}
-
-// === STAR MAKER MODE ===
-
-STAR_MAKER_RATING_UNKNOWN     = 0x00
-STAR_MAKER_RATING_WANNABE     = 0x01
-STAR_MAKER_RATING_RISING_STAR = 0x02
-STAR_MAKER_RATING_PRO         = 0x03
-STAR_MAKER_RATING_STAR        = 0x04
-STAR_MAKER_RATING_SUPERSTAR   = 0x05
-
-STAR_MAKER_RATING_TO_NAME = {
-    STAR_MAKER_RATING_UNKNOWN     : "Unknown",
-    STAR_MAKER_RATING_WANNABE     : "Wannabe",
-    STAR_MAKER_RATING_RISING_STAR : "Rising Star",
-    STAR_MAKER_RATING_PRO         : "Pro",
-    STAR_MAKER_RATING_STAR        : "Star",
-    STAR_MAKER_RATING_SUPERSTAR   : "Superstar"
-}
-
-STAR_MAKER_RATING_TO_BUZZ_NEEDED = {
-    STAR_MAKER_RATING_WANNABE     : 500,
-    STAR_MAKER_RATING_RISING_STAR : 1000,
-    STAR_MAKER_RATING_PRO         : 1500,
-    STAR_MAKER_RATING_STAR        : 2000,
-    STAR_MAKER_RATING_SUPERSTAR   : 2500
-}
-
-STAR_MAKER_RATING_TO_ACHIEVEMENT_NAME = {
-    STAR_MAKER_RATING_WANNABE     : "So Tell Me What You Want What You Really Really Want",
-    STAR_MAKER_RATING_RISING_STAR : "Leaping through the Sky like a Tiger",
-    STAR_MAKER_RATING_PRO         : "Like Being You, You're So Professional",
-    STAR_MAKER_RATING_STAR        : "There's a Starman Waiting in the Sky",
-    STAR_MAKER_RATING_SUPERSTAR   : "Cause You've Got All Eyes on You No Matter Where You Are"
-}
-
-STAR_MAKER_RATING_TO_ACHIEVEMENT_ID = {
-    STAR_MAKER_RATING_WANNABE     : 397599,
-    STAR_MAKER_RATING_RISING_STAR : 397600,
-    STAR_MAKER_RATING_PRO         : 397601,
-    STAR_MAKER_RATING_STAR        : 397602,
-    STAR_MAKER_RATING_SUPERSTAR   : 397603
-}
-
-for star_maker_rating in STAR_MAKER_RATING_TO_ACHIEVEMENT_NAME {
-    rating_name = STAR_MAKER_RATING_TO_NAME[star_maker_rating]
-    buzz = STAR_MAKER_RATING_TO_BUZZ_NEEDED[star_maker_rating]
-    achievement_id = STAR_MAKER_RATING_TO_ACHIEVEMENT_ID[star_maker_rating]
-
-    achievement(
-        title = STAR_MAKER_RATING_TO_ACHIEVEMENT_NAME[star_maker_rating], points = 5, id = achievement_id,
-        description = format("Reach rating {0} with a buzz of {1} in Star Maker mode", rating_name, format_int_with_commas(buzz)),
-        trigger = is_in_star_maker_mode()
-            && star_maker_mode_callback_pointer() == prev(star_maker_mode_callback_pointer()) // Load game prevention
-            && star_maker_mode_buzz() >= buzz
-            && prev(star_maker_mode_buzz()) < buzz
-    )
-}
-
-for is_hard in [false, true] {
-    if (is_hard == true) {
-        difficulty_string = "hard difficulty"
-        title_string = " (Hard)"
-        difficulty_condition = star_maker_mode_difficulty() == DIFFICULTY_HARD
-        achievement_id_index = 1
-    } else {
-        difficulty_string = "any difficulty"
-        title_string = ""
-        difficulty_condition = always_true()
-        achievement_id_index = 0
-    }
-
-    achievement_ids = [397604, 397608]
-    achievement(
-        title = format("My First Recording Deal{0}", title_string), points = 5, id = achievement_ids[achievement_id_index],
-        description = format("Achieve a score of at least 6,500 on your first recording gig on {0} in Star Maker Mode", difficulty_string),
-        trigger = is_in_star_maker_mode()
-            && difficulty_condition
-            && star_maker_state() == STAR_MAKER_STATE_WANNABE_RANK
-            && is_after_star_maker_mode_song_1()
-            && total_score() >= 6500
-    )
-
-    achievement_ids = [397605, 397609]
-    achievement(
-        title = format("My Second Recording Deal{0}", title_string), points = 5, id = achievement_ids[achievement_id_index],
-        description = format("Achieve a score of at least 6,500 on your second recording gig on {0} in Star Maker Mode", difficulty_string),
-        trigger = is_in_star_maker_mode() 
-            && difficulty_condition
-            && star_maker_state() == STAR_MAKER_STATE_PRO_RANK
-            && is_after_star_maker_mode_song_1()
-            && total_score() >= 6500
-    )
-
-    achievement_ids = [397606, 397610]
-    achievement(
-        title = format("In Perfect Unison{0}", title_string), points = 5, id = achievement_ids[achievement_id_index],
-        description = format("Achieve a score of at least 5,000 on all three songs at Harmony Hall on {0} in Star Maker Mode", difficulty_string),
-        trigger = is_in_star_maker_mode()
-            && difficulty_condition
-            && star_maker_state() == STAR_MAKER_STATE_STAR_RANK
-            && is_after_star_maker_mode_song_3()
-            && star_maker_playlist_song_1_score() >= 5000
-            && star_maker_playlist_song_2_score() >= 5000
-            && star_maker_playlist_song_3_score() >= 5000
-    )
-
-    achievement_ids = [397607, 397611]
-    achievement(
-        title = format("World Famous{0}", title_string), points = 5, id = achievement_ids[achievement_id_index],
-        description = format("Achieve a score of at least 20,000 total across all three songs at Blue Bay Stadium on {0} in Star Maker Mode", difficulty_string),
-        trigger = is_in_star_maker_mode()
-            && difficulty_condition
-            && star_maker_state() == STAR_MAKER_STATE_SUPERSTAR_RANK
-            && is_after_star_maker_mode_song_3()
-            && (star_maker_playlist_song_1_score() + star_maker_playlist_song_2_score() + star_maker_playlist_song_3_score()) >= 20000
-    )
-}
-
-// === SONG ACHIEVEMENTS ===
-
-function is_total_score_above_value(target) {
-    return (
-        is_in_star_maker_mode_song_1()
-        && total_score() >= target
-    ) || (
-        is_in_star_maker_mode_song_2()
-        && total_score_song_2() >= target
-    ) || (
-        is_in_star_maker_mode_song_3()
-        && total_score_song_2() >= target
-    ) || (
-        is_in_sing_mode_song()
-        && total_score() >= target
-    )
-}
-
-// IDs are an array representing [easy, hard, streak]
-SONG_TO_ACHIEVEMENT_IDS = {
     SONG_WORLD_OF_OUR_OWN                 : [397564, 397565, 397566],
     SONG_MURDER_ON_THE_DANCEFLOOR         : [397543, 397544, 397545],
     SONG_THANK_YOU                        : [397522, 397523, 397524],
@@ -1016,9 +980,6 @@ for song_id in SONG_TO_NAME {
     achievement(
         title = SONG_TO_EASY_SCORE_ACHIEVEMENT_NAME[song_id], points = 5, id = easy_achievement_id,
         description = format("Achieve a score of {0} or more on {1} on any difficulty", format_int_with_commas(easy_score), song_name),
-        // trigger = is_in_specific_song_long(song_id)
-        //     && did_song_just_finish()
-        //     && is_total_score_above_value(easy_score)
         trigger = (
             is_after_star_maker_mode_song_1()
             && loaded_song_id_star_maker_mode_song_1() == song_id
@@ -1049,7 +1010,6 @@ for song_id in SONG_TO_NAME {
     achievement(
         title = SONG_TO_HARD_SCORE_ACHIEVEMENT_NAME[song_id], points = 5, id = hard_achievement_id,
         description = format("Achieve a score of {0} or more on {1} on the hard difficulty", format_int_with_commas(hard_score), song_name),
-        // trigger = is_in_specific_song_and_difficulty_long(song_id, DIFFICULTY_HARD)
         trigger = (
             is_after_star_maker_mode_song_1()
             && loaded_song_id_star_maker_mode_song_1() == song_id
@@ -1075,7 +1035,6 @@ for song_id in SONG_TO_NAME {
             && !is_sing_mode_short_song_enabled()
             && total_score() >= hard_score
         ) && did_song_just_finish()
-            // && is_total_score_above_value(hard_score)
     )
 
     phrase_count = SONG_TO_PHRASE_COUNT[song_id]
@@ -1086,35 +1045,9 @@ for song_id in SONG_TO_NAME {
     achievement(
         title = SONG_TO_PHRASE_COUNT_ACHIEVEMENT_NAME[song_id], points = 10, id = phrase_achievement_id,
         description = format("Get a phrase bonus on at least {0} of the {1} phrases on {2} on the hard difficulty", target_phrase_count, phrase_count, song_name),
-        // trigger = measured(
-        //         tally(
-        //             target_phrase_count,
-        //             is_in_star_maker_mode_song_1()
-        //                 && prev(phrase_bonus()) < phrase_bonus(),
-        //             is_in_star_maker_mode_song_2()
-        //                 && prev(phrase_bonus_song_2()) < phrase_bonus_song_2(),
-        //             is_in_star_maker_mode_song_3()
-        //                 && prev(phrase_bonus_song_3()) < phrase_bonus_song_3(),
-        //             is_in_sing_mode_song()
-        //                 && prev(phrase_bonus()) < phrase_bonus()
-        //         )
-        //     )
-        //     && never(is_in_star_maker_mode_song_1() && loaded_song_id_star_maker_mode_song_1() != song_id)
-        //     && never(is_in_star_maker_mode_song_1() && star_maker_mode_difficulty() != DIFFICULTY_HARD)
-        //     && never(is_in_star_maker_mode_song_2() && loaded_song_id_star_maker_mode_song_2() != song_id)
-        //     && never(is_in_star_maker_mode_song_2() && star_maker_mode_difficulty() != DIFFICULTY_HARD)
-        //     && never(is_in_star_maker_mode_song_3() && loaded_song_id_star_maker_mode_song_3() != song_id)
-        //     && never(is_in_star_maker_mode_song_3() && star_maker_mode_difficulty() != DIFFICULTY_HARD)
-        //     && never(is_in_sing_mode_song() && loaded_song_id_sing_mode() != song_id)
-        //     && never(is_in_sing_mode_song() && sing_mode_difficulty() != DIFFICULTY_HARD)
-        //     && never(prev(phrase_bonus()) > phrase_bonus())
-        //     && never(prev(phrase_bonus_song_2()) > phrase_bonus_song_2())
-        //     && never(prev(phrase_bonus_song_3()) > phrase_bonus_song_3())
-        //     && did_song_just_finish()
         trigger = measured(
             repeated(target_phrase_count, prev(phrase_bonus()) < phrase_bonus()),
             is_in_star_maker_mode_song_1()
-
                 && loaded_song_id_star_maker_mode_song_1() == song_id
                 && star_maker_mode_difficulty() == DIFFICULTY_HARD
                 && !is_star_maker_mode_short_song_enabled()
@@ -1142,7 +1075,24 @@ for song_id in SONG_TO_NAME {
     )
 }
 
-// === MISC ACHIEVEMENTS ===
+
+// == MISC ACHIEVEMENTS ==
+
+function is_total_score_above_value(target) {
+    return (
+        is_in_star_maker_mode_song_1()
+        && total_score() >= target
+    ) || (
+        is_in_star_maker_mode_song_2()
+        && total_score_song_2() >= target
+    ) || (
+        is_in_star_maker_mode_song_3()
+        && total_score_song_2() >= target
+    ) || (
+        is_in_sing_mode_song()
+        && total_score() >= target
+    )
+}
 
 achievement(
     title = "It's Over 9000!", points = 10, id = 398334,
@@ -1150,6 +1100,28 @@ achievement(
     trigger = did_song_just_finish()
         && is_total_score_above_value(9000)
 )
+
+function is_in_specific_song(song_id) {
+    return (
+        is_in_star_maker_mode_song_1()
+        && loaded_song_id_star_maker_mode_song_1() == song_id
+    ) || (
+        is_in_star_maker_mode_song_2()
+        && loaded_song_id_star_maker_mode_song_2() == song_id
+    ) || (
+        is_in_star_maker_mode_song_3()
+        && loaded_song_id_star_maker_mode_song_3() == song_id
+    ) || (
+        is_in_sing_mode_song()
+        && loaded_song_id_sing_mode() == song_id
+    )
+}
+
+function did_song_just_start() {
+    return song_position() == 0x02
+        && prev(song_position()) == 0x01
+        && is_mic_on()
+}
 
 achievement(
     title = "Rick Rolled in 2004", points = 0, id = 397597,
@@ -1159,163 +1131,31 @@ achievement(
         && did_song_just_start()
 )
 
+function is_in_specific_song_long(song_id) {
+    return (
+        is_in_star_maker_mode_song_1()
+        && loaded_song_id_star_maker_mode_song_1() == song_id
+        && !is_star_maker_mode_short_song_enabled()
+    ) || (
+        is_in_star_maker_mode_song_2()
+        && loaded_song_id_star_maker_mode_song_2() == song_id
+        && !is_star_maker_mode_short_song_enabled()
+    ) || (
+        is_in_star_maker_mode_song_3()
+        && loaded_song_id_star_maker_mode_song_3() == song_id
+        && !is_star_maker_mode_short_song_enabled()
+    ) || (
+        is_in_sing_mode_song()
+        && loaded_song_id_sing_mode() == song_id
+        && !is_sing_mode_short_song_enabled()
+    )
+}
+
 achievement(
     title = "Hot Got a Deal You Wanna Know", points = 0, id = 397598,
     description = "Sing the rap in Groove Is In The Heart as well as the game expects",
     trigger = is_in_specific_song_long(SONG_GROOVE_IS_IN_THE_HEART)
+        && never(song_position() == 0x01)
+        && once(song_position() == 0x261e)
         && did_song_just_finish()
 )
-
-// == LEADERBOARDS ==
-
-// IDs are an array representing [long+easy, long+medium, long+hard, short+easy, short+medium, short+hard]
-SONG_TO_LEADERBOARD_IDS = {
-    SONG_WORLD_OF_OUR_OWN                 : [88912, 88913, 88914, 89035, 89036, 89037],
-    SONG_MURDER_ON_THE_DANCEFLOOR         : [88915, 88916, 88917, 89056, 89057, 89058],
-    SONG_THANK_YOU                        : [88918, 88919, 88920, 89077, 89078, 89079],
-    SONG_GET_THE_PARTY_STARTED            : [88921, 88922, 88923, 89044, 89045, 89046],
-    SONG_SCANDALOUS                       : [88924, 88925, 88926, 89050, 89051, 89052],
-    SONG_ACE_OF_SPADES                    : [88927, 88928, 88929, 89005, 89006, 89007],
-    SONG_DOWNTOWN                         : [88930, 88931, 88932, 89008, 89009, 89010],
-    SONG_LIKE_A_VIRGIN                    : [88933, 88934, 88935, 89011, 89012, 89013],
-    SONG_NEVER_GONNA_GIVE_YOU_UP          : [88936, 88937, 88938, 89002, 89003, 89004],
-    SONG_OH_PRETTY_WOMAN                  : [88939, 88940, 88941, 89023, 89024, 89025],
-    SONG_GROOVE_IS_IN_THE_HEART           : [88942, 88943, 88944, 89026, 89027, 89028],
-    SONG_JUST_A_LITTLE                    : [88945, 88946, 88947, 89029, 89030, 89031],
-    SONG_TAKE_ON_ME                       : [88948, 88949, 88950, 89032, 89033, 89034],
-    SONG_KUNG_FU_FIGHTING                 : [88951, 88952, 88953, 89038, 89039, 89040],
-    SONG_IF_YOURE_NOT_THE_ONE             : [88954, 88955, 88956, 89041, 89042, 89043],
-    SONG_SUSPICIOUS_MINDS                 : [88957, 88958, 88959, 89014, 89015, 89016],
-    SONG_HEART_OF_GLASS                   : [88960, 88961, 88962, 89017, 89018, 89019],
-    SONG_CARELESS_WHISPER                 : [88963, 88964, 88965, 89020, 89021, 89022],
-    SONG_ROUND_ROUND                      : [88966, 88967, 88968, 89053, 89054, 89055],
-    SONG_YMCA                             : [88969, 88970, 88971, 89059, 89060, 89061],
-    SONG_CRASHED_THE_WEDDING              : [88972, 88973, 88974, 89062, 89063, 89064],
-    SONG_COMPLICATED                      : [88975, 88976, 88977, 89065, 89066, 89067],
-    SONG_LIVIN_LA_VIDA_LOCA               : [88978, 88979, 88980, 89068, 89069, 89070],
-    SONG_DONT_STOP_MOVIN                  : [88981, 88982, 88983, 89071, 89072, 89073],
-    SONG_SUPERSTAR                        : [88984, 88985, 88986, 89074, 89075, 89076],
-    SONG_I_BELIEVE_IN_A_THING_CALLED_LOVE : [88987, 88988, 88989, 89080, 89081, 89082],
-    SONG_GIRLS_AND_BOYS                   : [88990, 88991, 88992, 89083, 89084, 89085],
-    SONG_ONE_LOVE                         : [88993, 88994, 88995, 89086, 89087, 89088],
-    SONG_ETERNAL_FLAME                    : [88996, 88997, 88998, 89089, 89090, 89091],
-    SONG_50_50                            : [88999, 89000, 89001, 89047, 89048, 89049]
-}
-
-function start_leaderboard(song_id, song_difficulty, is_short) {
-    if (is_short == true) {
-        song_condition = is_in_specific_song_and_difficulty_short(song_id, song_difficulty)
-    } else {
-        song_condition = is_in_specific_song_and_difficulty_long(song_id, song_difficulty)
-    }
-    return (
-        score_screen_detector() == 0x50000000
-            || score_screen_detector() == 0x3a800000
-    )
-        && is_mic_on()
-        && song_position() == 2 // World Of Our Own just starts counting before it's even finished loading!
-        && prev(song_position()) == 1
-        && song_condition
-}
-
-function cancel_leaderboard() {
-    return !is_in_song()
-        && !is_in_end_song_loading()
-        && !is_in_end_song_results()
-        || is_in_song_frame_0()
-}
-
-function submit_leaderboard() {
-    return did_song_just_finish()
-}
-
-function leaderboard_value() {
-    return max_of(
-        measured(total_score(), when=is_in_star_maker_mode() && is_in_song() && dword(dword(0x002f3898) + 0x0134) == 0x00),
-        measured(star_maker_playlist_song_1_score(), when=is_in_star_maker_mode() && is_in_end_song_results() && dword(dword(0x002f3898) + 0x0134) == 0x01),
-        measured(total_score_song_2(), when=is_in_star_maker_mode() && is_in_song() && dword(dword(0x002f3898) + 0x0134) == 0x01),
-        measured(star_maker_playlist_song_2_score(), when=is_in_star_maker_mode() && is_in_end_song_results() && dword(dword(0x002f3898) + 0x0134) == 0x02),
-        measured(total_score_song_3(), when=is_in_star_maker_mode() && is_in_song() && dword(dword(0x002f3898) + 0x0134) == 0x02),
-        measured(star_maker_playlist_song_3_score(), when=is_in_star_maker_mode() && is_in_end_song_results() && dword(dword(0x002f3898) + 0x0134) == 0x03),
-        measured(total_score(), when=!is_in_star_maker_mode())
-    )
-}
-
-for song_id in SONG_TO_NAME {
-    for song_difficulty in DIFFICULTY_TO_NAME {
-        song_name = SONG_TO_NAME[song_id]
-        difficulty_name = DIFFICULTY_TO_NAME[song_difficulty]
-        long_leaderboard_id = SONG_TO_LEADERBOARD_IDS[song_id][song_difficulty]
-        leaderboard(
-            title = format("{0} - {1} - Highest Score", song_name, difficulty_name),
-            description = format("Highest score for {0} on {1}", song_name, difficulty_name),
-            id = long_leaderboard_id,
-            start = start_leaderboard(song_id, song_difficulty, false),
-            cancel = cancel_leaderboard(),
-            submit = submit_leaderboard(),
-            value = leaderboard_value(),
-            format = "VALUE"
-        )
-        short_leaderboard_id = SONG_TO_LEADERBOARD_IDS[song_id][song_difficulty + 3]
-        leaderboard(
-            title = format("{0} (Short) - {1} - Highest Score", song_name, difficulty_name),
-            description = format("Highest score for {0} (Short) on {1}", song_name, difficulty_name),
-            id = short_leaderboard_id,
-            start = start_leaderboard(song_id, song_difficulty, true),
-            cancel = cancel_leaderboard(),
-            submit = submit_leaderboard(),
-            value = leaderboard_value(),
-            format = "VALUE"
-        )
-    }
-}
-
-// == RICH PRESENCE ==
-
-rich_presence_conditional_display(is_in_star_maker_mode() && is_in_star_maker_cutscene(), "In a Star Maker cutscene")
-for song_func in [
-    [is_in_star_maker_mode_song_1() && is_in_song(), loaded_song_id_star_maker_mode_song_1(), total_score()],
-    [is_in_star_maker_mode_song_2() && is_in_song(), loaded_song_id_star_maker_mode_song_2(), total_score_song_2()],
-    [is_in_star_maker_mode_song_3() && is_in_song(), loaded_song_id_star_maker_mode_song_3(), total_score_song_3()]
-] {
-    rich_presence_conditional_display(song_func[0] && is_star_maker_mode_short_song_enabled() && song_position() > 0, "Star Maker Mode: {0} (Short) by {1} - Difficulty: {2}, Score: {3}, Time: {4}/{5}",
-        rich_presence_lookup("SongName", song_func[1], SONG_TO_NAME),
-        rich_presence_lookup("ArtistName", song_func[1], SONG_TO_ARTIST_NAME),
-        rich_presence_lookup("Difficulty", star_maker_mode_difficulty(), DIFFICULTY_TO_NAME),
-        
-        rich_presence_macro("Number", song_func[2]),
-        rich_presence_macro("Seconds", song_position() / 50),
-        rich_presence_lookup("SongLengthShort", song_func[1], SONG_TO_SHORT_LENGTH_FORMATTED)
-    )
-    rich_presence_conditional_display(song_func[0] && song_position() > 0, "Star Maker Mode: {0} by {1} - Difficulty: {2}, Score: {3}, Time: {4}/{5}",
-        rich_presence_lookup("SongName", song_func[1], SONG_TO_NAME),
-        rich_presence_lookup("ArtistName", song_func[1], SONG_TO_ARTIST_NAME),
-        rich_presence_lookup("Difficulty", star_maker_mode_difficulty(), DIFFICULTY_TO_NAME),
-        rich_presence_macro("Number", song_func[2]),
-        rich_presence_macro("Seconds", song_position() / 50),
-        rich_presence_lookup("SongLength", song_func[1], SONG_TO_LENGTH_FORMATTED)
-    )
-}
-rich_presence_conditional_display(is_in_sing_mode_song() && is_sing_mode_short_song_enabled() && song_position() > 0, "Sing Mode: {0} (Short) by {1} - Difficulty: {2}, Score: {3}, Time: {4}/{5}",
-    rich_presence_lookup("SongName", loaded_song_id_sing_mode(), SONG_TO_NAME),
-    rich_presence_lookup("ArtistName", loaded_song_id_sing_mode(), SONG_TO_ARTIST_NAME),
-    rich_presence_lookup("Difficulty", sing_mode_difficulty(), DIFFICULTY_TO_NAME),
-    rich_presence_macro("Number", total_score()),
-    rich_presence_macro("Seconds", song_position() / 50),
-    rich_presence_lookup("SongLengthShort", loaded_song_id_sing_mode(), SONG_TO_SHORT_LENGTH_FORMATTED)
-)
-rich_presence_conditional_display(is_in_sing_mode_song() && song_position() > 0, "Sing Mode: {0} by {1} - Difficulty: {2}, Score: {3}, Time: {4}/{5}",
-    rich_presence_lookup("SongName", loaded_song_id_sing_mode(), SONG_TO_NAME),
-    rich_presence_lookup("ArtistName", loaded_song_id_sing_mode(), SONG_TO_ARTIST_NAME),
-    rich_presence_lookup("Difficulty", sing_mode_difficulty(), DIFFICULTY_TO_NAME),
-    rich_presence_macro("Number", total_score()),
-    rich_presence_macro("Seconds", song_position() / 50),
-    rich_presence_lookup("SongLength", loaded_song_id_sing_mode(), SONG_TO_LENGTH_FORMATTED)
-)
-rich_presence_conditional_display(is_in_star_maker_mode(), "Star Maker Mode - Difficulty: {0}, Rating: {1}, Buzz: {2}, Week: {3}",
-    rich_presence_lookup("Difficulty", star_maker_mode_difficulty(), DIFFICULTY_TO_NAME),
-    rich_presence_lookup("StarMakerRating", star_maker_mode_rating(), STAR_MAKER_RATING_TO_NAME),
-    rich_presence_macro("Number", star_maker_mode_buzz()),
-    rich_presence_macro("Number", star_maker_mode_week())
-)
-rich_presence_display("Looking through menus")

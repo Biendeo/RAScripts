@@ -6,7 +6,7 @@ https://retroachievements.org/game/22438
 
 ## Overview
 
-TODO
+Singstar is a 2004 music video game for the PlayStation 2. It was released in PAL regions on May 21st, 2004, but was never released in North America. Sing along to 30 songs that span a variety of genres and time periods using the two bundled Singstar microphones and USB dongle. Build your repetoire and reputation in the Star Maker Mode in singleplayer or compete for leaderboards with one or two players in Sing Mode. There also exists a Party Mode to spice things up where up to 8 players can participate in a round robin style mode, but for these achievements, only one player is necessary.
 
 ## Set Design
 
@@ -85,31 +85,63 @@ The exception are the career buzz rank achievements, which trigger after `Result
 
 #### Progression
 
-There exists one achievement for each day of the campaign mode. TODO
+There exists one achievement for each of the 5 Star Maker mode ranks (with the 5th being a win condition). There also exists two for each of the four end of rank events, one for completing it, and another for doing it on hard (which will trigger both in that case). The third and fourth (Harmony Hall and Blue Bay Stadium) are missable as the game continues no matter how poorly you do at those. The other two, the non-hard achievement is marked as Progression, but not the hard ones.
 
-#### Game Completion
+#### Win Condition
 
-The game is completed when the final song of the campaign mode is sung. TODO
+Game completion is handled by the 5th rank (Superstar), as the game asks you to do (but doesn't require you to do well in) the Blue Bay Stadium event.
 
 #### Per Song
 
-Each of the game's 30 songs has two achievements; one for beating the lowest of the top leaderboard scores (as each song has three leaderboards where easy gets more points), and 
+Each of the game's 30 songs has three achievements:
+- Beating the easy score on any difficulty.
+- Beating the hard score on the hard difficulty (which is **always** 720 points less).
+- Getting a phrase bonus on 75% (rounded up) of the song's phrases.
+    - A phrase bonus is acquired when the player gets a cool rated phrase while their star bar is at least 80% full, and the player will get phrase bonus points for doing so.
 
 #### Miscellaneous
 
-There's also one last achievement for having a combo score of 5000 at some point in the game.
+There exist a few extra achievements:
+- Start _Never Gonna Give You Up_ (just for a joke, 0 points).
+- _Perfectly_ sing the rap part in Groove Is In The Heart (just for a joke since there's no notes to sing, 0 points).
+- Achieve a score of 9000 on any song on hard (10 points).
 
 ### Leaderboards
 
-There are three leaderboards for each song for each difficulty. Short and long modes both aim for the same leaderboard like they do in-game.
+There are six leaderboards per song, one for combination of difficulty and short/normal length. This equates to 180 leaderboards total.
 
 ### Rich Presence
 
-The rich presence lists your current song and score:
+The rich presence when in a song in Sing Mode displays to the following format:
 
 ```
-Singing along to Superstar - Score: 7200
+Sing Mode: I Believe In A Thing Called Love by The Darkness - Difficulty: Easy, Score: 4000, Time: 2:00/3:47
 ```
 
-If in a menu, the rich presence lists what you're looking at:
-TODO
+Short version would be:
+
+```
+Sing Mode: I Believe In A Thing Called Love (Short) by The Darkness - Difficulty: Easy, Score: 4000, Time: 2:00/3:47
+```
+
+When in Star Maker mode:
+
+```
+Star Maker Mode: I Believe In A Thing Called Love by The Darkness - Difficulty: Easy, Score: 4000, Time: 2:00/3:47
+```
+
+When in Star Maker mode but not in song:
+```
+Star Maker Mode: Difficulty: Normal, Rating: Wannabe, Buzz: 611, Week: 11
+```
+
+In one of the two Star Maker mode cutscenes:
+```
+In a Star Maker cutscene
+```
+
+If in any other menu:
+
+```
+Looking through menus
+```

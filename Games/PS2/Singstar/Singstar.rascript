@@ -981,25 +981,27 @@ for song_id in SONG_TO_NAME {
         title = SONG_TO_EASY_SCORE_ACHIEVEMENT_NAME[song_id], points = 5, id = easy_achievement_id,
         description = format("Achieve a score of {0} or more on {1} on any difficulty", format_int_with_commas(easy_score), song_name),
         trigger = (
-            is_after_star_maker_mode_song_1()
-            && loaded_song_id_star_maker_mode_song_1() == song_id
-            && !is_star_maker_mode_short_song_enabled()
-            && total_score() >= easy_score
-        ) || (
-            is_after_star_maker_mode_song_2()
-            && loaded_song_id_star_maker_mode_song_2() == song_id
-            && !is_star_maker_mode_short_song_enabled()
-            && total_score_song_2() >= easy_score
-        ) || (
-            is_after_star_maker_mode_song_3()
-            && loaded_song_id_star_maker_mode_song_3() == song_id
-            && !is_star_maker_mode_short_song_enabled()
-            && total_score_song_3() >= easy_score
-        ) || (
-            is_in_sing_mode_song()
-            && loaded_song_id_sing_mode() == song_id
-            && !is_sing_mode_short_song_enabled()
-            && total_score() >= easy_score
+            (
+                is_after_star_maker_mode_song_1()
+                && loaded_song_id_star_maker_mode_song_1() == song_id
+                && !is_star_maker_mode_short_song_enabled()
+                && total_score() >= easy_score
+            ) || (
+                is_after_star_maker_mode_song_2()
+                && loaded_song_id_star_maker_mode_song_2() == song_id
+                && !is_star_maker_mode_short_song_enabled()
+                && total_score_song_2() >= easy_score
+            ) || (
+                is_after_star_maker_mode_song_3()
+                && loaded_song_id_star_maker_mode_song_3() == song_id
+                && !is_star_maker_mode_short_song_enabled()
+                && total_score_song_3() >= easy_score
+            ) || (
+                is_in_sing_mode_song()
+                && loaded_song_id_sing_mode() == song_id
+                && !is_sing_mode_short_song_enabled()
+                && total_score() >= easy_score
+            )
         ) && did_song_just_finish()
     )
 
@@ -1011,29 +1013,31 @@ for song_id in SONG_TO_NAME {
         title = SONG_TO_HARD_SCORE_ACHIEVEMENT_NAME[song_id], points = 5, id = hard_achievement_id,
         description = format("Achieve a score of {0} or more on {1} on the hard difficulty", format_int_with_commas(hard_score), song_name),
         trigger = (
-            is_after_star_maker_mode_song_1()
-            && loaded_song_id_star_maker_mode_song_1() == song_id
-            && star_maker_mode_difficulty() == DIFFICULTY_HARD
-            && !is_star_maker_mode_short_song_enabled()
-            && total_score() >= hard_score
-        ) || (
-            is_after_star_maker_mode_song_2()
-            && loaded_song_id_star_maker_mode_song_2() == song_id
-            && star_maker_mode_difficulty() == DIFFICULTY_HARD
-            && !is_star_maker_mode_short_song_enabled()
-            && total_score_song_2() >= hard_score
-        ) || (
-            is_after_star_maker_mode_song_3()
-            && loaded_song_id_star_maker_mode_song_3() == song_id
-            && star_maker_mode_difficulty() == DIFFICULTY_HARD
-            && !is_star_maker_mode_short_song_enabled()
-            && total_score_song_3() >= hard_score
-        ) || (
-            is_in_sing_mode_song()
-            && loaded_song_id_sing_mode() == song_id
-            && sing_mode_difficulty() == DIFFICULTY_HARD
-            && !is_sing_mode_short_song_enabled()
-            && total_score() >= hard_score
+            (
+                is_after_star_maker_mode_song_1()
+                && loaded_song_id_star_maker_mode_song_1() == song_id
+                && star_maker_mode_difficulty() == DIFFICULTY_HARD
+                && !is_star_maker_mode_short_song_enabled()
+                && total_score() >= hard_score
+            ) || (
+                is_after_star_maker_mode_song_2()
+                && loaded_song_id_star_maker_mode_song_2() == song_id
+                && star_maker_mode_difficulty() == DIFFICULTY_HARD
+                && !is_star_maker_mode_short_song_enabled()
+                && total_score_song_2() >= hard_score
+            ) || (
+                is_after_star_maker_mode_song_3()
+                && loaded_song_id_star_maker_mode_song_3() == song_id
+                && star_maker_mode_difficulty() == DIFFICULTY_HARD
+                && !is_star_maker_mode_short_song_enabled()
+                && total_score_song_3() >= hard_score
+            ) || (
+                is_in_sing_mode_song()
+                && loaded_song_id_sing_mode() == song_id
+                && sing_mode_difficulty() == DIFFICULTY_HARD
+                && !is_sing_mode_short_song_enabled()
+                && total_score() >= hard_score
+            )
         ) && did_song_just_finish()
     )
 
@@ -1045,30 +1049,32 @@ for song_id in SONG_TO_NAME {
     achievement(
         title = SONG_TO_PHRASE_COUNT_ACHIEVEMENT_NAME[song_id], points = 10, id = phrase_achievement_id,
         description = format("Get a phrase bonus on at least {0} of the {1} phrases on {2} on the hard difficulty", target_phrase_count, phrase_count, song_name),
-        trigger = measured(
-            repeated(target_phrase_count, prev(phrase_bonus()) < phrase_bonus()),
-            is_in_star_maker_mode_song_1()
-                && loaded_song_id_star_maker_mode_song_1() == song_id
-                && star_maker_mode_difficulty() == DIFFICULTY_HARD
-                && !is_star_maker_mode_short_song_enabled()
-        ) || measured(
-            repeated(target_phrase_count, prev(phrase_bonus_song_2()) < phrase_bonus_song_2()),
-            is_in_star_maker_mode_song_2()
-                && loaded_song_id_star_maker_mode_song_2() == song_id
-                && star_maker_mode_difficulty() == DIFFICULTY_HARD
-                && !is_star_maker_mode_short_song_enabled()
-        ) || measured(
-            repeated(target_phrase_count, prev(phrase_bonus_song_3()) < phrase_bonus_song_3()),
-            is_in_star_maker_mode_song_3()
-                && loaded_song_id_star_maker_mode_song_3() == song_id
-                && star_maker_mode_difficulty() == DIFFICULTY_HARD
-                && !is_star_maker_mode_short_song_enabled()
-        ) || measured(
-            repeated(target_phrase_count, prev(phrase_bonus()) < phrase_bonus()),
-            is_in_sing_mode_song()
-                && loaded_song_id_sing_mode() == song_id
-                && sing_mode_difficulty() == DIFFICULTY_HARD
-                && !is_sing_mode_short_song_enabled()
+        trigger = (
+            measured(
+                repeated(target_phrase_count, prev(phrase_bonus()) < phrase_bonus()),
+                is_in_star_maker_mode_song_1()
+                    && loaded_song_id_star_maker_mode_song_1() == song_id
+                    && star_maker_mode_difficulty() == DIFFICULTY_HARD
+                    && !is_star_maker_mode_short_song_enabled()
+            ) || measured(
+                repeated(target_phrase_count, prev(phrase_bonus_song_2()) < phrase_bonus_song_2()),
+                is_in_star_maker_mode_song_2()
+                    && loaded_song_id_star_maker_mode_song_2() == song_id
+                    && star_maker_mode_difficulty() == DIFFICULTY_HARD
+                    && !is_star_maker_mode_short_song_enabled()
+            ) || measured(
+                repeated(target_phrase_count, prev(phrase_bonus_song_3()) < phrase_bonus_song_3()),
+                is_in_star_maker_mode_song_3()
+                    && loaded_song_id_star_maker_mode_song_3() == song_id
+                    && star_maker_mode_difficulty() == DIFFICULTY_HARD
+                    && !is_star_maker_mode_short_song_enabled()
+            ) || measured(
+                repeated(target_phrase_count, prev(phrase_bonus()) < phrase_bonus()),
+                is_in_sing_mode_song()
+                    && loaded_song_id_sing_mode() == song_id
+                    && sing_mode_difficulty() == DIFFICULTY_HARD
+                    && !is_sing_mode_short_song_enabled()
+            )
         ) && never(
             song_position() == 0
         ) && song_position() == SONG_TO_LENGTH[song_id] // I can't MeasureIf during the loading and end results so instead we'll try to activate this on the last frame in-song.

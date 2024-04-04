@@ -979,7 +979,7 @@ for song_id in SONG_TO_NAME {
     // Break the easy score on any difficulty.
     achievement(
         title = SONG_TO_EASY_SCORE_ACHIEVEMENT_NAME[song_id], points = 5, id = easy_achievement_id,
-        description = format("Achieve a score of {0} or more on {1} on any difficulty", format_int_with_commas(easy_score), song_name),
+        description = format("Achieve a score of {0} or more on {1} (normal length) on any difficulty", format_int_with_commas(easy_score), song_name),
         trigger = (
             (
                 is_after_star_maker_mode_song_1()
@@ -1011,7 +1011,7 @@ for song_id in SONG_TO_NAME {
     // Break the hard score on the hard difficulty.
     achievement(
         title = SONG_TO_HARD_SCORE_ACHIEVEMENT_NAME[song_id], points = 5, id = hard_achievement_id,
-        description = format("Achieve a score of {0} or more on {1} on the hard difficulty", format_int_with_commas(hard_score), song_name),
+        description = format("Achieve a score of {0} or more on {1} (normal length) on the hard difficulty", format_int_with_commas(hard_score), song_name),
         trigger = (
             (
                 is_after_star_maker_mode_song_1()

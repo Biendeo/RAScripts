@@ -165,6 +165,8 @@ CHARACTER_STEFAN  = 0x01
 
 function winning_character() => byte(0x0b09)
 
+function in_the_end_screen() => word(0x0002) == 0x02a0
+
 function fair_fight_as_p1() => never(!is_in_game() && !is_loading_results_screen())
     && once(
         just_entered_game()
@@ -225,7 +227,7 @@ for map in MAP_TO_NAME {
     map_name = MAP_TO_NAME[map]
     for setup in leaderboard_setups {
         character_name = setup[0]
-        submit_condition = setup[1] && just_entered_results_screen() && current_map() == map
+        submit_condition = setup[1] && just_entered_results_screen() && current_map() == map && !in_the_end_screen()
         leaderboard(
             title = format("{0} - {1} - Quickest Victory", character_name, map_name),
             description = format("Beat {0} as {1} in a fair fight without quickloading in the fewest number of turns", map_name, character_name),
@@ -281,12 +283,12 @@ for map in MAP_TO_NAME {
     map_name = MAP_TO_NAME[map]
     for setup in leaderboard_setups {
         character_name = setup[0]
-        submit_condition = setup[1] && just_entered_results_screen() && current_map() == map
+        submit_condition = setup[1] && just_entered_results_screen() && current_map() == map && !in_the_end_screen()
         achievement(
             title = format("Victory at {0} ({1})", map_name, character_name),
             description = format("Beat {0} as {1} in a fair fight (start with equal or less money and don't start with your units placed and your opponent's not placed) without quickloading", map_name, character_name),
             points = 10,
-            id = MAP_TO_LEADERBOARD_IDS[map][setup[2]],
+            id = MAP_TO_ACHIEVEMENT_IDS[map][setup[2]],
             trigger = submit_condition
         )
     }
@@ -413,15 +415,23 @@ function max_buildings_trigger() {
     return (
         is_in_single_player_game_as_p1()
             && p1_cities() >= 30
-            && prev(p1_cities()) < 30
             && p1_factories() >= 5
             && prev(p1_factories()) < 5
+    ) || (
+        is_in_single_player_game_as_p1()
+            && p1_cities() >= 30
+            && prev(p1_cities()) < 30
+            && p1_factories() >= 5
+    ) || (
+        is_in_single_player_game_as_p2()
+            && p2_cities() >= 30
+            && p2_factories() >= 5
+            && prev(p2_factories()) < 5
     ) || (
         is_in_single_player_game_as_p2()
             && p2_cities() >= 30
             && prev(p2_cities()) < 30
             && p2_factories() >= 5
-            && prev(p2_factories()) < 5
     )
 }
 

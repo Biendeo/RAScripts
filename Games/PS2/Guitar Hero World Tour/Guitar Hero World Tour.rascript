@@ -69,7 +69,9 @@ function money_spent_linked_list() {
 }
 
 function did_reach_you_rock() {
-    return player_money_cut(1) > 0 && prev(player_money_cut(1)) == 0
+    // In most cases, this is set to 0 after the song results screen.
+    // This does not set to 0 after the credits though, so as a best case this tries to detect that the player's money changed, which may potentially not be right.
+    return player_money_cut(1) > 0 && prev(player_money_cut(1)) != player_money_cut(1)
 }
 
 IN_SONG_ADDR = 0x00420174
@@ -87,6 +89,11 @@ function is_in_career_mode_gig() {
     return dword(IN_CAREER_MODE_GIG_ADDR) == 0x01
 }
 
+IN_PRACTICE_MODE_ADDR = 0x0041d088
+function is_in_practice_mode() {
+    return dword(IN_PRACTICE_MODE_ADDR) == 0x01
+}
+
 NUMBER_OF_ACTIVE_PLAYERS_ADDR = 0x004287f4
 function number_of_active_players() {
     return dword(NUMBER_OF_ACTIVE_PLAYERS_ADDR)
@@ -97,9 +104,14 @@ function current_song() {
     return dword(CURRENT_SONG_ID_ADDR)
 }
 
-SCORE_ADDR = 0x00c42978
-function score() {
-    return dword(SCORE_ADDR)
+P1_SCORE_ADDR = 0x00c42978
+function p1_score() {
+    return dword(P1_SCORE_ADDR)
+}
+
+BAND_SCORE_ADDR = 0x00c42b48
+function band_score() {
+    return dword(BAND_SCORE_ADDR)
 }
 
 PLAYER_INFO_ARRAY_ADDR = 0x008d62c0
@@ -238,56 +250,56 @@ function total_earnings() {
 
 // [Rank number, money to reach, rank name, achievement ID]
 RANK_INFO = [
-    [  2,     500, "Got Some Kicks", 0],
-    [  3,    1000, "Got A Look", 0],
-    [  4,    2000, "Became A Rebel", 0],
-    [  5,    3000, "Found Your Roots", 0],
-    [  6,    4500, "Got A Pet", 0],
-    [  7,    6000, "Signed Your First Deal", 0],
-    [  8,    8000, "Got An Ego", 0],
-    [  9,   11000, "Blew Your Dough", 0],
-    [ 10,   15000, "Had To Show Off", 0],
-    [ 11,   20000, "Signed An Endorsement Deal", 0],
-    [ 12,   25000, "Got Some Cold, Hard, Cash", 0],
-    [ 13,   30000, "Upgraded Your Look", 0],
-    [ 14,   40000, "Got Fancier Taste", 0],
-    [ 15,   50000, "Partied In Cannes", 0],
-    [ 16,   60000, "Vacationed In Egypt", 0],
-    [ 17,   70000, "Brought Back A Pet Lion", 0],
-    [ 18,   80000, "'Hear Me Roar' Became A Gold Record", 0],
-    [ 19,   90000, "Split Up The Band", 0],
-    [ 20,  105000, "Ate Only The Finest", 0],
-    [ 21,  120000, "Bought Your Own Island", 0],
-    [ 22,  135000, "Decided To Go Solo", 0],
-    [ 23,  150000, "Got Richer", 0],
-    [ 24,  165000, "Became Increasingly More Reclusive", 0],
-    [ 25,  180000, "Had A Cameo In A Hip-Hop Track", 0],
-    [ 26,  200000, "Collected Rare Muscle Cars", 0],
-    [ 27,  220000, "Bought A Venus de Milo Knock Off", 0],
-    [ 28,  240000, "Built An Enormous Fish Tank For The New Pet Shark", 0],
-    [ 29,  260000, "Won The 'Best Rock Performance In A Hip-Hop Cameo' Award", 0],
-    [ 30,  280000, "Wrecked Your Car Driving Home From The After Party", 0],
-    [ 31,  305000, "Went To Rehab In Palm Springs", 0],
-    [ 32,  330000, "Decided To Move To Arizona To 'Clear Your Head'", 0],
-    [ 33,  355000, "'Toms of Life' Becomes a Worldwide Hit", 0],
-    [ 34,  380000, "Did A Major Credit Card Commercial", 0],
-    [ 35,  410000, "Got A Weekend Gig in Vegas", 0],
-    [ 36,  440000, "Got Married In Vegas", 0],
-    [ 37,  470000, "Leased A Private Jet", 0],
-    [ 38,  500000, "Bought A Sarcophagus To Sleep In", 0],
-    [ 39,  530000, "Imported A Bengal Tiger", 0],
-    [ 40,  565000, "Got A Star In Hollywood Blvd", 0],
-    [ 41,  600000, "Burned One Million Dollars To Make A Statement", 0],
-    [ 42,  635000, "Started Your Own Beverage Company", 0],
-    [ 43,  670000, "Bought A Castle In France", 0],
-    [ 44,  705000, "Bought A Guitar Manufacturer", 0],
-    [ 45,  745000, "Demanded To Get Paid In Gold Bricks", 0],
-    [ 46,  785000, "Got A Cult Following In Norway", 0],
-    [ 47,  825000, "Became Blinded By Success", 0],
-    [ 48,  865000, "Bought A Decommissioned Submarine From Russia", 0],
-    [ 49,  910000, "Commissioned A Self Portrait", 0],
-    [ 50,  955000, "Replaced Your Butler With A Robot", 0],
-    [ 51, 1000000, "Immortalized Your Guitar In Frozen Carbonite", 0]
+    [  2,     500, "Got Some Kicks", 427841],
+    [  3,    1000, "Got A Look", 427842],
+    [  4,    2000, "Became A Rebel", 427843],
+    [  5,    3000, "Found Your Roots", 427844],
+    [  6,    4500, "Got A Pet", 427845],
+    [  7,    6000, "Signed Your First Deal", 427846],
+    [  8,    8000, "Got An Ego", 427847],
+    [  9,   11000, "Blew Your Dough", 427848],
+    [ 10,   15000, "Had To Show Off", 427849],
+    [ 11,   20000, "Signed An Endorsement Deal", 427850],
+    [ 12,   25000, "Got Some Cold, Hard, Cash", 427851],
+    [ 13,   30000, "Upgraded Your Look", 427852],
+    [ 14,   40000, "Got Fancier Taste", 427853],
+    [ 15,   50000, "Partied In Cannes", 427854],
+    [ 16,   60000, "Vacationed In Egypt", 427855],
+    [ 17,   70000, "Brought Back A Pet Lion", 427856],
+    [ 18,   80000, "'Hear Me Roar' Became A Gold Record", 427857],
+    [ 19,   90000, "Split Up The Band", 427858],
+    [ 20,  105000, "Ate Only The Finest", 427859],
+    [ 21,  120000, "Bought Your Own Island", 427860],
+    [ 22,  135000, "Decided To Go Solo", 427861],
+    [ 23,  150000, "Got Richer", 427862],
+    [ 24,  165000, "Became Increasingly More Reclusive", 427863],
+    [ 25,  180000, "Had A Cameo In A Hip-Hop Track", 427864],
+    [ 26,  200000, "Collected Rare Muscle Cars", 427865],
+    [ 27,  220000, "Bought A Venus de Milo Knock Off", 427866],
+    [ 28,  240000, "Built An Enormous Fish Tank For The New Pet Shark", 427867],
+    [ 29,  260000, "Won The 'Best Rock Performance In A Hip-Hop Cameo' Award", 427868],
+    [ 30,  280000, "Wrecked Your Car Driving Home From The After Party", 427869],
+    [ 31,  305000, "Went To Rehab In Palm Springs", 427870],
+    [ 32,  330000, "Decided To Move To Arizona To 'Clear Your Head'", 427871],
+    [ 33,  355000, "'Toms of Life' Becomes a Worldwide Hit", 427872],
+    [ 34,  380000, "Did A Major Credit Card Commercial", 427873],
+    [ 35,  410000, "Got A Weekend Gig in Vegas", 427874],
+    [ 36,  440000, "Got Married In Vegas", 427875],
+    [ 37,  470000, "Leased A Private Jet", 427876],
+    [ 38,  500000, "Bought A Sarcophagus To Sleep In", 427877],
+    [ 39,  530000, "Imported A Bengal Tiger", 427878],
+    [ 40,  565000, "Got A Star In Hollywood Blvd", 427879],
+    [ 41,  600000, "Burned One Million Dollars To Make A Statement", 427880],
+    [ 42,  635000, "Started Your Own Beverage Company", 427881],
+    [ 43,  670000, "Bought A Castle In France", 427882],
+    [ 44,  705000, "Bought A Guitar Manufacturer", 427883],
+    [ 45,  745000, "Demanded To Get Paid In Gold Bricks", 427884],
+    [ 46,  785000, "Got A Cult Following In Norway", 427885],
+    [ 47,  825000, "Became Blinded By Success", 427886],
+    [ 48,  865000, "Bought A Decommissioned Submarine From Russia", 427887],
+    [ 49,  910000, "Commissioned A Self Portrait", 427888],
+    [ 50,  955000, "Replaced Your Butler With A Robot", 427889],
+    [ 51, 1000000, "Immortalized Your Guitar In Frozen Carbonite", 427890]
     // The ranks below have no icon and are also so much of a grind to get to so they're excluded from achievements.
     // [101, 2000000, "Became 'The Bomb' Literally", 0]
     // [151, 3000000, "Got Your Own Scent - 'Eau de Shred'", 0]
@@ -382,7 +394,7 @@ SONG_RAMBLIN_MAN                     = 0x5418ab8a
 SONG_REBEL_YELL                      = 0x921d18b1
 SONG_RE_EDUCATION_THROUGH_LABOR      = 0xc6514ca6
 SONG_ROOFTOPS_A_LIBERATION_BROADCAST = 0xa76357b3
-SONG_SANTERIA                        =  0x7e68e3be
+SONG_SANTERIA                        = 0x7e68e3be
 SONG_SATCH_BOOGIE                    = 0x7f8b13a8
 SONG_SCHISM                          = 0x939c343d
 SONG_SCREAM_AIM_FIRE                 = 0x230d6fa8
@@ -412,35 +424,34 @@ SONG_INFO = {
         "Title": "About a Girl (Unplugged)",
         "Artist": "Nirvana",
         "Year": 1994,
-        "BandLeaderboardIndices": [1125, 1188, 206, 1859, 1560],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 58600,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [786, 57, 1838, 1108, 233],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428189,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "I Need an Easy Friend",
+                "LeaderboardIds": [0, 101574, 101575, 101576, 101573]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 29150,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [229, 663, 2163, 350, 265],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428190,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "You Hang Me Out to Dry",
+                "LeaderboardIds": [0, 101578, 101579, 101580, 101577]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 64100,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [751, 1233, 1971, 789, 907],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428192,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "I Do Keep a Date with You",
+                "LeaderboardIds": [0, 101586, 101587, 101588, 101585]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 15500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [627, 838, 974, 1364, 2019],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428191,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Free, I Do",
+                "LeaderboardIds": [0, 101582, 101583, 101584, 101581]
             }
         }
     },
@@ -448,35 +459,34 @@ SONG_INFO = {
         "Title": "Aggro",
         "Artist": "The Enemy",
         "Year": 2007,
-        "BandLeaderboardIndices": [1297, 1621, 521, 2182, 1664],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 78936,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [490, 1923, 1592,  981, 2070],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427943,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Things Are Getting Ugly",
+                "LeaderboardIds": [0, 100590, 100591, 100592, 100589]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 26448,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1463, 559, 277, 1238, 1409],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427944,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "I Want You Running with Me",
+                "LeaderboardIds": [0, 100594, 100595, 100596, 100593]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 66375,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [185, 631, 904, 1451, 935],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427946,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "We'll Set the Streets on Fire",
+                "LeaderboardIds": [0, 100602, 100603, 100604, 100601]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 19000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [526, 1781, 1878, 1509, 1892],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427945,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Say What You Mean",
+                "LeaderboardIds": [0, 100598, 100599, 100600, 100597]
             }
         }
     },
@@ -484,35 +494,34 @@ SONG_INFO = {
         "Title": "American Woman",
         "Artist": "The Guess Who",
         "Year": 1970,
-        "BandLeaderboardIndices": [2072, 993, 2190, 2049, 1215],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 62584,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2082, 440, 892, 1758, 883],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428132,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Mama, Let Me Be",
+                "LeaderboardIds": [0, 101346, 101347, 101348, 101345]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 41073,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [509, 524, 2239, 199, 667],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428133,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "I Got More Important Things to Do",
+                "LeaderboardIds": [0, 101350, 101351, 101352, 101349]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 102900,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [715, 215, 1395, 131, 1917],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428135,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Colored Lights Can Hypnotize",
+                "LeaderboardIds": [0, 101358, 101359, 101360, 101357]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 28000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [31, 2145, 655, 1528, 1353],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428134,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Goodbye American Woman",
+                "LeaderboardIds": [0, 101354, 101355, 101356, 101353]
             }
         }
     },
@@ -520,35 +529,34 @@ SONG_INFO = {
         "Title": "Antisocial",
         "Artist": "Trust",
         "Year": 1980,
-        "BandLeaderboardIndices": [607, 155, 1159, 1566, 2160],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 88849,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1526, 2125, 66, 2249, 232],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428111,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Tu Masques Ton Visage en Lisant Ton Journal",
+                "LeaderboardIds": [0, 101262, 101263, 101264, 101261]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 64450,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2185, 1464, 1831, 1582, 178],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428112,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Tu Voudrais Donner Des Yeux à la Justice",
+                "LeaderboardIds": [0, 101266, 101267, 101268, 101265]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 126528,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1512, 1423, 1071, 2141, 396],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428114,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Bouge de Ta Retraite, Ta Conduite Est Trop Parfaite",
+                "LeaderboardIds": [0, 101274, 101275, 101276, 101273]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 26000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1676, 2233, 162, 51, 1843],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428113,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Ceux Qui Hier T'enviaient, Aujourd'hui Te Jugeraient",
+                "LeaderboardIds": [0, 101270, 101271, 101272, 101269]
             }
         }
     },
@@ -556,35 +564,34 @@ SONG_INFO = {
         "Title": "Are You Gonna Go My Way",
         "Artist": "Lenny Kravitz",
         "Year": 1993,
-        "BandLeaderboardIndices": [1434, 2135, 1672, 971, 2173],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 53647,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [987, 563, 1722, 641, 2241],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428197,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Am the Chosen, I'm the One",
+                "LeaderboardIds": [0, 101606, 101607, 101608, 101605]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 29904,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1565, 556, 1432, 1049, 373],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428198,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Though I'm Not Paid, I Play This Game",
+                "LeaderboardIds": [0, 101610, 101611, 101612, 101609]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 67225,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [802, 2039, 1508, 620, 1139],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428200,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "We Must Engage and Rearrange",
+                "LeaderboardIds": [0, 101618, 101619, 101620, 101617]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 16500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1042, 731, 653, 1270, 1895],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428199,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "We've Got to Hug and Rub-a-Dub",
+                "LeaderboardIds": [0, 101614, 101615, 101616, 101613]
             }
         }
     },
@@ -592,35 +599,34 @@ SONG_INFO = {
         "Title": "Assassin",
         "Artist": "Muse",
         "Year": 2006,
-        "BandLeaderboardIndices": [1855, 123, 2048, 771, 1207],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 84934,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [52, 69, 2130, 765, 1688],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428124,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "War Is Overdue",
+                "LeaderboardIds": [0, 101314, 101315, 101316, 101313]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 63147,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [312, 1097, 1839, 401, 836],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428125,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "These People Are Torn",
+                "LeaderboardIds": [0, 101318, 101319, 101320, 101317]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 95750,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [510, 555, 1471, 840, 260],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428127,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Destroy Demonocracy",
+                "LeaderboardIds": [0, 101326, 101327, 101328, 101325]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 12000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [113, 2139, 287, 80, 1002],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428126,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Oppose and Disagree",
+                "LeaderboardIds": [0, 101322, 101323, 101324, 101321]
             }
         }
     },
@@ -628,35 +634,34 @@ SONG_INFO = {
         "Title": "Band on the Run",
         "Artist": "Wings",
         "Year": 1973,
-        "BandLeaderboardIndices": [103, 467, 281, 482, 177],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 70349,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2114, 1360, 322, 1689, 160],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428160,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Stuck Inside These Four Walls",
+                "LeaderboardIds": [0, 101458, 101459, 101460, 101457]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 35769,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1068, 436, 1833, 1914, 1638],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428161,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "If I Ever Get Out of Here",
+                "LeaderboardIds": [0, 101462, 101463, 101464, 101461]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 86725,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1022, 2186, 2119, 672, 89],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428163,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "For the Rabbits on the Run",
+                "LeaderboardIds": [0, 101470, 101471, 101472, 101469]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 26000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [169, 2060, 1273, 1955, 2010],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428162,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "In the Town They're Searching for Us Everywhere",
+                "LeaderboardIds": [0, 101466, 101467, 101468, 101465]
             }
         }
     },
@@ -664,35 +669,34 @@ SONG_INFO = {
         "Title": "Beat It",
         "Artist": "Michael Jackson",
         "Year": 1982,
-        "BandLeaderboardIndices": [132, 58, 369, 2, 477],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 54299,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2155, 2017, 1746, 2073, 1120],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428185,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The Fire's in Their Eyes and Their Words Are Really Clear",
+                "LeaderboardIds": [0, 101558, 101559, 101560, 101557]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 30967,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [224, 2159, 998, 282, 1272],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428186,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "You Wanna Be Tough, Better Do What You Can",
+                "LeaderboardIds": [0, 101562, 101563, 101564, 101561]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 101825,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [909, 1435, 407, 496, 875],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428188,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Don't Wanna Be a Boy, You Wanna Be a Man",
+                "LeaderboardIds": [0, 101570, 101571, 101572, 101569]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 27000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [737, 1329, 1177, 604, 970],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428187,
+                "FiveStarAchievementPoints": 10,
+                "FiveStarAchievementTitle": "Showin' How Funky and Strong Is Your Fight",
+                "LeaderboardIds": [0, 101566, 101567, 101568, 101565]
             }
         }
     },
@@ -700,35 +704,34 @@ SONG_INFO = {
         "Title": "Beautiful Disaster",
         "Artist": "311",
         "Year": 1997,
-        "BandLeaderboardIndices": [1161, 1411, 2212, 1369, 1549],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 61516,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [591, 70, 1234, 776, 1332],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428205,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Today Seems Like a Good Day to Burn a Bridge or Two",
+                "LeaderboardIds": [0, 101638, 101639, 101640, 101637]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 43500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [5, 814, 962, 1863, 957],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428206,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Some People Really Suck",
+                "LeaderboardIds": [0, 101642, 101643, 101644, 101641]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 114175,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [815, 2071, 2088, 410, 74],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428208,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "I Know a Drugstore Cowgirl So Afraid of Getting Bored",
+                "LeaderboardIds": [0, 101650, 101651, 101652, 101649]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 20000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [447, 1184, 49, 740, 2055],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428207,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "You're a Butterfly in the Wind without a Care",
+                "LeaderboardIds": [0, 101646, 101647, 101648, 101645]
             }
         }
     },
@@ -736,35 +739,34 @@ SONG_INFO = {
         "Title": "B.Y.O.B.",
         "Artist": "System Of A Down",
         "Year": 2005,
-        "BandLeaderboardIndices": [1825, 242, 2121, 1145, 1803],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 103178,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1628, 1027, 1, 1836, 1339],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428156,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Yet You Feed Us Lies from the Tablecloth",
+                "LeaderboardIds": [0, 101442, 101443, 101444, 101441]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 73305,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [610, 1337, 1523, 702, 460],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428157,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Dancin' in the Desert, Blowin' up the Sunshine",
+                "LeaderboardIds": [0, 101446, 101447, 101448, 101445]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 128700,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [332, 1860, 494, 430, 546],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428159,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Blast Off, It's Party Time",
+                "LeaderboardIds": [0, 101454, 101455, 101456, 101453]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 28000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1170, 2009, 887, 1099, 459],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428158,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Why Do They Always Send the Poor?",
+                "LeaderboardIds": [0, 101450, 101451, 101452, 101449]
             }
         }
     },
@@ -772,35 +774,34 @@ SONG_INFO = {
         "Title": "Crazy Train",
         "Artist": "Ozzy Osbourne",
         "Year": 1980,
-        "BandLeaderboardIndices": [956, 856, 1154, 493, 1650],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 93714,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1187, 1656, 1312, 560, 1636],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428047,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Crazy, but That's How It Goes",
+                "LeaderboardIds": [0, 101006, 101007, 101008, 101005]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 49325,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [925, 780, 976, 1102, 1269],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428048,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "All Aboard",
+                "LeaderboardIds": [0, 101010, 101011, 101012, 101009]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 131400,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2066, 1100, 492, 637, 1335],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428050,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Learn How to Love and Forget How to Hate",
+                "LeaderboardIds": [0, 101018, 101019, 101020, 101017]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 21000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2087, 1841, 756, 495, 1539],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428049,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Gotta Listen to My Words, Yeah, Yeah",
+                "LeaderboardIds": [0, 101014, 101015, 101016, 101013]
             }
         }
     },
@@ -808,35 +809,34 @@ SONG_INFO = {
         "Title": "Dammit",
         "Artist": "Blink-182",
         "Year": 1997,
-        "BandLeaderboardIndices": [182, 1229, 2219, 2144, 1846],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 54450,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1192, 17, 1038, 1611, 26],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428039,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Won't Try to Argue",
+                "LeaderboardIds": [0, 100974, 100975, 100976, 100973]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 45935,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [320, 2184, 2223, 701, 144],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428040,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The Season Is Calling",
+                "LeaderboardIds": [0, 100978, 100979, 100980, 100977]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 98225,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1759, 434, 1023, 1674, 311],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428042,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The Charade, It Won't Last",
+                "LeaderboardIds": [0, 100986, 100987, 100988, 100985]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 13000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1115, 1871, 285, 1217, 1537],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428041,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Well I Guess This Is Growing Up",
+                "LeaderboardIds": [0, 100982, 100983, 100984, 100981]
             }
         }
     },
@@ -844,35 +844,34 @@ SONG_INFO = {
         "Title": "Demolition Man (Live)",
         "Artist": "Sting",
         "Year": 2005,
-        "BandLeaderboardIndices": [1422, 1416, 2228, 1034, 721],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 60646,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [41, 1163, 1629, 810, 944],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428059,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Say That This Wasn't in Your Plan",
+                "LeaderboardIds": [0, 101054, 101055, 101056, 101053]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 52127,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1950, 1807, 1149, 1293, 461],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428060,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Don't Mess around with the Demolition Man",
+                "LeaderboardIds": [0, 101058, 101059, 101060, 101057]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 115732,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1389, 1823, 2032, 1039, 1352],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428062,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Could Be My Greatest Fan",
+                "LeaderboardIds": [0, 101066, 101067, 101068, 101065]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 19000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1160, 1136, 1870, 916, 2033],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428061,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I'm the Sort of Thing They Ban",
+                "LeaderboardIds": [0, 101062, 101063, 101064, 101061]
             }
         }
     },
@@ -880,35 +879,34 @@ SONG_INFO = {
         "Title": "Do It Again",
         "Artist": "Steely Dan",
         "Year": 1972,
-        "BandLeaderboardIndices": [1153, 323, 289, 1357, 1466],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 61225,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1101, 1006, 406, 996, 2025],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427971,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "She's No High Climber",
+                "LeaderboardIds": [0, 100702, 100703, 100704, 100701]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 56392,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1662, 1355, 386, 2128, 550],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427972,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "You Love a Little Wild One",
+                "LeaderboardIds": [0, 100706, 100707, 100708, 100705]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 123750,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [643, 512, 1225, 543, 1450],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427974,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "You're Not a Gambling Man",
+                "LeaderboardIds": [0, 100714, 100715, 100716, 100713]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 16500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [353, 1980, 1294, 1239, 1276],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427973,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Wheel Turnin' 'Round and 'Round",
+                "LeaderboardIds": [0, 100710, 100711, 100712, 100709]
             }
         }
     },
@@ -916,35 +914,34 @@ SONG_INFO = {
         "Title": "Escuela de Calor",
         "Artist": "Radio Futura",
         "Year": 1984,
-        "BandLeaderboardIndices": [811, 1213, 558, 685, 2086],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 54064,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1378, 1279, 1987, 746, 2000],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428031,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Arde la Calle Al Sol de Poniente",
+                "LeaderboardIds": [0, 100942, 100943, 100944, 100941]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 29173,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [808, 1167, 1287, 2084, 1994],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428032,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Tú Estés Loco Por Mí",
+                "LeaderboardIds": [0, 100946, 100947, 100948, 100945]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 88775,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1498, 8, 190, 1104, 995],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428034,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Esa Paloma Sobrevuela El Peligro",
+                "LeaderboardIds": [0, 100954, 100955, 100956, 100953]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 15500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1454, 1334, 472, 1285, 1820],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428033,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Quiero Vivir Del Aire",
+                "LeaderboardIds": [0, 100950, 100951, 100952, 100949]
             }
         }
     },
@@ -952,35 +949,34 @@ SONG_INFO = {
         "Title": "Everlong",
         "Artist": "Foo Fighters",
         "Year": 1997,
-        "BandLeaderboardIndices": [1911, 2104, 2247, 150, 1777],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 102163,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [431, 252, 1216, 1964, 934],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428140,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Out of the Red, Out of Her Head, She Sang",
+                "LeaderboardIds": [0, 101378, 101379, 101380, 101377]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 51650,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2011, 114, 1744, 1135, 1693],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428141,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Breathe Out, So I Can Breathe You In",
+                "LeaderboardIds": [0, 101382, 101383, 101384, 101381]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 133575,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [361, 1921, 20, 719, 2143],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428143,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Gotta Promise Not To Stop When I Say When",
+                "LeaderboardIds": [0, 101390, 101391, 101392, 101389]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 17000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [936, 140, 1220, 166, 337],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428142,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "When I Sing along with You",
+                "LeaderboardIds": [0, 101386, 101387, 101388, 101385]
             }
         }
     },
@@ -988,35 +984,34 @@ SONG_INFO = {
         "Title": "Eye of the Tiger",
         "Artist": "Survivor",
         "Year": 1982,
-        "BandLeaderboardIndices": [1771, 1764, 1359, 2098, 1591],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 59151,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2122, 1111, 1570, 231, 1206],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428055,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Risin' Up, Back on the Street",
+                "LeaderboardIds": [0, 101038, 101039, 101040, 101037]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 28608,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [283, 1461, 276, 978, 139],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428056,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Just a Man and His Will to Survive",
+                "LeaderboardIds": [0, 101042, 101043, 101044, 101041]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 80425,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [398, 708, 1176, 1811, 2237],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428058,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Had the Guts, Got the Glory",
+                "LeaderboardIds": [0, 101050, 101051, 101052, 101049]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 26000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1928, 855, 790, 718, 683],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428057,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Risin' up to the Challenge of Our Rival",
+                "LeaderboardIds": [0, 101046, 101047, 101048, 101045]
             }
         }
     },
@@ -1024,35 +1019,34 @@ SONG_INFO = {
         "Title": "Feel the Pain",
         "Artist": "Dinosaur Jr.",
         "Year": 1994,
-        "BandLeaderboardIndices": [1374, 1793, 801, 1854, 1535],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 67560,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [897, 379, 1048, 221, 659],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428051,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Then I Feel Nothing",
+                "LeaderboardIds": [0, 101022, 101023, 101024, 101021]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 45550,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1117, 959, 2106, 130, 1644],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428052,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Is It up to Me?",
+                "LeaderboardIds": [0, 101026, 101027, 101028, 101025]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 96850,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [984, 78, 298, 487, 418],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428054,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Hey Now, Take It Back",
+                "LeaderboardIds": [0, 101034, 101035, 101036, 101033]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 12000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1906, 1458, 1708, 2161, 344],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428053,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Just Try and Keep It Clean",
+                "LeaderboardIds": [0, 101030, 101031, 101032, 101029]
             }
         }
     },
@@ -1060,35 +1054,34 @@ SONG_INFO = {
         "Title": "Float On",
         "Artist": "Modest Mouse",
         "Year": 2004,
-        "BandLeaderboardIndices": [262, 1956, 2243, 1990, 222],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 41133,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [329, 1578, 1934, 1830, 1304],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428209,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Backed My Car into a Cop Car the Other Day",
+                "LeaderboardIds": [0, 101654, 101655, 101656, 101653]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 18075,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [529, 1452, 1527, 402, 2031],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428210,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Well, You Just Laughed It Off, It Was All Okay",
+                "LeaderboardIds": [0, 101658, 101659, 101660, 101657]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 69275,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2026, 1976, 1379, 1148, 1119],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428212,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "It Was Worth It Just to Learn Some Sleight of Hand",
+                "LeaderboardIds": [0, 101666, 101667, 101668, 101665]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 18000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [979, 908, 551, 1277, 1430],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428211,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Even If Things Get Heavy, We'll All Float On",
+                "LeaderboardIds": [0, 101662, 101663, 101664, 101661]
             }
         }
     },
@@ -1096,35 +1089,34 @@ SONG_INFO = {
         "Title": "Freak on a Leash",
         "Artist": "Korn",
         "Year": 1998,
-        "BandLeaderboardIndices": [1058, 1445, 238, 1927, 844],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 43344,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [111, 1129, 2167, 259, 1665],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428043,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Can't They Chill and Let Me Be Free?",
+                "LeaderboardIds": [0, 100990, 100991, 100992, 100989]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 36362,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [926, 471, 871, 1882, 456],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428044,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Somethin' Takes a Part of Me",
+                "LeaderboardIds": [0, 100994, 100995, 100996, 100993]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 91925,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1745, 76, 582, 362, 1652],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428046,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "How Many Times Have I Felt Disease",
+                "LeaderboardIds": [0, 101002, 101003, 101004, 101001]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 22500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1669, 1469, 1118, 1446, 249],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428045,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Boom-da-da-mmm-dum-na-ee-ma",
+                "LeaderboardIds": [0, 100998, 100999, 101000, 100997]
             }
         }
     },
@@ -1132,35 +1124,34 @@ SONG_INFO = {
         "Title": "Go Your Own Way",
         "Artist": "Fleetwood Mac",
         "Year": 1977,
-        "BandLeaderboardIndices": [1223, 1721, 914, 674, 561],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 67201,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1593, 133, 640, 1986, 767],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428173,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "How Can I Ever Change Things That I Feel?",
+                "LeaderboardIds": [0, 101510, 101511, 101512, 101509]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 51016,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [384, 1737, 2109, 1261, 849],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428174,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Maybe I'd Give You My World",
+                "LeaderboardIds": [0, 101514, 101515, 101516, 101513]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 109250,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [769, 194, 888, 1783, 2222],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428176,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Packing Up, Shacking Up's All You Wanna Do",
+                "LeaderboardIds": [0, 101522, 101523, 101524, 101521]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 18500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [579, 1879, 53, 1179, 1456],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428175,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Open Up, Everything's Waiting for You",
+                "LeaderboardIds": [0, 101518, 101519, 101520, 101517]
             }
         }
     },
@@ -1168,35 +1159,34 @@ SONG_INFO = {
         "Title": "Good God",
         "Artist": "Anouk",
         "Year": 2007,
-        "BandLeaderboardIndices": [425, 1885, 2236, 752, 483],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 48080,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1200, 105, 2085, 1375, 536],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427915,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Surely I Am Willing",
+                "LeaderboardIds": [0, 100478, 100479, 100480, 100477]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 30549,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [63, 1919, 1929, 21, 1635],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427916,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Know You're Trouble",
+                "LeaderboardIds": [0, 100482, 100483, 100484, 100481]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 58525,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [196, 1112, 1037, 1245, 723],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427918,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Haven't Got Me Yet, but You Might",
+                "LeaderboardIds": [0, 100490, 100491, 100492, 100489]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 21000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1174, 541, 2044, 455, 466],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427917,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Freedom or Loyalty",
+                "LeaderboardIds": [0, 100486, 100487, 100488, 100485]
             }
         }
     },
@@ -1204,35 +1194,34 @@ SONG_INFO = {
         "Title": "Hail to the Freaks",
         "Artist": "Beatsteaks",
         "Year": 2007,
-        "BandLeaderboardIndices": [710, 986, 1618, 6, 1649],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 52476,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1318, 2004, 1105, 1826, 1784],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428169,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Hashing Out Deals to Cover Lies",
+                "LeaderboardIds": [0, 101494, 101495, 101496, 101493]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 40250,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1973, 827, 1959, 1574, 2027],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428170,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I've Been Around and Around and Around I'll Come",
+                "LeaderboardIds": [0, 101498, 101499, 101500, 101497]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 88075,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1790, 1845, 930, 967, 427],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428172,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "To Weather the Storm and Set up the Sun",
+                "LeaderboardIds": [0, 101506, 101507, 101508, 101505]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 17500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [578, 927, 1778, 1743, 1654],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428171,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Calling You from the Top of Friction",
+                "LeaderboardIds": [0, 101502, 101503, 101504, 101501]
             }
         }
     },
@@ -1240,35 +1229,34 @@ SONG_INFO = {
         "Title": "Heartbreaker",
         "Artist": "Pat Benatar",
         "Year": 1979,
-        "BandLeaderboardIndices": [2207, 824, 1908, 1440, 562],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 62778,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1169, 2195, 866, 711, 198],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428079,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Your Love Is Like a Tidal Wave",
+                "LeaderboardIds": [0, 101134, 101135, 101136, 101133]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 38706,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1944, 1952, 253, 1470, 1465],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428080,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The Invincible Winner",
+                "LeaderboardIds": [0, 101138, 101139, 101140, 101137]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 79623,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1488, 2234, 56, 1495, 1224],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428082,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Taught Me the Ways of Desire",
+                "LeaderboardIds": [0, 101146, 101147, 101148, 101145]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 22000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1065, 696, 763, 205, 1138],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428081,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Don't You Mess around with Me",
+                "LeaderboardIds": [0, 101142, 101143, 101144, 101141]
             }
         }
     },
@@ -1276,35 +1264,34 @@ SONG_INFO = {
         "Title": "Hey Man, Nice Shot",
         "Artist": "Filter",
         "Year": 1995,
-        "BandLeaderboardIndices": [2091, 1082, 1399, 1195, 102],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 66619,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [548, 913, 1835, 116, 1645],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427891,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Wish I Would've Met You",
+                "LeaderboardIds": [0, 100382, 100383, 100384, 100381]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 82000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1095, 1232, 1007, 1975, 1713],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427892,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Think That Your Early Ending Was All Wrong",
+                "LeaderboardIds": [0, 100386, 100387, 100388, 100385]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 74750,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1935, 449, 1796, 2148, 1873],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427894,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "The Air Is All Clear",
+                "LeaderboardIds": [0, 100394, 100395, 100396, 100393]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 18500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [197, 416, 1064, 1497, 1044],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427893,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "That's What I Say",
+                "LeaderboardIds": [0, 100390, 100391, 100392, 100389]
             }
         }
     },
@@ -1312,35 +1299,34 @@ SONG_INFO = {
         "Title": "Hollywood Nights",
         "Artist": "Bob Seger & The Silver Bullet Band",
         "Year": 1978,
-        "BandLeaderboardIndices": [1030, 828, 381, 839, 296],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 115275,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [764, 365, 1051, 230, 544],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428177,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "He Was a Midwestern Boy on His Own",
+                "LeaderboardIds": [0, 101526, 101527, 101528, 101525]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 75125,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [444, 1681, 946, 660, 1340],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428178,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "She Led Him along That Golden Beach",
+                "LeaderboardIds": [0, 101530, 101531, 101532, 101529]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 163225,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2131, 632, 1012, 67, 973],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428180,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "She Had Been Born with a Face That Would Let Her Get Her Way",
+                "LeaderboardIds": [0, 101538, 101539, 101540, 101537]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 28500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1553, 1608, 1321, 1025, 390],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428179,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "He Spent All Night Staring Down at the Lights of LA",
+                "LeaderboardIds": [0, 101534, 101535, 101536, 101533]
             }
         }
     },
@@ -1348,35 +1334,34 @@ SONG_INFO = {
         "Title": "Hot for Teacher",
         "Artist": "Van Halen",
         "Year": 1984,
-        "BandLeaderboardIndices": [1056, 2244, 848, 819, 1580],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 111351,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2245, 2218, 358, 498, 2213],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428083,
+                "FiveStarAchievementPoints": 10,
+                "FiveStarAchievementTitle": "My Homework Was Never Quite Like This",
+                "LeaderboardIds": [0, 101150, 101151, 101152, 101149]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 48114,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [797, 1210, 223, 1555, 331],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428084,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Think the Clock Is Slow, Man",
+                "LeaderboardIds": [0, 101154, 101155, 101156, 101153]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 146576,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1997, 724, 267, 97, 473],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428086,
+                "FiveStarAchievementPoints": 10,
+                "FiveStarAchievementTitle": "Class Dismissed",
+                "LeaderboardIds": [0, 101162, 101163, 101164, 101161]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 21000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1028, 1513, 1483, 980, 2204],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428085,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Brought My Pencil",
+                "LeaderboardIds": [0, 101158, 101159, 101160, 101157]
             }
         }
     },
@@ -1384,35 +1369,34 @@ SONG_INFO = {
         "Title": "Hotel California",
         "Artist": "The Eagles",
         "Year": 1976,
-        "BandLeaderboardIndices": [393, 305, 1610, 1589, 575],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 69092,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1436, 2126, 1506, 1687, 519],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427979,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "On a Dark Desert Highway",
+                "LeaderboardIds": [0, 100734, 100735, 100736, 100733]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 49851,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2090, 40, 217, 1209, 1622],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427980,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "We Haven't Had That Spirit Here since 1969",
+                "LeaderboardIds": [0, 100738, 100739, 100740, 100737]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 83375,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [759, 624, 1370, 2231, 1484],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427982,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "We're Just Prisoners Here of Our Own Device",
+                "LeaderboardIds": [0, 100746, 100747, 100748, 100745]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 29000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2172, 247, 273, 315, 618],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427981,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Can Check Out Any Time You Like but You Can Never Leave",
+                "LeaderboardIds": [0, 100742, 100743, 100744, 100741]
             }
         }
     },
@@ -1420,35 +1404,34 @@ SONG_INFO = {
         "Title": "The Joker",
         "Artist": "The Steve Miller Band",
         "Year": 1973,
-        "BandLeaderboardIndices": [872, 705, 107, 1989, 274],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 47671,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [136, 1768, 1055, 698, 1837],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428027,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Some People Call Me the Space Cowboy",
+                "LeaderboardIds": [0, 100926, 100927, 100928, 100925]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 37161,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [940, 426, 1538, 2238, 1948],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428028,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Some Call Me the Gangster of Love",
+                "LeaderboardIds": [0, 100930, 100931, 100932, 100929]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 56875,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1852, 1992, 175, 241, 514],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428030,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Some People Call Me Maurice",
+                "LeaderboardIds": [0, 100938, 100939, 100940, 100937]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 21000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1602, 497, 1280, 364, 1849],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428029,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I'm Right Here, Right Here, Right Here, Right Here at Home",
+                "LeaderboardIds": [0, 100934, 100935, 100936, 100933]
             }
         }
     },
@@ -1456,35 +1439,34 @@ SONG_INFO = {
         "Title": "Kick Out the Jams",
         "Artist": "MC5's Wayne Kramer",
         "Year": 2008,
-        "BandLeaderboardIndices": [520, 2203, 576, 1551, 945],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 52626,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1888, 812, 1307, 1235, 1741],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428148,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I'm Starting to Sweat, You Know My Shirt's All Wet",
+                "LeaderboardIds": [0, 101410, 101411, 101412, 101409]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 31646,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1281, 1309, 161, 2214, 1388],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428149,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "When You Get That Feeling, You Gotta Sock 'Em Out",
+                "LeaderboardIds": [0, 101414, 101415, 101416, 101413]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 67949,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [173, 137, 193, 2129, 803],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428151,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "It Gets in Your Brain, It Drives You Insane",
+                "LeaderboardIds": [0, 101422, 101423, 101424, 101421]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 19000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1103, 784, 1183, 255, 697],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428150,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Let Me up on the Stand",
+                "LeaderboardIds": [0, 101418, 101419, 101420, 101417]
             }
         }
     },
@@ -1492,35 +1474,34 @@ SONG_INFO = {
         "Title": "The Kill",
         "Artist": "30 Seconds To Mars",
         "Year": 2005,
-        "BandLeaderboardIndices": [1383, 1901, 885, 1969, 572],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 84010,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1816, 2089, 1062, 1203, 2156],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428003,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "What If I Wanted to Break?",
+                "LeaderboardIds": [0, 100830, 100831, 100832, 100829]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 51807,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1612, 278, 1815, 395, 1205],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428004,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "What If I Fell to the Floor?",
+                "LeaderboardIds": [0, 100834, 100835, 100836, 100833]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 77950,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [367, 1945, 1847, 1905, 1604],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428006,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "What If I Wanted to Fight?",
+                "LeaderboardIds": [0, 100842, 100843, 100844, 100841]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 21500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [284, 142, 891, 922, 1358],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428005,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "What Would You Do, Do, Do?",
+                "LeaderboardIds": [0, 100838, 100839, 100840, 100837]
             }
         }
     },
@@ -1528,35 +1509,34 @@ SONG_INFO = {
         "Title": "La Bamba",
         "Artist": "Los Lobos",
         "Year": 1987,
-        "BandLeaderboardIndices": [409, 2179, 1960, 1151, 1958],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 51055,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2215, 1438, 201, 622, 1380],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427923,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Se Necesita Una Poca de Gracia",
+                "LeaderboardIds": [0, 100510, 100511, 100512, 100509]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 25766,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [794, 1311, 745, 1494, 2067],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427924,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Y Arriba y Arriba",
+                "LeaderboardIds": [0, 100514, 100515, 100516, 100513]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 50825,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1475, 859, 2127, 480, 357],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427926,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Yo No Soy Marinero, Soy Capitán",
+                "LeaderboardIds": [0, 100522, 100523, 100524, 100521]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 14500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1754, 433, 319, 2050, 310],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427925,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Por Ti Seré",
+                "LeaderboardIds": [0, 100518, 100519, 100520, 100517]
             }
         }
     },
@@ -1564,35 +1544,34 @@ SONG_INFO = {
         "Title": "Lazy Eye",
         "Artist": "Silversun Pickups",
         "Year": 2006,
-        "BandLeaderboardIndices": [896, 902, 1728, 570, 1162],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 125825,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [868, 1173, 2197, 1050, 1271],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427959,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I've Been Waiting for This Moment All My Life",
+                "LeaderboardIds": [0, 100654, 100655, 100656, 100653]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 71449,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [923, 886, 168, 2034, 1041],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427960,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Aim Free, but So Untrue",
+                "LeaderboardIds": [0, 100658, 100659, 100660, 100657]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 150175,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1196, 917, 503, 334, 1712],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427962,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "It's the Room, the Sun, and the Sky",
+                "LeaderboardIds": [0, 100666, 100667, 100668, 100665]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 14500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2092, 293, 772, 507, 189],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427961,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "That's Why I Said I Relate",
+                "LeaderboardIds": [0, 100662, 100663, 100664, 100661]
             }
         }
     },
@@ -1600,35 +1579,34 @@ SONG_INFO = {
         "Title": "Livin' On A Prayer",
         "Artist": "Bon Jovi",
         "Year": 1986,
-        "BandLeaderboardIndices": [583, 1001, 1696, 1851, 1547],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 48739,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1267, 783, 1834, 469, 694],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428035,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Tommy's Got His Six-String in Hock",
+                "LeaderboardIds": [0, 100958, 100959, 100960, 100957]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 53149,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1797, 2150, 1350, 348, 1789],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428036,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "She Brings Home Her Pay for Love",
+                "LeaderboardIds": [0, 100962, 100963, 100964, 100961]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 79075,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1403, 2059, 1981, 413, 1609],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428038,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Union's Been on Strike",
+                "LeaderboardIds": [0, 100970, 100971, 100972, 100969]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 31500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2146, 15, 552, 1363, 1583],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428037,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "It Doesn't Make a Difference If We Make It or Not",
+                "LeaderboardIds": [0, 100966, 100967, 100968, 100965]
             }
         }
     },
@@ -1636,35 +1614,34 @@ SONG_INFO = {
         "Title": "Love Me Two Times",
         "Artist": "The Doors",
         "Year": 1967,
-        "BandLeaderboardIndices": [1426, 1077, 1227, 739, 2110],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 52103,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [355, 244, 1865, 647, 299],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428165,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Love Me Twice Today",
+                "LeaderboardIds": [0, 101478, 101479, 101480, 101477]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 38625,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [403, 906, 1036, 1264, 1766],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428166,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "My Knees Got Weak",
+                "LeaderboardIds": [0, 101482, 101483, 101484, 101481]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 57075,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2138, 1316, 1931, 1106, 947],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428168,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Last Me All through the Week",
+                "LeaderboardIds": [0, 101490, 101491, 101492, 101489]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 21000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1594, 788, 798, 877, 237],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428167,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I'm Goin' Away",
+                "LeaderboardIds": [0, 101486, 101487, 101488, 101485]
             }
         }
     },
@@ -1672,35 +1649,34 @@ SONG_INFO = {
         "Title": "Love Removal Machine",
         "Artist": "The Cult",
         "Year": 1987,
-        "BandLeaderboardIndices": [1731, 118, 82, 1396, 2168],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 67136,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [905, 2105, 1779, 1333, 1524],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428015,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "She Got Me in Fear",
+                "LeaderboardIds": [0, 100878, 100879, 100880, 100877]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 44705,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1116, 1236, 963, 774, 1147],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428016,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Baby, Baby, Baby, Baby, Baby",
+                "LeaderboardIds": [0, 100882, 100883, 100884, 100881]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 90675,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2206, 372, 225, 286, 1202],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428018,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Upside-down Psychotic Reaction",
+                "LeaderboardIds": [0, 100890, 100891, 100892, 100889]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 30500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1899, 2038, 1419, 817, 1414],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428017,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Look Out, Here She Comes",
+                "LeaderboardIds": [0, 100886, 100887, 100888, 100885]
             }
         }
     },
@@ -1708,35 +1684,34 @@ SONG_INFO = {
         "Title": "Love Spreads",
         "Artist": "The Stone Roses",
         "Year": 1994,
-        "BandLeaderboardIndices": [1903, 829, 1266, 2132, 534],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 82220,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [982, 2232, 275, 1052, 1016],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428091,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I'm Hiding in the Trees With a Picnic",
+                "LeaderboardIds": [0, 101182, 101183, 101184, 101181]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 66063,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [117, 23, 1770, 975, 1702],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428092,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Forgive You Boy",
+                "LeaderboardIds": [0, 101186, 101187, 101188, 101185]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 131125,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [757, 1212, 1141, 1562, 2117],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428094,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Let Me Show You What I Mean",
+                "LeaderboardIds": [0, 101194, 101195, 101196, 101193]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 33000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1325, 881, 1623, 1556, 1572],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428093,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Ain't No King, Man, She's My Queen",
+                "LeaderboardIds": [0, 101190, 101191, 101192, 101189]
             }
         }
     },
@@ -1744,35 +1719,34 @@ SONG_INFO = {
         "Title": "L'Via L'Viaquez",
         "Artist": "The Mars Volta",
         "Year": 2005,
-        "BandLeaderboardIndices": [1967, 2028, 1624, 435, 88],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 60325,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [34, 602, 1367, 2196, 1561],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428201,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Sin Ojos Me Quieres Dar",
+                "LeaderboardIds": [0, 101622, 101623, 101624, 101621]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 40193,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [505, 880, 2095, 2118, 1573],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428202,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "¿Quién Te Va a Perseguir?",
+                "LeaderboardIds": [0, 101626, 101627, 101628, 101625]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 97150,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [768, 371, 157, 2051, 1482],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428204,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Y Yo Te Lo Juro, Lo Van a Pagar",
+                "LeaderboardIds": [0, 101634, 101635, 101636, 101633]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 25500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1850, 2040, 915, 1496, 1121],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428203,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Blackmailed, She Fell off Every Mountain",
+                "LeaderboardIds": [0, 101630, 101631, 101632, 101629]
             }
         }
     },
@@ -1780,35 +1754,34 @@ SONG_INFO = {
         "Title": "The Middle",
         "Artist": "Jimmy Eat World",
         "Year": 2001,
-        "BandLeaderboardIndices": [2062, 1775, 1045, 738, 1557],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 74040,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [346, 1010, 1480, 129, 463],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428116,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Don't Write Yourself Off Yet",
+                "LeaderboardIds": [0, 101282, 101283, 101284, 101281]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 39973,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [865, 429, 183, 1107, 1317],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428117,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Don't You Worry What They Tell Themselves When You're Away",
+                "LeaderboardIds": [0, 101286, 101287, 101288, 101285]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 67875,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [580, 2047, 476, 388, 1408],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428119,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Know You're Doin' Better on Your Own",
+                "LeaderboardIds": [0, 101294, 101295, 101296, 101293]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 21000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1567, 1584, 1979, 681, 1844],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428118,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Everything, Everything Will Be Alright, Alright",
+                "LeaderboardIds": [0, 101290, 101291, 101292, 101289]
             }
         }
     },
@@ -1816,35 +1789,34 @@ SONG_INFO = {
         "Title": "Misery Business",
         "Artist": "Paramore",
         "Year": 2007,
-        "BandLeaderboardIndices": [84, 48, 747, 1647, 121],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 66756,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [268, 167, 1684, 1137, 1247],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428087,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Two Weeks and We Caught on Fire",
+                "LeaderboardIds": [0, 101166, 101167, 101168, 101165]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 38700,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1780, 830, 227, 1372, 446],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428088,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Got Him Where I Want Him Now",
+                "LeaderboardIds": [0, 101170, 101171, 101172, 101169]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 88050,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [961, 75, 513, 1500, 983],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428090,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Watch My Wildest Dreams Come True",
+                "LeaderboardIds": [0, 101178, 101179, 101180, 101177]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 24500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [720, 1953, 330, 1485, 778],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428089,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Refuse, I Refuse, I Refuse",
+                "LeaderboardIds": [0, 101174, 101175, 101176, 101173]
             }
         }
     },
@@ -1852,35 +1824,34 @@ SONG_INFO = {
         "Title": "Monsoon",
         "Artist": "Tokio Hotel",
         "Year": 2007,
-        "BandLeaderboardIndices": [1673, 893, 2192, 874, 1406],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 71577,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1478, 1802, 1130, 2191, 2108],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428071,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "My Room Is Cold, It's Making Me Insane",
+                "LeaderboardIds": [0, 101102, 101103, 101104, 101101]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 61546,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1362, 2200, 2078, 1398, 99],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428072,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "When I Lose Myself I Think of You",
+                "LeaderboardIds": [0, 101106, 101107, 101108, 101105]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 74500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [122, 1083, 648, 3, 1182],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428074,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "I See Your Vision in Its Light",
+                "LeaderboardIds": [0, 101114, 101115, 101116, 101113]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 29500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [598, 1543, 1999, 1769, 220],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428073,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "I'm Fighting All Its Power",
+                "LeaderboardIds": [0, 101110, 101111, 101112, 101109]
             }
         }
     },
@@ -1888,35 +1859,34 @@ SONG_INFO = {
         "Title": "Mountain Song",
         "Artist": "Jane's Addiction",
         "Year": 1988,
-        "BandLeaderboardIndices": [1384, 535, 304, 1175, 1397],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 57704,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [725, 307, 1144, 1349, 1300],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428193,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Everybody Has Their Own Opinion",
+                "LeaderboardIds": [0, 101590, 101591, 101592, 101589]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 71437,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [588, 1709, 1296, 451, 2183],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428194,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Jumped Out of My Flesh and I Said Cash In",
+                "LeaderboardIds": [0, 101594, 101595, 101596, 101593]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 98613,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [423, 91, 1011, 385, 1747],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428196,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "She Had Pin Eyes",
+                "LeaderboardIds": [0, 101602, 101603, 101604, 101601]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 20000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1804, 164, 1093, 1241, 2177],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428195,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Cash In Now, Baby",
+                "LeaderboardIds": [0, 101598, 101599, 101600, 101597]
             }
         }
     },
@@ -1924,35 +1894,34 @@ SONG_INFO = {
         "Title": "Mr. Crowley",
         "Artist": "Ozzy Osbourne",
         "Year": 1980,
-        "BandLeaderboardIndices": [669, 952, 36, 1714, 1354],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 72392,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [911, 294, 592, 1663, 1330],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428103,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Your Lifestyle, to Me, Seemed So Tragic",
+                "LeaderboardIds": [0, 101230, 101231, 101232, 101229]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 61179,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [502, 800, 464, 1301, 2015],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428104,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "In Nocturnal Rapport",
+                "LeaderboardIds": [0, 101234, 101235, 101236, 101233]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 86725,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1415, 635, 545, 1457, 1004],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428106,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Conceived in the Eye of a Secret",
+                "LeaderboardIds": [0, 101242, 101243, 101244, 101241]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 14000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [470, 1818, 1545, 1324, 1660],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428105,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Won't You Ride My White Horse?",
+                "LeaderboardIds": [0, 101238, 101239, 101240, 101237]
             }
         }
     },
@@ -1960,35 +1929,34 @@ SONG_INFO = {
         "Title": "Never Too Late",
         "Artist": "The Answer",
         "Year": 2006,
-        "BandLeaderboardIndices": [1256, 2083, 766, 860, 313],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 66846,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1559, 98, 1904, 597, 485],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427983,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Have Been Searchin' for Ten Thousand Years",
+                "LeaderboardIds": [0, 100750, 100751, 100752, 100749]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 41047,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1678, 1641, 933, 1605, 1918],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427984,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Contradictions Clearly State",
+                "LeaderboardIds": [0, 100754, 100755, 100756, 100753]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 77300,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [39, 1514, 899, 862, 1308],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427986,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Fascination's All Around",
+                "LeaderboardIds": [0, 100762, 100763, 100764, 100761]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 27000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [92, 2188, 1544, 614, 573],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427985,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Have Met My Maker",
+                "LeaderboardIds": [0, 100758, 100759, 100760, 100757]
             }
         }
     },
@@ -1996,35 +1964,34 @@ SONG_INFO = {
         "Title": "No Sleep Till Brooklyn",
         "Artist": "Beastie Boys",
         "Year": 1986,
-        "BandLeaderboardIndices": [79, 1000, 574, 1961, 2081],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 39863,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1087, 775, 652, 325, 450],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428095,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Engine Running Hotter than a Boiling Kettle",
+                "LeaderboardIds": [0, 101198, 101199, 101200, 101197]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 17198,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1761, 1185, 953, 1706, 1150],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428096,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Itchy Trigger Finger, but a Stable Turntable",
+                "LeaderboardIds": [0, 101202, 101203, 101204, 101201]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 83550,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1800, 760, 2097, 2216, 106],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428098,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "He's Got His Own Room at the Back of the Bus",
+                "LeaderboardIds": [0, 101210, 101211, 101212, 101209]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 28000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1197, 1703, 823, 101, 1336],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428097,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Step Off, Holmes, Get out of My Way",
+                "LeaderboardIds": [0, 101206, 101207, 101208, 101205]
             }
         }
     },
@@ -2032,35 +1999,34 @@ SONG_INFO = {
         "Title": "Nuvole E Lenzuola",
         "Artist": "Negramaro",
         "Year": 2005,
-        "BandLeaderboardIndices": [251, 554, 972, 1424, 623],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 62905,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [138, 93, 19, 4, 1686],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427939,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Attraversano il Silenzio Del Mio Cielo",
+                "LeaderboardIds": [0, 100574, 100575, 100576, 100573]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 30373,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [46, 1548, 1653, 1444, 1134],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427940,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Come Sempre Provo a Farlo",
+                "LeaderboardIds": [0, 100578, 100579, 100580, 100577]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 66325,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [207, 843, 1748, 1319, 684],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427942,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Tutto Sembra Aver Trovato il Giusto Peso",
+                "LeaderboardIds": [0, 100586, 100587, 100588, 100585]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 30500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1949, 951, 468, 1529, 1546],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427941,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Non Dire Una Parola",
+                "LeaderboardIds": [0, 100582, 100583, 100584, 100581]
             }
         }
     },
@@ -2068,35 +2034,34 @@ SONG_INFO = {
         "Title": "Obstacle 1",
         "Artist": "Interpol",
         "Year": 2002,
-        "BandLeaderboardIndices": [1158, 785, 1152, 1536, 921],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 65566,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1668, 309, 1534, 1907, 360],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427955,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "I'll Never See This Place Again",
+                "LeaderboardIds": [0, 100638, 100639, 100640, 100637]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 43355,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1883, 1587, 417, 326, 2199],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427956,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Make Playing Only Logical Harm",
+                "LeaderboardIds": [0, 100642, 100643, 100644, 100641]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 104400,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [538, 1421, 203, 1479, 924],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427958,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "It's the Things That She Puts in My Head",
+                "LeaderboardIds": [0, 100650, 100651, 100652, 100649]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 23000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [796, 2158, 686, 1700, 1943],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427957,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "She Can Read, She Can Read, She Can Read, She Can Read, She's Bad",
+                "LeaderboardIds": [0, 100646, 100647, 100648, 100645]
             }
         }
     },
@@ -2104,35 +2069,34 @@ SONG_INFO = {
         "Title": "On the Road Again (Live)",
         "Artist": "Willie Nelson",
         "Year": 1980,
-        "BandLeaderboardIndices": [1511, 744, 1701, 845, 1462],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 36197,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1723, 1268, 1856, 1156, 181],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427963,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The Life I Love Is Making Music with My Friends",
+                "LeaderboardIds": [0, 100670, 100671, 100672, 100669]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 19209,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1607, 2115, 1642, 1704, 179],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427964,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Goin' Places That I've Never Been",
+                "LeaderboardIds": [0, 100674, 100675, 100676, 100673]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 69725,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1606, 1092, 2175, 270, 212],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427966,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "We're the Best of Friends",
+                "LeaderboardIds": [0, 100682, 100683, 100684, 100681]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 13500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1401, 1894, 7, 115, 1530],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427965,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Insisting That the World Keep Turning Our Way",
+                "LeaderboardIds": [0, 100678, 100679, 100680, 100677]
             }
         }
     },
@@ -2140,35 +2104,34 @@ SONG_INFO = {
         "Title": "One Armed Scissor",
         "Artist": "At The Drive-In",
         "Year": 2000,
-        "BandLeaderboardIndices": [2187, 1655, 1096, 1827, 1813],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 95641,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1178, 1157, 1491, 700, 1459],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427935,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Yes This Is the Campaign",
+                "LeaderboardIds": [0, 100558, 100559, 100560, 100557]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 51574,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1753, 1476, 1504, 368, 1848],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427936,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Pucker Up and Kiss the Asphalt Now",
+                "LeaderboardIds": [0, 100562, 100563, 100564, 100561]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 101100,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1858, 1710, 639, 1003, 522],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427938,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Sputnik Sickles Found in the Seats",
+                "LeaderboardIds": [0, 100570, 100571, 100572, 100569]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 27000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [709, 1659, 1288, 1240, 2235],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427937,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "I Write To Remember",
+                "LeaderboardIds": [0, 100566, 100567, 100568, 100565]
             }
         }
     },
@@ -2176,35 +2139,34 @@ SONG_INFO = {
         "Title": "The One I Love",
         "Artist": "R.E.M.",
         "Year": 1987,
-        "BandLeaderboardIndices": [1631, 1734, 1490, 1824, 397],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 32194,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [352, 1061, 1086, 474, 408],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428181,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "A Simple Prop to Occupy My Time",
+                "LeaderboardIds": [0, 101542, 101543, 101544, 101541]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 25331,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [713, 1164, 741, 1577, 1926],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428182,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "This One Goes Out to the One I've Left Behind",
+                "LeaderboardIds": [0, 101546, 101547, 101548, 101545]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 75478,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1373, 174, 489, 1382, 1338],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428184,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "This One Goes Out to the One I Love",
+                "LeaderboardIds": [0, 101554, 101555, 101556, 101553]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 11000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [343, 1916, 22, 240, 1348],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428183,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Fiiiiirreeeeeee",
+                "LeaderboardIds": [0, 101550, 101551, 101552, 101549]
             }
         }
     },
@@ -2212,35 +2174,34 @@ SONG_INFO = {
         "Title": "One Way or Another",
         "Artist": "Blondie",
         "Year": 1978,
-        "BandLeaderboardIndices": [1518, 1063, 415, 758, 2065],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 56260,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [441, 2030, 86, 577, 2061],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427975,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I'll See Who's Around",
+                "LeaderboardIds": [0, 100718, 100719, 100720, 100717]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 36611,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [248, 518, 508, 873, 376],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427976,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "I'll Follow Your Bus Downtown",
+                "LeaderboardIds": [0, 100722, 100723, 100724, 100721]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 99225,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [679, 1968, 2037, 1875, 1862],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427978,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Lead You to the Supermarket Checkout",
+                "LeaderboardIds": [0, 100730, 100731, 100732, 100729]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 23500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1792, 1752, 1715, 2246, 1059],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427977,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Where I Can See It All, Find Out Who You Call",
+                "LeaderboardIds": [0, 100726, 100727, 100728, 100725]
             }
         }
     },
@@ -2248,35 +2209,34 @@ SONG_INFO = {
         "Title": "Our Truth",
         "Artist": "Lacuna Coil",
         "Year": 2006,
-        "BandLeaderboardIndices": [1394, 308, 809, 263, 1076],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 52189,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1503, 1751, 1705, 733, 108],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428019,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Clock Is Ticking While I'm Killing Time",
+                "LeaderboardIds": [0, 100894, 100895, 100896, 100893]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 39648,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2166, 882, 404, 991, 1595],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428020,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Wicked Partnership in This Crime",
+                "LeaderboardIds": [0, 100898, 100899, 100900, 100897]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 72375,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1626, 243, 246, 2035, 1817],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428022,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Silent Sneaking along My Path",
+                "LeaderboardIds": [0, 100906, 100907, 100908, 100905]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 20500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [673, 1140, 690, 1486, 1079],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428021,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Feel It Like We're Flyin'",
+                "LeaderboardIds": [0, 100902, 100903, 100904, 100901]
             }
         }
     },
@@ -2284,35 +2244,34 @@ SONG_INFO = {
         "Title": "Overkill",
         "Artist": "Motörhead",
         "Year": 2007,
-        "BandLeaderboardIndices": [1381, 254, 1995, 1788, 846],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 93561,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [929, 392, 1900, 2058, 2076],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427999,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Don't Sweat It",
+                "LeaderboardIds": [0, 100814, 100815, 100816, 100813]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 77885,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1920, 128, 831, 820, 1683],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428000,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "We'll Get It Back to You",
+                "LeaderboardIds": [0, 100818, 100819, 100820, 100817]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 173218,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1420, 1840, 1974, 71, 821],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428002,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "So Good I Can't Believe It",
+                "LeaderboardIds": [0, 100826, 100827, 100828, 100825]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 9500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1942, 68, 605, 1772, 1794],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428001,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Ya Feel It in Your Guts",
+                "LeaderboardIds": [0, 100822, 100823, 100824, 100821]
             }
         }
     },
@@ -2320,35 +2279,34 @@ SONG_INFO = {
         "Title": "Parabola",
         "Artist": "Tool",
         "Year": 2001,
-        "BandLeaderboardIndices": [2054, 960, 619, 1634, 1756],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 77071,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [454, 1738, 1047, 200, 1732],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427987,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Choosing to Be Here In",
+                "LeaderboardIds": [0, 100766, 100767, 100768, 100765]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 71070,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [910, 303, 2230, 1443, 988],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427988,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "This Body, This Body Holding Me",
+                "LeaderboardIds": [0, 100770, 100771, 100772, 100769]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 112471,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2099, 734, 531, 825, 125],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427990,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Feeling Eternal, All This Pain Is an Illusion",
+                "LeaderboardIds": [0, 100778, 100779, 100780, 100777]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 20500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [419, 1289, 359, 1922, 1341],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427989,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "A Chance to Be Alive and Breathing",
+                "LeaderboardIds": [0, 100774, 100775, 100776, 100773]
             }
         }
     },
@@ -2356,35 +2314,34 @@ SONG_INFO = {
         "Title": "Pretty Vacant",
         "Artist": "Sex Pistols",
         "Year": 2007,
-        "BandLeaderboardIndices": [9, 941, 1810, 38, 858],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 57351,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1143, 770, 2221, 1492, 2169],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428213,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "There's No Point in Asking, You'll Get No Reply",
+                "LeaderboardIds": [0, 101670, 101671, 101672, 101669]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 42575,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1550, 1874, 1315, 1014, 1046],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428214,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "You'll Always Find Us Out to Lunch",
+                "LeaderboardIds": [0, 101674, 101675, 101676, 101673]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 97200,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1405, 853, 851, 171, 1460],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428216,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Don't Pretend 'Cause I Don't Care",
+                "LeaderboardIds": [0, 101682, 101683, 101684, 101681]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 22000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [448, 1806, 594, 1542, 1962],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428215,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "I Just Remembered I Don't Decide",
+                "LeaderboardIds": [0, 101678, 101679, 101680, 101677]
             }
         }
     },
@@ -2392,35 +2349,34 @@ SONG_INFO = {
         "Title": "Prisoner of Society",
         "Artist": "The Living End",
         "Year": 1999,
-        "BandLeaderboardIndices": [1226, 264, 1786, 657, 1402],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 93758,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [192, 542, 457, 606, 736],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427907,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "We're on Our Own",
+                "LeaderboardIds": [0, 100446, 100447, 100448, 100445]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 66648,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [210, 349, 2176, 1785, 1667],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427908,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I'm a Brat",
+                "LeaderboardIds": [0, 100450, 100451, 100452, 100449]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 105375,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2013, 992, 1387, 245, 1468],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427910,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You'll See I'm Not the Enemy",
+                "LeaderboardIds": [0, 100458, 100459, 100460, 100457]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 24500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1303, 1155, 1204, 55, 72],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427909,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "We Don't Need No One to Tell Us What to Do",
+                "LeaderboardIds": [0, 100454, 100455, 100456, 100453]
             }
         }
     },
@@ -2428,35 +2384,34 @@ SONG_INFO = {
         "Title": "Pull Me Under",
         "Artist": "Dream Theater",
         "Year": 1992,
-        "BandLeaderboardIndices": [2205, 2029, 10, 2021, 533],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 134316,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1651, 1832, 488, 540, 1505],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428011,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Clouds Roll by and I Roll with Them",
+                "LeaderboardIds": [0, 100862, 100863, 100864, 100861]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 103879,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [339, 1371, 742, 258, 1166],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428012,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "This World Is Spinning around Me",
+                "LeaderboardIds": [0, 100866, 100867, 100868, 100865]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 207419,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1208, 292, 1109, 1502, 1391],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428014,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "All That I Feel Is Honor and Spite",
+                "LeaderboardIds": [0, 100874, 100875, 100876, 100873]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 24000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1679, 2170, 1310, 1275, 2068],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428013,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Living My Life Too Much in the Sun",
+                "LeaderboardIds": [0, 100870, 100871, 100872, 100869]
             }
         }
     },
@@ -2464,35 +2419,34 @@ SONG_INFO = {
         "Title": "Purple Haze (Live)",
         "Artist": "The Jimi Hendrix Experience",
         "Year": 1968,
-        "BandLeaderboardIndices": [112, 1884, 1410, 942, 156],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 54193,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1417, 1088, 1377, 753, 1877],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428067,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Excuse Me While I Kiss That Guy",
+                "LeaderboardIds": [0, 101086, 101087, 101088, 101085]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 45808,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2103, 279, 1385, 1998, 1983],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428068,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Excuse Me While I Kiss the Sky",
+                "LeaderboardIds": [0, 101090, 101091, 101092, 101089]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 75625,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [676, 1331, 60, 1801, 954],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428070,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Wait, Is It Kiss That Guy or Kiss the Sky?",
+                "LeaderboardIds": [0, 101098, 101099, 101100, 101097]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 23500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [564, 64, 1680, 484, 792],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428069,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "No, Definitely It's Kiss That Guy",
+                "LeaderboardIds": [0, 101094, 101095, 101096, 101093]
             }
         }
     },
@@ -2500,35 +2454,34 @@ SONG_INFO = {
         "Title": "Ramblin' Man",
         "Artist": "The Allman Brothers Band",
         "Year": 1973,
-        "BandLeaderboardIndices": [590, 1930, 1520, 755, 1757],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 77752,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1260, 363, 1181, 1521, 216],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428152,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Tryin' To Make a Livin' and Doin' the Best I Can",
+                "LeaderboardIds": [0, 101426, 101427, 101428, 101425]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 55473,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1393, 822, 732, 347, 2041],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428153,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "When It's Time For Leavin', I Hope You'll Understand",
+                "LeaderboardIds": [0, 101430, 101431, 101432, 101429]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 152000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [833, 1677, 65, 889, 1345],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428155,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Rollin' Down Highway 41",
+                "LeaderboardIds": [0, 101438, 101439, 101440, 101437]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 14000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1691, 671, 692, 779, 549],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428154,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "There's Always Having a Good Time Down on the Bayou",
+                "LeaderboardIds": [0, 101434, 101435, 101436, 101433]
             }
         }
     },
@@ -2536,71 +2489,69 @@ SONG_INFO = {
         "Title": "Rebel Yell",
         "Artist": "Billy Idol",
         "Year": 1983,
-        "BandLeaderboardIndices": [612, 351, 1127, 1893, 1165],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 76381,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2133, 1939, 1344, 997, 184],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427899,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Got a License for Love",
+                "LeaderboardIds": [0, 100414, 100415, 100416, 100413]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 70650,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [617, 83, 2002, 1323, 948],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427900,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "What Set You Free and Brought You Back to Me",
+                "LeaderboardIds": [0, 100418, 100419, 100420, 100417]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 125150,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1933, 1070, 1575, 1692, 2220],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427902,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "He Lives in His Own Heaven",
+                "LeaderboardIds": [0, 100426, 100427, 100428, 100425]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 37000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [134, 2100, 2003, 1211, 1924],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427901,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I'd Sell My Soul for You",
+                "LeaderboardIds": [0, 100422, 100423, 100424, 100421]
             }
         }
     },
     SONG_RE_EDUCATION_THROUGH_LABOR: {
-        "Title": "Re-Education Through Labor",
+        "Title": "Re-Education (Through Labor)",
         "Artist": "Rise Against",
         "Year": 2008,
-        "BandLeaderboardIndices": [1646, 1253, 2210, 735, 1886],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 76907,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2116, 1760, 2226, 716, 2012],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427967,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Each Breath We Take Makes Us Thieves",
+                "LeaderboardIds": [0, 100686, 100687, 100688, 100685]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 47336,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2137, 900, 1913, 288, 2189],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427968,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Under a Sky No Longer Blue",
+                "LeaderboardIds": [0, 100690, 100691, 100692, 100689]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 77850,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [110, 2124, 1089, 158, 1627],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427970,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "We Don't Live, We Just Survive",
+                "LeaderboardIds": [0, 100698, 100699, 100700, 100697]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 21000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1864, 280, 1009, 682, 1474],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427969,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "We Bring the Dawn Long Overdue",
+                "LeaderboardIds": [0, 100694, 100695, 100696, 100693]
             }
         }
     },
@@ -2608,35 +2559,34 @@ SONG_INFO = {
         "Title": "Rooftops (A Liberation Broadcast)",
         "Artist": "Lostprophets",
         "Year": 2006,
-        "BandLeaderboardIndices": [186, 547, 2151, 209, 567],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 101012,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1941, 2152, 211, 2056, 236],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427931,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Will We Make Our Mark This Time",
+                "LeaderboardIds": [0, 100542, 100543, 100544, 100541]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 47925,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2093, 1412, 1090, 2053, 1040],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427932,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "I Have No Regrets",
+                "LeaderboardIds": [0, 100546, 100547, 100548, 100545]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 83825,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [609, 94, 1829, 1180, 593],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427934,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Watching Every Sunset",
+                "LeaderboardIds": [0, 100554, 100555, 100556, 100553]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 26500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2046, 61, 1221, 414, 1596],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427933,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Scream Your Heart Out",
+                "LeaderboardIds": [0, 100550, 100551, 100552, 100549]
             }
         }
     },
@@ -2644,35 +2594,34 @@ SONG_INFO = {
         "Title": "Santeria",
         "Artist": "Sublime",
         "Year": 1996,
-        "BandLeaderboardIndices": [1984, 399, 382, 1767, 30],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 36812,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1519, 969, 475, 2024, 1286],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428217,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Ain't Got No Crystal Ball",
+                "LeaderboardIds": [0, 101686, 101687, 101688, 101685]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 34418,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1126, 318, 852, 1477, 135],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428218,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "If He Knows What Is Good for Him",
+                "LeaderboardIds": [0, 101690, 101691, 101692, 101689]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 70242,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [596, 1648, 1091, 1881, 442],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428220,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "My Soul Will Have to Wait",
+                "LeaderboardIds": [0, 101698, 101699, 101700, 101697]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 19000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1569, 804, 525, 218, 1809],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428219,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "What I Really Want to Say, I Can't Define",
+                "LeaderboardIds": [0, 101694, 101695, 101696, 101693]
             }
         }
     },
@@ -2680,28 +2629,27 @@ SONG_INFO = {
         "Title": "Satch Boogie",
         "Artist": "Joe Satriani",
         "Year": 1987,
-        "BandLeaderboardIndices": [691, 300, 1094, 613, 932],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 74469,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1493, 2140, 1735, 761, 1517],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428221,
+                "FiveStarAchievementPoints": 10,
+                "FiveStarAchievementTitle": "Surfing with the Alien",
+                "LeaderboardIds": [0, 101702, 101703, 101704, 101701]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 33742,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [28, 2022, 119, 1060, 1015],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428222,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Crushing Day",
+                "LeaderboardIds": [0, 101706, 101707, 101708, 101705]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 78379,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1814, 87, 1418, 1302, 1228],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428223,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Always with Me, Always with You",
+                "LeaderboardIds": [0, 101710, 101711, 101712, 101709]
             }
         }
     },
@@ -2709,35 +2657,34 @@ SONG_INFO = {
         "Title": "Schism",
         "Artist": "Tool",
         "Year": 2001,
-        "BandLeaderboardIndices": [340, 1857, 90, 1248, 1201],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 84100,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [515, 1258, 32, 1876, 863],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427903,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Know the Pieces Fit",
+                "LeaderboardIds": [0, 100430, 100431, 100432, 100429]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 79989,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [271, 1828, 1522, 1322, 638],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427904,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Crippling Our Communication",
+                "LeaderboardIds": [0, 100434, 100435, 100436, 100433]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 108375,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1437, 1657, 1698, 1915, 1029],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427906,
+                "FiveStarAchievementPoints": 10,
+                "FiveStarAchievementTitle": "Finding Beauty in the Dissonance",
+                "LeaderboardIds": [0, 100442, 100443, 100444, 100441]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 23000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1763, 327, 1822, 2005, 968],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427905,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Between Supposed Lovers",
+                "LeaderboardIds": [0, 100438, 100439, 100440, 100437]
             }
         }
     },
@@ -2745,35 +2692,34 @@ SONG_INFO = {
         "Title": "Scream Aim Fire",
         "Artist": "Bullet For My Valentine",
         "Year": 2008,
-        "BandLeaderboardIndices": [16, 141, 1067, 528, 1053],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 103668,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [228, 688, 1671, 443, 100],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428063,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Chaos Soon Ignites",
+                "LeaderboardIds": [0, 101070, 101071, 101072, 101069]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 65986,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [226, 43, 878, 1554, 1643],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428064,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The Call Is Made, It's One for All",
+                "LeaderboardIds": [0, 101074, 101075, 101076, 101073]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 129444,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [977, 2075, 1982, 1219, 1866],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428066,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Such a Hurtful Sight",
+                "LeaderboardIds": [0, 101082, 101083, 101084, 101081]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 24500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [832, 1365, 1191, 670, 1630],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428065,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Take No Prisoners",
+                "LeaderboardIds": [0, 101078, 101079, 101080, 101077]
             }
         }
     },
@@ -2781,35 +2727,34 @@ SONG_INFO = {
         "Title": "Shiver",
         "Artist": "Coldplay",
         "Year": 2000,
-        "BandLeaderboardIndices": [27, 1035, 1993, 295, 805],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 96425,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1552, 599, 955, 1342, 1073],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427991,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "From the Moment I Wake to the Moment I Sleep",
+                "LeaderboardIds": [0, 100782, 100783, 100784, 100781]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 27100,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [511, 1791, 1774, 176, 1501],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427992,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Is This My Final Chance of Gettin' You?",
+                "LeaderboardIds": [0, 100786, 100787, 100788, 100785]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 109725,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1682, 1404, 581, 901, 42],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427994,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Look in Your Direction but You Pay Me No Attention",
+                "LeaderboardIds": [0, 100794, 100795, 100796, 100793]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 25500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1637, 586, 1230, 714, 202],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427993,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Sing It Loud and Clear",
+                "LeaderboardIds": [0, 100790, 100791, 100792, 100789]
             }
         }
     },
@@ -2817,35 +2762,34 @@ SONG_INFO = {
         "Title": "Some Might Say",
         "Artist": "Oasis",
         "Year": 1995,
-        "BandLeaderboardIndices": [1821, 1347, 750, 1080, 1376],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 75171,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2180, 356, 1439, 1711, 730],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428075,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "We Will Find a Brighter Day",
+                "LeaderboardIds": [0, 101118, 101119, 101120, 101117]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 63066,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2036, 0, 793, 1531, 903],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428076,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "In Need of Education in the Rain",
+                "LeaderboardIds": [0, 101122, 101123, 101124, 101121]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 120525,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [153, 636, 500, 458, 1428],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428078,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "She's Got Dirty Dishes on the Brain",
+                "LeaderboardIds": [0, 101130, 101131, 101132, 101129]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 20000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2142, 234, 143, 29, 33],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428077,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Itchin' in the Kitchen Once Again",
+                "LeaderboardIds": [0, 101126, 101127, 101128, 101125]
             }
         }
     },
@@ -2853,35 +2797,34 @@ SONG_INFO = {
         "Title": "Soul Doubt",
         "Artist": "Nofx",
         "Year": 1992,
-        "BandLeaderboardIndices": [316, 918, 1685, 989, 1868],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 68264,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2120, 795, 841, 1720, 1449],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428128,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Sometimes I Feel My Life Is Going 'Round in Circles",
+                "LeaderboardIds": [0, 101330, 101331, 101332, 101329]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 47226,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1442, 2229, 1639, 787, 615],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428129,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Stick My Head out of the Window When It's Closed",
+                "LeaderboardIds": [0, 101334, 101335, 101336, 101333]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 102375,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1598, 1563, 504, 1750, 1254],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428131,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "A Frameless Erté, a Painting without a Signature",
+                "LeaderboardIds": [0, 101342, 101343, 101344, 101341]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 19000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1328, 1640, 1198, 539, 1278],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428130,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "I Gotta Know What She's All About",
+                "LeaderboardIds": [0, 101338, 101339, 101340, 101337]
             }
         }
     },
@@ -2889,35 +2832,34 @@ SONG_INFO = {
         "Title": "Spiderwebs",
         "Artist": "No Doubt",
         "Year": 1995,
-        "BandLeaderboardIndices": [1361, 1525, 1314, 1033, 1284],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 74276,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [807, 195, 743, 628, 726],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427951,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You're Taking up My Time",
+                "LeaderboardIds": [0, 100622, 100623, 100624, 100621]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 63888,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [341, 1585, 595, 1532, 870],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427952,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You're Ringing in My Ears",
+                "LeaderboardIds": [0, 100626, 100627, 100628, 100625]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 124675,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1013, 895, 204, 2123, 2198],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427954,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "No Matter Who Calls",
+                "LeaderboardIds": [0, 100634, 100635, 100636, 100633]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 37000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [837, 1977, 2208, 1222, 387],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427953,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Leave a Message and I'll Call You Back",
+                "LeaderboardIds": [0, 100630, 100631, 100632, 100629]
             }
         }
     },
@@ -2925,35 +2867,34 @@ SONG_INFO = {
         "Title": "Stillborn",
         "Artist": "Black Label Society",
         "Year": 2003,
-        "BandLeaderboardIndices": [626, 2107, 306, 884, 421],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 48989,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [453, 2096, 370, 1425, 894],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427927,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Just a Shell of a Man",
+                "LeaderboardIds": [0, 100526, 100527, 100528, 100525]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 37470,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [666, 1897, 920, 1054, 1661],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427928,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "This I Understand",
+                "LeaderboardIds": [0, 100530, 100531, 100532, 100529]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 80075,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1729, 876, 879, 2101, 1244],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427930,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The Feelings I Once Felt Are Now Dead and Gone",
+                "LeaderboardIds": [0, 100538, 100539, 100540, 100537]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 12000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1588, 2042, 644, 1576, 693],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427929,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "I've Waited Here for You for So Very Long",
+                "LeaderboardIds": [0, 100534, 100535, 100536, 100533]
             }
         }
     },
@@ -2961,35 +2902,34 @@ SONG_INFO = {
         "Title": "Stranglehold",
         "Artist": "Ted Nugent",
         "Year": 1975,
-        "BandLeaderboardIndices": [35, 159, 420, 1586, 486],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 117622,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [180, 336, 1069, 147, 1617],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427947,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Here I Come Again Now Baby",
+                "LeaderboardIds": [0, 100606, 100607, 100608, 100605]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 109643,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2134, 394, 345, 530, 2057],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427948,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Like to Tear up the Street",
+                "LeaderboardIds": [0, 100610, 100611, 100612, 100609]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 191150,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [405, 2020, 1305, 321, 2194],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427950,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Know I'm Here to Stay",
+                "LeaderboardIds": [0, 100618, 100619, 100620, 100617]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 18000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [257, 678, 1320, 1447, 661],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427949,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "You Know You Can't Turn Me 'Round",
+                "LeaderboardIds": [0, 100614, 100615, 100616, 100613]
             }
         }
     },
@@ -2997,35 +2937,34 @@ SONG_INFO = {
         "Title": "Sweet Home Alabama (Live)",
         "Artist": "Lynyrd Skynyrd",
         "Year": 1976,
-        "BandLeaderboardIndices": [1819, 1448, 1799, 452, 850],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 131954,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [239, 985, 1008, 291, 1718],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428224,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Big Wheels Keep on Turnin'",
+                "LeaderboardIds": [0, 101714, 101715, 101716, 101713]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 68447,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [73, 1880, 151, 867, 491],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428225,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "They Pick Me Up When I'm Feelin' Blue",
+                "LeaderboardIds": [0, 101718, 101719, 101720, 101717]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 121770,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [290, 568, 2202, 411, 633],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428227,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Well, I Hope Neil Young Will Remember",
+                "LeaderboardIds": [0, 101726, 101727, 101728, 101725]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 22500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1146, 338, 1074, 584, 2018],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428226,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Does Your Conscience Bother You?",
+                "LeaderboardIds": [0, 101722, 101723, 101724, 101721]
             }
         }
     },
@@ -3036,10 +2975,10 @@ SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 54352,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1776, 680, 1313, 2001, 1392],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428115,
+                "FiveStarAchievementPoints": 10,
+                "FiveStarAchievementTitle": "Outshine the Motor City Madman",
+                "LeaderboardIds": [0, 101278, 101279, 101280, 101277]
             }
         }
     },
@@ -3047,35 +2986,34 @@ SONG_INFO = {
         "Title": "Today",
         "Artist": "The Smashing Pumpkins",
         "Year": 1993,
-        "BandLeaderboardIndices": [1142, 727, 1564, 1733, 1966],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 42853,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1725, 704, 1765, 834, 96],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428136,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Tomorrow's Much Too Long",
+                "LeaderboardIds": [0, 101362, 101363, 101364, 101361]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 32113,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1168, 1730, 571, 1936, 1991],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428137,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "I Wanted More than Life Could Ever Grant Me",
+                "LeaderboardIds": [0, 101366, 101367, 101368, 101365]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 73625,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1633, 1429, 1453, 1694, 81],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428139,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "My Angel Wings",
+                "LeaderboardIds": [0, 101374, 101375, 101376, 101373]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 20000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [375, 380, 869, 1972, 1250],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428138,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "I Want to Turn You On",
+                "LeaderboardIds": [0, 101370, 101371, 101372, 101369]
             }
         }
     },
@@ -3083,35 +3021,34 @@ SONG_INFO = {
         "Title": "Too Much, Too Young, Too Fast",
         "Artist": "Airbourne",
         "Year": 2007,
-        "BandLeaderboardIndices": [465, 931, 2045, 1571, 754],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 51090,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1113, 527, 1699, 1098, 1306],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428007,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Some People Like to Make All the Rules",
+                "LeaderboardIds": [0, 100846, 100847, 100848, 100845]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 37324,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [854, 479, 1695, 1351, 1938],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428008,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "I'm Gonna Drink It Up While It Lasts",
+                "LeaderboardIds": [0, 100850, 100851, 100852, 100849]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 76000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1433, 314, 532, 1597, 1616],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428010,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Paranoia on Every Street",
+                "LeaderboardIds": [0, 100858, 100859, 100860, 100857]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 17500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [317, 1327, 566, 266, 1853],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428009,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "I'm Goin' Out in Style",
+                "LeaderboardIds": [0, 100854, 100855, 100856, 100853]
             }
         }
     },
@@ -3119,35 +3056,34 @@ SONG_INFO = {
         "Title": "Toy Boy",
         "Artist": "Stuck In The Sound",
         "Year": 2007,
-        "BandLeaderboardIndices": [335, 432, 1808, 664, 516],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 114669,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1726, 1937, 2112, 1740, 565],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428144,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Blame Me for the Day",
+                "LeaderboardIds": [0, 101394, 101395, 101396, 101393]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 59450,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [651, 712, 1675, 1190, 378],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428145,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "She's above Love, Open Your Eyes",
+                "LeaderboardIds": [0, 101398, 101399, 101400, 101397]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 122025,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1717, 600, 1742, 1326, 2149],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428147,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Choked on a Bone, Some Chinese Food",
+                "LeaderboardIds": [0, 101406, 101407, 101408, 101405]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 31500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [826, 1985, 269, 2178, 2171],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428146,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Please Baby Talk",
+                "LeaderboardIds": [0, 101402, 101403, 101404, 101401]
             }
         }
     },
@@ -3155,35 +3091,34 @@ SONG_INFO = {
         "Title": "Trapped Under Ice",
         "Artist": "Metallica",
         "Year": 1984,
-        "BandLeaderboardIndices": [1812, 208, 2007, 1343, 1259],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 89315,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1489, 50, 261, 1940, 806],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427911,
+                "FiveStarAchievementPoints": 10,
+                "FiveStarAchievementTitle": "I'm Still Locked in This Shell",
+                "LeaderboardIds": [0, 100462, 100463, 100464, 100461]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 65587,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [928, 342, 424, 1131, 1909],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427912,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Break the Ice",
+                "LeaderboardIds": [0, 100466, 100467, 100468, 100465]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 160875,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [439, 2225, 2201, 523, 1427],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427914,
+                "FiveStarAchievementPoints": 10,
+                "FiveStarAchievementTitle": "I've Been Stricken by Fate",
+                "LeaderboardIds": [0, 100474, 100475, 100476, 100473]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 16000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [383, 154, 1282, 1473, 537],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427913,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Can't Hear My Call",
+                "LeaderboardIds": [0, 100470, 100471, 100472, 100469]
             }
         }
     },
@@ -3191,35 +3126,34 @@ SONG_INFO = {
         "Title": "Up Around the Bend",
         "Artist": "Creedence Clearwater Revival",
         "Year": 1970,
-        "BandLeaderboardIndices": [126, 163, 172, 1249, 689],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 44299,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [608, 919, 2174, 990, 2111],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428107,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Bring a Song and a Smile for the Banjo",
+                "LeaderboardIds": [0, 101246, 101247, 101248, 101245]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 33987,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2043, 2064, 2217, 1947, 569],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428108,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Leave the Sinkin' Ship Behind",
+                "LeaderboardIds": [0, 101250, 101251, 101252, 101249]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 64125,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1346, 662, 1805, 54, 1787],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428110,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "You Can Ponder Perpetual Motion",
+                "LeaderboardIds": [0, 101258, 101259, 101260, 101257]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 19500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1005, 37, 1114, 1132, 1773],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428109,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "We'll Meet by the Big Red Tree",
+                "LeaderboardIds": [0, 101254, 101255, 101256, 101253]
             }
         }
     },
@@ -3227,71 +3161,69 @@ SONG_INFO = {
         "Title": "Vicarious",
         "Artist": "Tool",
         "Year": 2006,
-        "BandLeaderboardIndices": [656, 1292, 1262, 1951, 1499],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 105988,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1400, 478, 553, 630, 707],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428099,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "It's No Fun 'Till Someone Dies",
+                "LeaderboardIds": [0, 101214, 101215, 101216, 101213]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 93755,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2164, 1172, 762, 1171, 835],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428100,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You All Need It Too, Don't Lie",
+                "LeaderboardIds": [0, 101218, 101219, 101220, 101217]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 163550,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [214, 668, 1218, 1625, 104],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428102,
+                "FiveStarAchievementPoints": 10,
+                "FiveStarAchievementTitle": "Why Can't We Just Admit It?",
+                "LeaderboardIds": [0, 101226, 101227, 101228, 101225]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 31500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1243, 256, 1601, 695, 1515],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428101,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Sing to the Death Rattle",
+                "LeaderboardIds": [0, 101222, 101223, 101224, 101221]
             }
         }
     },
     SONG_VINTERNOLL2: {
-        "Title": "Vinternoll2",
+        "Title": "VinterNoll2",
         "Artist": "Kent",
         "Year": 2002,
-        "BandLeaderboardIndices": [2080, 1085, 1925, 1697, 445],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 61928,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1255, 77, 937, 374, 1965],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427895,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Genom en Iskall Vinter",
+                "LeaderboardIds": [0, 100398, 100399, 100400, 100397]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 51025,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1441, 1861, 861, 2074, 1066],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427896,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Du är Min Hjälte",
+                "LeaderboardIds": [0, 100402, 100403, 100404, 100401]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 118750,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1257, 389, 152, 1124, 601],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427898,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Jag Behöver Dig Igen, Igen, Igen",
+                "LeaderboardIds": [0, 100410, 100411, 100412, 100409]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 12500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [428, 2069, 2094, 13, 965],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427897,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Staden är Precis Som Staden Alltid Varit",
+                "LeaderboardIds": [0, 100406, 100407, 100408, 100405]
             }
         }
     },
@@ -3299,35 +3231,34 @@ SONG_INFO = {
         "Title": "Weapon of Choice",
         "Artist": "Black Rebel Motorcycle Club",
         "Year": 2007,
-        "BandLeaderboardIndices": [2102, 2224, 1842, 149, 603],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 56277,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [943, 1263, 1795, 1078, 1658],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427995,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I Won't Waste It",
+                "LeaderboardIds": [0, 100798, 100799, 100800, 100797]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 29094,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2023, 857, 1123, 324, 2248],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427996,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "There Is No Weapon to Free Us All",
+                "LeaderboardIds": [0, 100802, 100803, 100804, 100801]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 72075,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1632, 616, 62, 47, 2147],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427998,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "I'll See You through to the After Life",
+                "LeaderboardIds": [0, 100810, 100811, 100812, 100809]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 23000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [301, 675, 1666, 1670, 1891],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427997,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "It's Too Hard to Stand Aside",
+                "LeaderboardIds": [0, 100806, 100807, 100808, 100805]
             }
         }
     },
@@ -3335,35 +3266,34 @@ SONG_INFO = {
         "Title": "What I've Done",
         "Artist": "Linkin Park",
         "Year": 2007,
-        "BandLeaderboardIndices": [165, 1128, 847, 146, 1867],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 46905,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2052, 1481, 687, 999, 1615],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428120,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "There's No Blood, There's No Alibi",
+                "LeaderboardIds": [0, 101298, 101299, 101300, 101297]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 20175,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [645, 127, 813, 170, 1727],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428121,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Put To Rest What You Thought of Me",
+                "LeaderboardIds": [0, 101302, 101303, 101304, 101301]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 57975,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [722, 1081, 649, 120, 1133],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428123,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "So Let Mercy Come and Wash away What I've Done",
+                "LeaderboardIds": [0, 101310, 101311, 101312, 101309]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 11500,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [377, 634, 2113, 366, 1558],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428122,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Today This Ends",
+                "LeaderboardIds": [0, 101306, 101307, 101308, 101305]
             }
         }
     },
@@ -3371,35 +3301,34 @@ SONG_INFO = {
         "Title": "The Wind Cries Mary",
         "Artist": "Jimi Hendrix",
         "Year": 1967,
-        "BandLeaderboardIndices": [1199, 272, 1019, 517, 2211],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 50366,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [2157, 2154, 950, 1110, 842],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427919,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The Clowns Have All Gone To Bed",
+                "LeaderboardIds": [0, 100494, 100495, 100496, 100493]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 23686,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [799, 557, 2165, 703, 2008],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427920,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The Traffic Lights Turn Blue Tomorrow",
+                "LeaderboardIds": [0, 100498, 100499, 100500, 100497]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 49575,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1707, 1487, 773, 748, 1568],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427922,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Will the Wind Ever Remember",
+                "LeaderboardIds": [0, 100506, 100507, 100508, 100505]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 10000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [642, 1890, 1613, 1749, 782],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 427921,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Somewhere a Queen Is Weeping",
+                "LeaderboardIds": [0, 100502, 100503, 100504, 100501]
             }
         }
     },
@@ -3407,35 +3336,34 @@ SONG_INFO = {
         "Title": "You're Gonna Say Yeah",
         "Artist": "The Hush Puppies",
         "Year": 2006,
-        "BandLeaderboardIndices": [1291, 302, 949, 1872, 791],
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 73335,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1910, 816, 1024, 1755, 646],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428023,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "You Would Call Me All the Time",
+                "LeaderboardIds": [0, 100910, 100911, 100912, 100909]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 38900,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [939, 1251, 1533, 777, 1252],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428024,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Ain't Got No Time to Look Behind Me Now",
+                "LeaderboardIds": [0, 100914, 100915, 100916, 100913]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 86225,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1540, 1283, 1736, 1690, 1386],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428026,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "You Hope You Won't Be Left Behind",
+                "LeaderboardIds": [0, 100922, 100923, 100924, 100921]
             },
             INSTRUMENT_VOCALS: {
                 "ExpertBaseScore": 22000,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [1996, 45, 1889, 1472, 187],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428025,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Listen to What I Have to Say",
+                "LeaderboardIds": [0, 100918, 100919, 100920, 100917]
             }
         }
     },
@@ -3446,10 +3374,10 @@ SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 52082,
-                "LeaderboardHashes": [0xdeadbeef, 0xffffbeef, 0xaaaabeef, 0xbbbbbeef, 0xccccbeef],
-                "LeaderboardIndices": [391, 1368, 25, 1467, 1298],
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428164,
+                "FiveStarAchievementPoints": 10,
+                "FiveStarAchievementTitle": "Decimate the Master of Doom",
+                "LeaderboardIds": [0, 101474, 101475, 101476, 101473]
             }
         }
     }
@@ -3457,23 +3385,25 @@ SONG_INFO = {
 
 function did_achieve_expert_five_star_score(song_ids, instrument_id, base_score) {
     return did_reach_you_rock()
-        && score() >= base_score * 14 / 5
+        && p1_score() >= base_score * 14 / 5
         && any_of(song_ids, song_id => current_song() == song_id)
         && !is_in_custom_song()
         && number_of_active_players() == 1
         && player_instrument(1) == instrument_id
         && player_difficulty(1) == DIFFICULTY_EXPERT
+        && !is_in_practice_mode()
         && are_all_cheats_off()
 }
 
 function leaderboard_start(song_ids, instrument_id, difficulty_id) {
     return (player_notes_passed(1) >= 1 || player_vocal_phrases_passed(1) >= 1)
-        && prev(score()) == 0
+        && prev(p1_score()) == 0
         && any_of(song_ids, song_id => current_song() == song_id)
         && !is_in_custom_song()
         && number_of_active_players() == 1
         && player_instrument(1) == instrument_id
         && player_difficulty(1) == difficulty_id
+        && !is_in_practice_mode()
         && are_all_cheats_off()
 }
 
@@ -3491,10 +3421,12 @@ for song in SONG_INFO {
         instrument_name = INSTRUMENT_TO_NAME[instrument]
         base_score = SONG_INFO[song]["Instruments"][instrument]["ExpertBaseScore"]
         achievement_id = SONG_INFO[song]["Instruments"][instrument]["FiveStarAchievementId"]
+        achievement_points = SONG_INFO[song]["Instruments"][instrument]["FiveStarAchievementPoints"]
+        achievement_title = SONG_INFO[song]["Instruments"][instrument]["FiveStarAchievementTitle"]
         achievement(
-            title = format("{0} - Expert {1} Five Star", song_name, instrument_name),
-            description = format("Reach a score of {0} in {1} on Expert {2}", format_int_with_commas(base_score * 14 / 5), song_name, instrument_name),
-            points = 5,
+            title = achievement_title,
+            description = format("Get five stars in {0} on Expert {1} with a score of {2}", song_name, instrument_name, format_int_with_commas(base_score * 14 / 5)),
+            points = achievement_points,
             id = achievement_id,
             trigger = did_achieve_expert_five_star_score([song], instrument, base_score)
         )
@@ -3502,14 +3434,23 @@ for song in SONG_INFO {
         for difficulty_id in DIFFICULTY_TO_NAME {
             if (difficulty_id != DIFFICULTY_BEGINNER) { // Leaving out beginner difficulty for leaderboards.
                 difficulty_name = DIFFICULTY_TO_NAME[difficulty_id]
+                if (difficulty_id == DIFFICULTY_EASY) {
+                    leaderboard_id = SONG_INFO[song]["Instruments"][instrument]["LeaderboardIds"][1]
+                } else if (difficulty_id == DIFFICULTY_MEDIUM) {
+                    leaderboard_id = SONG_INFO[song]["Instruments"][instrument]["LeaderboardIds"][2]
+                } else if (difficulty_id == DIFFICULTY_HARD) {
+                    leaderboard_id = SONG_INFO[song]["Instruments"][instrument]["LeaderboardIds"][3]
+                } else if (difficulty_id == DIFFICULTY_EXPERT) {
+                    leaderboard_id = SONG_INFO[song]["Instruments"][instrument]["LeaderboardIds"][4]
+                }
                 leaderboard(
                     title = format("{0} - {1} {2}", song_name, difficulty_name, instrument_name),
-                    description = format("Get the highest score in {1} on {2} {3}", format_int_with_commas(base_score * 14 / 5), song_name, difficulty_name, instrument_name),
-                    id = 0,
+                    description = format("Get the highest score in {0} on {1} {2}", song_name, difficulty_name, instrument_name),
+                    id = leaderboard_id,
                     start = leaderboard_start([song], instrument, difficulty_id),
                     cancel = leaderboard_cancel(),
                     submit = leaderboard_submit(),
-                    value = score(),
+                    value = p1_score(),
                     format = "VALUE"
                 )
             }
@@ -3519,10 +3460,11 @@ for song in SONG_INFO {
 
 function did_achieve_low_beginner_score() {
     return did_reach_you_rock()
-        && score() <= 1000
+        && p1_score() <= 1000
         && !is_in_custom_song()
         && number_of_active_players() == 1
         && player_difficulty(1) == DIFFICULTY_BEGINNER
+        && !is_in_practice_mode()
         && are_all_cheats_off()
 }
 
@@ -3530,17 +3472,17 @@ achievement(
     title = "John Cage Performance",
     description = "Finish any non-custom song with any instrument on Beginner difficulty with 1,000 points or less",
     points = 2,
-    id = 0,
+    id = 428423,
     trigger = did_achieve_low_beginner_score()
 )
 
 function did_fail_dammit() {
     return player_rock_meter(1) <= 0.0
         && prev(player_rock_meter(1)) > 0.0
-        && player_notes_passed(1) > 0
         && current_song() == SONG_DAMMIT
         && !is_in_custom_song()
         && number_of_active_players() == 1
+        && !is_in_practice_mode()
         && are_all_cheats_off()
 }
 
@@ -3548,7 +3490,7 @@ achievement(
     title = "Failed Dammit",
     description = "Demonstrate the usefulness of commas",
     points = 0,
-    id = 0,
+    id = 428424,
     trigger = did_fail_dammit()
 )
 
@@ -3560,6 +3502,7 @@ function did_100_percent_song() {
             && number_of_active_players() == 1
             && (player_instrument(1) == INSTRUMENT_GUITAR || player_instrument(1) == INSTRUMENT_BASS || player_difficulty(1) == INSTRUMENT_DRUMS)
             && (player_difficulty(1) == DIFFICULTY_HARD || player_difficulty(1) == DIFFICULTY_EXPERT)
+            && !is_in_practice_mode()
             && are_all_cheats_off()
     ) || (
         did_reach_you_rock()
@@ -3568,6 +3511,7 @@ function did_100_percent_song() {
             && number_of_active_players() == 1
             && player_instrument(1) == INSTRUMENT_VOCALS
             && (player_difficulty(1) == DIFFICULTY_HARD || player_difficulty(1) == DIFFICULTY_EXPERT)
+            && !is_in_practice_mode()
             && are_all_cheats_off()
     )
 }
@@ -3576,71 +3520,99 @@ achievement(
     title = "Golden Performance",
     description = "Hit 100% of the notes in any non-custom song on any instrument on either Hard or Expert",
     points = 10,
-    id = 0,
+    id = 428425,
     trigger = did_100_percent_song()
 )
 
 VOXTAR_ACHIEVEMENT_INFO = [
     {
-        "Song": SONG_HOTEL_CALIFORNIA,
-        "Instrument": INSTRUMENT_DRUMS,
-        "AchievementId": 0,
-        "AchievementTitle": "They Just Can't Kill the Beast"
+        "Song": SONG_ABOUT_A_GIRL_UNPLUGGED,
+        "Instrument": INSTRUMENT_GUITAR,
+        "AchievementId": 430140,
+        "AchievementTitle": "Kurt Cobain Double Instrument Challenge",
+        "LeaderboardId": 102895
     },
     {
         "Song": SONG_BAND_ON_THE_RUN,
         "Instrument": INSTRUMENT_BASS,
-        "AchievementId": 0,
-        "AchievementTitle": "I Hope You're Having Fun"
+        "AchievementId": 428427,
+        "AchievementTitle": "Paul McCartney Double Instrument Challenge",
+        "LeaderboardId": 102896
     },
     {
         "Song": SONG_DEMOLITION_MAN_LIVE,
         "Instrument": INSTRUMENT_BASS,
-        "AchievementId": 0,
-        "AchievementTitle": "I'm a Walking Nightmare"
+        "AchievementId": 428428,
+        "AchievementTitle": "Sting Double Instrument Challenge",
+        "LeaderboardId": 102897
+    },
+    {
+        "Song": SONG_EVERLONG,
+        "Instrument": INSTRUMENT_GUITAR,
+        "AchievementId": 430141,
+        "AchievementTitle": "Dave Grohl Double Instrument Challenge",
+        "LeaderboardId": 102898
+    },
+    {
+        "Song": SONG_HOTEL_CALIFORNIA,
+        "Instrument": INSTRUMENT_DRUMS,
+        "AchievementId": 428426,
+        "AchievementTitle": "Don Henley Double Instrument Challenge",
+        "LeaderboardId": 102899
     },
     {
         "Song": SONG_OVERKILL,
         "Instrument": INSTRUMENT_BASS,
-        "AchievementId": 0,
-        "AchievementTitle": "Shut It Down"
-    },
-    {
-        "Song": SONG_TODAY,
-        "Instrument": INSTRUMENT_GUITAR,
-        "AchievementId": 0,
-        "AchievementTitle": "My Angel Wings"
-    },
-    {
-        "Song": SONG_STILLBORN,
-        "Instrument": INSTRUMENT_GUITAR,
-        "AchievementId": 0,
-        "AchievementTitle": "I've Waited Here For You"
-    },
-    {
-        "Song": SONG_THE_WIND_CRIES_MARY,
-        "Instrument": INSTRUMENT_GUITAR,
-        "AchievementId": 0,
-        "AchievementTitle": "Will the Wind Ever Remember"
+        "AchievementId": 428429,
+        "AchievementTitle": "Lemmy Double Instrument Challenge",
+        "LeaderboardId": 102900
     },
     {
         "Song": SONG_PURPLE_HAZE_LIVE,
         "Instrument": INSTRUMENT_GUITAR,
-        "AchievementId": 0,
-        "AchievementTitle": "You Make Me Blow My Mind"
+        "AchievementId": 428433,
+        "AchievementTitle": "Jimi Hendrix Double Instrument Challenge 2",
+        "LeaderboardId": 102901
+    },
+    {
+        "Song": SONG_STILLBORN,
+        "Instrument": INSTRUMENT_GUITAR,
+        "AchievementId": 428431,
+        "AchievementTitle": "Zakk Wydle Double Instrument Challenge",
+        "LeaderboardId": 102902
+    },
+    {
+        "Song": SONG_TODAY,
+        "Instrument": INSTRUMENT_GUITAR,
+        "AchievementId": 428430,
+        "AchievementTitle": "Billy Corgan Double Instrument Challenge",
+        "LeaderboardId": 102903
     },
     {
         "Song": SONG_TRAPPED_UNDER_ICE,
         "Instrument": INSTRUMENT_GUITAR,
-        "AchievementId": 0,
-        "AchievementTitle": "No Release From My Cryonic State"
+        "AchievementId": 428434,
+        "AchievementTitle": "James Hetfield Double Instrument Challenge",
+        "LeaderboardId": 102904
+    },
+    {
+        "Song": SONG_THE_WIND_CRIES_MARY,
+        "Instrument": INSTRUMENT_GUITAR,
+        "AchievementId": 428432,
+        "AchievementTitle": "Jimi Hendrix Double Instrument Challenge 1",
+        "LeaderboardId": 102905
     }
 ]
 
-function did_achieve_expert_five_star_score_dual_vocal(song, primary_instrument, base_score) {
+BAND_STARS_ADDR = 0x005cc798
+function band_stars() {
+    return dword(BAND_STARS_ADDR)
+}
+
+function did_achieve_expert_five_star_score_dual_vocal(song, primary_instrument) {
     return (
         did_reach_you_rock()
-        && score() >= base_score * 14 / 5
+        && band_stars() == 5
         && current_song() == song
         && !is_in_custom_song()
         && number_of_active_players() == 2
@@ -3648,10 +3620,11 @@ function did_achieve_expert_five_star_score_dual_vocal(song, primary_instrument,
         && player_instrument(2) == INSTRUMENT_VOCALS
         && player_difficulty(1) == DIFFICULTY_EXPERT
         && player_difficulty(2) == DIFFICULTY_EXPERT
+        && !is_in_practice_mode()
         && are_all_cheats_off()
     ) || (
         did_reach_you_rock()
-        && score() >= base_score * 14 / 5
+        && band_stars() == 5
         && current_song() == song
         && !is_in_custom_song()
         && number_of_active_players() == 2
@@ -3659,6 +3632,35 @@ function did_achieve_expert_five_star_score_dual_vocal(song, primary_instrument,
         && player_instrument(2) == primary_instrument
         && player_difficulty(1) == DIFFICULTY_EXPERT
         && player_difficulty(2) == DIFFICULTY_EXPERT
+        && !is_in_practice_mode()
+        && are_all_cheats_off()
+    )
+}
+
+function dual_vocal_leaderboard_start(song, primary_instrument) {
+    return (
+        (player_notes_passed(1) >= 1 || player_vocal_phrases_passed(1) >= 1 || player_notes_passed(2) >= 1 || player_vocal_phrases_passed(2) >= 1)
+        && prev(p1_score()) == 0
+        && current_song() == song
+        && !is_in_custom_song()
+        && number_of_active_players() == 2
+        && player_instrument(1) == primary_instrument
+        && player_instrument(2) == INSTRUMENT_VOCALS
+        && player_difficulty(1) == DIFFICULTY_EXPERT
+        && player_difficulty(2) == DIFFICULTY_EXPERT
+        && !is_in_practice_mode()
+        && are_all_cheats_off()
+    ) || (
+        (player_notes_passed(1) >= 1 || player_vocal_phrases_passed(1) >= 1 || player_notes_passed(2) >= 1 || player_vocal_phrases_passed(2) >= 1)
+        && prev(p1_score()) == 0
+        && current_song() == song
+        && !is_in_custom_song()
+        && number_of_active_players() == 2
+        && player_instrument(1) == INSTRUMENT_VOCALS
+        && player_instrument(2) == primary_instrument
+        && player_difficulty(1) == DIFFICULTY_EXPERT
+        && player_difficulty(2) == DIFFICULTY_EXPERT
+        && !is_in_practice_mode()
         && are_all_cheats_off()
     )
 }
@@ -3668,15 +3670,34 @@ for achievement_info in VOXTAR_ACHIEVEMENT_INFO {
     song_name = SONG_INFO[song]["Title"]
     primary_instrument = achievement_info["Instrument"]
     instrument_name = INSTRUMENT_TO_NAME[primary_instrument]
-    base_score = SONG_INFO[song]["Instruments"][primary_instrument]["ExpertBaseScore"] + SONG_INFO[song]["Instruments"][INSTRUMENT_VOCALS]["ExpertBaseScore"]
     achievement_title = achievement_info["AchievementTitle"]
     achievement_id = achievement_info["AchievementId"]
     achievement(
         title = achievement_title,
-        description = format("Reach a score of {0} in {1} playing both Expert {2} and Expert Vocals by yourself", format_int_with_commas(base_score * 14 / 5), song_name, instrument_name),
-        points = 10,
+        description = format("Get five stars in {0} playing both Expert {1} and Expert Vocals by yourself", song_name, instrument_name),
         id = achievement_id,
-        trigger = did_achieve_expert_five_star_score_dual_vocal(song, primary_instrument, base_score)
+        points = 10,
+        trigger = did_achieve_expert_five_star_score_dual_vocal(song, primary_instrument)
+    )
+
+    if (primary_instrument == INSTRUMENT_GUITAR) {
+        combined_instrument_name = "Voxtar"
+    } else if (primary_instrument == INSTRUMENT_BASS) {
+        combined_instrument_name = "Voxbass"
+    } else if (primary_instrument == INSTRUMENT_DRUMS) {
+        combined_instrument_name = "Voxdrums"
+    }
+
+    leaderboard_id = achievement_info["LeaderboardId"]
+    leaderboard(
+        title = format("{0} - Expert {1}", song_name, combined_instrument_name),
+        description = format("Get the highest score in {0} on both Expert {1} and Expert Vocals by yourself", song_name, instrument_name),
+        id = leaderboard_id,
+        start = dual_vocal_leaderboard_start(song, primary_instrument),
+        cancel = leaderboard_cancel(),
+        submit = leaderboard_submit(),
+        value = band_score(),
+        format = "VALUE"
     )
 }
 
@@ -3707,18 +3728,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 13910,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428372,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Amazing Fretwork",
+                "LeaderboardIds": [0, 101730, 101731, 101732, 101729]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 11100,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428373,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Amazing Grooves",
+                "LeaderboardIds": [0, 101734, 101735, 101736, 101733]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 19250,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428374,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Amazing Percussion",
+                "LeaderboardIds": [0, 101738, 101739, 101740, 101737]
             }
         }
     },
@@ -3727,18 +3754,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 34374,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428399,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "An Interlude Turned Concerto",
+                "LeaderboardIds": [0, 101838, 101839, 101840, 101837]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 15321,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428400,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "From the Tale of Tsar Saltan",
+                "LeaderboardIds": [0, 101842, 101843, 101844, 101841]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 44700,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428401,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "A Rimsky-Korsakov Classic",
+                "LeaderboardIds": [0, 101846, 101847, 101848, 101845]
             }
         }
     },
@@ -3747,18 +3780,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 16500,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428393,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "A Fifth Movement from BWV 996",
+                "LeaderboardIds": [0, 101814, 101815, 101816, 101813]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 14750,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428394,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Bach to Basics",
+                "LeaderboardIds": [0, 101818, 101819, 101820, 101817]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 48175,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428395,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "A Classical Rendition of a Jethro Tull Song",
+                "LeaderboardIds": [0, 101822, 101823, 101824, 101821]
             }
         }
     },
@@ -3767,18 +3806,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 29612,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428390,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "A Famous Posthumous Composition",
+                "LeaderboardIds": [0, 101802, 101803, 101804, 101801]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 17622,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428391,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Who Even Was Elise?",
+                "LeaderboardIds": [0, 101806, 101807, 101808, 101805]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 44175,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428392,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Poco Moto",
+                "LeaderboardIds": [0, 101810, 101811, 101812, 101809]
             }
         }
     },
@@ -3787,18 +3832,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 24979,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428378,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The Future's So Bright, I Gotta Wear Shades",
+                "LeaderboardIds": [0, 101754, 101755, 101756, 101753]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 15850,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428379,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Riding to Work in the Year 2025",
+                "LeaderboardIds": [0, 101758, 101759, 101760, 101757]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 21500,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428380,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Tomorrow Never Knows",
+                "LeaderboardIds": [0, 101762, 101763, 101764, 101761]
             }
         }
     },
@@ -3807,18 +3858,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 14573,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428381,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "It Does the More Enrapture Me",
+                "LeaderboardIds": [0, 101766, 101767, 101768, 101765]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 11300,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428382,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "My Men Were Clothed All in Green",
+                "LeaderboardIds": [0, 101770, 101771, 101772, 101769]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 29200,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428383,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "My Heart Remains in Captivity",
+                "LeaderboardIds": [0, 101774, 101775, 101776, 101773]
             }
         }
     },
@@ -3827,18 +3884,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 29464,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428387,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "The Carpet Crawlers Heed Their Callers",
+                "LeaderboardIds": [0, 101790, 101791, 101792, 101789]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 14864,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428388,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "The More I Look, the More I Find",
+                "LeaderboardIds": [0, 101794, 101795, 101796, 101793]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 20000,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428389,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "You Have the Talent to Make Me Feel like Dirt",
+                "LeaderboardIds": [0, 101798, 101799, 101800, 101797]
             }
         }
     },
@@ -3847,18 +3910,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 39097,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428405,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "A Breakfast Classic",
+                "LeaderboardIds": [0, 101862, 101863, 101864, 101861]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 9597,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428406,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Slapping That Bass",
+                "LeaderboardIds": [0, 101866, 101867, 101868, 101865]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 29250,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428407,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Boots and Cats",
+                "LeaderboardIds": [0, 101870, 101871, 101872, 101869]
             }
         }
     },
@@ -3867,18 +3936,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 18765,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428417,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Night Moves",
+                "LeaderboardIds": [0, 101910, 101911, 101912, 101909]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 20732,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428418,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "End of the Night",
+                "LeaderboardIds": [0, 101914, 101915, 101916, 101913]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 45400,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428419,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Night Fever",
+                "LeaderboardIds": [0, 101918, 101919, 101920, 101917]
             }
         }
     },
@@ -3887,18 +3962,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 16192,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428402,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Light Amplification by Stimulated Emission of Radiation",
+                "LeaderboardIds": [0, 101850, 101851, 101852, 101849]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 12082,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428403,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Bop",
+                "LeaderboardIds": [0, 101854, 101855, 101856, 101853]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 27825,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428404,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Funky Groove Master",
+                "LeaderboardIds": [0, 101858, 101859, 101860, 101857]
             }
         }
     },
@@ -3907,18 +3988,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 39263,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428414,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Scott Joplin's Funeral Song",
+                "LeaderboardIds": [0, 101898, 101899, 101900, 101897]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 28126,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428415,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "A Ragtime Classic",
+                "LeaderboardIds": [0, 101902, 101903, 101904, 101901]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 46550,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428416,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The 39th Greatest Song of All Time According to Canadians",
+                "LeaderboardIds": [0, 101906, 101907, 101908, 101905]
             }
         }
     },
@@ -3927,18 +4014,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 24300,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428384,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "The Second Largest City in Portugal",
+                "LeaderboardIds": [0, 101778, 101779, 101780, 101777]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 12494,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428385,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Not Quite Misirlou",
+                "LeaderboardIds": [0, 101782, 101783, 101784, 101781]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 33550,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428386,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Porto of Entry",
+                "LeaderboardIds": [0, 101786, 101787, 101788, 101785]
             }
         }
     },
@@ -3947,18 +4040,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 17494,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428408,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "They Call Me the Working Man",
+                "LeaderboardIds": [0, 101874, 101875, 101876, 101873]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 15010,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428409,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "The Walking Bass",
+                "LeaderboardIds": [0, 101878, 101879, 101880, 101877]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 30950,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428410,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Mixed Meter Master",
+                "LeaderboardIds": [0, 101882, 101883, 101884, 101881]
             }
         }
     },
@@ -3967,18 +4066,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 26871,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428396,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Rock Lobster",
+                "LeaderboardIds": [0, 101826, 101827, 101828, 101825]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 17400,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428397,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "You Keep On Shouting",
+                "LeaderboardIds": [0, 101830, 101831, 101832, 101829]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 36000,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428398,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Snare on Two",
+                "LeaderboardIds": [0, 101834, 101835, 101836, 101833]
             }
         }
     },
@@ -3987,18 +4092,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 46919,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428420,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Play With Me",
+                "LeaderboardIds": [0, 101922, 101923, 101924, 101921]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 43706,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428421,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Master of the Turkish March",
+                "LeaderboardIds": [0, 101926, 101927, 101928, 101925]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 69675,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428422,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Playing against the Piano",
+                "LeaderboardIds": [0, 101930, 101931, 101932, 101929]
             }
         }
     },
@@ -4007,18 +4118,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 8415,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428375,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "O Say Can You See",
+                "LeaderboardIds": [0, 101742, 101743, 101744, 101741]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 7176,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428376,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "And the Rocket's Red Glare",
+                "LeaderboardIds": [0, 101746, 101747, 101748, 101745]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 23400,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428377,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "O'er the Land of the Free",
+                "LeaderboardIds": [0, 101750, 101751, 101752, 101749]
             }
         }
     },
@@ -4027,18 +4144,24 @@ CUSTOM_SONG_INFO = {
         "Instruments": {
             INSTRUMENT_GUITAR: {
                 "ExpertBaseScore": 63969,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428411,
+                "FiveStarAchievementPoints": 5,
+                "FiveStarAchievementTitle": "Alphabet Ender",
+                "LeaderboardIds": [0, 101886, 101887, 101888, 101885]
             },
             INSTRUMENT_BASS: {
                 "ExpertBaseScore": 19400,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428412,
+                "FiveStarAchievementPoints": 3,
+                "FiveStarAchievementTitle": "Counter Melody Champion",
+                "LeaderboardIds": [0, 101890, 101891, 101892, 101889]
             },
             INSTRUMENT_DRUMS: {
                 "ExpertBaseScore": 40350,
-                "FiveStarAchievementId": 0,
-                "LeaderboardIds": [0, 0, 0, 0, 0]
+                "FiveStarAchievementId": 428413,
+                "FiveStarAchievementPoints": 4,
+                "FiveStarAchievementTitle": "Kick to the Beat",
+                "LeaderboardIds": [0, 101894, 101895, 101896, 101893]
             }
         }
     }
@@ -4051,7 +4174,7 @@ function current_custom_song_id() {
 
 function custom_song_did_achieve_expert_five_star_score(song_id, instrument_id, base_score) {
     return did_reach_you_rock()
-        && score() >= base_score * 14 / 5
+        && p1_score() >= base_score * 14 / 5
         && current_custom_song_id() == song_id
         && is_in_custom_song()
         && number_of_active_players() == 1
@@ -4062,7 +4185,7 @@ function custom_song_did_achieve_expert_five_star_score(song_id, instrument_id, 
 
 function custom_song_leaderboard_start(song_id, instrument_id, difficulty_id) {
     return (player_notes_passed(1) >= 1 || player_vocal_phrases_passed(1) >= 1)
-        && prev(score()) == 0
+        && prev(p1_score()) == 0
         && current_custom_song_id() == song_id
         && is_in_custom_song()
         && number_of_active_players() == 1
@@ -4085,10 +4208,12 @@ for song in CUSTOM_SONG_INFO {
         instrument_name = INSTRUMENT_TO_NAME[instrument]
         base_score = CUSTOM_SONG_INFO[song]["Instruments"][instrument]["ExpertBaseScore"]
         achievement_id = CUSTOM_SONG_INFO[song]["Instruments"][instrument]["FiveStarAchievementId"]
+        achievement_points = CUSTOM_SONG_INFO[song]["Instruments"][instrument]["FiveStarAchievementPoints"]
+        achievement_title = CUSTOM_SONG_INFO[song]["Instruments"][instrument]["FiveStarAchievementTitle"]
         achievement(
-            title = format("{0} - Expert {1} Five Star", song_name, instrument_name),
-            description = format("Reach a score of {0} in the custom song {1} on Expert {2}", format_int_with_commas(base_score * 14 / 5), song_name, instrument_name),
-            points = 5,
+            title = achievement_title,
+            description = format("Get five stars in the custom song {0} on Expert {1} with a score of {2}", song_name, instrument_name, format_int_with_commas(base_score * 14 / 5)),
+            points = achievement_points,
             id = achievement_id,
             trigger = custom_song_did_achieve_expert_five_star_score(song, instrument, base_score)
         )
@@ -4098,12 +4223,12 @@ for song in CUSTOM_SONG_INFO {
                 difficulty_name = DIFFICULTY_TO_NAME[difficulty_id]
                 leaderboard(
                     title = format("{0} - {1} {2}", song_name, difficulty_name, instrument_name),
-                    description = format("Get the highest score in the custom song {1} on {2} {3}", format_int_with_commas(base_score * 14 / 5), song_name, difficulty_name, instrument_name),
+                    description = format("Get the highest score in the custom song {0} on {1} {2}", song_name, difficulty_name, instrument_name),
                     id = 0,
                     start = custom_song_leaderboard_start(song, instrument, difficulty_id),
                     cancel = custom_song_leaderboard_cancel(),
                     submit = custom_song_leaderboard_submit(),
-                    value = score(),
+                    value = p1_score(),
                     format = "VALUE"
                 )
             }
@@ -4112,9 +4237,9 @@ for song in CUSTOM_SONG_INFO {
 }
 
 function custom_song_did_achieve_expert_vocals_full_combo() {
-    neversoft_song_condition = always_true()
+    neversoft_song_condition = always_false()
     for song in CUSTOM_SONG_INFO {
-        neversoft_song_condition = neversoft_song_condition && current_custom_song_id() == song
+        neversoft_song_condition = neversoft_song_condition || current_custom_song_id() == song
     }
     return did_reach_you_rock()
         && player_vocal_phrases_hit(1) == 1 // This is the gag, all GHTunes songs are one phrase.
@@ -4123,6 +4248,7 @@ function custom_song_did_achieve_expert_vocals_full_combo() {
         && number_of_active_players() == 1
         && player_instrument(1) == INSTRUMENT_VOCALS
         && player_difficulty(1) == DIFFICULTY_EXPERT
+        && !is_in_practice_mode()
         && are_all_cheats_off()
 }
 
@@ -4130,7 +4256,7 @@ achievement(
     title = "MIDI Master",
     description = "Full combo any Neversoft-made custom song on Expert Vocals",
     points = 3,
-    id = 0,
+    id = 428435,
     trigger = custom_song_did_achieve_expert_vocals_full_combo()
 )
 
@@ -4147,14 +4273,15 @@ function original_custom_song_did_achieve_expert_five_star_score() {
         && number_of_active_players() == 1
         && (player_instrument(1) == INSTRUMENT_GUITAR || player_instrument(1) == INSTRUMENT_BASS || player_instrument(1) == INSTRUMENT_DRUMS)
         && player_difficulty(1) == DIFFICULTY_EXPERT
+        && !is_in_practice_mode()
         && are_all_cheats_off()
 }
 
 achievement(
     title = "Modern Day Mozart",
-    description = "Five star your own GHTunes song on either Expert Guitar, Expert Bass, or Expert Drums (must have at least 500 notes)",
+    description = "Five star your own GHTunes song on either Expert Guitar, Expert Bass, or Expert Drums (must have at least 500 notes). You also get brownie points if you post a video of your song to the RetroAchievements Discord.",
     points = 5,
-    id = 0,
+    id = 428436,
     trigger = original_custom_song_did_achieve_expert_five_star_score()
 )
 
@@ -4172,8 +4299,9 @@ CAREER_INFO = {
                 SONG_ABOUT_A_GIRL_UNPLUGGED,
                 SONG_MOUNTAIN_SONG
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428228,
+            "CompleteGigExpertAchievementId": 428229
         },
         {
             "Venue": "Wilted Orchid",
@@ -4183,8 +4311,9 @@ CAREER_INFO = {
                 SONG_OBSTACLE_1,
                 SONG_THE_ONE_I_LOVE
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428230,
+            "CompleteGigExpertAchievementId": 428231
         },
         {
             "Venue": "Bone Church",
@@ -4194,8 +4323,9 @@ CAREER_INFO = {
                 SONG_TODAY,
                 SONG_WHAT_IVE_DONE
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428232,
+            "CompleteGigExpertAchievementId": 428233
         },
         {
             "Venue": "Pang Tang Bay",
@@ -4206,8 +4336,9 @@ CAREER_INFO = {
                 SONG_UP_AROUND_THE_BEND,
                 SONG_NO_SLEEP_TILL_BROOKLYN
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 4,
+            "CompleteGigAnyAchievementId": 428234,
+            "CompleteGigExpertAchievementId": 428235
         },
         {
             "Venue": "Amoeba Records",
@@ -4218,8 +4349,9 @@ CAREER_INFO = {
                 SONG_MISERY_BUSINESS,
                 SONG_HOTEL_CALIFORNIA
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 4,
+            "CompleteGigAnyAchievementId": 428236,
+            "CompleteGigExpertAchievementId": 428237
         },
         {
             "Venue": "Tool",
@@ -4229,8 +4361,9 @@ CAREER_INFO = {
                 SONG_SCHISM,
                 SONG_VICARIOUS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428238,
+            "CompleteGigExpertAchievementId": 428239
         },
         {
             "Venue": "Swamp Shack",
@@ -4243,8 +4376,9 @@ CAREER_INFO = {
                 SONG_ZAKK_WYLDE_GUITAR_DUEL,
                 SONG_STILLBORN
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428240,
+            "CompleteGigExpertAchievementId": 428241
         },
         {
             "Venue": "Rock Brigade",
@@ -4256,8 +4390,9 @@ CAREER_INFO = {
                 SONG_DAMMIT,
                 SONG_EVERLONG
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428242,
+            "CompleteGigExpertAchievementId": 428243
         },
         {
             "Venue": "Strutter's Farm",
@@ -4270,8 +4405,9 @@ CAREER_INFO = {
                 SONG_TED_NUGENT_GUITAR_DUEL,
                 SONG_STRANGLEHOLD
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428244,
+            "CompleteGigExpertAchievementId": 428245
         },
         {
             "Venue": "House of Blues",
@@ -4283,8 +4419,9 @@ CAREER_INFO = {
                 SONG_ON_THE_ROAD_AGAIN_LIVE,
                 SONG_LOVE_ME_TWO_TIMES
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428246,
+            "CompleteGigExpertAchievementId": 428247
         },
         {
             "Venue": "Swamp Shack",
@@ -4296,8 +4433,9 @@ CAREER_INFO = {
                 SONG_TOO_MUCH_TOO_YOUNG_TOO_FAST,
                 SONG_FLOAT_ON
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428248,
+            "CompleteGigExpertAchievementId": 428249
         },
         {
             "Venue": "Will Heilm's Keep",
@@ -4309,8 +4447,9 @@ CAREER_INFO = {
                 SONG_DEMOLITION_MAN_LIVE,
                 SONG_BEAT_IT
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428250,
+            "CompleteGigExpertAchievementId": 428251
         },
         {
             "Venue": "Will Heilm's Keep",
@@ -4322,8 +4461,9 @@ CAREER_INFO = {
                 SONG_TOY_BOY,
                 SONG_HAIL_TO_THE_FREAKS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428252,
+            "CompleteGigExpertAchievementId": 428253
         },
         {
             "Venue": "AT&T Park",
@@ -4336,8 +4476,9 @@ CAREER_INFO = {
                 SONG_THE_WIND_CRIES_MARY,
                 SONG_PURPLE_HAZE_LIVE
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428254,
+            "CompleteGigExpertAchievementId": 428255
         },
         {
             "Venue": "Ozzfest",
@@ -4349,8 +4490,9 @@ CAREER_INFO = {
                 SONG_ONE_ARMED_SCISSOR,
                 SONG_HOLLYWOOD_NIGHTS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428256,
+            "CompleteGigExpertAchievementId": 428257
         },
         {
             "Venue": "Ozzfest",
@@ -4363,8 +4505,9 @@ CAREER_INFO = {
                 SONG_MR_CROWLEY,
                 SONG_CRAZY_TRAIN
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428258,
+            "CompleteGigExpertAchievementId": 428259
         },
         {
             "Venue": "Times Square",
@@ -4378,8 +4521,9 @@ CAREER_INFO = {
                 SONG_TRAPPED_UNDER_ICE,
                 SONG_HOT_FOR_TEACHER
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428260,
+            "CompleteGigExpertAchievementId": 428261
         },
         {
             "Venue": "Sunna's Chariot",
@@ -4391,8 +4535,9 @@ CAREER_INFO = {
                 SONG_PULL_ME_UNDER,
                 SONG_SATCH_BOOGIE
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428262,
+            "CompleteGigExpertAchievementId": 428263
         }
     ],
     INSTRUMENT_BASS: [
@@ -4404,8 +4549,9 @@ CAREER_INFO = {
                 SONG_OBSTACLE_1,
                 SONG_BEAUTIFUL_DISASTER
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428264,
+            "CompleteGigExpertAchievementId": 428265
         },
         {
             "Venue": "Bone Church",
@@ -4415,8 +4561,9 @@ CAREER_INFO = {
                 SONG_TODAY,
                 SONG_SOME_MIGHT_SAY
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428266,
+            "CompleteGigExpertAchievementId": 428267
         },
         {
             "Venue": "Phi Psi Kappa",
@@ -4426,8 +4573,9 @@ CAREER_INFO = {
                 SONG_LIVIN_ON_A_PRAYER,
                 SONG_MOUNTAIN_SONG
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428268,
+            "CompleteGigExpertAchievementId": 428269
         },
         {
             "Venue": "Pang Tang Bay",
@@ -4438,8 +4586,9 @@ CAREER_INFO = {
                 SONG_UP_AROUND_THE_BEND,
                 SONG_YOURE_GONNA_SAY_YEAH
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 4,
+            "CompleteGigAnyAchievementId": 428270,
+            "CompleteGigExpertAchievementId": 428271
         },
         {
             "Venue": "Amoeba Records",
@@ -4450,8 +4599,9 @@ CAREER_INFO = {
                 SONG_MISERY_BUSINESS,
                 SONG_FREAK_ON_A_LEASH
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 4,
+            "CompleteGigAnyAchievementId": 428272,
+            "CompleteGigExpertAchievementId": 428273
         },
         {
             "Venue": "Tool",
@@ -4461,8 +4611,9 @@ CAREER_INFO = {
                 SONG_SCHISM,
                 SONG_VICARIOUS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428274,
+            "CompleteGigExpertAchievementId": 428275
         },
         {
             "Venue": "Swamp Shack",
@@ -4474,8 +4625,9 @@ CAREER_INFO = {
                 SONG_STILLBORN,
                 SONG_DO_IT_AGAIN
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428276,
+            "CompleteGigExpertAchievementId": 428277
         },
         {
             "Venue": "Rock Brigade",
@@ -4487,8 +4639,9 @@ CAREER_INFO = {
                 SONG_DAMMIT,
                 SONG_HEY_MAN_NICE_SHOT
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428278,
+            "CompleteGigExpertAchievementId": 428279
         },
         {
             "Venue": "Strutter's Farm",
@@ -4500,8 +4653,9 @@ CAREER_INFO = {
                 SONG_STRANGLEHOLD,
                 SONG_RAMBLIN_MAN
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428280,
+            "CompleteGigExpertAchievementId": 428281
         },
         {
             "Venue": "Will Heilm's Keep",
@@ -4513,8 +4667,9 @@ CAREER_INFO = {
                 SONG_DEMOLITION_MAN_LIVE,
                 SONG_THE_KILL
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428282,
+            "CompleteGigExpertAchievementId": 428283
         },
         {
             "Venue": "Swamp Shack",
@@ -4526,8 +4681,9 @@ CAREER_INFO = {
                 SONG_TOO_MUCH_TOO_YOUNG_TOO_FAST,
                 SONG_FLOAT_ON
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428284,
+            "CompleteGigExpertAchievementId": 428285
         },
         {
             "Venue": "House of Blues",
@@ -4539,8 +4695,9 @@ CAREER_INFO = {
                 SONG_SANTERIA,
                 SONG_LVIA_LVIAQUEZ
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428286,
+            "CompleteGigExpertAchievementId": 428287
         },
         {
             "Venue": "Will Heilm's Keep",
@@ -4552,8 +4709,9 @@ CAREER_INFO = {
                 SONG_TOY_BOY,
                 SONG_HAIL_TO_THE_FREAKS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428288,
+            "CompleteGigExpertAchievementId": 428289
         },
         {
             "Venue": "AT&T Park",
@@ -4566,8 +4724,9 @@ CAREER_INFO = {
                 SONG_THE_WIND_CRIES_MARY,
                 SONG_PURPLE_HAZE_LIVE
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428290,
+            "CompleteGigExpertAchievementId": 428291
         },
         {
             "Venue": "Ozzfest",
@@ -4579,8 +4738,9 @@ CAREER_INFO = {
                 SONG_ONE_ARMED_SCISSOR,
                 SONG_HOLLYWOOD_NIGHTS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428292,
+            "CompleteGigExpertAchievementId": 428293
         },
         {
             "Venue": "Ozzfest",
@@ -4593,8 +4753,9 @@ CAREER_INFO = {
                 SONG_MR_CROWLEY,
                 SONG_CRAZY_TRAIN
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428294,
+            "CompleteGigExpertAchievementId": 428295
         },
         {
             "Venue": "Times Square",
@@ -4608,8 +4769,9 @@ CAREER_INFO = {
                 SONG_OVERKILL,
                 SONG_BYOB
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428296,
+            "CompleteGigExpertAchievementId": 428297
         },
         {
             "Venue": "Sunna's Chariot",
@@ -4621,8 +4783,9 @@ CAREER_INFO = {
                 SONG_PULL_ME_UNDER,
                 SONG_SATCH_BOOGIE
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428298,
+            "CompleteGigExpertAchievementId": 428299
         }
     ],
     INSTRUMENT_DRUMS: [
@@ -4634,8 +4797,9 @@ CAREER_INFO = {
                 SONG_TODAY,
                 SONG_SOME_MIGHT_SAY
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428336,
+            "CompleteGigExpertAchievementId": 428337
         },
         {
             "Venue": "Phi Psi Kappa",
@@ -4645,8 +4809,9 @@ CAREER_INFO = {
                 SONG_LIVIN_ON_A_PRAYER,
                 SONG_ABOUT_A_GIRL_UNPLUGGED
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428338,
+            "CompleteGigExpertAchievementId": 428339
         },
         {
             "Venue": "Wilted Orchid",
@@ -4656,8 +4821,9 @@ CAREER_INFO = {
                 SONG_THE_ONE_I_LOVE,
                 SONG_BEAUTIFUL_DISASTER
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428340,
+            "CompleteGigExpertAchievementId": 428341
         },
         {
             "Venue": "Pang Tang Bay",
@@ -4668,8 +4834,9 @@ CAREER_INFO = {
                 SONG_UP_AROUND_THE_BEND,
                 SONG_YOURE_GONNA_SAY_YEAH
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 4,
+            "CompleteGigAnyAchievementId": 428342,
+            "CompleteGigExpertAchievementId": 428343
         },
         {
             "Venue": "Amoeba Records",
@@ -4680,8 +4847,9 @@ CAREER_INFO = {
                 SONG_MISERY_BUSINESS,
                 SONG_RAMBLIN_MAN
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 4,
+            "CompleteGigAnyAchievementId": 428344,
+            "CompleteGigExpertAchievementId": 428345
         },
         {
             "Venue": "Tool",
@@ -4691,8 +4859,9 @@ CAREER_INFO = {
                 SONG_SCHISM,
                 SONG_VICARIOUS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428346,
+            "CompleteGigExpertAchievementId": 428347
         },
         {
             "Venue": "Swamp Shack",
@@ -4704,8 +4873,9 @@ CAREER_INFO = {
                 SONG_STILLBORN,
                 SONG_OBSTACLE_1
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428348,
+            "CompleteGigExpertAchievementId": 428349
         },
         {
             "Venue": "Strutter's Farm",
@@ -4717,8 +4887,9 @@ CAREER_INFO = {
                 SONG_STRANGLEHOLD,
                 SONG_FREAK_ON_A_LEASH
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428350,
+            "CompleteGigExpertAchievementId": 428351
         },
         {
             "Venue": "Rock Brigade",
@@ -4730,8 +4901,9 @@ CAREER_INFO = {
                 SONG_DAMMIT,
                 SONG_EVERLONG
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428352,
+            "CompleteGigExpertAchievementId": 428353
         },
         {
             "Venue": "Will Heilm's Keep",
@@ -4743,8 +4915,9 @@ CAREER_INFO = {
                 SONG_DEMOLITION_MAN_LIVE,
                 SONG_THE_KILL
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428354,
+            "CompleteGigExpertAchievementId": 428355
         },
         {
             "Venue": "Swamp Shack",
@@ -4756,8 +4929,9 @@ CAREER_INFO = {
                 SONG_TOO_MUCH_TOO_YOUNG_TOO_FAST,
                 SONG_FLOAT_ON
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428356,
+            "CompleteGigExpertAchievementId": 428357
         },
         {
             "Venue": "House of Blues",
@@ -4769,8 +4943,9 @@ CAREER_INFO = {
                 SONG_KICK_OUT_THE_JAMS,
                 SONG_SANTERIA
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428358,
+            "CompleteGigExpertAchievementId": 428359
         },
         {
             "Venue": "Will Heilm's Keep",
@@ -4782,8 +4957,9 @@ CAREER_INFO = {
                 SONG_TOY_BOY,
                 SONG_HAIL_TO_THE_FREAKS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428360,
+            "CompleteGigExpertAchievementId": 428361
         },
         {
             "Venue": "AT&T Park",
@@ -4796,8 +4972,9 @@ CAREER_INFO = {
                 SONG_THE_WIND_CRIES_MARY,
                 SONG_PURPLE_HAZE_LIVE
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428362,
+            "CompleteGigExpertAchievementId": 428363
         },
         {
             "Venue": "Ozzfest",
@@ -4809,8 +4986,9 @@ CAREER_INFO = {
                 SONG_ONE_ARMED_SCISSOR,
                 SONG_HOLLYWOOD_NIGHTS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428364,
+            "CompleteGigExpertAchievementId": 428365
         },
         {
             "Venue": "Ozzfest",
@@ -4823,8 +5001,9 @@ CAREER_INFO = {
                 SONG_MR_CROWLEY,
                 SONG_CRAZY_TRAIN
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428366,
+            "CompleteGigExpertAchievementId": 428367
         },
         {
             "Venue": "Times Square",
@@ -4838,8 +5017,9 @@ CAREER_INFO = {
                 SONG_BYOB,
                 SONG_HOT_FOR_TEACHER
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428368,
+            "CompleteGigExpertAchievementId": 428369
         },
         {
             "Venue": "Sunna's Chariot",
@@ -4851,8 +5031,9 @@ CAREER_INFO = {
                 SONG_PULL_ME_UNDER,
                 SONG_SATCH_BOOGIE
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428370,
+            "CompleteGigExpertAchievementId": 428371
         }
     ],
     INSTRUMENT_VOCALS: [
@@ -4864,8 +5045,9 @@ CAREER_INFO = {
                 SONG_THE_ONE_I_LOVE,
                 SONG_BEAUTIFUL_DISASTER
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428300,
+            "CompleteGigExpertAchievementId": 428301
         },
         {
             "Venue": "Bone Church",
@@ -4875,8 +5057,9 @@ CAREER_INFO = {
                 SONG_TODAY,
                 SONG_SOME_MIGHT_SAY
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428302,
+            "CompleteGigExpertAchievementId": 428303
         },
         {
             "Venue": "Phi Psi Kappa",
@@ -4886,8 +5069,9 @@ CAREER_INFO = {
                 SONG_MOUNTAIN_SONG,
                 SONG_LIVIN_ON_A_PRAYER
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 3,
+            "CompleteGigAnyAchievementId": 428304,
+            "CompleteGigExpertAchievementId": 428305
         },
         {
             "Venue": "Amoeba Records",
@@ -4898,8 +5082,9 @@ CAREER_INFO = {
                 SONG_MISERY_BUSINESS,
                 SONG_THE_JOKER
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 4,
+            "CompleteGigAnyAchievementId": 428306,
+            "CompleteGigExpertAchievementId": 428307
         },
         {
             "Venue": "Pang Tang Bay",
@@ -4910,8 +5095,9 @@ CAREER_INFO = {
                 SONG_YOURE_GONNA_SAY_YEAH,
                 SONG_BAND_ON_THE_RUN
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 4,
+            "CompleteGigAnyAchievementId": 428308,
+            "CompleteGigExpertAchievementId": 428309
         },
         {
             "Venue": "Tool",
@@ -4921,8 +5107,9 @@ CAREER_INFO = {
                 SONG_SCHISM,
                 SONG_VICARIOUS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428310,
+            "CompleteGigExpertAchievementId": 428311
         },
         {
             "Venue": "Swamp Shack",
@@ -4934,8 +5121,9 @@ CAREER_INFO = {
                 SONG_STILLBORN,
                 SONG_SPIDERWEBS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428312,
+            "CompleteGigExpertAchievementId": 428313
         },
         {
             "Venue": "Rock Brigade",
@@ -4947,8 +5135,9 @@ CAREER_INFO = {
                 SONG_DAMMIT,
                 SONG_EVERLONG
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428314,
+            "CompleteGigExpertAchievementId": 428315
         },
         {
             "Venue": "Strutter's Farm",
@@ -4960,8 +5149,9 @@ CAREER_INFO = {
                 SONG_STRANGLEHOLD,
                 SONG_ONE_WAY_OR_ANOTHER
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428316,
+            "CompleteGigExpertAchievementId": 428317
         },
         {
             "Venue": "House of Blues",
@@ -4973,8 +5163,9 @@ CAREER_INFO = {
                 SONG_ON_THE_ROAD_AGAIN_LIVE,
                 SONG_LOVE_ME_TWO_TIMES
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428318,
+            "CompleteGigExpertAchievementId": 428319
         },
         {
             "Venue": "Swamp Shack",
@@ -4986,8 +5177,9 @@ CAREER_INFO = {
                 SONG_TOO_MUCH_TOO_YOUNG_TOO_FAST,
                 SONG_FLOAT_ON
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428320,
+            "CompleteGigExpertAchievementId": 428321
         },
         {
             "Venue": "Will Heilm's Keep",
@@ -4999,8 +5191,9 @@ CAREER_INFO = {
                 SONG_DEMOLITION_MAN_LIVE,
                 SONG_SHIVER
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428322,
+            "CompleteGigExpertAchievementId": 428323
         },
         {
             "Venue": "Will Heilm's Keep",
@@ -5012,8 +5205,9 @@ CAREER_INFO = {
                 SONG_TOY_BOY,
                 SONG_HAIL_TO_THE_FREAKS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428324,
+            "CompleteGigExpertAchievementId": 428325
         },
         {
             "Venue": "Ozzfest",
@@ -5026,8 +5220,9 @@ CAREER_INFO = {
                 SONG_MR_CROWLEY,
                 SONG_CRAZY_TRAIN
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428326,
+            "CompleteGigExpertAchievementId": 428327
         },
         {
             "Venue": "Ozzfest",
@@ -5039,8 +5234,9 @@ CAREER_INFO = {
                 SONG_ONE_ARMED_SCISSOR,
                 SONG_HOLLYWOOD_NIGHTS
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428328,
+            "CompleteGigExpertAchievementId": 428329
         },
         {
             "Venue": "AT&T Park",
@@ -5053,8 +5249,9 @@ CAREER_INFO = {
                 SONG_THE_WIND_CRIES_MARY,
                 SONG_PURPLE_HAZE_LIVE
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428330,
+            "CompleteGigExpertAchievementId": 428331
         },
         {
             "Venue": "Times Square",
@@ -5068,8 +5265,9 @@ CAREER_INFO = {
                 SONG_LVIA_LVIAQUEZ,
                 SONG_BEAT_IT
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428332,
+            "CompleteGigExpertAchievementId": 428333
         },
         {
             "Venue": "Sunna's Chariot",
@@ -5080,8 +5278,9 @@ CAREER_INFO = {
                 SONG_SOUL_DOUBT,
                 SONG_PULL_ME_UNDER
             ],
-            "CompleteGigAnyAchievementId": 0,
-            "CompleteGigExpertAchievementId": 0
+            "Points": 5,
+            "CompleteGigAnyAchievementId": 428334,
+            "CompleteGigExpertAchievementId": 428335
         }
     ]
 }
@@ -5102,6 +5301,7 @@ function has_player_completed_all_songs_in_gig(gig_songs, instrument, expert_onl
                 && current_song() == song
                 && player_instrument(1) == instrument
                 && difficulty_restriction
+                && !is_in_practice_mode()
                 && are_all_cheats_off()
         ))
     }
@@ -5120,6 +5320,7 @@ for instrument in CAREER_INFO {
         gig_venue = gig["Venue"]
         any_difficulty_achievement_id = gig["CompleteGigAnyAchievementId"]
         expert_difficulty_achievement_id = gig["CompleteGigExpertAchievementId"]
+        points = gig["Points"]
 
         if (gig["GigNumber"] == 0) {
             any_difficulty_title = format("{0} Gig at {1}", instrument_name, gig_venue)
@@ -5138,18 +5339,25 @@ for instrument in CAREER_INFO {
             expert_difficulty_description = format("Clear the {0} song setlist at the second {1} gig in the {2} career on Expert difficulty in a single sitting", length(gig["Songs"]), gig_venue, instrument_name)
         }
 
+        if (gig_venue == "Times Square") {
+            type = "win_condition"
+        } else {
+            type = ""
+        }
+
         achievement(
             title = any_difficulty_title,
             description = any_difficulty_description,
-            points = 5,
+            points = points,
             id = any_difficulty_achievement_id,
+            type = type,
             trigger = has_player_completed_all_songs_in_gig(gig["Songs"], instrument, false)
         )
 
         achievement(
             title = expert_difficulty_title,
             description = expert_difficulty_description,
-            points = 5,
+            points = points,
             id = expert_difficulty_achievement_id,
             trigger = has_player_completed_all_songs_in_gig(gig["Songs"], instrument, true)
         )
@@ -5165,12 +5373,17 @@ for song in SONG_INFO {
     SONG_TO_NAME[song] = SONG_INFO[song]["Title"]
 }
 
+CUSTOM_SONG_TO_NAME = {}
+for custom_song in CUSTOM_SONG_INFO {
+    CUSTOM_SONG_TO_NAME[custom_song] = "the custom song " + CUSTOM_SONG_INFO[custom_song]["Title"]
+}
+
 BAND_STAR_POWER_ADDR = 0x005cc768
 function band_star_power() {
     return float(BAND_STAR_POWER_ADDR)
 }
 
-BAND_STREAK_ADDR = 0x005cc7c8
+BAND_STREAK_ADDR = 0x00e115dc
 function band_streak() {
     return dword(BAND_STREAK_ADDR)
 }
@@ -5185,39 +5398,49 @@ function in_gig_select() {
     return dword(IN_GIG_SELECT_ADDR) == 0x01
 }
 
-rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && !is_in_custom_song() && number_of_active_players() > 1 && score() > 0, "Rockin' out to {0} as a band - Score: {1}, Streak: {2}",
+rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && !is_in_custom_song() && number_of_active_players() > 1 && band_score() > 0 && !is_in_practice_mode(), "Rockin' out to {0} as a band - Score: {1}, Streak: {2}",
     rich_presence_lookup("Song", current_song(), SONG_TO_NAME),
-    rich_presence_macro("Number", score()),
+    rich_presence_macro("Number", band_score()),
     rich_presence_macro("Number", band_streak())
 )
-rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && !is_in_custom_song() && number_of_active_players() == 1 && player_instrument(1) == INSTRUMENT_VOCALS && score() > 0, "Rockin' out to {0} on {1} {2} - Score: {3}, Streak: {4}",
+rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && !is_in_custom_song() && number_of_active_players() == 1 && player_instrument(1) == INSTRUMENT_VOCALS && p1_score() > 0 && !is_in_practice_mode(), "Rockin' out to {0} on {1} {2} - Score: {3}, Streak: {4}",
     rich_presence_lookup("Song", current_song(), SONG_TO_NAME),
     rich_presence_lookup("Difficulty", player_difficulty(1), DIFFICULTY_TO_NAME),
     rich_presence_lookup("Instrument", player_instrument(1), INSTRUMENT_TO_NAME),
-    rich_presence_macro("Number", score()),
+    rich_presence_macro("Number", p1_score()),
     rich_presence_macro("Number", player_streak(1) / 10)
 )
-rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && !is_in_custom_song() && number_of_active_players() == 1 && score() > 0, "Rockin' out to {0} on {1} {2} - Score: {3}, Streak: {4}",
+rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && !is_in_custom_song() && number_of_active_players() == 1 && p1_score() > 0 && !is_in_practice_mode(), "Rockin' out to {0} on {1} {2} - Score: {3}, Streak: {4}",
     rich_presence_lookup("Song", current_song(), SONG_TO_NAME),
     rich_presence_lookup("Difficulty", player_difficulty(1), DIFFICULTY_TO_NAME),
     rich_presence_lookup("Instrument", player_instrument(1), INSTRUMENT_TO_NAME),
-    rich_presence_macro("Number", score()),
+    rich_presence_macro("Number", p1_score()),
     rich_presence_macro("Number", player_streak(1))
 )
-rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && is_in_custom_song() && number_of_active_players() > 1 && score() > 0, "Rockin' out to a custom song as a band - Score: {0}, Streak: {1}",
-    rich_presence_macro("Number", score()),
+rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && is_in_custom_song() && number_of_active_players() > 1 && band_score() > 0 && !is_in_practice_mode(), "Rockin' out to {0} as a band - Score: {1}, Streak: {2}",
+    rich_presence_lookup("CustomSong", current_custom_song_id(), CUSTOM_SONG_TO_NAME, "an original custom song"),
+    rich_presence_macro("Number", band_score()),
     rich_presence_macro("Number", band_streak())
 )
-rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && is_in_custom_song() && number_of_active_players() == 1 && player_instrument(1) == INSTRUMENT_VOCALS && score() > 0, "Rockin' out to a custom song on {0} {1} - Score: {2}, Streak: {3}",
+rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && is_in_custom_song() && number_of_active_players() == 1 && player_instrument(1) == INSTRUMENT_VOCALS && p1_score() > 0 && !is_in_practice_mode(), "Rockin' out to {0} on {1} {2} - Score: {3}, Streak: {4}",
+    rich_presence_lookup("CustomSong", current_custom_song_id(), CUSTOM_SONG_TO_NAME, "an original custom song"),
     rich_presence_lookup("Difficulty", player_difficulty(1), DIFFICULTY_TO_NAME),
     rich_presence_lookup("Instrument", player_instrument(1), INSTRUMENT_TO_NAME),
-    rich_presence_macro("Number", score()),
+    rich_presence_macro("Number", p1_score()),
     rich_presence_macro("Number", player_streak(1) / 10)
 )
-rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && is_in_custom_song() && number_of_active_players() == 1 && score() > 0, "Rockin' out to a custom song on {0} {1} - Score: {2}, Streak: {3}",
+rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && is_in_custom_song() && number_of_active_players() == 1 && p1_score() > 0 && !is_in_practice_mode(), "Rockin' out to {0} on {1} {2} - Score: {3}, Streak: {4}",
+    rich_presence_lookup("CustomSong", current_custom_song_id(), CUSTOM_SONG_TO_NAME, "an original custom song"),
     rich_presence_lookup("Difficulty", player_difficulty(1), DIFFICULTY_TO_NAME),
     rich_presence_lookup("Instrument", player_instrument(1), INSTRUMENT_TO_NAME),
-    rich_presence_macro("Number", score()),
+    rich_presence_macro("Number", p1_score()),
+    rich_presence_macro("Number", player_streak(1))
+)
+rich_presence_conditional_display(is_in_song() && !is_background_menu_music_playing_addr() && !in_gig_select() && number_of_active_players() == 1 && p1_score() > 0 && is_in_practice_mode(), "Practising {0} on {1} {2} - Score: {3}, Streak: {4}",
+    rich_presence_lookup("Song", current_song(), SONG_TO_NAME),
+    rich_presence_lookup("Difficulty", player_difficulty(1), DIFFICULTY_TO_NAME),
+    rich_presence_lookup("Instrument", player_instrument(1), INSTRUMENT_TO_NAME),
+    rich_presence_macro("Number", p1_score()),
     rich_presence_macro("Number", player_streak(1))
 )
 rich_presence_display("Tuning instruments...")

@@ -3425,7 +3425,7 @@ for song in SONG_INFO {
         achievement_title = SONG_INFO[song]["Instruments"][instrument]["FiveStarAchievementTitle"]
         achievement(
             title = achievement_title,
-            description = format("Get five stars in {0} on Expert {1} with a score of {2}", song_name, instrument_name, format_int_with_commas(base_score * 14 / 5)),
+            description = format("Get five stars in {0} on Expert {1} with a score of at least {2}", song_name, instrument_name, format_int_with_commas(base_score * 14 / 5)),
             points = achievement_points,
             id = achievement_id,
             trigger = did_achieve_expert_five_star_score([song], instrument, base_score)
@@ -4212,7 +4212,7 @@ for song in CUSTOM_SONG_INFO {
         achievement_title = CUSTOM_SONG_INFO[song]["Instruments"][instrument]["FiveStarAchievementTitle"]
         achievement(
             title = achievement_title,
-            description = format("Get five stars in the custom song {0} on Expert {1} with a score of {2}", song_name, instrument_name, format_int_with_commas(base_score * 14 / 5)),
+            description = format("Get five stars in the custom song {0} on Expert {1} with a score of at least {2}", song_name, instrument_name, format_int_with_commas(base_score * 14 / 5)),
             points = achievement_points,
             id = achievement_id,
             trigger = custom_song_did_achieve_expert_five_star_score(song, instrument, base_score)

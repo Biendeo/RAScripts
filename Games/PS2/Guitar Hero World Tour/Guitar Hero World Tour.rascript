@@ -89,9 +89,9 @@ function is_in_career_mode_gig() {
     return dword(IN_CAREER_MODE_GIG_ADDR) == 0x01
 }
 
-IN_PRACTICE_MODE_ADDR = 0x0041d088
+IN_PRACTICE_MODE_ADDR = 0x00422c50
 function is_in_practice_mode() {
-    return dword(IN_PRACTICE_MODE_ADDR) == 0x01
+    return dword(IN_PRACTICE_MODE_ADDR) == 0x08
 }
 
 NUMBER_OF_ACTIVE_PLAYERS_ADDR = 0x004287f4
@@ -109,9 +109,9 @@ function p1_score() {
     return dword(P1_SCORE_ADDR)
 }
 
-BAND_SCORE_ADDR = 0x00c42b48
+BAND_SCORE_ADDR = 0x00e106c4
 function band_score() {
-    return dword(BAND_SCORE_ADDR)
+    return dword(dword(BAND_SCORE_ADDR))
 }
 
 PLAYER_INFO_ARRAY_ADDR = 0x008d62c0
@@ -2060,7 +2060,7 @@ SONG_INFO = {
                 "ExpertBaseScore": 23000,
                 "FiveStarAchievementId": 427957,
                 "FiveStarAchievementPoints": 4,
-                "FiveStarAchievementTitle": "She Can Read, She Can Read, She Can Read, She Can Read, She's Bad",
+                "FiveStarAchievementTitle": "She Can Read, She Can Read, She Can Read, She Can Read She's Bad",
                 "LeaderboardIds": [0, 100646, 100647, 100648, 100645]
             }
         }
@@ -3704,23 +3704,23 @@ for achievement_info in VOXTAR_ACHIEVEMENT_INFO {
 // #endregion
 
 // #region CUSTOM SONGS
-CUSTOM_SONG_AMAZING      = 0x0032
-CUSTOM_SONG_BEE          = 0x00ca
-CUSTOM_SONG_BOUREE       = 0x00c4
-CUSTOM_SONG_FURELISE     = 0x00bd
-CUSTOM_SONG_FUTUREFREAK  = 0x0065
-CUSTOM_SONG_GREENSLEEVES = 0x007c
-CUSTOM_SONG_ILIKEDIRT    = 0x00a4
-CUSTOM_SONG_JAMANDTOAST  = 0x00f1
-CUSTOM_SONG_LANOCHE      = 0x0151
-CUSTOM_SONG_LASERBOP     = 0x00db
-CUSTOM_SONG_MAPLELEAF    = 0x0125
-CUSTOM_SONG_PORTO        = 0x007f
-CUSTOM_SONG_RAJAFUNSHINE = 0x00f8
-CUSTOM_SONG_ROCKHOP      = 0x00c6
-CUSTOM_SONG_RONDO        = 0x0162
-CUSTOM_SONG_STARSPANGLED = 0x0062
-CUSTOM_SONG_YANDZ        = 0x0116
+CUSTOM_SONG_AMAZING      = 0x2e2ffa47
+CUSTOM_SONG_BEE          = 0x978d1559
+CUSTOM_SONG_BOUREE       = 0x5def14a5
+CUSTOM_SONG_FURELISE     = 0x3a28b18f
+CUSTOM_SONG_FUTUREFREAK  = 0x7c727098
+CUSTOM_SONG_GREENSLEEVES = 0xb47cc6e1
+CUSTOM_SONG_ILIKEDIRT    = 0xb85d73e0
+CUSTOM_SONG_JAMANDTOAST  = 0x7bee8fe8
+CUSTOM_SONG_LANOCHE      = 0xa014beb7
+CUSTOM_SONG_LASERBOP     = 0x4c5d2fb4
+CUSTOM_SONG_MAPLELEAF    = 0x8f83e40d
+CUSTOM_SONG_PORTO        = 0xe6defecf
+CUSTOM_SONG_RAJAFUNSHINE = 0x3cf5557f
+CUSTOM_SONG_ROCKHOP      = 0x1deca987
+CUSTOM_SONG_RONDO        = 0xc626bb8d
+CUSTOM_SONG_STARSPANGLED = 0x5617ba48
+CUSTOM_SONG_YANDZ        = 0x897d90fe
 
 CUSTOM_SONG_INFO = {
     CUSTOM_SONG_AMAZING: {
@@ -4167,7 +4167,7 @@ CUSTOM_SONG_INFO = {
     }
 }
 
-CUSTOM_SONG_ADDR = 0x00426bf0
+CUSTOM_SONG_ADDR = 0x0093cc3c
 function current_custom_song_id() {
     return dword(CUSTOM_SONG_ADDR)
 }

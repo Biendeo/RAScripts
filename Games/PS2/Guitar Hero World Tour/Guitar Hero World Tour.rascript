@@ -3578,7 +3578,7 @@ VOXTAR_ACHIEVEMENT_INFO = [
         "Song": SONG_STILLBORN,
         "Instrument": INSTRUMENT_GUITAR,
         "AchievementId": 428431,
-        "AchievementTitle": "Zakk Wydle Double Instrument Challenge",
+        "AchievementTitle": "Zakk Wylde Double Instrument Challenge",
         "LeaderboardId": 102902
     },
     {

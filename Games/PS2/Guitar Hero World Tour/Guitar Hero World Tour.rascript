@@ -4167,9 +4167,9 @@ CUSTOM_SONG_INFO = {
     }
 }
 
-CUSTOM_SONG_ADDR = 0x0093cc3c
+CUSTOM_SONG_ADDR = 0x00be8b70
 function current_custom_song_id() {
-    return dword(CUSTOM_SONG_ADDR)
+    return dword(dword(CUSTOM_SONG_ADDR) + 0x0c)
 }
 
 function custom_song_did_achieve_expert_five_star_score(song_id, instrument_id, base_score) {

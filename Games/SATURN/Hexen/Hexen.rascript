@@ -115,11 +115,11 @@ function is_in_game() {
 IS_MAP_CHANGE_HAPPENING_ADDR = 0x190318
 
 function is_map_change_happening() {
-	return word(IS_MAP_CHANGE_HAPPENING_ADDR) == 0x0601
+	return prev(word(IS_MAP_CHANGE_HAPPENING_ADDR)) == 0x0601 || word(IS_MAP_CHANGE_HAPPENING_ADDR) == 0x0601
 }
 
 function is_not_loading() {
-	return word(IS_MAP_CHANGE_HAPPENING_ADDR) != 0x0609
+	return prev(word(IS_MAP_CHANGE_HAPPENING_ADDR)) != 0x0609 && word(IS_MAP_CHANGE_HAPPENING_ADDR) != 0x0609
 }
 
 CURRENT_MAP_ADDR = 0x19a9d0
@@ -302,8 +302,8 @@ function is_player_on_hard_difficulty() {
 FMV_ADDR = 0x1efaa8
 
 function is_player_in_fmv() {
-	// This is a boolean so we can unswizzle this
-	return word(FMV_ADDR + 2) == 1
+	// This is some bitmask, and we want this specific value so this is being treated unswizzled for the moment
+	return dword(FMV_ADDR) == 0x00010000
 }
 
 IS_PAST_BIOS_ADDR = 0x19afd8

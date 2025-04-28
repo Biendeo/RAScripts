@@ -16,7 +16,7 @@ MAP_SACRED_GROVE            = 11
 MAP_HYPOSTYLE               = 12
 MAP_HERESIARCHS_SEMINARY    = 27
 MAP_ORCHARD_OF_LAMENTATIONS = 32
-MAP_SILENT_REFACTORY        = 33
+MAP_SILENT_REFECTORY        = 33
 MAP_WOLF_CHAPEL             = 34
 MAP_DRAGON_CHAPEL           = 28
 MAP_GRIFFIN_CHAPEL          = 30
@@ -299,11 +299,11 @@ function is_player_on_hard_difficulty() {
 	return difficulty() >= 3
 }
 
-FMV_ADDR = 0x1efaa8
+FMV_ADDR = 0x19cc30
 
 function is_player_in_fmv() {
 	// This is some bitmask, and we want this specific value so this is being treated unswizzled for the moment
-	return dword(FMV_ADDR) == 0x00010000
+	return dword(FMV_ADDR) == 0x8314060e
 }
 
 IS_PAST_BIOS_ADDR = 0x19afd8
@@ -1249,7 +1249,7 @@ achievement(
 	title = "No Better Time to Field Test",
 	points = 2,
 	id = 508291,
-	description = "Acquire your third and final piece of the ultimate weapon in the Heresiarch's Seminary",
+	description = "Acquire your third and final piece of the ultimate weapon in the Heresiarch's Seminary (before you acquire that piece in one of the Chapel stages)",
 	type = "missable",
 	trigger = (
 		protect_against_non_game()
@@ -1337,13 +1337,13 @@ achievement(
 	title = "I Send You to the Shadow Realm",
 	points = 2,
 	id = 508297,
-	description = "Find the hidden Banishment Device in the Silent Refactory",
+	description = "Find the hidden Banishment Device in the Silent Refectory",
 	type = "missable",
 	trigger = (
 		protect_against_non_game()
 		&& ensure_keys_are_not_acquired([KEY_RUSTED, KEY_DUNGEON, KEY_AXE])
 		&& ensure_items_are_not_acquired([ITEM_GLAIVE_SEAL])
-		&& player_is_in_map(MAP_SILENT_REFACTORY)
+		&& player_is_in_map(MAP_SILENT_REFECTORY)
 		&& did_player_pick_up_item(ITEM_BANISHMENT_DEVICE)
 	)
 )
@@ -1352,13 +1352,13 @@ achievement(
 	title = "To Gaze Into the Future",
 	points = 3,
 	id = 508298,
-	description = "Find the Sapphire Planet in the Silent Refactory",
+	description = "Find the Sapphire Planet in the Silent Refectory",
 	type = "progression",
 	trigger = (
 		protect_against_non_game()
 		&& ensure_keys_are_not_acquired([KEY_RUSTED, KEY_DUNGEON, KEY_AXE])
 		&& ensure_items_are_not_acquired([ITEM_GLAIVE_SEAL])
-		&& player_is_in_map(MAP_SILENT_REFACTORY)
+		&& player_is_in_map(MAP_SILENT_REFECTORY)
 		&& did_player_pick_up_item(ITEM_SAPPHIRE_PLANET_1)
 	)
 )
@@ -1367,13 +1367,13 @@ achievement(
 	title = "To Cure All Ailments",
 	points = 3,
 	id = 508299,
-	description = "Find the Ruby Planet in the Silent Refactory",
+	description = "Find the Ruby Planet in the Silent Refectory",
 	type = "progression",
 	trigger = (
 		protect_against_non_game()
 		&& ensure_keys_are_not_acquired([KEY_RUSTED, KEY_DUNGEON, KEY_AXE])
 		&& ensure_items_are_not_acquired([ITEM_GLAIVE_SEAL])
-		&& player_is_in_map(MAP_SILENT_REFACTORY)
+		&& player_is_in_map(MAP_SILENT_REFECTORY)
 		&& did_player_pick_up_item(ITEM_RUBY_PLANET)
 	)
 )
@@ -1382,13 +1382,13 @@ achievement(
 	title = "Gammon in the Pantry",
 	points = 2,
 	id = 508300,
-	description = "Find the hidden Porkalator in the Silent Refactory",
+	description = "Find the hidden Porkalator in the Silent Refectory",
 	type = "missable",
 	trigger = (
 		protect_against_non_game()
 		&& ensure_keys_are_not_acquired([KEY_RUSTED, KEY_DUNGEON, KEY_AXE])
 		&& ensure_items_are_not_acquired([ITEM_GLAIVE_SEAL])
-		&& player_is_in_map(MAP_SILENT_REFACTORY)
+		&& player_is_in_map(MAP_SILENT_REFECTORY)
 		&& did_player_pick_up_item(ITEM_PORKALATOR)
 	)
 )
@@ -1397,13 +1397,13 @@ achievement(
 	title = "To Protect From Magic",
 	points = 3,
 	id = 508301,
-	description = "Find the hidden Emerald Planet in the Silent Refactory",
+	description = "Find the hidden Emerald Planet in the Silent Refectory",
 	type = "progression",
 	trigger = (
 		protect_against_non_game()
 		&& ensure_keys_are_not_acquired([KEY_RUSTED, KEY_DUNGEON, KEY_AXE])
 		&& ensure_items_are_not_acquired([ITEM_GLAIVE_SEAL])
-		&& player_is_in_map(MAP_SILENT_REFACTORY)
+		&& player_is_in_map(MAP_SILENT_REFECTORY)
 		&& did_player_pick_up_item(ITEM_EMERALD_PLANET_1)
 	)
 )
@@ -2462,7 +2462,7 @@ MAP_TO_NAME = {
 	MAP_HYPOSTYLE               : "the Hypostyle",
 	MAP_HERESIARCHS_SEMINARY    : "Heresiarch's Seminary",
 	MAP_ORCHARD_OF_LAMENTATIONS : "the Orchard of Lamentations",
-	MAP_SILENT_REFACTORY        : "the Silent Refactory",
+	MAP_SILENT_REFECTORY        : "the Silent Refectory",
 	MAP_WOLF_CHAPEL             : "the Wolf Chapel",
 	MAP_DRAGON_CHAPEL           : "the Dragon Chapel",
 	MAP_GRIFFIN_CHAPEL          : "the Griffin Chapel",

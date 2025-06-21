@@ -4263,7 +4263,7 @@ QUIT_SONG_DETECTOR_VALUE = {
     REGION_FRANCE: 0x00002910,
     REGION_GERMANY: 0x000028d0,
     REGION_ITALY: 0x00002920,
-    REGION_SPAIN: 0x00002920
+    REGION_SPAIN: 0x00002919 // This actually is 2920 in both the End Song and Quit Song buttons, so unfortunately the Spanish version submits leaderboards on quits
 }
 function did_song_just_finish(region) => (prev(dword(SONG_STATE_ADDR[region])) == 0x01 || prev(dword(SONG_STATE_ADDR[region])) == 0x04) && dword(SONG_STATE_ADDR[region]) == 0x02 && dword(QUIT_SONG_DETECTOR_ADDR[region]) != QUIT_SONG_DETECTOR_VALUE[region]
 

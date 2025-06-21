@@ -57,7 +57,7 @@ SONG_DETAILS = [
                 "TargetScore": 7440
             },
             "Hard": {
-                "Title": "I've Taken More Than Would A Fool",
+                "Title": "I've Taken More than Would a Fool",
                 "Id": 523915,
                 "TargetScore": 6900
             }
@@ -68,7 +68,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "I Never Loved Someone The Way That I'm Lovin' You",
+                        "Title": "I Never Loved Someone the Way That I'm Lovin' You",
                         "Id": 523916,
                         "TotalPhraseCount": 91
                     }
@@ -114,7 +114,7 @@ SONG_DETAILS = [
                 "Name": "Ashford",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "It Was No Time To Play",
+                        "Title": "It Was No Time to Play",
                         "Id": 523919,
                         "TotalPhraseCount": 45
                     }
@@ -139,7 +139,7 @@ SONG_DETAILS = [
                 "Name": "Simpson",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "And For Love's Sake, Each Mistake You Forgave",
+                        "Title": "And for Love's Sake, Each Mistake You Forgave",
                         "Id": 523920,
                         "TotalPhraseCount": 53
                     }
@@ -185,7 +185,7 @@ SONG_DETAILS = [
                 "Name": "Dave",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "I've Had A Little Time To Find The Truth",
+                        "Title": "I've Had a Little Time to Find the Truth",
                         "Id": 523923,
                         "TotalPhraseCount": 28
                     }
@@ -283,7 +283,7 @@ SONG_DETAILS = [
         "ShortLength": 5147,
         "Achievements": {
             "Easy": {
-                "Title": "While He Was Schemin', I Was Steamin' In The Beemer Just Beamin'",
+                "Title": "While He Was Schemin', I Was Steamin' in the Beemer Just Beamin'",
                 "Id": 523928,
                 "TargetScore": 6480
             },
@@ -299,7 +299,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "Revenge Is Better Than Money",
+                        "Title": "Revenge Is Better than Money",
                         "Id": 523930,
                         "TotalPhraseCount": 118
                     }
@@ -329,7 +329,7 @@ SONG_DETAILS = [
         "ShortLength": 8513,
         "Achievements": {
             "Easy": {
-                "Title": "In The Government Yard In Trench Town",
+                "Title": "In the Government Yard in Trench Town",
                 "Id": 523931,
                 "TargetScore": 6640
             },
@@ -375,7 +375,7 @@ SONG_DETAILS = [
         "ShortLength": 5393,
         "Achievements": {
             "Easy": {
-                "Title": "Pictures Came And Broke Your Heart",
+                "Title": "Pictures Came and Broke Your Heart",
                 "Id": 523934,
                 "TargetScore": 7290
             },
@@ -391,7 +391,7 @@ SONG_DETAILS = [
                 "Name": "Trevor Horn",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "Put The Blame On VCR",
+                        "Title": "Put the Blame on VCR",
                         "Id": 523936,
                         "TotalPhraseCount": 40
                     }
@@ -416,7 +416,7 @@ SONG_DETAILS = [
                 "Name": "Linda Jardim",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "You Are A Radio Star",
+                        "Title": "You Are a Radio Star",
                         "Id": 523937,
                         "TotalPhraseCount": 38
                     }
@@ -462,7 +462,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "Boy Bands, And Another One, And Another One, And Another One",
+                        "Title": "Boy Bands, and Another One, and Another One, and Another One",
                         "Id": 523940,
                         "TotalPhraseCount": 99
                     }
@@ -492,7 +492,7 @@ SONG_DETAILS = [
         "ShortLength": 4885,
         "Achievements": {
             "Easy": {
-                "Title": "We're Not The Fortunate Ones",
+                "Title": "We're Not the Fortunate Ones",
                 "Id": 523941,
                 "TargetScore": 6820
             },
@@ -508,7 +508,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "When The Working Day Is Done",
+                        "Title": "When the Working Day Is Done",
                         "Id": 523943,
                         "TotalPhraseCount": 94
                     }
@@ -538,7 +538,7 @@ SONG_DETAILS = [
         "ShortLength": 6195,
         "Achievements": {
             "Easy": {
-                "Title": "Thought That I'd Be Stressed Without You, But I'm Chillin'",
+                "Title": "Thought That I'd Be Stressed Without You, but I'm Chillin'",
                 "Id": 523944,
                 "TargetScore": 7460
             },
@@ -554,7 +554,7 @@ SONG_DETAILS = [
                 "Name": "Singer 1",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "You Know I'm Not Gon' Diss You On The Internet",
+                        "Title": "You Know I'm Not Gon' Diss You on the Internet",
                         "Id": 523946,
                         "TotalPhraseCount": 99
                     }
@@ -579,7 +579,7 @@ SONG_DETAILS = [
                 "Name": "Singer 2",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "Much Success, No Stress, And Lots Of Happiness",
+                        "Title": "Much Success, No Stress, and Lots of Happiness",
                         "Id": 523947,
                         "TotalPhraseCount": 98
                     }
@@ -609,12 +609,12 @@ SONG_DETAILS = [
         "ShortLength": 6169,
         "Achievements": {
             "Easy": {
-                "Title": "I Will Go Down With This Ship",
+                "Title": "I Will Go Down with This Ship",
                 "Id": 523948,
                 "TargetScore": 6320
             },
             "Hard": {
-                "Title": "I Know I Left Too Much Mess And Destruction",
+                "Title": "I Know I Left Too Much Mess and Destruction",
                 "Id": 523949,
                 "TargetScore": 5780
             }
@@ -625,7 +625,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "I'm In Love And Always Will Be",
+                        "Title": "I'm in Love and Always Will Be",
                         "Id": 523950,
                         "TotalPhraseCount": 61
                     }
@@ -655,12 +655,12 @@ SONG_DETAILS = [
         "ShortLength": 6931,
         "Achievements": {
             "Easy": {
-                "Title": "Darken The City, Night Is A Wire",
+                "Title": "Darken the City, Night Is a Wire",
                 "Id": 523951,
                 "TargetScore": 7140
             },
             "Hard": {
-                "Title": "Smell Like I Sound, I'm Lost In A Crowd",
+                "Title": "Smell Like I Sound, I'm Lost in a Crowd",
                 "Id": 523952,
                 "TargetScore": 6600
             }
@@ -671,7 +671,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "Straddle The Line, In Discord And Rhyme",
+                        "Title": "Straddle the Line, in Discord and Rhyme",
                         "Id": 523953,
                         "TotalPhraseCount": 64
                     }
@@ -706,7 +706,7 @@ SONG_DETAILS = [
                 "TargetScore": 6330
             },
             "Hard": {
-                "Title": "You Put The Light In My Life",
+                "Title": "You Put the Light in My Life",
                 "Id": 523955,
                 "TargetScore": 5790
             }
@@ -818,7 +818,7 @@ SONG_DETAILS = [
         "ShortLength": 5443,
         "Achievements": {
             "Easy": {
-                "Title": "\"I'll Be Over At Ten\", You Told Me Time And Again",
+                "Title": "\"I'll Be over at Ten\", You Told Me Time and Again",
                 "Id": 523961,
                 "TargetScore": 6180
             },
@@ -834,7 +834,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "Although You're Untrue, I'm Attracted To You All The More",
+                        "Title": "Although You're Untrue, I'm Attracted to You All the More",
                         "Id": 523963,
                         "TotalPhraseCount": 79
                     }
@@ -864,7 +864,7 @@ SONG_DETAILS = [
         "ShortLength": 7707,
         "Achievements": {
             "Easy": {
-                "Title": "I'm Just A Cross-Hair",
+                "Title": "I'm Just a Cross-Hair",
                 "Id": 523964,
                 "TargetScore": 7450
             },
@@ -910,12 +910,12 @@ SONG_DETAILS = [
         "ShortLength": 8205,
         "Achievements": {
             "Easy": {
-                "Title": "But I've Got To Think Twice Before I Give My Heart Away",
+                "Title": "But I've Got to Think Twice Before I Give My Heart Away",
                 "Id": 523967,
                 "TargetScore": 6800
             },
             "Hard": {
-                "Title": "I Need Some Time Off From That Emotion",
+                "Title": "I Need Some Time Off from That Emotion",
                 "Id": 523968,
                 "TargetScore": 6260
             }
@@ -956,12 +956,12 @@ SONG_DETAILS = [
         "ShortLength": 7163,
         "Achievements": {
             "Easy": {
-                "Title": "It Was Quarter Past Eleven On A Saturday In 1999",
+                "Title": "It Was Quarter past Eleven on a Saturday in 1999",
                 "Id": 523970,
                 "TargetScore": 6490
             },
             "Hard": {
-                "Title": "She Laser Beamed Me With Her Cosmic Eyes",
+                "Title": "She Laser Beamed Me with Her Cosmic Eyes",
                 "Id": 523971,
                 "TargetScore": 5950
             }
@@ -1007,7 +1007,7 @@ SONG_DETAILS = [
                 "TargetScore": 7120
             },
             "Hard": {
-                "Title": "It's Not About the J-O-B But The R-E-S-P-E-C-T",
+                "Title": "It's Not About the J-O-B but the R-E-S-P-E-C-T",
                 "Id": 523974,
                 "TargetScore": 6580
             }
@@ -1018,7 +1018,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "You Could Be The Hottest, You Could Be The Finest",
+                        "Title": "You Could Be the Hottest, You Could Be the Finest",
                         "Id": 523975,
                         "TotalPhraseCount": 87
                     }
@@ -1048,7 +1048,7 @@ SONG_DETAILS = [
         "ShortLength": 5881,
         "Achievements": {
             "Easy": {
-                "Title": "I Dream About You All The Time",
+                "Title": "I Dream About You All the Time",
                 "Id": 523976,
                 "TargetScore": 6810
             },
@@ -1099,7 +1099,7 @@ SONG_DETAILS = [
                 "TargetScore": 6660
             },
             "Hard": {
-                "Title": "She Knows Just What To Do",
+                "Title": "She Knows Just What to Do",
                 "Id": 523980,
                 "TargetScore": 6120
             }
@@ -1110,7 +1110,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "A Wop Bop A Looma, Ba-Lop Bam Bam",
+                        "Title": "A Wop Bop a Looma, Ba-Lop Bam Bam",
                         "Id": 523981,
                         "TotalPhraseCount": 84
                     }
@@ -1140,7 +1140,7 @@ SONG_DETAILS = [
         "ShortLength": 6113,
         "Achievements": {
             "Easy": {
-                "Title": "Never To Return Again, But Always In My Heart",
+                "Title": "Never to Return Again, but Always in My Heart",
                 "Id": 523982,
                 "TargetScore": 6020
             },
@@ -1156,7 +1156,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "Her Heart Is Breaking In Front Of Me",
+                        "Title": "Her Heart Is Breaking in Front of Me",
                         "Id": 523984,
                         "TotalPhraseCount": 66
                     }
@@ -1186,12 +1186,12 @@ SONG_DETAILS = [
         "ShortLength": 6257,
         "Achievements": {
             "Easy": {
-                "Title": "Right Now A Star's In The Ascendant",
+                "Title": "Right Now a Star's in the Ascendant",
                 "Id": 523985,
                 "TargetScore": 6500
             },
             "Hard": {
-                "Title": "My Declaration Of Independence",
+                "Title": "My Declaration of Independence",
                 "Id": 523986,
                 "TargetScore": 5960
             }
@@ -1202,7 +1202,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "You Either Got It Or You Don't",
+                        "Title": "You Either Got It or You Don't",
                         "Id": 523987,
                         "TotalPhraseCount": 83
                     }
@@ -1232,7 +1232,7 @@ SONG_DETAILS = [
         "ShortLength": 7605,
         "Achievements": {
             "Easy": {
-                "Title": "I Can't Stay On Your Life Support",
+                "Title": "I Can't Stay on Your Life Support",
                 "Id": 523988,
                 "TargetScore": 6970
             },
@@ -1248,7 +1248,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "To The Middle Of My Frustrated Fears",
+                        "Title": "To the Middle of My Frustrated Fears",
                         "Id": 523990,
                         "TotalPhraseCount": 90
                     }
@@ -1324,12 +1324,12 @@ SONG_DETAILS = [
         "ShortLength": 5179,
         "Achievements": {
             "Easy": {
-                "Title": "All The Girls They Seem To Like You",
+                "Title": "All the Girls They Seem to Like You",
                 "Id": 523994,
                 "TargetScore": 6650
             },
             "Hard": {
-                "Title": "The Folks'll Wonder 'Bout The Wedding",
+                "Title": "The Folks'll Wonder 'Bout the Wedding",
                 "Id": 523995,
                 "TargetScore": 6110
             }
@@ -1370,12 +1370,12 @@ SONG_DETAILS = [
         "ShortLength": 4595,
         "Achievements": {
             "Easy": {
-                "Title": "There Ain't No Hill Or Mountain We Can't Climb",
+                "Title": "There Ain't No Hill or Mountain We Can't Climb",
                 "Id": 523997,
                 "TargetScore": 7600
             },
             "Hard": {
-                "Title": "I Got You To Hold My Hand",
+                "Title": "I Got You to Hold My Hand",
                 "Id": 523998,
                 "TargetScore": 7060
             }
@@ -1386,7 +1386,7 @@ SONG_DETAILS = [
                 "Name": "Sonny",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "I Got Flowers In The Spring",
+                        "Title": "I Got Flowers in the Spring",
                         "Id": 523999,
                         "TotalPhraseCount": 40
                     }
@@ -1411,7 +1411,7 @@ SONG_DETAILS = [
                 "Name": "Cher",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "They Say Our Love Won't Pay The Rent",
+                        "Title": "They Say Our Love Won't Pay the Rent",
                         "Id": 524000,
                         "TotalPhraseCount": 37
                     }
@@ -1487,12 +1487,12 @@ SONG_DETAILS = [
         "ShortLength": 6679,
         "Achievements": {
             "Easy": {
-                "Title": "The Race Is On To Get Out Of The Bottom",
+                "Title": "The Race Is On to Get Out of the Bottom",
                 "Id": 524004,
                 "TargetScore": 7130
             },
             "Hard": {
-                "Title": "Your Trumpet's Blowing For Far Too Long",
+                "Title": "Your Trumpet's Blowing for Far Too Long",
                 "Id": 524005,
                 "TargetScore": 6590
             }
@@ -1503,7 +1503,7 @@ SONG_DETAILS = [
                 "Name": "",
                 "Achievements": {
                     "PhraseBonuses": {
-                        "Title": "Some Kind Of Superstar?",
+                        "Title": "Some Kind of Superstar?",
                         "Id": 524006,
                         "TotalPhraseCount": 84
                     }
@@ -1533,7 +1533,7 @@ SONG_DETAILS = [
         "ShortLength": 7279,
         "Achievements": {
             "Easy": {
-                "Title": "Holding On To One Another's Hand",
+                "Title": "Holding on to One Another's Hand",
                 "Id": 524007,
                 "TargetScore": 7300
             },
@@ -1905,7 +1905,7 @@ EYETOY_GOLDEN_MOMENTS_INDEX_ADDR = 0x003444d0
 function eyetoy_golden_moments_index() => dword(EYETOY_GOLDEN_MOMENTS_INDEX_ADDR)
 
 achievement(
-    title = "I Am A Camera",
+    title = "I Am a Camera",
     description = "Smile for the camera and snap at least 10 Eyetoy Golden Moments in any song in Sing Solo mode",
     points = 3,
     id = 524011,

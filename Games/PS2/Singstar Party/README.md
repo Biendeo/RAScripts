@@ -8,6 +8,8 @@ https://retroachievements.org/game/30933
 
 Singstar Party is a 2004 music video game for the PlayStation 2 and the second title in the Singstar franchise. It was released in PAL regions on September 23rd, 2004 (four months after the first game), and never released in North America. Sing along to 30 more songs that span a variety of genres and time periods using the two bundled Singstar microphones and USB dongle. The career mode of the first game is gone, but there exists more party mode options, including some songs with duet options. Again, this achievement set will only focus on the single-player scenarios.
 
+![Singstar Party](Icons/Screenshots/singstarparty.gif)
+
 ## Set Design
 
 ### Game Flow Description

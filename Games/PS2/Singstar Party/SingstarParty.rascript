@@ -1615,18 +1615,13 @@ function is_in_solo_mode() => dword(IS_IN_SOLO_MODE_ADDR) == 0x01f62360
 function is_in_freestyle_mode() => dword(IS_IN_SOLO_MODE_ADDR) == 0x01f5ed30
 function is_in_party_mode() => dword(IS_IN_SOLO_MODE_ADDR) == 0x01f659f0
 
+PLAYER_DETAILS_POINTER_ADDR = 0x005f40f4
+function current_song_id() => dword(dword(dword(PLAYER_DETAILS_POINTER_ADDR) + 0xb0))
+function is_song_short_version() => dword(dword(dword(PLAYER_DETAILS_POINTER_ADDR) + 0xb0) + 0x4) == 1
+function song_part_id() => dword(dword(dword(PLAYER_DETAILS_POINTER_ADDR) + 0xb0) + 0xc)
+function difficulty() => dword(dword(PLAYER_DETAILS_POINTER_ADDR) + 0xd8)
+
 SONG_DETAILS_POINTER_ADDR = 0x0034c1c8
-
-CURRENT_SONG_DETAILS_ADDR = 0x00cbbe34
-
-function current_song_id() => dword(dword(CURRENT_SONG_DETAILS_ADDR))
-function is_song_short_version() => dword(dword(CURRENT_SONG_DETAILS_ADDR) + 4) == 1
-
-function song_part_id() => dword(dword(CURRENT_SONG_DETAILS_ADDR) + 0xc)
-
-DIFFICULTY_ADDR = 0x00cbbe5c // This is behind some pointers but it's stable enough to reference directly.
-function difficulty() => dword(DIFFICULTY_ADDR)
-
 function phrase_bonus() => dword(dword(SONG_DETAILS_POINTER_ADDR) + 0x02f8) // This is making some assumptions about the structure but it's stable enough
 function total_score() => dword(dword(SONG_DETAILS_POINTER_ADDR) + 0x02fc) // This is making some assumptions about the structure but it's stable enough
 
@@ -1913,7 +1908,12 @@ achievement(
         is_master_disc_in_use()
             && !is_in_pass_the_mic_mode()
             && is_in_solo_mode()
-            && did_song_just_finish()
+            && dword(SONG_STATE_ADDR) == 0x02 // The golden moments index will increment substantially after this has changed to 2
+            && (
+                prior(dword(SONG_STATE_ADDR)) == 0x01
+                    || prior(dword(SONG_STATE_ADDR)) == 0x04
+            )
             && eyetoy_golden_moments_index() >= 10
+            && prev(eyetoy_golden_moments_index()) == eyetoy_golden_moments_index() - 1 // This seems to increment by one once in the song results screen
     )
 )

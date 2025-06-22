@@ -4079,37 +4079,27 @@ function is_in_solo_mode(region) => dword(IS_IN_SOLO_MODE_ADDR[region]) == IS_IN
 function is_in_freestyle_mode(region) => dword(IS_IN_SOLO_MODE_ADDR[region]) == IS_IN_SOLO_MODE_FREESTYLE_VALUE[region]
 function is_in_party_mode(region) => dword(IS_IN_SOLO_MODE_ADDR[region]) == IS_IN_SOLO_MODE_PARTY_VALUE[region]
 
+function is_in_region(region) {
+    return ascii_string_equals(MASTER_DISC_NAME_ADDR[region], MASTER_DISC_EXPECTED_STRING[region], length(MASTER_DISC_EXPECTED_STRING[region]))
+}
+
+PLAYER_DETAILS_POINTER_ADDR = {
+    REGION_FRANCE: 0x005f72b4,
+    REGION_GERMANY: 0x005eed34,
+    REGION_ITALY: 0x005f7334,
+    REGION_SPAIN: 0x005f6a74
+}
+function current_song_id(region) => dword(dword(dword(PLAYER_DETAILS_POINTER_ADDR[region]) + 0xb0))
+function is_song_short_version(region) => dword(dword(dword(PLAYER_DETAILS_POINTER_ADDR[region]) + 0xb0) + 0x4) == 1
+function song_part_id(region) => dword(dword(dword(PLAYER_DETAILS_POINTER_ADDR[region]) + 0xb0) + 0xc)
+function difficulty(region) => dword(dword(PLAYER_DETAILS_POINTER_ADDR[region]) + 0xd8)
+
 SONG_DETAILS_POINTER_ADDR = {
     REGION_FRANCE: 0x0034e958,
     REGION_GERMANY: 0x0034ce48,
     REGION_ITALY: 0x0034e958,
     REGION_SPAIN: 0x0034e758
 }
-
-function is_in_region(region) {
-    return ascii_string_equals(MASTER_DISC_NAME_ADDR[region], MASTER_DISC_EXPECTED_STRING[region], length(MASTER_DISC_EXPECTED_STRING[region]))
-}
-
-CURRENT_SONG_DETAILS_ADDR = {
-    REGION_FRANCE: 0x00d255e4,
-    REGION_GERMANY: 0x00cac694,
-    REGION_ITALY: 0x00cb69b4,
-    REGION_SPAIN: 0x00cb7884
-}
-
-function current_song_id(region) => dword(dword(CURRENT_SONG_DETAILS_ADDR[region]))
-function is_song_short_version(region) => dword(dword(CURRENT_SONG_DETAILS_ADDR[region]) + 4) == 1
-
-function song_part_id(region) => dword(dword(CURRENT_SONG_DETAILS_ADDR[region]) + 0xc)
-
-DIFFICULTY_ADDR = {
-    REGION_FRANCE: 0x00d2560c,
-    REGION_GERMANY: 0x00cac6bc,
-    REGION_ITALY: 0x00c3b9e8,
-    REGION_SPAIN: 0x00cb78ac
-} // This is behind some pointers but it's stable enough to reference directly.
-function difficulty(region) => dword(DIFFICULTY_ADDR[region])
-
 function phrase_bonus(region) => dword(dword(SONG_DETAILS_POINTER_ADDR[region]) + 0x02f8) // This is making some assumptions about the structure but it's stable enough
 function total_score(region) => dword(dword(SONG_DETAILS_POINTER_ADDR[region]) + 0x02fc) // This is making some assumptions about the structure but it's stable enough
 

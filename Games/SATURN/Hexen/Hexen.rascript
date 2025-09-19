@@ -2410,9 +2410,15 @@ achievement(
 		protect_against_non_game()
 		&& ensure_items_are_not_acquired([ITEM_RUBY_PLANET])
 		&& player_is_in_map(MAP_DARK_CRUCIBLE)
-		&& measured(
-			map_var_value(6) == 40, // Watch out if this gets set to 0
-			when = player_is_in_map(MAP_DARK_CRUCIBLE)
+		&& (
+			measured(
+				map_var_value(6) == 40, // Because the script sets this to 40, spawns the enemies, then sets this to 0, this may hit either between frames.
+				when = player_is_in_map(MAP_DARK_CRUCIBLE)
+			)
+			|| (
+				map_var_value(6) == 0
+				&& player_is_in_map(MAP_DARK_CRUCIBLE)
+			)
 		)
 		&& prev(map_var_value(6)) == 39
 	)

@@ -1,0 +1,1 @@
+All icons in this folder were created by [NicNamSam](https://retroachievements.org/user/NicNamSam).

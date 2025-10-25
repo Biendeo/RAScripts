@@ -1,4 +1,4 @@
-# Singstar
+# Guitar Hero: World Tour
 
 ## Game Site
 

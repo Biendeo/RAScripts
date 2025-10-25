@@ -286,7 +286,7 @@ leaderboard(
 )
 
 
-NUMBER_CRUNCHER_TIME_USED_ADDR = 0x000dd9d0
+NUMBER_CRUNCHER_TIME_USED_ADDR = 0x000dda1c
 function number_cruncher_time_used() => word(NUMBER_CRUNCHER_TIME_USED_ADDR)
 
 function number_cruncher_completed() => screen_id() == SCREEN_ID_RESULTS && prev(screen_id()) == SCREEN_ID_NUMBER_CRUNCHER

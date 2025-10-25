@@ -296,7 +296,7 @@ achievement(
     description = "Get a time of 60 seconds or less in Number Cruncher",
     points = 5,
     id = 554255,
-    trigger = number_cruncher_time_used() <= 3600
+    trigger = number_cruncher_completed() && number_cruncher_time_used() <= 3600
 )
 
 leaderboard(

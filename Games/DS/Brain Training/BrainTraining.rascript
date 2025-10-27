@@ -111,7 +111,13 @@ leaderboard(
 STAMPS_COLLECTED_ADDR = 0x000d8552
 function stamps_collected() => word(STAMPS_COLLECTED_ADDR)
 
-function did_player_just_collect_stamp(num_stamps) => screen_id() == SCREEN_ID_PLACING_A_STAMP && stamps_collected() == num_stamps
+PROFILE_INDEX_ADDR = 0x000da774
+function profile_index() => byte(PROFILE_INDEX_ADDR)
+
+STAMPS_COLLECTED_IN_PROFILE_ADDR = 0x000da8a6
+function stamps_collected_in_profile(profile_index) => word(STAMPS_COLLECTED_IN_PROFILE_ADDR + (0x30 * profile_index))
+
+function did_player_just_collect_stamp(num_stamps) => screen_id() == SCREEN_ID_PLACING_A_STAMP && stamps_collected_in_profile(profile_index()) == num_stamps && prev(stamps_collected_in_profile(profile_index())) == num_stamps - 1
 
 class StampAchievementDetails {
     title = "DUMMY TITLE"
@@ -123,7 +129,6 @@ class StampAchievementDetails {
 }
 
 STAMP_ACHIEVEMENTS = [
-    // This first one accidentally unlocks as you enter the screen with one stamp already, but since it's so easy to achieve on a new save, and you have to get one stamp before the second one, I won't look towards fixing this bug.
     StampAchievementDetails(
         title = "Stamp of Approval",
         description = "Earn your 1st stamp and unlock Low To High",

@@ -22,6 +22,7 @@ SCREEN_ID_STROOP_TEST                            = 0x1d
 SCREEN_ID_TRIANGLE_MATH                          = 0x20
 SCREEN_ID_TRIANGLE_MATH_HARD                     = 0x21
 SCREEN_ID_SPEED_COUNTING                         = 0x27
+SCREEN_ID_CONNECT_MAZE_FROM_CUSTOM_MENU          = 0x28
 SCREEN_ID_CONNECT_MAZE                           = 0x29
 SCREEN_ID_WORD_MEMORY                            = 0x2a
 SCREEN_ID_RESULTS                                = 0x2b
@@ -235,7 +236,7 @@ for stamp_achievement in STAMP_ACHIEVEMENTS {
 CONNECT_MAZE_TIME_USED_ADDR = 0x000dda1c
 function connect_maze_time_used() => word(CONNECT_MAZE_TIME_USED_ADDR)
 
-function connect_maze_completed() => screen_id() == SCREEN_ID_RESULTS && prev(screen_id()) == SCREEN_ID_CONNECT_MAZE
+function connect_maze_completed() => screen_id() == SCREEN_ID_RESULTS && (prev(screen_id()) == SCREEN_ID_CONNECT_MAZE || prev(screen_id()) == SCREEN_ID_CONNECT_MAZE_FROM_CUSTOM_MENU)
 
 achievement(
     title = "Now I Know My A-1-B-2-C-3s",
@@ -719,7 +720,7 @@ achievement(
     description = "Get asked something you did in the past by Dr. Kawashima",
     points = 1,
     id = 554273,
-    trigger = screen_id() == SCREEN_ID_DAILY_TRAINING_MENU && prev(screen_id()) == SCREEN_ID_WRITING_PROMPT
+    trigger = (screen_id() == SCREEN_ID_DAILY_TRAINING_MENU || screen_id() == SCREEN_ID_SUDOKU_HOW_TO_PLAY || screen_id() == SCREEN_ID_SUDOKU_DIFFICULTY_MENU) && prev(screen_id()) == SCREEN_ID_WRITING_PROMPT
 )
 
 achievement(
@@ -727,22 +728,22 @@ achievement(
     description = "Try your hand at some art",
     points = 1,
     id = 554274,
-    trigger = screen_id() == SCREEN_ID_DAILY_TRAINING_MENU && prev(screen_id()) == SCREEN_ID_PICTURE_DRAWING_RESULTS
+    trigger = (screen_id() == SCREEN_ID_DAILY_TRAINING_MENU || screen_id() == SCREEN_ID_SUDOKU_HOW_TO_PLAY || screen_id() == SCREEN_ID_SUDOKU_DIFFICULTY_MENU) && prev(screen_id()) == SCREEN_ID_PICTURE_DRAWING_RESULTS
 )
 
 
-SUDOKU_DATA_ADDR = 0x000eddf4
+SUDOKU_DATA_ADDR = 0x0029f9c0
 SUDOKU_STATUS_NA       = 0x00
 SUDOKU_STATUS_LOCKED   = 0x01
 SUDOKU_STATUS_UNSOLVED = 0x02
 SUDOKU_STATUS_SOLVED   = 0x03
 function sudoku_puzzle_status(i) {
     assert(i >= 0 && i < 120, message = "This isn't handling the right number of sudokus!")
-    return byte(SUDOKU_DATA_ADDR + 4 * i) & 0x03
+    return byte(dword(SUDOKU_DATA_ADDR) + 0xfe000010 + 4 * i) & 0x03
 }
 function previous_sudoku_puzzle_status(i) {
     assert(i >= 0 && i < 120, message = "This isn't handling the right number of sudokus!")
-    return prev(byte(SUDOKU_DATA_ADDR + 4 * i)) & 0x03
+    return prev(byte(dword(SUDOKU_DATA_ADDR) + 0xfe000010 + 4 * i)) & 0x03
 }
 
 class SudokuAchievementDetails {
@@ -984,6 +985,7 @@ SCREEN_ID_TO_RICH_PRESENCE = {
     SCREEN_ID_TRIANGLE_MATH                          : "Solving Triangle Math",
     SCREEN_ID_TRIANGLE_MATH_HARD                     : "Solving Triangle Math (Hard)",
     SCREEN_ID_SPEED_COUNTING                         : "Cycling numbers in Speed Counting",
+    SCREEN_ID_CONNECT_MAZE_FROM_CUSTOM_MENU          : "Connecting the dots in Connect Maze",
     SCREEN_ID_CONNECT_MAZE                           : "Connecting the dots in Connect Maze",
     SCREEN_ID_WORD_MEMORY                            : "Memorizing words in Word Memory",
     SCREEN_ID_RESULTS                                : "Seeing the results of a minigame",

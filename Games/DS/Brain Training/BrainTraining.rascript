@@ -739,11 +739,11 @@ SUDOKU_STATUS_UNSOLVED = 0x02
 SUDOKU_STATUS_SOLVED   = 0x03
 function sudoku_puzzle_status(i) {
     assert(i >= 0 && i < 120, message = "This isn't handling the right number of sudokus!")
-    return byte(dword(SUDOKU_DATA_ADDR) + 0xfe000010 + 4 * i) & 0x03
+    return byte(dword(SUDOKU_DATA_ADDR) + 0xfe000014 + 4 * i) & 0x03
 }
 function previous_sudoku_puzzle_status(i) {
     assert(i >= 0 && i < 120, message = "This isn't handling the right number of sudokus!")
-    return prev(byte(dword(SUDOKU_DATA_ADDR) + 0xfe000010 + 4 * i)) & 0x03
+    return prev(byte(dword(SUDOKU_DATA_ADDR) + 0xfe000014 + 4 * i)) & 0x03
 }
 
 class SudokuAchievementDetails {

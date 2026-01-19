@@ -1,4 +1,9 @@
 .venv
 .vscode
+*.pyc
 # Singstar persists your voice so don't upload these!
 Games/PS2/Singstar/SaveStates
+Games/Wii/Guitar Hero Warriors of Rock/Savestates
+Games/Wii/Guitar Hero Warriors of Rock/Icons/Output
+Games/Wii/Guitar Hero Warriors of Rock/Icons/local
+Games/Wii/Guitar Hero Warriors of Rock/Icons/Layers/Working Textures

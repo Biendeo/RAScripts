@@ -199,7 +199,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151542,
-                DominateQuestLeaderboardId = 151543
+                DominateQuestLeaderboardId = 151543,
+                PowerChallengeScoreLeaderboardId = 152804,
+                PowerChallengeStarLeaderboardId = 152805
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -215,7 +217,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151544,
-                DominateQuestLeaderboardId = 151545
+                DominateQuestLeaderboardId = 151545,
+                PowerChallengeScoreLeaderboardId = 152806,
+                PowerChallengeStarLeaderboardId = 152807
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -230,7 +234,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151546,
-                DominateQuestLeaderboardId = 151547
+                DominateQuestLeaderboardId = 151547,
+                PowerChallengeScoreLeaderboardId = 152808,
+                PowerChallengeStarLeaderboardId = 152809
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -245,9 +251,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151548,
-                DominateQuestLeaderboardId = 151549
+                DominateQuestLeaderboardId = 151549,
+                PowerChallengeScoreLeaderboardId = 152810,
+                PowerChallengeStarLeaderboardId = 152811
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "Here You Are Down on Your Knees Again",
+                Id = 576135,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Please See and Believe Again",
             Id = 573829,
@@ -277,7 +293,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151550,
-                DominateQuestLeaderboardId = 151551
+                DominateQuestLeaderboardId = 151551,
+                PowerChallengeScoreLeaderboardId = 152812,
+                PowerChallengeStarLeaderboardId = 152813
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -293,7 +311,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151552,
-                DominateQuestLeaderboardId = 151553
+                DominateQuestLeaderboardId = 151553,
+                PowerChallengeScoreLeaderboardId = 152814,
+                PowerChallengeStarLeaderboardId = 152815
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -308,7 +328,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151554,
-                DominateQuestLeaderboardId = 151555
+                DominateQuestLeaderboardId = 151555,
+                PowerChallengeScoreLeaderboardId = 152816,
+                PowerChallengeStarLeaderboardId = 152817
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -323,9 +345,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151556,
-                DominateQuestLeaderboardId = 151557
+                DominateQuestLeaderboardId = 151557,
+                PowerChallengeScoreLeaderboardId = 152818,
+                PowerChallengeStarLeaderboardId = 152819
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Sitting on a Park Bench",
+                Id = 576136,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "You Poor Old Sod, You See, It's Only Me",
             Id = 573834,
@@ -355,7 +387,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151558,
-                DominateQuestLeaderboardId = 151559
+                DominateQuestLeaderboardId = 151559,
+                PowerChallengeScoreLeaderboardId = 152820,
+                PowerChallengeStarLeaderboardId = 152821
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -371,7 +405,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151560,
-                DominateQuestLeaderboardId = 151561
+                DominateQuestLeaderboardId = 151561,
+                PowerChallengeScoreLeaderboardId = 152822,
+                PowerChallengeStarLeaderboardId = 152823
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -386,7 +422,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151562,
-                DominateQuestLeaderboardId = 151563
+                DominateQuestLeaderboardId = 151563,
+                PowerChallengeScoreLeaderboardId = 152824,
+                PowerChallengeStarLeaderboardId = 152825
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -401,9 +439,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151564,
-                DominateQuestLeaderboardId = 151565
+                DominateQuestLeaderboardId = 151565,
+                PowerChallengeScoreLeaderboardId = 152826,
+                PowerChallengeStarLeaderboardId = 152827
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "He Who Makes a Beast Out of Himself",
+                Id = 576137,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "No Oasis Here to See",
             Id = 573839,
@@ -433,7 +481,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151566,
-                DominateQuestLeaderboardId = 151567
+                DominateQuestLeaderboardId = 151567,
+                PowerChallengeScoreLeaderboardId = 152828,
+                PowerChallengeStarLeaderboardId = 152829
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -449,7 +499,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151568,
-                DominateQuestLeaderboardId = 151569
+                DominateQuestLeaderboardId = 151569,
+                PowerChallengeScoreLeaderboardId = 152830,
+                PowerChallengeStarLeaderboardId = 152831
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -464,7 +516,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151570,
-                DominateQuestLeaderboardId = 151571
+                DominateQuestLeaderboardId = 151571,
+                PowerChallengeScoreLeaderboardId = 152832,
+                PowerChallengeStarLeaderboardId = 152833
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -479,9 +533,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151572,
-                DominateQuestLeaderboardId = 151573
+                DominateQuestLeaderboardId = 151573,
+                PowerChallengeScoreLeaderboardId = 152834,
+                PowerChallengeStarLeaderboardId = 152835
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "It's Mine, Mine, All Mine",
+                Id = 576138,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "I Enjoy Stealin', It's Just as Simple as That",
             Id = 573844,
@@ -511,7 +575,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151575,
-                DominateQuestLeaderboardId = 151576
+                DominateQuestLeaderboardId = 151576,
+                PowerChallengeScoreLeaderboardId = 152836,
+                PowerChallengeStarLeaderboardId = 152837
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -527,7 +593,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151577,
-                DominateQuestLeaderboardId = 151578
+                DominateQuestLeaderboardId = 151578,
+                PowerChallengeScoreLeaderboardId = 152838,
+                PowerChallengeStarLeaderboardId = 152839
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -542,7 +610,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151579,
-                DominateQuestLeaderboardId = 151580
+                DominateQuestLeaderboardId = 151580,
+                PowerChallengeScoreLeaderboardId = 152840,
+                PowerChallengeStarLeaderboardId = 152841
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -557,9 +627,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151581,
-                DominateQuestLeaderboardId = 151582
+                DominateQuestLeaderboardId = 151582,
+                PowerChallengeScoreLeaderboardId = 152842,
+                PowerChallengeStarLeaderboardId = 152843
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "If I Could Hawk My Love",
+                Id = 576139,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Cry on Black Rain",
             Id = 573849,
@@ -598,7 +678,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151583,
-                DominateQuestLeaderboardId = 151584
+                DominateQuestLeaderboardId = 151584,
+                PowerChallengeScoreLeaderboardId = 152844,
+                PowerChallengeStarLeaderboardId = 152845
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -614,7 +696,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [6, 7, 8]
                 ),
                 QuickplayLeaderboardId = 151585,
-                DominateQuestLeaderboardId = 151586
+                DominateQuestLeaderboardId = 151586,
+                PowerChallengeScoreLeaderboardId = 152846,
+                PowerChallengeStarLeaderboardId = 152847
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -629,9 +713,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4, 5]
                 ),
                 QuickplayLeaderboardId = 151587,
-                DominateQuestLeaderboardId = 151588
+                DominateQuestLeaderboardId = 151588,
+                PowerChallengeScoreLeaderboardId = 152848,
+                PowerChallengeStarLeaderboardId = 152849
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "July 31st (The Last Stand)",
+                Id = 576140,
+                Points = 10
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "The Washing Away of Wrong",
             Id = 573855,
@@ -661,7 +755,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151589,
-                DominateQuestLeaderboardId = 151590
+                DominateQuestLeaderboardId = 151590,
+                PowerChallengeScoreLeaderboardId = 152850,
+                PowerChallengeStarLeaderboardId = 152851
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -677,7 +773,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151591,
-                DominateQuestLeaderboardId = 151592
+                DominateQuestLeaderboardId = 151592,
+                PowerChallengeScoreLeaderboardId = 152852,
+                PowerChallengeStarLeaderboardId = 152853
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -692,7 +790,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151593,
-                DominateQuestLeaderboardId = 151594
+                DominateQuestLeaderboardId = 151594,
+                PowerChallengeScoreLeaderboardId = 152854,
+                PowerChallengeStarLeaderboardId = 152855
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -707,9 +807,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151595,
-                DominateQuestLeaderboardId = 151596
+                DominateQuestLeaderboardId = 151596,
+                PowerChallengeScoreLeaderboardId = 152856,
+                PowerChallengeStarLeaderboardId = 152857
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Digging Deeper Just to Throw It Away",
+                Id = 576141,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Here We Go for the Hundredth Time",
             Id = 573859,
@@ -739,7 +849,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151597,
-                DominateQuestLeaderboardId = 151598
+                DominateQuestLeaderboardId = 151598,
+                PowerChallengeScoreLeaderboardId = 152858,
+                PowerChallengeStarLeaderboardId = 152859
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -755,7 +867,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [6, 7]
                 ),
                 QuickplayLeaderboardId = 151599,
-                DominateQuestLeaderboardId = 151600
+                DominateQuestLeaderboardId = 151600,
+                PowerChallengeScoreLeaderboardId = 152860,
+                PowerChallengeStarLeaderboardId = 152861
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -770,7 +884,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [8]
                 ),
                 QuickplayLeaderboardId = 151601,
-                DominateQuestLeaderboardId = 151602
+                DominateQuestLeaderboardId = 151602,
+                PowerChallengeScoreLeaderboardId = 152862,
+                PowerChallengeStarLeaderboardId = 152863
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -785,9 +901,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4, 5]
                 ),
                 QuickplayLeaderboardId = 151603,
-                DominateQuestLeaderboardId = 151604
+                DominateQuestLeaderboardId = 151604,
+                PowerChallengeScoreLeaderboardId = 152864,
+                PowerChallengeStarLeaderboardId = 152865
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "Disappear Into the Fog",
+                Id = 576142,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "I Am Man and Beast",
             Id = 573864,
@@ -817,7 +943,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151605,
-                DominateQuestLeaderboardId = 151606
+                DominateQuestLeaderboardId = 151606,
+                PowerChallengeScoreLeaderboardId = 152866,
+                PowerChallengeStarLeaderboardId = 152867
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -833,7 +961,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151607,
-                DominateQuestLeaderboardId = 151608
+                DominateQuestLeaderboardId = 151608,
+                PowerChallengeScoreLeaderboardId = 152868,
+                PowerChallengeStarLeaderboardId = 152869
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -848,7 +978,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151609,
-                DominateQuestLeaderboardId = 151610
+                DominateQuestLeaderboardId = 151610,
+                PowerChallengeScoreLeaderboardId = 152870,
+                PowerChallengeStarLeaderboardId = 152871
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -863,9 +995,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151611,
-                DominateQuestLeaderboardId = 151612
+                DominateQuestLeaderboardId = 151612,
+                PowerChallengeScoreLeaderboardId = 152872,
+                PowerChallengeStarLeaderboardId = 152873
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "Skin Against Skin, Blood and Bone",
+                Id = 576143,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Let the Bodies Hit the Floor",
             Id = 573869,
@@ -895,7 +1037,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151613,
-                DominateQuestLeaderboardId = 151614
+                DominateQuestLeaderboardId = 151614,
+                PowerChallengeScoreLeaderboardId = 152874,
+                PowerChallengeStarLeaderboardId = 152875
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -911,7 +1055,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [4, 5]
                 ),
                 QuickplayLeaderboardId = 151615,
-                DominateQuestLeaderboardId = 151616
+                DominateQuestLeaderboardId = 151616,
+                PowerChallengeScoreLeaderboardId = 152876,
+                PowerChallengeStarLeaderboardId = 152877
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -926,7 +1072,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [6, 7, 8]
                 ),
                 QuickplayLeaderboardId = 151617,
-                DominateQuestLeaderboardId = 151618
+                DominateQuestLeaderboardId = 151618,
+                PowerChallengeScoreLeaderboardId = 152878,
+                PowerChallengeStarLeaderboardId = 152879
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -941,9 +1089,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3]
                 ),
                 QuickplayLeaderboardId = 151619,
-                DominateQuestLeaderboardId = 151620
+                DominateQuestLeaderboardId = 151620,
+                PowerChallengeScoreLeaderboardId = 152880,
+                PowerChallengeStarLeaderboardId = 152881
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Mama, Just Killed a Man",
+                Id = 576144,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Any Way the Wind Blows",
             Id = 573874,
@@ -973,7 +1131,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151621,
-                DominateQuestLeaderboardId = 151622
+                DominateQuestLeaderboardId = 151622,
+                PowerChallengeScoreLeaderboardId = 152882,
+                PowerChallengeStarLeaderboardId = 152883
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -981,7 +1141,7 @@ GHWOR_SONGS = [
                 ExpertBaseScore = 155949,
                 ExpertPlusAvailable = false,
                 FiveStarAchievementMetadata = AchievementMetadata(
-                    Title = "The City's Ablaze, the Town's on Fire",
+                    Title = "The City's Ablaze, The Town's on Fire",
                     Id = 573881,
                     Points = 5
                 ),
@@ -989,7 +1149,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151623,
-                DominateQuestLeaderboardId = 151624
+                DominateQuestLeaderboardId = 151624,
+                PowerChallengeScoreLeaderboardId = 152884,
+                PowerChallengeStarLeaderboardId = 152885
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1004,7 +1166,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151625,
-                DominateQuestLeaderboardId = 151626
+                DominateQuestLeaderboardId = 151626,
+                PowerChallengeScoreLeaderboardId = 152886,
+                PowerChallengeStarLeaderboardId = 152887
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1019,9 +1183,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151627,
-                DominateQuestLeaderboardId = 151628
+                DominateQuestLeaderboardId = 151628,
+                PowerChallengeScoreLeaderboardId = 152888,
+                PowerChallengeStarLeaderboardId = 152889
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "When It Came No One Was Spared",
+                Id = 576145,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "You Know We Had No Time",
             Id = 573879,
@@ -1051,7 +1225,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151630,
-                DominateQuestLeaderboardId = 151631
+                DominateQuestLeaderboardId = 151631,
+                PowerChallengeScoreLeaderboardId = 152890,
+                PowerChallengeStarLeaderboardId = 152891
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1067,7 +1243,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151632,
-                DominateQuestLeaderboardId = 151633
+                DominateQuestLeaderboardId = 151633,
+                PowerChallengeScoreLeaderboardId = 152892,
+                PowerChallengeStarLeaderboardId = 152893
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1082,7 +1260,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151634,
-                DominateQuestLeaderboardId = 151635
+                DominateQuestLeaderboardId = 151635,
+                PowerChallengeScoreLeaderboardId = 152894,
+                PowerChallengeStarLeaderboardId = 152895
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1097,9 +1277,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151636,
-                DominateQuestLeaderboardId = 151637
+                DominateQuestLeaderboardId = 151637,
+                PowerChallengeScoreLeaderboardId = 152896,
+                PowerChallengeStarLeaderboardId = 152897
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Home Isn't My Way",
+                Id = 576146,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Ain't No Home for Me",
             Id = 573884,
@@ -1138,7 +1328,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151638,
-                DominateQuestLeaderboardId = 151639
+                DominateQuestLeaderboardId = 151639,
+                PowerChallengeScoreLeaderboardId = 152898,
+                PowerChallengeStarLeaderboardId = 152899
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1154,7 +1346,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151640,
-                DominateQuestLeaderboardId = 151641
+                DominateQuestLeaderboardId = 151641,
+                PowerChallengeScoreLeaderboardId = 152900,
+                PowerChallengeStarLeaderboardId = 152901
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1169,7 +1363,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151642,
-                DominateQuestLeaderboardId = 151643
+                DominateQuestLeaderboardId = 151643,
+                PowerChallengeScoreLeaderboardId = 152902,
+                PowerChallengeStarLeaderboardId = 152903
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1184,9 +1380,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151644,
-                DominateQuestLeaderboardId = 151645
+                DominateQuestLeaderboardId = 151645,
+                PowerChallengeScoreLeaderboardId = 152904,
+                PowerChallengeStarLeaderboardId = 152905
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "Wings That Take This Sparrow",
+                Id = 576147,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Is Anybody Tuning In?",
             Id = 573890,
@@ -1216,7 +1422,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151646,
-                DominateQuestLeaderboardId = 151647
+                DominateQuestLeaderboardId = 151647,
+                PowerChallengeScoreLeaderboardId = 152906,
+                PowerChallengeStarLeaderboardId = 152907
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1232,7 +1440,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151648,
-                DominateQuestLeaderboardId = 151649
+                DominateQuestLeaderboardId = 151649,
+                PowerChallengeScoreLeaderboardId = 152908,
+                PowerChallengeStarLeaderboardId = 152909
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1247,7 +1457,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151650,
-                DominateQuestLeaderboardId = 151651
+                DominateQuestLeaderboardId = 151651,
+                PowerChallengeScoreLeaderboardId = 152910,
+                PowerChallengeStarLeaderboardId = 152911
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1262,9 +1474,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151652,
-                DominateQuestLeaderboardId = 151653
+                DominateQuestLeaderboardId = 151653,
+                PowerChallengeScoreLeaderboardId = 152912,
+                PowerChallengeStarLeaderboardId = 152913
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Makes Me Feel Right at Home",
+                Id = 576148,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Nobody's Hidin' from Me",
             Id = 573895,
@@ -1294,7 +1516,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151655,
-                DominateQuestLeaderboardId = 151656
+                DominateQuestLeaderboardId = 151656,
+                PowerChallengeScoreLeaderboardId = 152914,
+                PowerChallengeStarLeaderboardId = 152915
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1310,7 +1534,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151657,
-                DominateQuestLeaderboardId = 151658
+                DominateQuestLeaderboardId = 151658,
+                PowerChallengeScoreLeaderboardId = 152916,
+                PowerChallengeStarLeaderboardId = 152917
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1325,7 +1551,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151659,
-                DominateQuestLeaderboardId = 151660
+                DominateQuestLeaderboardId = 151660,
+                PowerChallengeScoreLeaderboardId = 152918,
+                PowerChallengeStarLeaderboardId = 152919
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1340,9 +1568,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151661,
-                DominateQuestLeaderboardId = 151662
+                DominateQuestLeaderboardId = 151662,
+                PowerChallengeScoreLeaderboardId = 152920,
+                PowerChallengeStarLeaderboardId = 152921
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "Generals in Their Slow Defeats",
+                Id = 576149,
+                Points = 10
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Nothing to See Where the Sleeping Souls Lie",
             Id = 573900,
@@ -1381,7 +1619,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151664,
-                DominateQuestLeaderboardId = 151665
+                DominateQuestLeaderboardId = 151665,
+                PowerChallengeScoreLeaderboardId = 152922,
+                PowerChallengeStarLeaderboardId = 152923
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1397,7 +1637,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151666,
-                DominateQuestLeaderboardId = 151667
+                DominateQuestLeaderboardId = 151667,
+                PowerChallengeScoreLeaderboardId = 152924,
+                PowerChallengeStarLeaderboardId = 152925
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1412,7 +1654,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151668,
-                DominateQuestLeaderboardId = 151669
+                DominateQuestLeaderboardId = 151669,
+                PowerChallengeScoreLeaderboardId = 152926,
+                PowerChallengeStarLeaderboardId = 152927
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1427,9 +1671,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151670,
-                DominateQuestLeaderboardId = 151671
+                DominateQuestLeaderboardId = 151671,
+                PowerChallengeScoreLeaderboardId = 152928,
+                PowerChallengeStarLeaderboardId = 152929
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Your Dead-End Dreams Don't Make You Smile",
+                Id = 576150,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Hello, Daddy, Hello, Mom",
             Id = 573906,
@@ -1468,7 +1722,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151672,
-                DominateQuestLeaderboardId = 151673
+                DominateQuestLeaderboardId = 151673,
+                PowerChallengeScoreLeaderboardId = 152930,
+                PowerChallengeStarLeaderboardId = 152931
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1484,7 +1740,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151674,
-                DominateQuestLeaderboardId = 151675
+                DominateQuestLeaderboardId = 151675,
+                PowerChallengeScoreLeaderboardId = 152932,
+                PowerChallengeStarLeaderboardId = 152933
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1499,7 +1757,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151676,
-                DominateQuestLeaderboardId = 151677
+                DominateQuestLeaderboardId = 151677,
+                PowerChallengeScoreLeaderboardId = 152934,
+                PowerChallengeStarLeaderboardId = 152935
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1514,9 +1774,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151678,
-                DominateQuestLeaderboardId = 151679
+                DominateQuestLeaderboardId = 151679,
+                PowerChallengeScoreLeaderboardId = 152936,
+                PowerChallengeStarLeaderboardId = 152937
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "The Children Start to March",
+                Id = 576151,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Show the World That Love Is Still Alive",
             Id = 573912,
@@ -1546,7 +1816,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151680,
-                DominateQuestLeaderboardId = 151681
+                DominateQuestLeaderboardId = 151681,
+                PowerChallengeScoreLeaderboardId = 152938,
+                PowerChallengeStarLeaderboardId = 152939
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1562,7 +1834,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151682,
-                DominateQuestLeaderboardId = 151683
+                DominateQuestLeaderboardId = 151683,
+                PowerChallengeScoreLeaderboardId = 152940,
+                PowerChallengeStarLeaderboardId = 152941
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1577,7 +1851,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151684,
-                DominateQuestLeaderboardId = 151685
+                DominateQuestLeaderboardId = 151685,
+                PowerChallengeScoreLeaderboardId = 152942,
+                PowerChallengeStarLeaderboardId = 152943
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1592,9 +1868,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151686,
-                DominateQuestLeaderboardId = 151687
+                DominateQuestLeaderboardId = 151687,
+                PowerChallengeScoreLeaderboardId = 152944,
+                PowerChallengeStarLeaderboardId = 152945
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Between Pleasure and Pain",
+                Id = 576152,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Do What You Do Down on Me",
             Id = 573917,
@@ -1624,7 +1910,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151689,
-                DominateQuestLeaderboardId = 151690
+                DominateQuestLeaderboardId = 151690,
+                PowerChallengeScoreLeaderboardId = 152946,
+                PowerChallengeStarLeaderboardId = 152947
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1640,14 +1928,16 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151691,
-                DominateQuestLeaderboardId = 151692
+                DominateQuestLeaderboardId = 151692,
+                PowerChallengeScoreLeaderboardId = 152948,
+                PowerChallengeStarLeaderboardId = 152949
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 38,
                 ExpertBaseScore = 527,
                 FiveStarAchievementMetadata = AchievementMetadata(
-                    Title = "She Says She's No Good with Words, but I'm Worse",
+                    Title = "She Says She's No Good with Words, But I'm Worse",
                     Id = 573926,
                     Points = 5
                 ),
@@ -1655,7 +1945,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151693,
-                DominateQuestLeaderboardId = 151694
+                DominateQuestLeaderboardId = 151694,
+                PowerChallengeScoreLeaderboardId = 152950,
+                PowerChallengeStarLeaderboardId = 152951
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1670,9 +1962,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151695,
-                DominateQuestLeaderboardId = 151696
+                DominateQuestLeaderboardId = 151696,
+                PowerChallengeScoreLeaderboardId = 152952,
+                PowerChallengeStarLeaderboardId = 152953
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Only Want Sympathy in the Form of You",
+                Id = 576153,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "If They Knew How Misery Loved Me",
             Id = 573922,
@@ -1711,7 +2013,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151697,
-                DominateQuestLeaderboardId = 151698
+                DominateQuestLeaderboardId = 151698,
+                PowerChallengeScoreLeaderboardId = 152954,
+                PowerChallengeStarLeaderboardId = 152955
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1727,7 +2031,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151699,
-                DominateQuestLeaderboardId = 151700
+                DominateQuestLeaderboardId = 151700,
+                PowerChallengeScoreLeaderboardId = 152956,
+                PowerChallengeStarLeaderboardId = 152957
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1742,7 +2048,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151701,
-                DominateQuestLeaderboardId = 151702
+                DominateQuestLeaderboardId = 151702,
+                PowerChallengeScoreLeaderboardId = 152958,
+                PowerChallengeStarLeaderboardId = 152959
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1757,9 +2065,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151703,
-                DominateQuestLeaderboardId = 151704
+                DominateQuestLeaderboardId = 151704,
+                PowerChallengeScoreLeaderboardId = 152960,
+                PowerChallengeStarLeaderboardId = 152961
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Swept off Our Feet by Misery",
+                Id = 576154,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "We All Have No Chance in This Horrid Romance",
             Id = 573928,
@@ -1789,7 +2107,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151705,
-                DominateQuestLeaderboardId = 151706
+                DominateQuestLeaderboardId = 151706,
+                PowerChallengeScoreLeaderboardId = 152962,
+                PowerChallengeStarLeaderboardId = 152963
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1805,7 +2125,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6, 7]
                 ),
                 QuickplayLeaderboardId = 151707,
-                DominateQuestLeaderboardId = 151708
+                DominateQuestLeaderboardId = 151708,
+                PowerChallengeScoreLeaderboardId = 152964,
+                PowerChallengeStarLeaderboardId = 152965
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1820,7 +2142,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [8]
                 ),
                 QuickplayLeaderboardId = 151709,
-                DominateQuestLeaderboardId = 151710
+                DominateQuestLeaderboardId = 151710,
+                PowerChallengeScoreLeaderboardId = 152966,
+                PowerChallengeStarLeaderboardId = 152967
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1835,9 +2159,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151711,
-                DominateQuestLeaderboardId = 151712
+                DominateQuestLeaderboardId = 151712,
+                PowerChallengeScoreLeaderboardId = 152968,
+                PowerChallengeStarLeaderboardId = 152969
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Had to Pay My Dues",
+                Id = 576155,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Who Sent Ya?",
             Id = 573933,
@@ -1867,7 +2201,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151713,
-                DominateQuestLeaderboardId = 151714
+                DominateQuestLeaderboardId = 151714,
+                PowerChallengeScoreLeaderboardId = 152970,
+                PowerChallengeStarLeaderboardId = 152971
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1883,7 +2219,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151715,
-                DominateQuestLeaderboardId = 151716
+                DominateQuestLeaderboardId = 151716,
+                PowerChallengeScoreLeaderboardId = 152972,
+                PowerChallengeStarLeaderboardId = 152973
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1898,7 +2236,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151717,
-                DominateQuestLeaderboardId = 151718
+                DominateQuestLeaderboardId = 151718,
+                PowerChallengeScoreLeaderboardId = 152974,
+                PowerChallengeStarLeaderboardId = 152975
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1913,9 +2253,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151719,
-                DominateQuestLeaderboardId = 151720
+                DominateQuestLeaderboardId = 151720,
+                PowerChallengeScoreLeaderboardId = 152976,
+                PowerChallengeStarLeaderboardId = 152977
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "To Drag You Down with Me to Kick the Last Nail In",
+                Id = 576156,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Let's Move to the Beat like We Know That It's Over",
             Id = 573938,
@@ -1945,7 +2295,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151721,
-                DominateQuestLeaderboardId = 151722
+                DominateQuestLeaderboardId = 151722,
+                PowerChallengeScoreLeaderboardId = 152978,
+                PowerChallengeStarLeaderboardId = 152979
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -1961,7 +2313,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151723,
-                DominateQuestLeaderboardId = 151724
+                DominateQuestLeaderboardId = 151724,
+                PowerChallengeScoreLeaderboardId = 152980,
+                PowerChallengeStarLeaderboardId = 152981
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -1976,7 +2330,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151725,
-                DominateQuestLeaderboardId = 151726
+                DominateQuestLeaderboardId = 151726,
+                PowerChallengeScoreLeaderboardId = 152982,
+                PowerChallengeStarLeaderboardId = 152983
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -1991,9 +2347,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151727,
-                DominateQuestLeaderboardId = 151728
+                DominateQuestLeaderboardId = 151728,
+                PowerChallengeScoreLeaderboardId = 152984,
+                PowerChallengeStarLeaderboardId = 152985
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Was This Over Before It Ever Began?",
+                Id = 576157,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Like the Devil's in Your Hands",
             Id = 573943,
@@ -2023,7 +2389,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151729,
-                DominateQuestLeaderboardId = 151730
+                DominateQuestLeaderboardId = 151730,
+                PowerChallengeScoreLeaderboardId = 152986,
+                PowerChallengeStarLeaderboardId = 152987
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2039,7 +2407,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151731,
-                DominateQuestLeaderboardId = 151732
+                DominateQuestLeaderboardId = 151732,
+                PowerChallengeScoreLeaderboardId = 152988,
+                PowerChallengeStarLeaderboardId = 152989
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2054,7 +2424,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151733,
-                DominateQuestLeaderboardId = 151734
+                DominateQuestLeaderboardId = 151734,
+                PowerChallengeScoreLeaderboardId = 152990,
+                PowerChallengeStarLeaderboardId = 152991
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2069,9 +2441,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151735,
-                DominateQuestLeaderboardId = 151736
+                DominateQuestLeaderboardId = 151736,
+                PowerChallengeScoreLeaderboardId = 152992,
+                PowerChallengeStarLeaderboardId = 152993
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "To Show You How Much You Mean to Me",
+                Id = 576158,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Won't You Open up the Door?",
             Id = 573948,
@@ -2101,7 +2483,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151738,
-                DominateQuestLeaderboardId = 151739
+                DominateQuestLeaderboardId = 151739,
+                PowerChallengeScoreLeaderboardId = 152994,
+                PowerChallengeStarLeaderboardId = 152995
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2117,7 +2501,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151740,
-                DominateQuestLeaderboardId = 151741
+                DominateQuestLeaderboardId = 151741,
+                PowerChallengeScoreLeaderboardId = 152996,
+                PowerChallengeStarLeaderboardId = 152997
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2132,7 +2518,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151742,
-                DominateQuestLeaderboardId = 151743
+                DominateQuestLeaderboardId = 151743,
+                PowerChallengeScoreLeaderboardId = 152998,
+                PowerChallengeStarLeaderboardId = 152999
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2147,9 +2535,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151744,
-                DominateQuestLeaderboardId = 151745
+                DominateQuestLeaderboardId = 151745,
+                PowerChallengeScoreLeaderboardId = 153000,
+                PowerChallengeStarLeaderboardId = 153001
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Ain't No Fortunate One",
+                Id = 576159,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "It Ain't Me, It Ain't Me",
             Id = 573953,
@@ -2180,7 +2578,7 @@ GHWOR_SONGS = [
                 ExpertNotesInChart = 656,
                 ExpertBaseScore = 43583,
                 FiveStarAchievementMetadata = AchievementMetadata(
-                    Title = "The Mountain Is High, the Valley Is Low",
+                    Title = "The Mountain Is High, The Valley Is Low",
                     Id = 573961,
                     Points = 5
                 ),
@@ -2188,7 +2586,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151747,
-                DominateQuestLeaderboardId = 151748
+                DominateQuestLeaderboardId = 151748,
+                PowerChallengeScoreLeaderboardId = 153002,
+                PowerChallengeStarLeaderboardId = 153003
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2204,7 +2604,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151749,
-                DominateQuestLeaderboardId = 151750
+                DominateQuestLeaderboardId = 151750,
+                PowerChallengeScoreLeaderboardId = 153004,
+                PowerChallengeStarLeaderboardId = 153005
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2219,7 +2621,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151751,
-                DominateQuestLeaderboardId = 151752
+                DominateQuestLeaderboardId = 151752,
+                PowerChallengeScoreLeaderboardId = 153006,
+                PowerChallengeStarLeaderboardId = 153007
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2234,9 +2638,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151753,
-                DominateQuestLeaderboardId = 151754
+                DominateQuestLeaderboardId = 151754,
+                PowerChallengeScoreLeaderboardId = 153008,
+                PowerChallengeStarLeaderboardId = 153009
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Lead You Into the Promised Land",
+                Id = 576160,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Come on and Sit Here by My Side",
             Id = 573959,
@@ -2275,7 +2689,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151755,
-                DominateQuestLeaderboardId = 151756
+                DominateQuestLeaderboardId = 151756,
+                PowerChallengeScoreLeaderboardId = 153010,
+                PowerChallengeStarLeaderboardId = 153011
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2291,7 +2707,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151757,
-                DominateQuestLeaderboardId = 151758
+                DominateQuestLeaderboardId = 151758,
+                PowerChallengeScoreLeaderboardId = 153012,
+                PowerChallengeStarLeaderboardId = 153013
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2306,7 +2724,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151759,
-                DominateQuestLeaderboardId = 151760
+                DominateQuestLeaderboardId = 151760,
+                PowerChallengeScoreLeaderboardId = 153014,
+                PowerChallengeStarLeaderboardId = 153015
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2321,9 +2741,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151761,
-                DominateQuestLeaderboardId = 151762
+                DominateQuestLeaderboardId = 151762,
+                PowerChallengeScoreLeaderboardId = 153016,
+                PowerChallengeStarLeaderboardId = 153017
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "We Are Riding for the Battlefield in Force Tonight",
+                Id = 576161,
+                Points = 10
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "For Victory We Ride",
             Id = 573965,
@@ -2353,7 +2783,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151764,
-                DominateQuestLeaderboardId = 151765
+                DominateQuestLeaderboardId = 151765,
+                PowerChallengeScoreLeaderboardId = 153018,
+                PowerChallengeStarLeaderboardId = 153019
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2369,7 +2801,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151766,
-                DominateQuestLeaderboardId = 151767
+                DominateQuestLeaderboardId = 151767,
+                PowerChallengeScoreLeaderboardId = 153020,
+                PowerChallengeStarLeaderboardId = 153021
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2384,7 +2818,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151768,
-                DominateQuestLeaderboardId = 151769
+                DominateQuestLeaderboardId = 151769,
+                PowerChallengeScoreLeaderboardId = 153022,
+                PowerChallengeStarLeaderboardId = 153023
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2399,9 +2835,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151770,
-                DominateQuestLeaderboardId = 151771
+                DominateQuestLeaderboardId = 151771,
+                PowerChallengeScoreLeaderboardId = 153024,
+                PowerChallengeStarLeaderboardId = 153025
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "She Never Loved Me, Why Should Anyone?",
+                Id = 576162,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Ride Into the Sun",
             Id = 573970,
@@ -2440,7 +2886,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151772,
-                DominateQuestLeaderboardId = 151773
+                DominateQuestLeaderboardId = 151773,
+                PowerChallengeScoreLeaderboardId = 153026,
+                PowerChallengeStarLeaderboardId = 153027
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2456,7 +2904,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151774,
-                DominateQuestLeaderboardId = 151775
+                DominateQuestLeaderboardId = 151775,
+                PowerChallengeScoreLeaderboardId = 153028,
+                PowerChallengeStarLeaderboardId = 153029
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2471,7 +2921,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151776,
-                DominateQuestLeaderboardId = 151777
+                DominateQuestLeaderboardId = 151777,
+                PowerChallengeScoreLeaderboardId = 153030,
+                PowerChallengeStarLeaderboardId = 153031
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2486,9 +2938,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151778,
-                DominateQuestLeaderboardId = 151779
+                DominateQuestLeaderboardId = 151779,
+                PowerChallengeScoreLeaderboardId = 153032,
+                PowerChallengeStarLeaderboardId = 153033
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "You Can't Hide",
+                Id = 576163,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Kill the Ghosts That Hide in Your Soul",
             Id = 573976,
@@ -2518,7 +2980,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151780,
-                DominateQuestLeaderboardId = 151781
+                DominateQuestLeaderboardId = 151781,
+                PowerChallengeScoreLeaderboardId = 153034,
+                PowerChallengeStarLeaderboardId = 153035
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2534,7 +2998,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151782,
-                DominateQuestLeaderboardId = 151783
+                DominateQuestLeaderboardId = 151783,
+                PowerChallengeScoreLeaderboardId = 153036,
+                PowerChallengeStarLeaderboardId = 153037
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2549,7 +3015,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151784,
-                DominateQuestLeaderboardId = 151785
+                DominateQuestLeaderboardId = 151785,
+                PowerChallengeScoreLeaderboardId = 153038,
+                PowerChallengeStarLeaderboardId = 153039
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2564,9 +3032,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151786,
-                DominateQuestLeaderboardId = 151787
+                DominateQuestLeaderboardId = 151787,
+                PowerChallengeScoreLeaderboardId = 153040,
+                PowerChallengeStarLeaderboardId = 153041
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "I'm Going to Knock It All Down",
+                Id = 576164,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Echo Fading We Can't Let Go",
             Id = 573981,
@@ -2596,7 +3074,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151788,
-                DominateQuestLeaderboardId = 151789
+                DominateQuestLeaderboardId = 151789,
+                PowerChallengeScoreLeaderboardId = 153042,
+                PowerChallengeStarLeaderboardId = 153043
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2612,7 +3092,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151790,
-                DominateQuestLeaderboardId = 151791
+                DominateQuestLeaderboardId = 151791,
+                PowerChallengeScoreLeaderboardId = 153044,
+                PowerChallengeStarLeaderboardId = 153045
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2627,7 +3109,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151792,
-                DominateQuestLeaderboardId = 151793
+                DominateQuestLeaderboardId = 151793,
+                PowerChallengeScoreLeaderboardId = 153046,
+                PowerChallengeStarLeaderboardId = 153047
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2642,9 +3126,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151794,
-                DominateQuestLeaderboardId = 151795
+                DominateQuestLeaderboardId = 151795,
+                PowerChallengeScoreLeaderboardId = 153048,
+                PowerChallengeStarLeaderboardId = 153049
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "The Walls Are Closing In",
+                Id = 576165,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Can't Explain What's Come over Me",
             Id = 573986,
@@ -2675,7 +3169,9 @@ GHWOR_SONGS = [
                 ),
                 QuickplayLeaderboardId = 151797,
                 FourPowerQuestLeaderboardId = 151798,
-                DominateQuestLeaderboardId = 151799
+                DominateQuestLeaderboardId = 151799,
+                PowerChallengeScoreLeaderboardId = 153050,
+                PowerChallengeStarLeaderboardId = 153051
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2692,7 +3188,9 @@ GHWOR_SONGS = [
                 ),
                 QuickplayLeaderboardId = 151800,
                 FourPowerQuestLeaderboardId = 151801,
-                DominateQuestLeaderboardId = 151802
+                DominateQuestLeaderboardId = 151802,
+                PowerChallengeScoreLeaderboardId = 153052,
+                PowerChallengeStarLeaderboardId = 153053
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2708,7 +3206,9 @@ GHWOR_SONGS = [
                 ),
                 QuickplayLeaderboardId = 151803,
                 FourPowerQuestLeaderboardId = 151804,
-                DominateQuestLeaderboardId = 151805
+                DominateQuestLeaderboardId = 151805,
+                PowerChallengeScoreLeaderboardId = 153054,
+                PowerChallengeStarLeaderboardId = 153055
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2724,9 +3224,19 @@ GHWOR_SONGS = [
                 ),
                 QuickplayLeaderboardId = 151806,
                 FourPowerQuestLeaderboardId = 151807,
-                DominateQuestLeaderboardId = 151808
+                DominateQuestLeaderboardId = 151808,
+                PowerChallengeScoreLeaderboardId = 153056,
+                PowerChallengeStarLeaderboardId = 153057
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Some People Risk to Employ Me",
+                Id = 576166,
+                Points = 10
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Wage the War on Organized Crime",
             Id = 573991,
@@ -2736,7 +3246,7 @@ GHWOR_SONGS = [
             Instrument = INSTRUMENT_GUITAR,
             LeaderboardId = 151796,
             Metadata = AchievementMetadata(
-                Title = "Dave Mustaine '90s Voxtar Challenge",
+                Title = "Dave Mustaine 90's Voxtar Challenge",
                 Id = 573992,
                 Points = 10
             )
@@ -2765,7 +3275,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151810,
-                DominateQuestLeaderboardId = 151811
+                DominateQuestLeaderboardId = 151811,
+                PowerChallengeScoreLeaderboardId = 153058,
+                PowerChallengeStarLeaderboardId = 153059
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2781,7 +3293,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151812,
-                DominateQuestLeaderboardId = 151813
+                DominateQuestLeaderboardId = 151813,
+                PowerChallengeScoreLeaderboardId = 153060,
+                PowerChallengeStarLeaderboardId = 153061
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2796,7 +3310,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151814,
-                DominateQuestLeaderboardId = 151815
+                DominateQuestLeaderboardId = 151815,
+                PowerChallengeScoreLeaderboardId = 153062,
+                PowerChallengeStarLeaderboardId = 153063
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2811,9 +3327,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151816,
-                DominateQuestLeaderboardId = 151817
+                DominateQuestLeaderboardId = 151817,
+                PowerChallengeScoreLeaderboardId = 153064,
+                PowerChallengeStarLeaderboardId = 153065
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Tired of Livin' like a Blind Man",
+                Id = 576167,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "I've Been Wrong, I've Been Down",
             Id = 573997,
@@ -2852,7 +3378,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151819,
-                DominateQuestLeaderboardId = 151820
+                DominateQuestLeaderboardId = 151820,
+                PowerChallengeScoreLeaderboardId = 153066,
+                PowerChallengeStarLeaderboardId = 153067
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2868,7 +3396,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [4, 5]
                 ),
                 QuickplayLeaderboardId = 151821,
-                DominateQuestLeaderboardId = 151822
+                DominateQuestLeaderboardId = 151822,
+                PowerChallengeScoreLeaderboardId = 153068,
+                PowerChallengeStarLeaderboardId = 153069
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2883,7 +3413,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [6, 7, 8]
                 ),
                 QuickplayLeaderboardId = 151823,
-                DominateQuestLeaderboardId = 151824
+                DominateQuestLeaderboardId = 151824,
+                PowerChallengeScoreLeaderboardId = 153070,
+                PowerChallengeStarLeaderboardId = 153071
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2898,9 +3430,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3]
                 ),
                 QuickplayLeaderboardId = 151825,
-                DominateQuestLeaderboardId = 151826
+                DominateQuestLeaderboardId = 151826,
+                PowerChallengeScoreLeaderboardId = 153072,
+                PowerChallengeStarLeaderboardId = 153073
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Hot Sweat, Got Debt",
+                Id = 576168,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "I Got the Time, but the Time Don't Pay",
             Id = 574003,
@@ -2939,7 +3481,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151827,
-                DominateQuestLeaderboardId = 151828
+                DominateQuestLeaderboardId = 151828,
+                PowerChallengeScoreLeaderboardId = 153074,
+                PowerChallengeStarLeaderboardId = 153075
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -2955,7 +3499,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151829,
-                DominateQuestLeaderboardId = 151830
+                DominateQuestLeaderboardId = 151830,
+                PowerChallengeScoreLeaderboardId = 153076,
+                PowerChallengeStarLeaderboardId = 153077
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -2970,7 +3516,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151831,
-                DominateQuestLeaderboardId = 151832
+                DominateQuestLeaderboardId = 151832,
+                PowerChallengeScoreLeaderboardId = 153078,
+                PowerChallengeStarLeaderboardId = 153079
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -2985,9 +3533,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151833,
-                DominateQuestLeaderboardId = 151834
+                DominateQuestLeaderboardId = 151834,
+                PowerChallengeScoreLeaderboardId = 153080,
+                PowerChallengeStarLeaderboardId = 153081
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Venereal Mother Embrace the Loss",
+                Id = 576169,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Inherit My Life",
             Id = 574009,
@@ -3017,7 +3575,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151835,
-                DominateQuestLeaderboardId = 151836
+                DominateQuestLeaderboardId = 151836,
+                PowerChallengeScoreLeaderboardId = 153082,
+                PowerChallengeStarLeaderboardId = 153083
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3025,7 +3585,7 @@ GHWOR_SONGS = [
                 ExpertBaseScore = 84325,
                 ExpertPlusAvailable = false,
                 FiveStarAchievementMetadata = AchievementMetadata(
-                    Title = "To Be a Joke and, Look, Another Line Without a Hook",
+                    Title = "To Be a Joke and Look, Another Line Without a Hook",
                     Id = 574016,
                     Points = 5
                 ),
@@ -3033,14 +3593,16 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151837,
-                DominateQuestLeaderboardId = 151838
+                DominateQuestLeaderboardId = 151838,
+                PowerChallengeScoreLeaderboardId = 153084,
+                PowerChallengeStarLeaderboardId = 153085
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 40,
                 ExpertBaseScore = 26641,
                 FiveStarAchievementMetadata = AchievementMetadata(
-                    Title = "You Sing the Words, but Don't Know What It Means",
+                    Title = "You Sing the Words, But Don't Know What It Means",
                     Id = 574017,
                     Points = 5
                 ),
@@ -3048,7 +3610,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151839,
-                DominateQuestLeaderboardId = 151840
+                DominateQuestLeaderboardId = 151840,
+                PowerChallengeScoreLeaderboardId = 153086,
+                PowerChallengeStarLeaderboardId = 153087
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3063,9 +3627,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151841,
-                DominateQuestLeaderboardId = 151842
+                DominateQuestLeaderboardId = 151842,
+                PowerChallengeScoreLeaderboardId = 153088,
+                PowerChallengeStarLeaderboardId = 153089
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "I'm Telling You the Truth",
+                Id = 576170,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "You Wear Me Out",
             Id = 574014,
@@ -3095,7 +3669,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151843,
-                DominateQuestLeaderboardId = 151844
+                DominateQuestLeaderboardId = 151844,
+                PowerChallengeScoreLeaderboardId = 153090,
+                PowerChallengeStarLeaderboardId = 153091
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3111,7 +3687,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151845,
-                DominateQuestLeaderboardId = 151846
+                DominateQuestLeaderboardId = 151846,
+                PowerChallengeScoreLeaderboardId = 153092,
+                PowerChallengeStarLeaderboardId = 153093
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -3126,7 +3704,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151847,
-                DominateQuestLeaderboardId = 151848
+                DominateQuestLeaderboardId = 151848,
+                PowerChallengeScoreLeaderboardId = 153094,
+                PowerChallengeStarLeaderboardId = 153095
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3141,9 +3721,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151849,
-                DominateQuestLeaderboardId = 151850
+                DominateQuestLeaderboardId = 151850,
+                PowerChallengeScoreLeaderboardId = 153096,
+                PowerChallengeStarLeaderboardId = 153097
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "A Flag of Many Colors Is What This Land's All About",
+                Id = 576171,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Cry for the Indians",
             Id = 574019,
@@ -3173,7 +3763,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151851,
-                DominateQuestLeaderboardId = 151852
+                DominateQuestLeaderboardId = 151852,
+                PowerChallengeScoreLeaderboardId = 153098,
+                PowerChallengeStarLeaderboardId = 153099
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3189,7 +3781,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151853,
-                DominateQuestLeaderboardId = 151854
+                DominateQuestLeaderboardId = 151854,
+                PowerChallengeScoreLeaderboardId = 153100,
+                PowerChallengeStarLeaderboardId = 153101
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -3204,7 +3798,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151855,
-                DominateQuestLeaderboardId = 151856
+                DominateQuestLeaderboardId = 151856,
+                PowerChallengeScoreLeaderboardId = 153102,
+                PowerChallengeStarLeaderboardId = 153103
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3219,9 +3815,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151857,
-                DominateQuestLeaderboardId = 151858
+                DominateQuestLeaderboardId = 151858,
+                PowerChallengeScoreLeaderboardId = 153104,
+                PowerChallengeStarLeaderboardId = 153105
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Promises of What I Seemed to Be",
+                Id = 576172,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Leavin' on a Southern Train",
             Id = 574024,
@@ -3251,7 +3857,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151860,
-                DominateQuestLeaderboardId = 151861
+                DominateQuestLeaderboardId = 151861,
+                PowerChallengeScoreLeaderboardId = 153106,
+                PowerChallengeStarLeaderboardId = 153107
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3267,7 +3875,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151862,
-                DominateQuestLeaderboardId = 151863
+                DominateQuestLeaderboardId = 151863,
+                PowerChallengeScoreLeaderboardId = 153108,
+                PowerChallengeStarLeaderboardId = 153109
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -3282,7 +3892,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151864,
-                DominateQuestLeaderboardId = 151865
+                DominateQuestLeaderboardId = 151865,
+                PowerChallengeScoreLeaderboardId = 153110,
+                PowerChallengeStarLeaderboardId = 153111
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3297,9 +3909,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151866,
-                DominateQuestLeaderboardId = 151867
+                DominateQuestLeaderboardId = 151867,
+                PowerChallengeScoreLeaderboardId = 153112,
+                PowerChallengeStarLeaderboardId = 153113
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "All I Can Do Is Play",
+                Id = 576173,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "An Invincible Design",
             Id = 574029,
@@ -3338,7 +3960,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151868,
-                DominateQuestLeaderboardId = 151869
+                DominateQuestLeaderboardId = 151869,
+                PowerChallengeScoreLeaderboardId = 153114,
+                PowerChallengeStarLeaderboardId = 153115
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3354,7 +3978,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151870,
-                DominateQuestLeaderboardId = 151871
+                DominateQuestLeaderboardId = 151871,
+                PowerChallengeScoreLeaderboardId = 153116,
+                PowerChallengeStarLeaderboardId = 153117
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -3369,7 +3995,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151872,
-                DominateQuestLeaderboardId = 151873
+                DominateQuestLeaderboardId = 151873,
+                PowerChallengeScoreLeaderboardId = 153118,
+                PowerChallengeStarLeaderboardId = 153119
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3384,9 +4012,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151874,
-                DominateQuestLeaderboardId = 151875
+                DominateQuestLeaderboardId = 151875,
+                PowerChallengeScoreLeaderboardId = 153120,
+                PowerChallengeStarLeaderboardId = 153121
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Can't Wait Another Day Without You",
+                Id = 576174,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Waited So Long",
             Id = 574035,
@@ -3416,7 +4054,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151876,
-                DominateQuestLeaderboardId = 151877
+                DominateQuestLeaderboardId = 151877,
+                PowerChallengeScoreLeaderboardId = 153122,
+                PowerChallengeStarLeaderboardId = 153123
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3432,7 +4072,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151878,
-                DominateQuestLeaderboardId = 151879
+                DominateQuestLeaderboardId = 151879,
+                PowerChallengeScoreLeaderboardId = 153124,
+                PowerChallengeStarLeaderboardId = 153125
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -3447,7 +4089,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151880,
-                DominateQuestLeaderboardId = 151881
+                DominateQuestLeaderboardId = 151881,
+                PowerChallengeScoreLeaderboardId = 153126,
+                PowerChallengeStarLeaderboardId = 153127
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3462,9 +4106,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151882,
-                DominateQuestLeaderboardId = 151883
+                DominateQuestLeaderboardId = 151883,
+                PowerChallengeScoreLeaderboardId = 153128,
+                PowerChallengeStarLeaderboardId = 153129
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Tomorrow Is a Long, Long Time",
+                Id = 576175,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Could You Go and Run Into Me?",
             Id = 574040,
@@ -3494,7 +4148,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151885,
-                DominateQuestLeaderboardId = 151886
+                DominateQuestLeaderboardId = 151886,
+                PowerChallengeScoreLeaderboardId = 153130,
+                PowerChallengeStarLeaderboardId = 153131
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3510,7 +4166,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151887,
-                DominateQuestLeaderboardId = 151888
+                DominateQuestLeaderboardId = 151888,
+                PowerChallengeScoreLeaderboardId = 153132,
+                PowerChallengeStarLeaderboardId = 153133
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -3525,7 +4183,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151889,
-                DominateQuestLeaderboardId = 151890
+                DominateQuestLeaderboardId = 151890,
+                PowerChallengeScoreLeaderboardId = 153134,
+                PowerChallengeStarLeaderboardId = 153135
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3540,9 +4200,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151891,
-                DominateQuestLeaderboardId = 151892
+                DominateQuestLeaderboardId = 151892,
+                PowerChallengeScoreLeaderboardId = 153136,
+                PowerChallengeStarLeaderboardId = 153137
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "You Can't Understand That She's My Girl",
+                Id = 576176,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "She Might Need a Lot of Loving but She Don't Need You",
             Id = 574045,
@@ -3581,7 +4251,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151893,
-                DominateQuestLeaderboardId = 151894
+                DominateQuestLeaderboardId = 151894,
+                PowerChallengeScoreLeaderboardId = 153138,
+                PowerChallengeStarLeaderboardId = 153139
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3597,7 +4269,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151895,
-                DominateQuestLeaderboardId = 151896
+                DominateQuestLeaderboardId = 151896,
+                PowerChallengeScoreLeaderboardId = 153140,
+                PowerChallengeStarLeaderboardId = 153141
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -3612,7 +4286,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151897,
-                DominateQuestLeaderboardId = 151898
+                DominateQuestLeaderboardId = 151898,
+                PowerChallengeScoreLeaderboardId = 153142,
+                PowerChallengeStarLeaderboardId = 153143
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3627,9 +4303,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151899,
-                DominateQuestLeaderboardId = 151900
+                DominateQuestLeaderboardId = 151900,
+                PowerChallengeScoreLeaderboardId = 153144,
+                PowerChallengeStarLeaderboardId = 153145
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Haven't Said Enough",
+                Id = 576177,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Oh No, I've Said Too Much",
             Id = 574051,
@@ -3659,7 +4345,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151902,
-                DominateQuestLeaderboardId = 151903
+                DominateQuestLeaderboardId = 151903,
+                PowerChallengeScoreLeaderboardId = 153146,
+                PowerChallengeStarLeaderboardId = 153147
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3675,7 +4363,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151904,
-                DominateQuestLeaderboardId = 151905
+                DominateQuestLeaderboardId = 151905,
+                PowerChallengeScoreLeaderboardId = 153148,
+                PowerChallengeStarLeaderboardId = 153149
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -3690,7 +4380,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151906,
-                DominateQuestLeaderboardId = 151907
+                DominateQuestLeaderboardId = 151907,
+                PowerChallengeScoreLeaderboardId = 153150,
+                PowerChallengeStarLeaderboardId = 153151
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3705,11 +4397,21 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151908,
-                DominateQuestLeaderboardId = 151909
+                DominateQuestLeaderboardId = 151909,
+                PowerChallengeScoreLeaderboardId = 153152,
+                PowerChallengeStarLeaderboardId = 153153
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "No Place for Hiding, Baby",
+                Id = 576178,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
-            Title = "You Pull the Trigger of My",
+            Title = "You Pull the Trigger of My...",
             Id = 574056,
             Points = 4
         )),
@@ -3746,7 +4448,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151911,
-                DominateQuestLeaderboardId = 151912
+                DominateQuestLeaderboardId = 151912,
+                PowerChallengeScoreLeaderboardId = 153154,
+                PowerChallengeStarLeaderboardId = 153155
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3762,7 +4466,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151913,
-                DominateQuestLeaderboardId = 151914
+                DominateQuestLeaderboardId = 151914,
+                PowerChallengeScoreLeaderboardId = 153156,
+                PowerChallengeStarLeaderboardId = 153157
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -3777,7 +4483,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151915,
-                DominateQuestLeaderboardId = 151916
+                DominateQuestLeaderboardId = 151916,
+                PowerChallengeScoreLeaderboardId = 153158,
+                PowerChallengeStarLeaderboardId = 153159
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3792,9 +4500,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151917,
-                DominateQuestLeaderboardId = 151918
+                DominateQuestLeaderboardId = 151918,
+                PowerChallengeScoreLeaderboardId = 153160,
+                PowerChallengeStarLeaderboardId = 153161
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Know You're Out There",
+                Id = 576179,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Can You Feel the Thunder?",
             Id = 574062,
@@ -3833,7 +4551,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151920,
-                DominateQuestLeaderboardId = 151921
+                DominateQuestLeaderboardId = 151921,
+                PowerChallengeScoreLeaderboardId = 153162,
+                PowerChallengeStarLeaderboardId = 153163
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3849,7 +4569,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151922,
-                DominateQuestLeaderboardId = 151923
+                DominateQuestLeaderboardId = 151923,
+                PowerChallengeScoreLeaderboardId = 153164,
+                PowerChallengeStarLeaderboardId = 153165
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -3864,7 +4586,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151924,
-                DominateQuestLeaderboardId = 151925
+                DominateQuestLeaderboardId = 151925,
+                PowerChallengeScoreLeaderboardId = 153166,
+                PowerChallengeStarLeaderboardId = 153167
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3879,9 +4603,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151926,
-                DominateQuestLeaderboardId = 151927
+                DominateQuestLeaderboardId = 151927,
+                PowerChallengeScoreLeaderboardId = 153168,
+                PowerChallengeStarLeaderboardId = 153169
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Felt You like Electric Light",
+                Id = 576180,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "I Walk from My Machine",
             Id = 574068,
@@ -3920,7 +4654,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151928,
-                DominateQuestLeaderboardId = 151929
+                DominateQuestLeaderboardId = 151929,
+                PowerChallengeScoreLeaderboardId = 153170,
+                PowerChallengeStarLeaderboardId = 153171
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -3936,7 +4672,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151930,
-                DominateQuestLeaderboardId = 151931
+                DominateQuestLeaderboardId = 151931,
+                PowerChallengeScoreLeaderboardId = 153172,
+                PowerChallengeStarLeaderboardId = 153173
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -3951,7 +4689,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151932,
-                DominateQuestLeaderboardId = 151933
+                DominateQuestLeaderboardId = 151933,
+                PowerChallengeScoreLeaderboardId = 153174,
+                PowerChallengeStarLeaderboardId = 153175
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -3966,9 +4706,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151934,
-                DominateQuestLeaderboardId = 151935
+                DominateQuestLeaderboardId = 151935,
+                PowerChallengeScoreLeaderboardId = 153176,
+                PowerChallengeStarLeaderboardId = 153177
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Bang-Bang, Blow You Away",
+                Id = 576181,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Bang-Bang, Shoot 'Em Up",
             Id = 574074,
@@ -3998,7 +4748,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151937,
-                DominateQuestLeaderboardId = 151938
+                DominateQuestLeaderboardId = 151938,
+                PowerChallengeScoreLeaderboardId = 153178,
+                PowerChallengeStarLeaderboardId = 153179
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4014,7 +4766,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151939,
-                DominateQuestLeaderboardId = 151940
+                DominateQuestLeaderboardId = 151940,
+                PowerChallengeScoreLeaderboardId = 153180,
+                PowerChallengeStarLeaderboardId = 153181
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4029,7 +4783,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151941,
-                DominateQuestLeaderboardId = 151942
+                DominateQuestLeaderboardId = 151942,
+                PowerChallengeScoreLeaderboardId = 153182,
+                PowerChallengeStarLeaderboardId = 153183
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4044,9 +4800,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151943,
-                DominateQuestLeaderboardId = 151944
+                DominateQuestLeaderboardId = 151944,
+                PowerChallengeScoreLeaderboardId = 153184,
+                PowerChallengeStarLeaderboardId = 153185
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Custom Kitchen Deliveries",
+                Id = 576182,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "I Want My MTV",
             Id = 574079,
@@ -4085,7 +4851,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151946,
-                DominateQuestLeaderboardId = 151947
+                DominateQuestLeaderboardId = 151947,
+                PowerChallengeScoreLeaderboardId = 153186,
+                PowerChallengeStarLeaderboardId = 153187
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4101,7 +4869,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151948,
-                DominateQuestLeaderboardId = 151949
+                DominateQuestLeaderboardId = 151949,
+                PowerChallengeScoreLeaderboardId = 153188,
+                PowerChallengeStarLeaderboardId = 153189
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4116,7 +4886,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151950,
-                DominateQuestLeaderboardId = 151951
+                DominateQuestLeaderboardId = 151951,
+                PowerChallengeScoreLeaderboardId = 153190,
+                PowerChallengeStarLeaderboardId = 153191
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4131,9 +4903,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151952,
-                DominateQuestLeaderboardId = 151953
+                DominateQuestLeaderboardId = 151953,
+                PowerChallengeScoreLeaderboardId = 153192,
+                PowerChallengeStarLeaderboardId = 153193
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "What's the Difference of Never Knowing at All",
+                Id = 576183,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Situation Never What You Want It to Be",
             Id = 574085,
@@ -4172,7 +4954,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151955,
-                DominateQuestLeaderboardId = 151956
+                DominateQuestLeaderboardId = 151956,
+                PowerChallengeScoreLeaderboardId = 153194,
+                PowerChallengeStarLeaderboardId = 153195
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4188,7 +4972,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151957,
-                DominateQuestLeaderboardId = 151958
+                DominateQuestLeaderboardId = 151958,
+                PowerChallengeScoreLeaderboardId = 153196,
+                PowerChallengeStarLeaderboardId = 153197
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4203,7 +4989,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151959,
-                DominateQuestLeaderboardId = 151960
+                DominateQuestLeaderboardId = 151960,
+                PowerChallengeScoreLeaderboardId = 153198,
+                PowerChallengeStarLeaderboardId = 153199
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4218,9 +5006,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151961,
-                DominateQuestLeaderboardId = 151962
+                DominateQuestLeaderboardId = 151962,
+                PowerChallengeScoreLeaderboardId = 153200,
+                PowerChallengeStarLeaderboardId = 153201
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "I've Been Scratchin' Fleas",
+                Id = 576184,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Rock It on Over",
             Id = 574091,
@@ -4259,7 +5057,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151963,
-                DominateQuestLeaderboardId = 151964
+                DominateQuestLeaderboardId = 151964,
+                PowerChallengeScoreLeaderboardId = 153202,
+                PowerChallengeStarLeaderboardId = 153203
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4275,7 +5075,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6, 7]
                 ),
                 QuickplayLeaderboardId = 151965,
-                DominateQuestLeaderboardId = 151966
+                DominateQuestLeaderboardId = 151966,
+                PowerChallengeScoreLeaderboardId = 153204,
+                PowerChallengeStarLeaderboardId = 153205
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4290,7 +5092,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [8]
                 ),
                 QuickplayLeaderboardId = 151967,
-                DominateQuestLeaderboardId = 151968
+                DominateQuestLeaderboardId = 151968,
+                PowerChallengeScoreLeaderboardId = 153206,
+                PowerChallengeStarLeaderboardId = 153207
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4305,9 +5109,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151969,
-                DominateQuestLeaderboardId = 151970
+                DominateQuestLeaderboardId = 151970,
+                PowerChallengeScoreLeaderboardId = 153208,
+                PowerChallengeStarLeaderboardId = 153209
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "We Are Strong, We Are One",
+                Id = 576185,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "One for All, All for One",
             Id = 574097,
@@ -4337,7 +5151,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151971,
-                DominateQuestLeaderboardId = 151972
+                DominateQuestLeaderboardId = 151972,
+                PowerChallengeScoreLeaderboardId = 153210,
+                PowerChallengeStarLeaderboardId = 153211
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4353,7 +5169,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151973,
-                DominateQuestLeaderboardId = 151974
+                DominateQuestLeaderboardId = 151974,
+                PowerChallengeScoreLeaderboardId = 153212,
+                PowerChallengeStarLeaderboardId = 153213
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4368,7 +5186,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151975,
-                DominateQuestLeaderboardId = 151976
+                DominateQuestLeaderboardId = 151976,
+                PowerChallengeScoreLeaderboardId = 153214,
+                PowerChallengeStarLeaderboardId = 153215
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4383,9 +5203,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151977,
-                DominateQuestLeaderboardId = 151978
+                DominateQuestLeaderboardId = 151978,
+                PowerChallengeScoreLeaderboardId = 153216,
+                PowerChallengeStarLeaderboardId = 153217
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Ma's Been Thrown Out of the Social Circle",
+                Id = 576186,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "They Say He's Sick, He's Obscene",
             Id = 574102,
@@ -4415,7 +5245,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151980,
-                DominateQuestLeaderboardId = 151981
+                DominateQuestLeaderboardId = 151981,
+                PowerChallengeScoreLeaderboardId = 153218,
+                PowerChallengeStarLeaderboardId = 153219
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4431,7 +5263,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151982,
-                DominateQuestLeaderboardId = 151983
+                DominateQuestLeaderboardId = 151983,
+                PowerChallengeScoreLeaderboardId = 153220,
+                PowerChallengeStarLeaderboardId = 153221
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4446,7 +5280,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151984,
-                DominateQuestLeaderboardId = 151985
+                DominateQuestLeaderboardId = 151985,
+                PowerChallengeScoreLeaderboardId = 153222,
+                PowerChallengeStarLeaderboardId = 153223
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4461,9 +5297,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151986,
-                DominateQuestLeaderboardId = 151987
+                DominateQuestLeaderboardId = 151987,
+                PowerChallengeScoreLeaderboardId = 153224,
+                PowerChallengeStarLeaderboardId = 153225
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "So Your Heart's Blown Open",
+                Id = 576187,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Let's Make This Perfectly Clear",
             Id = 574107,
@@ -4502,7 +5348,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151989,
-                DominateQuestLeaderboardId = 151990
+                DominateQuestLeaderboardId = 151990,
+                PowerChallengeScoreLeaderboardId = 153226,
+                PowerChallengeStarLeaderboardId = 153227
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4518,7 +5366,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151991,
-                DominateQuestLeaderboardId = 151992
+                DominateQuestLeaderboardId = 151992,
+                PowerChallengeScoreLeaderboardId = 153228,
+                PowerChallengeStarLeaderboardId = 153229
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4533,7 +5383,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 151993,
-                DominateQuestLeaderboardId = 151994
+                DominateQuestLeaderboardId = 151994,
+                PowerChallengeScoreLeaderboardId = 153230,
+                PowerChallengeStarLeaderboardId = 153231
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4548,9 +5400,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 151995,
-                DominateQuestLeaderboardId = 151996
+                DominateQuestLeaderboardId = 151996,
+                PowerChallengeScoreLeaderboardId = 153232,
+                PowerChallengeStarLeaderboardId = 153233
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "But I Don't Care",
+                Id = 576188,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Pleased to Meet You, Take My Hand",
             Id = 574113,
@@ -4589,7 +5451,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 151997,
-                DominateQuestLeaderboardId = 151998
+                DominateQuestLeaderboardId = 151998,
+                PowerChallengeScoreLeaderboardId = 153234,
+                PowerChallengeStarLeaderboardId = 153235
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4605,7 +5469,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 151999,
-                DominateQuestLeaderboardId = 152000
+                DominateQuestLeaderboardId = 152000,
+                PowerChallengeScoreLeaderboardId = 153236,
+                PowerChallengeStarLeaderboardId = 153237
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4620,7 +5486,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152001,
-                DominateQuestLeaderboardId = 152002
+                DominateQuestLeaderboardId = 152002,
+                PowerChallengeScoreLeaderboardId = 153238,
+                PowerChallengeStarLeaderboardId = 153239
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4635,9 +5503,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152003,
-                DominateQuestLeaderboardId = 152004
+                DominateQuestLeaderboardId = 152004,
+                PowerChallengeScoreLeaderboardId = 153240,
+                PowerChallengeStarLeaderboardId = 153241
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "I Wish I Could, But It's Too Late",
+                Id = 576189,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Can You Help Me Occupy My Brain?",
             Id = 574119,
@@ -4667,7 +5545,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152005,
-                DominateQuestLeaderboardId = 152006
+                DominateQuestLeaderboardId = 152006,
+                PowerChallengeScoreLeaderboardId = 153242,
+                PowerChallengeStarLeaderboardId = 153243
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4683,7 +5563,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [4, 5, 6]
                 ),
                 QuickplayLeaderboardId = 152007,
-                DominateQuestLeaderboardId = 152008
+                DominateQuestLeaderboardId = 152008,
+                PowerChallengeScoreLeaderboardId = 153244,
+                PowerChallengeStarLeaderboardId = 153245
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4698,7 +5580,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152009,
-                DominateQuestLeaderboardId = 152010
+                DominateQuestLeaderboardId = 152010,
+                PowerChallengeScoreLeaderboardId = 153246,
+                PowerChallengeStarLeaderboardId = 153247
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4713,9 +5597,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3]
                 ),
                 QuickplayLeaderboardId = 152011,
-                DominateQuestLeaderboardId = 152012
+                DominateQuestLeaderboardId = 152012,
+                PowerChallengeScoreLeaderboardId = 153248,
+                PowerChallengeStarLeaderboardId = 153249
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Razzle 'n' a Dazzle 'n' a Flash a Little Light",
+                Id = 576190,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Love Is like a Bomb",
             Id = 574124,
@@ -4745,7 +5639,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152014,
-                DominateQuestLeaderboardId = 152015
+                DominateQuestLeaderboardId = 152015,
+                PowerChallengeScoreLeaderboardId = 153250,
+                PowerChallengeStarLeaderboardId = 153251
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4761,7 +5657,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [6, 7]
                 ),
                 QuickplayLeaderboardId = 152016,
-                DominateQuestLeaderboardId = 152017
+                DominateQuestLeaderboardId = 152017,
+                PowerChallengeScoreLeaderboardId = 153252,
+                PowerChallengeStarLeaderboardId = 153253
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4776,7 +5674,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [8]
                 ),
                 QuickplayLeaderboardId = 152018,
-                DominateQuestLeaderboardId = 152019
+                DominateQuestLeaderboardId = 152019,
+                PowerChallengeScoreLeaderboardId = 153254,
+                PowerChallengeStarLeaderboardId = 153255
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4791,9 +5691,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4, 5]
                 ),
                 QuickplayLeaderboardId = 152020,
-                DominateQuestLeaderboardId = 152021
+                DominateQuestLeaderboardId = 152021,
+                PowerChallengeScoreLeaderboardId = 153256,
+                PowerChallengeStarLeaderboardId = 153257
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "Waiting for You I Want to Just Tell You",
+                Id = 576191,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Pick up and Fight, Release Tonight",
             Id = 574129,
@@ -4832,7 +5742,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152022,
-                DominateQuestLeaderboardId = 152023
+                DominateQuestLeaderboardId = 152023,
+                PowerChallengeScoreLeaderboardId = 153258,
+                PowerChallengeStarLeaderboardId = 153259
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4840,7 +5752,7 @@ GHWOR_SONGS = [
                 ExpertBaseScore = 116250,
                 ExpertPlusAvailable = true,
                 FiveStarAchievementMetadata = AchievementMetadata(
-                    Title = "The Reckoning, the Sickening",
+                    Title = "The Reckoning, The Sickening",
                     Id = 574137,
                     Points = 5
                 ),
@@ -4848,7 +5760,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152024,
-                DominateQuestLeaderboardId = 152025
+                DominateQuestLeaderboardId = 152025,
+                PowerChallengeScoreLeaderboardId = 153260,
+                PowerChallengeStarLeaderboardId = 153261
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4863,7 +5777,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152026,
-                DominateQuestLeaderboardId = 152027
+                DominateQuestLeaderboardId = 152027,
+                PowerChallengeScoreLeaderboardId = 153262,
+                PowerChallengeStarLeaderboardId = 153263
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4878,9 +5794,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152028,
-                DominateQuestLeaderboardId = 152029
+                DominateQuestLeaderboardId = 152029,
+                PowerChallengeScoreLeaderboardId = 153264,
+                PowerChallengeStarLeaderboardId = 153265
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "The Limits of the Dead",
+                Id = 576192,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "And the Rain Will Kill Us All",
             Id = 574135,
@@ -4910,7 +5836,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152030,
-                DominateQuestLeaderboardId = 152031
+                DominateQuestLeaderboardId = 152031,
+                PowerChallengeScoreLeaderboardId = 153266,
+                PowerChallengeStarLeaderboardId = 153267
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -4926,7 +5854,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152032,
-                DominateQuestLeaderboardId = 152033
+                DominateQuestLeaderboardId = 152033,
+                PowerChallengeScoreLeaderboardId = 153268,
+                PowerChallengeStarLeaderboardId = 153269
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -4941,7 +5871,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152034,
-                DominateQuestLeaderboardId = 152035
+                DominateQuestLeaderboardId = 152035,
+                PowerChallengeScoreLeaderboardId = 153270,
+                PowerChallengeStarLeaderboardId = 153271
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -4956,9 +5888,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152036,
-                DominateQuestLeaderboardId = 152037
+                DominateQuestLeaderboardId = 152037,
+                PowerChallengeScoreLeaderboardId = 153272,
+                PowerChallengeStarLeaderboardId = 153273
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "We Kill More than We Need",
+                Id = 576193,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Then We Push for War",
             Id = 574140,
@@ -4988,7 +5930,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152038,
-                DominateQuestLeaderboardId = 152039
+                DominateQuestLeaderboardId = 152039,
+                PowerChallengeScoreLeaderboardId = 153274,
+                PowerChallengeStarLeaderboardId = 153275
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5004,7 +5948,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152040,
-                DominateQuestLeaderboardId = 152041
+                DominateQuestLeaderboardId = 152041,
+                PowerChallengeScoreLeaderboardId = 153276,
+                PowerChallengeStarLeaderboardId = 153277
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5019,7 +5965,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152042,
-                DominateQuestLeaderboardId = 152043
+                DominateQuestLeaderboardId = 152043,
+                PowerChallengeScoreLeaderboardId = 153278,
+                PowerChallengeStarLeaderboardId = 153279
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5034,9 +5982,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152044,
-                DominateQuestLeaderboardId = 152045
+                DominateQuestLeaderboardId = 152045,
+                PowerChallengeScoreLeaderboardId = 153280,
+                PowerChallengeStarLeaderboardId = 153281
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "We Love to Make You Overstand",
+                Id = 576194,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "That This Gross Sphere Is Not Jah Land",
             Id = 574145,
@@ -5066,7 +6024,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152046,
-                DominateQuestLeaderboardId = 152047
+                DominateQuestLeaderboardId = 152047,
+                PowerChallengeScoreLeaderboardId = 153282,
+                PowerChallengeStarLeaderboardId = 153283
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5082,7 +6042,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152048,
-                DominateQuestLeaderboardId = 152049
+                DominateQuestLeaderboardId = 152049,
+                PowerChallengeScoreLeaderboardId = 153284,
+                PowerChallengeStarLeaderboardId = 153285
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5097,7 +6059,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152050,
-                DominateQuestLeaderboardId = 152051
+                DominateQuestLeaderboardId = 152051,
+                PowerChallengeScoreLeaderboardId = 153286,
+                PowerChallengeStarLeaderboardId = 153287
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5112,9 +6076,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152052,
-                DominateQuestLeaderboardId = 152053
+                DominateQuestLeaderboardId = 152053,
+                PowerChallengeScoreLeaderboardId = 153288,
+                PowerChallengeStarLeaderboardId = 153289
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "They Finally Found Me",
+                Id = 576195,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "This'll Be the End Today of the Wanted Man",
             Id = 574150,
@@ -5144,7 +6118,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152055,
-                DominateQuestLeaderboardId = 152056
+                DominateQuestLeaderboardId = 152056,
+                PowerChallengeScoreLeaderboardId = 153290,
+                PowerChallengeStarLeaderboardId = 153291
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5160,7 +6136,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152057,
-                DominateQuestLeaderboardId = 152058
+                DominateQuestLeaderboardId = 152058,
+                PowerChallengeScoreLeaderboardId = 153292,
+                PowerChallengeStarLeaderboardId = 153293
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5175,7 +6153,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152059,
-                DominateQuestLeaderboardId = 152060
+                DominateQuestLeaderboardId = 152060,
+                PowerChallengeScoreLeaderboardId = 153294,
+                PowerChallengeStarLeaderboardId = 153295
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5190,11 +6170,21 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152061,
-                DominateQuestLeaderboardId = 152062
+                DominateQuestLeaderboardId = 152062,
+                PowerChallengeScoreLeaderboardId = 153296,
+                PowerChallengeStarLeaderboardId = 153297
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "A Fast Driver Such a Clean Machine",
+                Id = 576196,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
-            Title = "They Gonna Rock It Rock It Rock It",
+            Title = "They Gonna Rock It, Rock It, Rock It",
             Id = 574155,
             Points = 5
         )),
@@ -5231,7 +6221,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152064,
-                DominateQuestLeaderboardId = 152065
+                DominateQuestLeaderboardId = 152065,
+                PowerChallengeScoreLeaderboardId = 153298,
+                PowerChallengeStarLeaderboardId = 153299
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5247,7 +6239,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152066,
-                DominateQuestLeaderboardId = 152067
+                DominateQuestLeaderboardId = 152067,
+                PowerChallengeScoreLeaderboardId = 153300,
+                PowerChallengeStarLeaderboardId = 153301
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5262,7 +6256,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152068,
-                DominateQuestLeaderboardId = 152069
+                DominateQuestLeaderboardId = 152069,
+                PowerChallengeScoreLeaderboardId = 153302,
+                PowerChallengeStarLeaderboardId = 153303
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5277,9 +6273,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152070,
-                DominateQuestLeaderboardId = 152071
+                DominateQuestLeaderboardId = 152071,
+                PowerChallengeScoreLeaderboardId = 153304,
+                PowerChallengeStarLeaderboardId = 153305
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Never Get to Fall in Love, Never Get to Be Cool",
+                Id = 576197,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "There's Colors on the Street",
             Id = 574161,
@@ -5318,7 +6324,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152072,
-                FourPowerQuestLeaderboardId = 152073
+                FourPowerQuestLeaderboardId = 152073,
+                PowerChallengeScoreLeaderboardId = 153306,
+                PowerChallengeStarLeaderboardId = 153307
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5334,7 +6342,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [6, 7]
                 ),
                 QuickplayLeaderboardId = 152074,
-                FourPowerQuestLeaderboardId = 152075
+                FourPowerQuestLeaderboardId = 152075,
+                PowerChallengeScoreLeaderboardId = 153308,
+                PowerChallengeStarLeaderboardId = 153309
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5349,7 +6359,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [8]
                 ),
                 QuickplayLeaderboardId = 152076,
-                FourPowerQuestLeaderboardId = 152077
+                FourPowerQuestLeaderboardId = 152077,
+                PowerChallengeScoreLeaderboardId = 153310,
+                PowerChallengeStarLeaderboardId = 153311
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5364,9 +6376,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4, 5]
                 ),
                 QuickplayLeaderboardId = 152078,
-                FourPowerQuestLeaderboardId = 152079
+                FourPowerQuestLeaderboardId = 152079,
+                PowerChallengeScoreLeaderboardId = 153312,
+                PowerChallengeStarLeaderboardId = 153313
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Then I Found Something That Changed It All…",
+                Id = 576198,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "2112 Pt. 2 - The Temples Of Syrinx",
@@ -5391,7 +6413,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152081,
-                FourPowerQuestLeaderboardId = 152082
+                FourPowerQuestLeaderboardId = 152082,
+                PowerChallengeScoreLeaderboardId = 153314,
+                PowerChallengeStarLeaderboardId = 153315
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5407,7 +6431,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152083,
-                FourPowerQuestLeaderboardId = 152084
+                FourPowerQuestLeaderboardId = 152084,
+                PowerChallengeScoreLeaderboardId = 153316,
+                PowerChallengeStarLeaderboardId = 153317
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5422,7 +6448,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152085,
-                FourPowerQuestLeaderboardId = 152086
+                FourPowerQuestLeaderboardId = 152086,
+                PowerChallengeScoreLeaderboardId = 153318,
+                PowerChallengeStarLeaderboardId = 153319
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5437,9 +6465,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152087,
-                FourPowerQuestLeaderboardId = 152088
+                FourPowerQuestLeaderboardId = 152088,
+                PowerChallengeScoreLeaderboardId = 153320,
+                PowerChallengeStarLeaderboardId = 153321
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "The Benevolent Wisdom of the Priests",
+                Id = 576199,
+                Points = 5
+            )
+        ),
         VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
             Instrument = INSTRUMENT_BASS,
             LeaderboardId = 152080,
@@ -5473,7 +6511,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152089,
-                FourPowerQuestLeaderboardId = 152090
+                FourPowerQuestLeaderboardId = 152090,
+                PowerChallengeScoreLeaderboardId = 153322,
+                PowerChallengeStarLeaderboardId = 153323
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5488,9 +6528,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4, 5]
                 ),
                 QuickplayLeaderboardId = 152091,
-                FourPowerQuestLeaderboardId = 152092
+                FourPowerQuestLeaderboardId = 152092,
+                PowerChallengeScoreLeaderboardId = 153324,
+                PowerChallengeStarLeaderboardId = 153325
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "See How It Sings like a Sad Heart",
+                Id = 576200,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "2112 Pt. 4 - Presentation",
@@ -5515,7 +6565,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152094,
-                FourPowerQuestLeaderboardId = 152095
+                FourPowerQuestLeaderboardId = 152095,
+                PowerChallengeScoreLeaderboardId = 153326,
+                PowerChallengeStarLeaderboardId = 153327
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5531,7 +6583,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152096,
-                FourPowerQuestLeaderboardId = 152097
+                FourPowerQuestLeaderboardId = 152097,
+                PowerChallengeScoreLeaderboardId = 153328,
+                PowerChallengeStarLeaderboardId = 153329
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5546,7 +6600,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152098,
-                FourPowerQuestLeaderboardId = 152099
+                FourPowerQuestLeaderboardId = 152099,
+                PowerChallengeScoreLeaderboardId = 153330,
+                PowerChallengeStarLeaderboardId = 153331
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5561,9 +6617,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152100,
-                FourPowerQuestLeaderboardId = 152101
+                FourPowerQuestLeaderboardId = 152101,
+                PowerChallengeScoreLeaderboardId = 153332,
+                PowerChallengeStarLeaderboardId = 153333
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "A Circle of Grim, Expressionless Faces",
+                Id = 576201,
+                Points = 5
+            )
+        ),
         VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
             Instrument = INSTRUMENT_BASS,
             LeaderboardId = 152093,
@@ -5597,7 +6663,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152102,
-                FourPowerQuestLeaderboardId = 152103
+                FourPowerQuestLeaderboardId = 152103,
+                PowerChallengeScoreLeaderboardId = 153334,
+                PowerChallengeStarLeaderboardId = 153335
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5613,7 +6681,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152104,
-                FourPowerQuestLeaderboardId = 152105
+                FourPowerQuestLeaderboardId = 152105,
+                PowerChallengeScoreLeaderboardId = 153336,
+                PowerChallengeStarLeaderboardId = 153337
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5628,7 +6698,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152106,
-                FourPowerQuestLeaderboardId = 152107
+                FourPowerQuestLeaderboardId = 152107,
+                PowerChallengeScoreLeaderboardId = 153338,
+                PowerChallengeStarLeaderboardId = 153339
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5643,9 +6715,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152108,
-                FourPowerQuestLeaderboardId = 152109
+                FourPowerQuestLeaderboardId = 152109,
+                PowerChallengeScoreLeaderboardId = 153340,
+                PowerChallengeStarLeaderboardId = 153341
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "As He Stood at the Summit of the Staircase",
+                Id = 576202,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "2112 Pt. 6 - Soliloquy",
@@ -5670,7 +6752,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152110,
-                FourPowerQuestLeaderboardId = 152111
+                FourPowerQuestLeaderboardId = 152111,
+                PowerChallengeScoreLeaderboardId = 153342,
+                PowerChallengeStarLeaderboardId = 153343
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5686,7 +6770,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152112,
-                FourPowerQuestLeaderboardId = 152113
+                FourPowerQuestLeaderboardId = 152113,
+                PowerChallengeScoreLeaderboardId = 153344,
+                PowerChallengeStarLeaderboardId = 153345
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5701,7 +6787,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152114,
-                FourPowerQuestLeaderboardId = 152115
+                FourPowerQuestLeaderboardId = 152115,
+                PowerChallengeScoreLeaderboardId = 153346,
+                PowerChallengeStarLeaderboardId = 153347
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5716,9 +6804,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152116,
-                FourPowerQuestLeaderboardId = 152117
+                FourPowerQuestLeaderboardId = 152117,
+                PowerChallengeScoreLeaderboardId = 153348,
+                PowerChallengeStarLeaderboardId = 153349
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "My Last Refuge in My Total Despair",
+                Id = 576203,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "2112 Pt. 7 - Grand Finale",
@@ -5743,7 +6841,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152118,
-                FourPowerQuestLeaderboardId = 152119
+                FourPowerQuestLeaderboardId = 152119,
+                PowerChallengeScoreLeaderboardId = 153350,
+                PowerChallengeStarLeaderboardId = 153351
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5751,7 +6851,7 @@ GHWOR_SONGS = [
                 ExpertBaseScore = 57065,
                 ExpertPlusAvailable = true,
                 FiveStarAchievementMetadata = AchievementMetadata(
-                    Title = "How Meaningless Life Had Become with the Loss of All These Things",
+                    Title = "How Meaningless Life Had Become",
                     Id = 574192,
                     Points = 5
                 ),
@@ -5759,7 +6859,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [6, 7]
                 ),
                 QuickplayLeaderboardId = 152120,
-                FourPowerQuestLeaderboardId = 152121
+                FourPowerQuestLeaderboardId = 152121,
+                PowerChallengeScoreLeaderboardId = 153352,
+                PowerChallengeStarLeaderboardId = 153353
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5774,7 +6876,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [8]
                 ),
                 QuickplayLeaderboardId = 152122,
-                FourPowerQuestLeaderboardId = 152123
+                FourPowerQuestLeaderboardId = 152123,
+                PowerChallengeScoreLeaderboardId = 153354,
+                PowerChallengeStarLeaderboardId = 153355
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5789,9 +6893,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4, 5]
                 ),
                 QuickplayLeaderboardId = 152124,
-                FourPowerQuestLeaderboardId = 152125
+                FourPowerQuestLeaderboardId = 152125,
+                PowerChallengeScoreLeaderboardId = 153356,
+                PowerChallengeStarLeaderboardId = 153357
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "The Bleakness of Megadon",
+                Id = 576204,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Savior",
@@ -5808,7 +6922,7 @@ GHWOR_SONGS = [
                 ExpertNotesInChart = 1063,
                 ExpertBaseScore = 112261,
                 FiveStarAchievementMetadata = AchievementMetadata(
-                    Title = "Through the Valleys of an Aging Face That This World Has Forgotten",
+                    Title = "Through the Valleys of an Aging Face",
                     Id = 574197,
                     Points = 5
                 ),
@@ -5816,7 +6930,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152127,
-                DominateQuestLeaderboardId = 152128
+                DominateQuestLeaderboardId = 152128,
+                PowerChallengeScoreLeaderboardId = 153358,
+                PowerChallengeStarLeaderboardId = 153359
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5832,7 +6948,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152129,
-                DominateQuestLeaderboardId = 152130
+                DominateQuestLeaderboardId = 152130,
+                PowerChallengeScoreLeaderboardId = 153360,
+                PowerChallengeStarLeaderboardId = 153361
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5847,7 +6965,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152131,
-                DominateQuestLeaderboardId = 152132
+                DominateQuestLeaderboardId = 152132,
+                PowerChallengeScoreLeaderboardId = 153362,
+                PowerChallengeStarLeaderboardId = 153363
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5862,9 +6982,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152133,
-                DominateQuestLeaderboardId = 152134
+                DominateQuestLeaderboardId = 152134,
+                PowerChallengeScoreLeaderboardId = 153364,
+                PowerChallengeStarLeaderboardId = 153365
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "That's When She Said, \"I Don't Hate You Boy\"",
+                Id = 576205,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "If This Ain't Love, Then How Do We Get Out?",
             Id = 574195,
@@ -5903,7 +7033,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152136,
-                DominateQuestLeaderboardId = 152137
+                DominateQuestLeaderboardId = 152137,
+                PowerChallengeScoreLeaderboardId = 153366,
+                PowerChallengeStarLeaderboardId = 153367
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5919,7 +7051,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152138,
-                DominateQuestLeaderboardId = 152139
+                DominateQuestLeaderboardId = 152139,
+                PowerChallengeScoreLeaderboardId = 153368,
+                PowerChallengeStarLeaderboardId = 153369
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -5934,7 +7068,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152140,
-                DominateQuestLeaderboardId = 152141
+                DominateQuestLeaderboardId = 152141,
+                PowerChallengeScoreLeaderboardId = 153370,
+                PowerChallengeStarLeaderboardId = 153371
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -5949,9 +7085,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152142,
-                DominateQuestLeaderboardId = 152143
+                DominateQuestLeaderboardId = 152143,
+                PowerChallengeScoreLeaderboardId = 153372,
+                PowerChallengeStarLeaderboardId = 153373
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Against a Wicked Counselor Such as I",
+                Id = 576206,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "You Won't Make It Out",
             Id = 574201,
@@ -5990,7 +7136,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152145,
-                DominateQuestLeaderboardId = 152146
+                DominateQuestLeaderboardId = 152146,
+                PowerChallengeScoreLeaderboardId = 153374,
+                PowerChallengeStarLeaderboardId = 153375
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -5998,7 +7146,7 @@ GHWOR_SONGS = [
                 ExpertBaseScore = 106525,
                 ExpertPlusAvailable = false,
                 FiveStarAchievementMetadata = AchievementMetadata(
-                    Title = "That's Okay, Man, 'Cause I like the Abuse",
+                    Title = "That's Okay Man 'Cause I like the Abuse",
                     Id = 574210,
                     Points = 5
                 ),
@@ -6006,7 +7154,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152147,
-                DominateQuestLeaderboardId = 152148
+                DominateQuestLeaderboardId = 152148,
+                PowerChallengeScoreLeaderboardId = 153376,
+                PowerChallengeStarLeaderboardId = 153377
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -6021,7 +7171,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152149,
-                DominateQuestLeaderboardId = 152150
+                DominateQuestLeaderboardId = 152150,
+                PowerChallengeScoreLeaderboardId = 153378,
+                PowerChallengeStarLeaderboardId = 153379
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -6036,11 +7188,21 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152151,
-                DominateQuestLeaderboardId = 152152
+                DominateQuestLeaderboardId = 152152,
+                PowerChallengeScoreLeaderboardId = 153380,
+                PowerChallengeStarLeaderboardId = 153381
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "If She Keeps It Up, I Just Might Tell Her So",
+                Id = 576207,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
-            Title = "The More You Suffer the More It Shows You Really Care",
+            Title = "The More You Suffer, The More It Shows You Really Care",
             Id = 574207,
             Points = 4
         )),
@@ -6077,7 +7239,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152153,
-                DominateQuestLeaderboardId = 152154
+                DominateQuestLeaderboardId = 152154,
+                PowerChallengeScoreLeaderboardId = 153382,
+                PowerChallengeStarLeaderboardId = 153383
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6093,7 +7257,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152155,
-                DominateQuestLeaderboardId = 152156
+                DominateQuestLeaderboardId = 152156,
+                PowerChallengeScoreLeaderboardId = 153384,
+                PowerChallengeStarLeaderboardId = 153385
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -6108,7 +7274,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152157,
-                DominateQuestLeaderboardId = 152158
+                DominateQuestLeaderboardId = 152158,
+                PowerChallengeScoreLeaderboardId = 153386,
+                PowerChallengeStarLeaderboardId = 153387
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -6123,9 +7291,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152159,
-                DominateQuestLeaderboardId = 152160
+                DominateQuestLeaderboardId = 152160,
+                PowerChallengeScoreLeaderboardId = 153388,
+                PowerChallengeStarLeaderboardId = 153389
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Your Head, Your Eyes, Your Head",
+                Id = 576208,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Baby, You Can Have It",
             Id = 574213,
@@ -6155,7 +7333,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152162,
-                DominateQuestLeaderboardId = 152163
+                DominateQuestLeaderboardId = 152163,
+                PowerChallengeScoreLeaderboardId = 153390,
+                PowerChallengeStarLeaderboardId = 153391
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6171,7 +7351,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152164,
-                DominateQuestLeaderboardId = 152165
+                DominateQuestLeaderboardId = 152165,
+                PowerChallengeScoreLeaderboardId = 153392,
+                PowerChallengeStarLeaderboardId = 153393
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -6186,7 +7368,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152166,
-                DominateQuestLeaderboardId = 152167
+                DominateQuestLeaderboardId = 152167,
+                PowerChallengeScoreLeaderboardId = 153394,
+                PowerChallengeStarLeaderboardId = 153395
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -6201,9 +7385,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152168,
-                DominateQuestLeaderboardId = 152169
+                DominateQuestLeaderboardId = 152169,
+                PowerChallengeScoreLeaderboardId = 153396,
+                PowerChallengeStarLeaderboardId = 153397
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I'm Gonna Work the Straw",
+                Id = 576209,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "They're Gonna Rip It Off",
             Id = 574218,
@@ -6242,7 +7436,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152171,
-                DominateQuestLeaderboardId = 152172
+                DominateQuestLeaderboardId = 152172,
+                PowerChallengeScoreLeaderboardId = 153398,
+                PowerChallengeStarLeaderboardId = 153399
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6258,7 +7454,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152173,
-                DominateQuestLeaderboardId = 152174
+                DominateQuestLeaderboardId = 152174,
+                PowerChallengeScoreLeaderboardId = 153400,
+                PowerChallengeStarLeaderboardId = 153401
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -6273,14 +7471,16 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152175,
-                DominateQuestLeaderboardId = 152176
+                DominateQuestLeaderboardId = 152176,
+                PowerChallengeScoreLeaderboardId = 153402,
+                PowerChallengeStarLeaderboardId = 153403
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 845,
                 ExpertBaseScore = 46289,
                 FiveStarAchievementMetadata = AchievementMetadata(
-                    Title = "Them Cufflinks, the Stick Pin",
+                    Title = "Them Cufflinks, The Stick Pin",
                     Id = 574229,
                     Points = 5
                 ),
@@ -6288,9 +7488,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152177,
-                DominateQuestLeaderboardId = 152178
+                DominateQuestLeaderboardId = 152178,
+                PowerChallengeScoreLeaderboardId = 153404,
+                PowerChallengeStarLeaderboardId = 153405
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "The Top Coat and Top Hat",
+                Id = 576210,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "They Come Runnin' Just as Fast as They Can",
             Id = 574224,
@@ -6329,7 +7539,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152180,
-                DominateQuestLeaderboardId = 152181
+                DominateQuestLeaderboardId = 152181,
+                PowerChallengeScoreLeaderboardId = 153406,
+                PowerChallengeStarLeaderboardId = 153407
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6345,7 +7557,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152182,
-                DominateQuestLeaderboardId = 152183
+                DominateQuestLeaderboardId = 152183,
+                PowerChallengeScoreLeaderboardId = 153408,
+                PowerChallengeStarLeaderboardId = 153409
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -6360,7 +7574,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152184,
-                DominateQuestLeaderboardId = 152185
+                DominateQuestLeaderboardId = 152185,
+                PowerChallengeScoreLeaderboardId = 153410,
+                PowerChallengeStarLeaderboardId = 153411
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -6375,9 +7591,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152186,
-                DominateQuestLeaderboardId = 152187
+                DominateQuestLeaderboardId = 152187,
+                PowerChallengeScoreLeaderboardId = 153412,
+                PowerChallengeStarLeaderboardId = 153413
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "This Is a Wasteland Now",
+                Id = 576211,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Put the Weights Around Yourself",
             Id = 574230,
@@ -6416,7 +7642,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152188,
-                DominateQuestLeaderboardId = 152189
+                DominateQuestLeaderboardId = 152189,
+                PowerChallengeScoreLeaderboardId = 153414,
+                PowerChallengeStarLeaderboardId = 153415
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6432,7 +7660,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [6, 7, 8]
                 ),
                 QuickplayLeaderboardId = 152190,
-                DominateQuestLeaderboardId = 152191
+                DominateQuestLeaderboardId = 152191,
+                PowerChallengeScoreLeaderboardId = 153416,
+                PowerChallengeStarLeaderboardId = 153417
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -6447,9 +7677,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4, 5]
                 ),
                 QuickplayLeaderboardId = 152192,
-                DominateQuestLeaderboardId = 152193
+                DominateQuestLeaderboardId = 152193,
+                PowerChallengeScoreLeaderboardId = 153418,
+                PowerChallengeStarLeaderboardId = 153419
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "Liberty",
+                Id = 576212,
+                Points = 10
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "The Audience Is Listening",
             Id = 574236,
@@ -6479,7 +7719,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152194,
-                DominateQuestLeaderboardId = 152195
+                DominateQuestLeaderboardId = 152195,
+                PowerChallengeScoreLeaderboardId = 153420,
+                PowerChallengeStarLeaderboardId = 153421
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6495,7 +7737,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152196,
-                DominateQuestLeaderboardId = 152197
+                DominateQuestLeaderboardId = 152197,
+                PowerChallengeScoreLeaderboardId = 153422,
+                PowerChallengeStarLeaderboardId = 153423
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -6510,7 +7754,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152198,
-                DominateQuestLeaderboardId = 152199
+                DominateQuestLeaderboardId = 152199,
+                PowerChallengeScoreLeaderboardId = 153424,
+                PowerChallengeStarLeaderboardId = 153425
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -6525,9 +7771,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152200,
-                DominateQuestLeaderboardId = 152201
+                DominateQuestLeaderboardId = 152201,
+                PowerChallengeScoreLeaderboardId = 153426,
+                PowerChallengeStarLeaderboardId = 153427
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "In the Chill of the Night",
+                Id = 576213,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Does Whatever a Spider Can",
             Id = 574240,
@@ -6557,7 +7813,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152202,
-                DominateQuestLeaderboardId = 152203
+                DominateQuestLeaderboardId = 152203,
+                PowerChallengeScoreLeaderboardId = 153428,
+                PowerChallengeStarLeaderboardId = 153429
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6573,7 +7831,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152204,
-                DominateQuestLeaderboardId = 152205
+                DominateQuestLeaderboardId = 152205,
+                PowerChallengeScoreLeaderboardId = 153430,
+                PowerChallengeStarLeaderboardId = 153431
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -6588,7 +7848,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152206,
-                DominateQuestLeaderboardId = 152207
+                DominateQuestLeaderboardId = 152207,
+                PowerChallengeScoreLeaderboardId = 153432,
+                PowerChallengeStarLeaderboardId = 153433
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -6603,9 +7865,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152208,
-                DominateQuestLeaderboardId = 152209
+                DominateQuestLeaderboardId = 152209,
+                PowerChallengeScoreLeaderboardId = 153434,
+                PowerChallengeStarLeaderboardId = 153435
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Bet She Don't Know You Can Bite like That",
+                Id = 576214,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Don't You Scratch like That",
             Id = 574245,
@@ -6635,7 +7907,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152210,
-                DominateQuestLeaderboardId = 152211
+                DominateQuestLeaderboardId = 152211,
+                PowerChallengeScoreLeaderboardId = 153436,
+                PowerChallengeStarLeaderboardId = 153437
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6651,7 +7925,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152212,
-                DominateQuestLeaderboardId = 152213
+                DominateQuestLeaderboardId = 152213,
+                PowerChallengeScoreLeaderboardId = 153438,
+                PowerChallengeStarLeaderboardId = 153439
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -6666,7 +7942,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152214,
-                DominateQuestLeaderboardId = 152215
+                DominateQuestLeaderboardId = 152215,
+                PowerChallengeScoreLeaderboardId = 153440,
+                PowerChallengeStarLeaderboardId = 153441
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -6681,9 +7959,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152216,
-                DominateQuestLeaderboardId = 152217
+                DominateQuestLeaderboardId = 152217,
+                PowerChallengeScoreLeaderboardId = 153442,
+                PowerChallengeStarLeaderboardId = 153443
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "A Blitzkrieg Raining Down Evil",
+                Id = 576215,
+                Points = 10
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Heaven Sends Its Love",
             Id = 574250,
@@ -6713,7 +8001,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152219,
-                DominateQuestLeaderboardId = 152220
+                DominateQuestLeaderboardId = 152220,
+                PowerChallengeScoreLeaderboardId = 153444,
+                PowerChallengeStarLeaderboardId = 153445
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6729,7 +8019,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152221,
-                DominateQuestLeaderboardId = 152222
+                DominateQuestLeaderboardId = 152222,
+                PowerChallengeScoreLeaderboardId = 153446,
+                PowerChallengeStarLeaderboardId = 153447
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -6744,7 +8036,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152223,
-                DominateQuestLeaderboardId = 152224
+                DominateQuestLeaderboardId = 152224,
+                PowerChallengeScoreLeaderboardId = 153448,
+                PowerChallengeStarLeaderboardId = 153449
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -6759,9 +8053,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152225,
-                DominateQuestLeaderboardId = 152226
+                DominateQuestLeaderboardId = 152226,
+                PowerChallengeScoreLeaderboardId = 153450,
+                PowerChallengeStarLeaderboardId = 153451
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I'm Constantly Devastated Just to Stay Alive",
+                Id = 576216,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "I'm Constantly Devastated Just to Stay Alive",
             Id = 574255,
@@ -6800,7 +8104,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152227,
-                DominateQuestLeaderboardId = 152228
+                DominateQuestLeaderboardId = 152228,
+                PowerChallengeScoreLeaderboardId = 153452,
+                PowerChallengeStarLeaderboardId = 153453
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6816,7 +8122,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152229,
-                DominateQuestLeaderboardId = 152230
+                DominateQuestLeaderboardId = 152230,
+                PowerChallengeScoreLeaderboardId = 153454,
+                PowerChallengeStarLeaderboardId = 153455
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -6831,7 +8139,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152231,
-                DominateQuestLeaderboardId = 152232
+                DominateQuestLeaderboardId = 152232,
+                PowerChallengeScoreLeaderboardId = 153456,
+                PowerChallengeStarLeaderboardId = 153457
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -6846,9 +8156,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152233,
-                DominateQuestLeaderboardId = 152234
+                DominateQuestLeaderboardId = 152234,
+                PowerChallengeScoreLeaderboardId = 153458,
+                PowerChallengeStarLeaderboardId = 153459
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "One Bullet at a Time",
+                Id = 576217,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Disconnect and Self-Destruct",
             Id = 574261,
@@ -6879,7 +8199,9 @@ GHWOR_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152236,
                 FourPowerQuestLeaderboardId = 152237,
-                DominateQuestLeaderboardId = 152238
+                DominateQuestLeaderboardId = 152238,
+                PowerChallengeScoreLeaderboardId = 153460,
+                PowerChallengeStarLeaderboardId = 153461
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6896,7 +8218,9 @@ GHWOR_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152239,
                 FourPowerQuestLeaderboardId = 152240,
-                DominateQuestLeaderboardId = 152241
+                DominateQuestLeaderboardId = 152241,
+                PowerChallengeScoreLeaderboardId = 153462,
+                PowerChallengeStarLeaderboardId = 153463
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -6912,7 +8236,9 @@ GHWOR_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152242,
                 FourPowerQuestLeaderboardId = 152243,
-                DominateQuestLeaderboardId = 152244
+                DominateQuestLeaderboardId = 152244,
+                PowerChallengeScoreLeaderboardId = 153464,
+                PowerChallengeStarLeaderboardId = 153465
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -6928,9 +8254,19 @@ GHWOR_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152245,
                 FourPowerQuestLeaderboardId = 152246,
-                DominateQuestLeaderboardId = 152247
+                DominateQuestLeaderboardId = 152247,
+                PowerChallengeScoreLeaderboardId = 153466,
+                PowerChallengeStarLeaderboardId = 153467
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 19,
+            Metadata = AchievementMetadata(
+                Title = "Whet with Your Blood, I Sharpen My Sword",
+                Id = 576218,
+                Points = 10
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "For This I Was Chosen, Because I Fear Nothing",
             Id = 574266,
@@ -6940,7 +8276,7 @@ GHWOR_SONGS = [
             Instrument = INSTRUMENT_GUITAR,
             LeaderboardId = 152235,
             Metadata = AchievementMetadata(
-                Title = "Dave Mustaine '00s Voxtar Challenge",
+                Title = "Dave Mustaine 00's Voxtar Challenge",
                 Id = 574267,
                 Points = 10
             )
@@ -6969,7 +8305,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152248,
-                DominateQuestLeaderboardId = 152249
+                DominateQuestLeaderboardId = 152249,
+                PowerChallengeScoreLeaderboardId = 153468,
+                PowerChallengeStarLeaderboardId = 153469
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -6985,7 +8323,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152250,
-                DominateQuestLeaderboardId = 152251
+                DominateQuestLeaderboardId = 152251,
+                PowerChallengeScoreLeaderboardId = 153470,
+                PowerChallengeStarLeaderboardId = 153471
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -7000,7 +8340,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152252,
-                DominateQuestLeaderboardId = 152253
+                DominateQuestLeaderboardId = 152253,
+                PowerChallengeScoreLeaderboardId = 153472,
+                PowerChallengeStarLeaderboardId = 153473
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -7015,9 +8357,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152254,
-                DominateQuestLeaderboardId = 152255
+                DominateQuestLeaderboardId = 152255,
+                PowerChallengeScoreLeaderboardId = 153474,
+                PowerChallengeStarLeaderboardId = 153475
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "It's Too Late, It's Too Soon, Or Is It?",
+                Id = 576219,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "I Done It Before and I Can Do It Some More",
             Id = 574272,
@@ -7047,7 +8399,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152256,
-                DominateQuestLeaderboardId = 152257
+                DominateQuestLeaderboardId = 152257,
+                PowerChallengeScoreLeaderboardId = 153476,
+                PowerChallengeStarLeaderboardId = 153477
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -7063,7 +8417,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152258,
-                DominateQuestLeaderboardId = 152259
+                DominateQuestLeaderboardId = 152259,
+                PowerChallengeScoreLeaderboardId = 153478,
+                PowerChallengeStarLeaderboardId = 153479
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -7078,7 +8434,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152260,
-                DominateQuestLeaderboardId = 152261
+                DominateQuestLeaderboardId = 152261,
+                PowerChallengeScoreLeaderboardId = 153480,
+                PowerChallengeStarLeaderboardId = 153481
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -7093,9 +8451,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152262,
-                DominateQuestLeaderboardId = 152263
+                DominateQuestLeaderboardId = 152263,
+                PowerChallengeScoreLeaderboardId = 153482,
+                PowerChallengeStarLeaderboardId = 153483
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "This I Know the Risk Is Worth the Gain",
+                Id = 576220,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "One Last Hope to Rise and Break Away",
             Id = 574277,
@@ -7125,7 +8493,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152264,
-                DominateQuestLeaderboardId = 152265
+                DominateQuestLeaderboardId = 152265,
+                PowerChallengeScoreLeaderboardId = 153484,
+                PowerChallengeStarLeaderboardId = 153485
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -7141,7 +8511,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152266,
-                DominateQuestLeaderboardId = 152267
+                DominateQuestLeaderboardId = 152267,
+                PowerChallengeScoreLeaderboardId = 153486,
+                PowerChallengeStarLeaderboardId = 153487
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -7156,7 +8528,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152268,
-                DominateQuestLeaderboardId = 152269
+                DominateQuestLeaderboardId = 152269,
+                PowerChallengeScoreLeaderboardId = 153488,
+                PowerChallengeStarLeaderboardId = 153489
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -7171,9 +8545,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152270,
-                DominateQuestLeaderboardId = 152271
+                DominateQuestLeaderboardId = 152271,
+                PowerChallengeScoreLeaderboardId = 153490,
+                PowerChallengeStarLeaderboardId = 153491
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "See, I'm So High to You, But Don't Fade Away",
+                Id = 576221,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "I'm Flyin' Home",
             Id = 574282,
@@ -7203,7 +8587,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152272,
-                DominateQuestLeaderboardId = 152273
+                DominateQuestLeaderboardId = 152273,
+                PowerChallengeScoreLeaderboardId = 153492,
+                PowerChallengeStarLeaderboardId = 153493
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -7219,7 +8605,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152274,
-                DominateQuestLeaderboardId = 152275
+                DominateQuestLeaderboardId = 152275,
+                PowerChallengeScoreLeaderboardId = 153494,
+                PowerChallengeStarLeaderboardId = 153495
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -7234,7 +8622,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152276,
-                DominateQuestLeaderboardId = 152277
+                DominateQuestLeaderboardId = 152277,
+                PowerChallengeScoreLeaderboardId = 153496,
+                PowerChallengeStarLeaderboardId = 153497
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -7249,9 +8639,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152278,
-                DominateQuestLeaderboardId = 152279
+                DominateQuestLeaderboardId = 152279,
+                PowerChallengeScoreLeaderboardId = 153498,
+                PowerChallengeStarLeaderboardId = 153499
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Just Blows Me Away",
+                Id = 576222,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "I Wanna Make Love, You Never Stop",
             Id = 574287,
@@ -7281,7 +8681,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152281,
-                DominateQuestLeaderboardId = 152282
+                DominateQuestLeaderboardId = 152282,
+                PowerChallengeScoreLeaderboardId = 153500,
+                PowerChallengeStarLeaderboardId = 153501
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -7297,7 +8699,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152283,
-                DominateQuestLeaderboardId = 152284
+                DominateQuestLeaderboardId = 152284,
+                PowerChallengeScoreLeaderboardId = 153502,
+                PowerChallengeStarLeaderboardId = 153503
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -7312,7 +8716,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152285,
-                DominateQuestLeaderboardId = 152286
+                DominateQuestLeaderboardId = 152286,
+                PowerChallengeScoreLeaderboardId = 153504,
+                PowerChallengeStarLeaderboardId = 153505
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -7327,9 +8733,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152287,
-                DominateQuestLeaderboardId = 152288
+                DominateQuestLeaderboardId = 152288,
+                PowerChallengeScoreLeaderboardId = 153506,
+                PowerChallengeStarLeaderboardId = 153507
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "If You Could Flick a Switch and Open Your Third Eye",
+                Id = 576223,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "We Will Be Victorious",
             Id = 574292,
@@ -7368,7 +8784,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152289,
-                DominateQuestLeaderboardId = 152290
+                DominateQuestLeaderboardId = 152290,
+                PowerChallengeScoreLeaderboardId = 153508,
+                PowerChallengeStarLeaderboardId = 153509
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -7384,7 +8802,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152291,
-                DominateQuestLeaderboardId = 152292
+                DominateQuestLeaderboardId = 152292,
+                PowerChallengeScoreLeaderboardId = 153510,
+                PowerChallengeStarLeaderboardId = 153511
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -7399,7 +8819,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152293,
-                DominateQuestLeaderboardId = 152294
+                DominateQuestLeaderboardId = 152294,
+                PowerChallengeScoreLeaderboardId = 153512,
+                PowerChallengeStarLeaderboardId = 153513
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -7414,9 +8836,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152295,
-                DominateQuestLeaderboardId = 152296
+                DominateQuestLeaderboardId = 152296,
+                PowerChallengeScoreLeaderboardId = 153514,
+                PowerChallengeStarLeaderboardId = 153515
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Auf Dem Lande, Auf Dem Meer",
+                Id = 576224,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "Die Kreatur Muss Sterben",
             Id = 574298,
@@ -7446,7 +8878,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152297,
-                DominateQuestLeaderboardId = 152298
+                DominateQuestLeaderboardId = 152298,
+                PowerChallengeScoreLeaderboardId = 153516,
+                PowerChallengeStarLeaderboardId = 153517
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -7462,7 +8896,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152299,
-                DominateQuestLeaderboardId = 152300
+                DominateQuestLeaderboardId = 152300,
+                PowerChallengeScoreLeaderboardId = 153518,
+                PowerChallengeStarLeaderboardId = 153519
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -7477,7 +8913,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152301,
-                DominateQuestLeaderboardId = 152302
+                DominateQuestLeaderboardId = 152302,
+                PowerChallengeScoreLeaderboardId = 153520,
+                PowerChallengeStarLeaderboardId = 153521
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -7492,9 +8930,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152303,
-                DominateQuestLeaderboardId = 152304
+                DominateQuestLeaderboardId = 152304,
+                PowerChallengeScoreLeaderboardId = 153522,
+                PowerChallengeStarLeaderboardId = 153523
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Your Life Is Trite and Jaded",
+                Id = 576225,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "We're Right, We're Free",
             Id = 574303,
@@ -7524,7 +8972,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152306,
-                DominateQuestLeaderboardId = 152307
+                DominateQuestLeaderboardId = 152307,
+                PowerChallengeScoreLeaderboardId = 153524,
+                PowerChallengeStarLeaderboardId = 153525
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -7540,7 +8990,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [5, 6]
                 ),
                 QuickplayLeaderboardId = 152308,
-                DominateQuestLeaderboardId = 152309
+                DominateQuestLeaderboardId = 152309,
+                PowerChallengeScoreLeaderboardId = 153526,
+                PowerChallengeStarLeaderboardId = 153527
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -7555,7 +9007,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152310,
-                DominateQuestLeaderboardId = 152311
+                DominateQuestLeaderboardId = 152311,
+                PowerChallengeScoreLeaderboardId = 153528,
+                PowerChallengeStarLeaderboardId = 153529
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -7570,9 +9024,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3, 4]
                 ),
                 QuickplayLeaderboardId = 152312,
-                DominateQuestLeaderboardId = 152313
+                DominateQuestLeaderboardId = 152313,
+                PowerChallengeScoreLeaderboardId = 153530,
+                PowerChallengeStarLeaderboardId = 153531
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "For You, Things Seem to Turn Out Right",
+                Id = 576226,
+                Points = 4
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "I Only Get Sleepless Nights",
             Id = 574308,
@@ -7611,7 +9075,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [0, 1, 2]
                 ),
                 QuickplayLeaderboardId = 152315,
-                DominateQuestLeaderboardId = 152316
+                DominateQuestLeaderboardId = 152316,
+                PowerChallengeScoreLeaderboardId = 153532,
+                PowerChallengeStarLeaderboardId = 153533
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
@@ -7627,7 +9093,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [4, 5, 6]
                 ),
                 QuickplayLeaderboardId = 152317,
-                DominateQuestLeaderboardId = 152318
+                DominateQuestLeaderboardId = 152318,
+                PowerChallengeScoreLeaderboardId = 153534,
+                PowerChallengeStarLeaderboardId = 153535
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
@@ -7642,7 +9110,9 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [7, 8]
                 ),
                 QuickplayLeaderboardId = 152319,
-                DominateQuestLeaderboardId = 152320
+                DominateQuestLeaderboardId = 152320,
+                PowerChallengeScoreLeaderboardId = 153536,
+                PowerChallengeStarLeaderboardId = 153537
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
@@ -7657,9 +9127,19 @@ GHWOR_SONGS = [
                     ChallengeIndicies = [3]
                 ),
                 QuickplayLeaderboardId = 152321,
-                DominateQuestLeaderboardId = 152322
+                DominateQuestLeaderboardId = 152322,
+                PowerChallengeScoreLeaderboardId = 153538,
+                PowerChallengeStarLeaderboardId = 153539
             )
         ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Put My Faith in God and My Trust in You",
+                Id = 576227,
+                Points = 5
+            )
+        ),
         QuestDominateAchievement = Nullable(false, AchievementMetadata(
             Title = "In This World Full of You",
             Id = 574314,
@@ -28179,7 +29659,7 @@ for song in SONGS {
         achievement(
             title = song.QuestDominateAchievement.Value.Title,
             // title = format("{0} - Quest Dominate", song.Title),
-            description = format("Dominate {0} in Quest mode with 40 stars on Expert or Expert+ difficulty with any instrument", song.Title),
+            description = format("Dominate \"{0}\" in Quest mode with 40 stars on Expert or Expert+ difficulty with any instrument", song.Title),
             points = song.QuestDominateAchievement.Value.Points,
             id = song.QuestDominateAchievement.Value.Id,
             trigger = quest_dominate_trigger(song)
@@ -28191,11 +29671,11 @@ for song in SONGS {
     // assert(song.PowerChallengeAchievement.StarTarget != -1, format("{0} needs a Power Challenge star target", song.Title))
 
     
-    // if (song.Source == SOURCE_GHWOR) {
-    //     set = 0
-    // } else {
-    //     set = DLC_SUBSET
-    // }
+    if (song.Source == SOURCE_GHWOR) {
+        set = 0
+    } else {
+        set = DLC_SUBSET
+    }
 
     if (song.Title == "Suicide & Redemption J.H.") {
         // Even though the guitar part is different, it's close enough that this challenge can be merged.
@@ -28203,7 +29683,7 @@ for song in SONGS {
         assert(other_song.Artist == "Metallica", "Suicide & Redemption K.H. could not be found")
         achievement(
             title = "Suicide & Redemption - Power Challenge",
-            description = format("Clear either version of Suicide & Redemption in Power Challenge mode with {0} stars on Expert or Expert+ difficulty with any instrument", song.PowerChallengeAchievement.StarTarget),
+            description = format("Clear either version of \"Suicide & Redemption\" in Power Challenge mode with {0} stars on Expert or Expert+ difficulty with any instrument", song.PowerChallengeAchievement.StarTarget),
             points = song.PowerChallengeAchievement.Metadata.Points,
             id = song.PowerChallengeAchievement.Metadata.Id,
             // set = POWER_CHALLENGE_SUBSET,
@@ -28213,7 +29693,7 @@ for song in SONGS {
         // The full band challenges still exists for both.
         achievement(
             title = format("{0} - Full Band - {1} 5 Star", song.Title, full_band_difficulty_name),
-            description = format("Get five stars on {0} in Quickplay+ mode (no powers) on {1} with a full band of all 3 instruments", song.Title, full_band_difficulty_name),
+            description = format("Get five stars on \"{0}\" in Quickplay+ mode with no powers active on {1} with a full band of all 3 instruments", song.Title, full_band_difficulty_name),
             points = song.FullBandFiveStarAchievementMetadata.Points,
             id = song.FullBandFiveStarAchievementMetadata.Id,
             // set = FULL_BAND_SUBSET,
@@ -28237,7 +29717,7 @@ for song in SONGS {
         assert(other_song.Artist == "Lynyrd Skynyrd", "Sweet Home Alabama (Live) (GH5) could not be found")
         achievement(
             title = "Sweet Home Alabama (Live) - Power Challenge",
-            description = format("Clear Sweet Home Alabama (Live) in Power Challenge mode with {0} stars on Expert or Expert+ difficulty with any instrument", song.PowerChallengeAchievement.StarTarget),
+            description = format("Clear \"Sweet Home Alabama (Live)\" in Power Challenge mode with {0} stars on Expert or Expert+ difficulty with any instrument", song.PowerChallengeAchievement.StarTarget),
             points = song.PowerChallengeAchievement.Metadata.Points,
             id = song.PowerChallengeAchievement.Metadata.Id,
             // set = POWER_CHALLENGE_SUBSET,
@@ -28246,7 +29726,7 @@ for song in SONGS {
 
         achievement(
             title = format("Sweet Home Alabama (Live) - Full Band - {0} 5 Star", DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT]),
-            description = format("Get five stars on Sweet Home Alabama (Live) in Quickplay+ mode (no powers) on {0} with a full band of all 4 instruments", full_band_difficulty_name),
+            description = format("Get five stars on \"Sweet Home Alabama (Live)\" in Quickplay+ mode with no powers active on {0} with a full band of all 4 instruments", full_band_difficulty_name),
             points = song.FullBandFiveStarAchievementMetadata.Points,
             id = song.FullBandFiveStarAchievementMetadata.Id,
             // set = FULL_BAND_SUBSET,
@@ -28255,7 +29735,7 @@ for song in SONGS {
 
         leaderboard(
             title = "Sweet Home Alabama (Live) - Quickplay+ - Full Band",
-            description = "Get the highest score on Sweet Home Alabama (Live) in Quickplay+ with a full band of all 4 instruments",
+            description = "Get the highest score on \"Sweet Home Alabama (Live)\" in Quickplay+ with a full band of all 4 instruments",
             id = song.FullBandLeaderboardId,
             // set = FULL_BAND_SUBSET,
             start = full_band_leaderboard_quickplay_start_two_songs(song, other_song),
@@ -28268,7 +29748,7 @@ for song in SONGS {
         // The Power Challenge is merged with the other one, but the full band is still necessary.
         achievement(
             title = format("{0} - Full Band - {1} 5 Star", song.Title, full_band_difficulty_name),
-            description = format("Get five stars on {0} in Quickplay+ mode (no powers) on {1} with a full band of all 3 instruments", song.Title, full_band_difficulty_name),
+            description = format("Get five stars on \"{0}\" in Quickplay+ mode with no powers active on {1} with a full band of all 3 instruments", song.Title, full_band_difficulty_name),
             points = song.FullBandFiveStarAchievementMetadata.Points,
             id = song.FullBandFiveStarAchievementMetadata.Id,
             // set = FULL_BAND_SUBSET,
@@ -28277,7 +29757,7 @@ for song in SONGS {
 
         leaderboard(
             title = format("{0} - Quickplay+ - Full Band", song.Title),
-            description = format("Get the highest score on {0} in Quickplay+ with a full band of all 3 instruments", song.Title),
+            description = format("Get the highest score on \"{0}\" in Quickplay+ with a full band of all 3 instruments", song.Title),
             id = song.FullBandLeaderboardId,
             // set = FULL_BAND_SUBSET,
             start = full_band_leaderboard_quickplay_start(song),
@@ -28289,19 +29769,19 @@ for song in SONGS {
     } else if (song.Title == "Sweet Home Alabama (Live) (GH5)") {
         // These are the repeat cases which need to be skipped.
     } else {
-        // achievement(
-        //     // title = song.PowerChallengeAchievement.Metadata.Title,
-        //     title = format("{0} - Power Challenge", song.Title),
-        //     description = format("Clear {0} in Power Challenge mode with {1} stars on Expert or Expert+ difficulty with any instrument", song.Title, song.PowerChallengeAchievement.StarTarget),
-        //     points = song.PowerChallengeAchievement.Metadata.Points,
-        //     id = song.PowerChallengeAchievement.Metadata.Id,
-        //     // set = POWER_CHALLENGE_SUBSET,
-        //     trigger = power_challenge_star_trigger(song, song.PowerChallengeAchievement.StarTarget)
-        // )
+        achievement(
+            title = song.PowerChallengeAchievement.Metadata.Title,
+            // title = format("{0} - Power Challenge", song.Title),
+            description = format("Clear \"{0}\" in Power Challenge mode with {1} stars on Expert or Expert+ difficulty with any instrument", song.Title, song.PowerChallengeAchievement.StarTarget),
+            points = song.PowerChallengeAchievement.Metadata.Points,
+            id = song.PowerChallengeAchievement.Metadata.Id,
+            // set = POWER_CHALLENGE_SUBSET,
+            trigger = power_challenge_star_trigger(song, song.PowerChallengeAchievement.StarTarget)
+        )
 
         // achievement(
         //     title = format("{0} - Full Band - {1} 5 Star", song.Title, full_band_difficulty_name),
-        //     description = format("Get five stars on {0} in Quickplay+ mode (no powers) on {1} with a full band of all {2} instruments", song.Title, full_band_difficulty_name, length(song.Instruments)),
+        //     description = format("Get five stars on \"{0}\" in Quickplay+ mode with no powers active on {1} with a full band of all {2} instruments", song.Title, full_band_difficulty_name, length(song.Instruments)),
         //     points = song.FullBandFiveStarAchievementMetadata.Points,
         //     id = song.FullBandFiveStarAchievementMetadata.Id,
         //     // set = FULL_BAND_SUBSET,
@@ -28310,7 +29790,7 @@ for song in SONGS {
 
         // leaderboard(
         //     title = format("{0} - Quickplay+ - Full Band", song.Title),
-        //     description = format("Get the highest score on {0} in Quickplay+ with a full band of all {1} instruments", song.Title, length(song.Instruments)),
+        //     description = format("Get the highest score on \"{0}\" in Quickplay+ with a full band of all {1} instruments", song.Title, length(song.Instruments)),
         //     id = song.FullBandLeaderboardId,
         //     // set = FULL_BAND_SUBSET,
         //     start = full_band_leaderboard_quickplay_start(song),
@@ -28334,7 +29814,7 @@ for song in SONGS {
         achievement(
             title = song.VocalChallengeAchievement.Value.Metadata.Title,
             // title = format("{0} - {1} Challenge", song.Title, combined_instrument_name),
-            description = format("Clear {0} in Quickplay+ mode with 5 stars on both Expert {1} and Expert Vocals by yourself", song.Title, INSTRUMENT_TO_NAME[primary_instrument]),
+            description = format("Clear \"{0}\" in Quickplay+ mode with 5 stars on both Expert {1} and Expert Vocals by yourself", song.Title, INSTRUMENT_TO_NAME[primary_instrument]),
             points = song.VocalChallengeAchievement.Value.Metadata.Points,
             id = song.VocalChallengeAchievement.Value.Metadata.Id,
             trigger = five_star_with_vocals_trigger(song, primary_instrument, DIFFICULTY_EXPERT)
@@ -28342,7 +29822,7 @@ for song in SONGS {
 
         leaderboard(
             title = format("{0} - Quickplay+ - {1} Challenge", song.Title, combined_instrument_name),
-            description = format("Get the highest score on {0} in Quickplay+ on both Expert {1} and Expert Vocals by yourself", song.Title, INSTRUMENT_TO_NAME[primary_instrument]),
+            description = format("Get the highest score on \"{0}\" in Quickplay+ on both Expert {1} and Expert Vocals by yourself", song.Title, INSTRUMENT_TO_NAME[primary_instrument]),
             id = song.VocalChallengeAchievement.Value.LeaderboardId,
             start = leaderboard_quickplay_with_vocals_start(song, primary_instrument),
             cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
@@ -28370,14 +29850,14 @@ for song in SONGS {
             other_song_instrument = array_filter(other_song.Instruments, i => i.Instrument == instrument.Instrument)[0]
             if (instrument.Instrument == INSTRUMENT_DRUMS) {
                 five_star_description = format(
-                    "Get five stars on Suicide & Redemption in Quickplay+ mode (no powers) on {0} {1} with a score of at least {2} (J.H.) or {3} (K.H.)",
+                    "Get five stars on \"Suicide & Redemption\" in Quickplay+ mode with no powers active on {0} {1} with a score of at least {2} (J.H.) or {3} (K.H.)",
                     DIFFICULTY_TO_NAME[hardest_difficulty],
                     INSTRUMENT_TO_NAME[instrument.Instrument],
                     format_int_with_commas(instrument.ExpertBaseScore * 14 / 5),
                     format_int_with_commas(other_song_instrument.ExpertBaseScore * 14 / 5)
                 )
                 fc_description = format(
-                    "Full combo with all {0} (J.H.) or {1} (K.H.) notes on Suicide & Redemption in Quickplay+ mode (no powers) on {2} {3}",
+                    "Full combo with all {0} (J.H.) or {1} (K.H.) notes on \"Suicide & Redemption\" in Quickplay+ mode with no powers active on {2} {3}",
                     format_int_with_commas(instrument.ExpertNotesInChart),
                     format_int_with_commas(other_song_instrument.ExpertNotesInChart),
                     DIFFICULTY_TO_NAME[hardest_difficulty],
@@ -28385,13 +29865,13 @@ for song in SONGS {
                 )
             } else {
                 five_star_description = format(
-                    "Get five stars on either version of Suicide & Redemption in Quickplay+ mode (no powers) on {0} {1} with a score of at least {2}",
+                    "Get five stars on either version of \"Suicide & Redemption\" in Quickplay+ mode with no powers active on {0} {1} with a score of at least {2}",
                     DIFFICULTY_TO_NAME[hardest_difficulty],
                     INSTRUMENT_TO_NAME[instrument.Instrument],
                     format_int_with_commas(instrument.ExpertBaseScore * 14 / 5)
                 )
                 fc_description = format(
-                    "Full combo with all {0} notes on Suicide & Redemption in Quickplay+ mode (no powers) on {1} {2}",
+                    "Full combo with all {0} notes on \"Suicide & Redemption\" in Quickplay+ mode with no powers active on {1} {2}",
                     format_int_with_commas(instrument.ExpertNotesInChart),
                     DIFFICULTY_TO_NAME[hardest_difficulty],
                     INSTRUMENT_TO_NAME[instrument.Instrument]
@@ -28418,7 +29898,7 @@ for song in SONGS {
 
             leaderboard(
                 title = format("Suicide & Redemption - Quickplay+ - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
-                description = format("Get the highest score on either version of Suicide & Redemption in Quickplay+ on {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
+                description = format("Get the highest score on either version of \"Suicide & Redemption\" in Quickplay+ on {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.QuickplayLeaderboardId,
                 // set = set,
                 start = leaderboard_quickplay_start_two_songs(song, other_song, instrument.Instrument),
@@ -28430,7 +29910,7 @@ for song in SONGS {
 
             leaderboard(
                 title = format("Suicide & Redemption - Power Challenge (Score) - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
-                description = format("Get the highest score on either version of Suicide & Redemption in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                description = format("Get the highest score on either version of \"Suicide & Redemption\" in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.PowerChallengeScoreLeaderboardId,
                 // set = POWER_CHALLENGE_SUBSET,
                 start = leaderboard_power_challenge_start_two_songs(song, other_song, instrument.Instrument),
@@ -28442,7 +29922,7 @@ for song in SONGS {
 
             leaderboard(
                 title = format("Suicide & Redemption - Power Challenge (Stars) - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
-                description = format("Get the most stars on either version of Suicide & Redemption in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                description = format("Get the most stars on either version of \"Suicide & Redemption\" in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.PowerChallengeStarLeaderboardId,
                 // set = POWER_CHALLENGE_SUBSET,
                 start = leaderboard_power_challenge_start_two_songs(song, other_song, instrument.Instrument),
@@ -28459,21 +29939,21 @@ for song in SONGS {
             assert(other_song.Artist == "Lynyrd Skynyrd", "Sweet Home Alabama (Live) (GH5) could not be found")
             other_song_instrument = array_filter(other_song.Instruments, i => i.Instrument == instrument.Instrument)[0]
             five_star_description = format(
-                "Get five stars on Sweet Home Alabama (Live) in Quickplay+ mode (no powers) on {0} {1} with a score of at least {2}",
+                "Get five stars on \"Sweet Home Alabama (Live)\" in Quickplay+ mode with no powers active on {0} {1} with a score of at least {2}",
                 DIFFICULTY_TO_NAME[hardest_difficulty],
                 INSTRUMENT_TO_NAME[instrument.Instrument],
                 format_int_with_commas(instrument.ExpertBaseScore * 14 / 5)
             )
             if (instrument.Instrument == INSTRUMENT_VOCALS) {
                 fc_description = format(
-                    "Full combo with all {0} phrases on Sweet Home Alabama (Live) in Quickplay+ mode (no powers) on {1} {2}",
+                    "Full combo with all {0} phrases on \"Sweet Home Alabama (Live)\" in Quickplay+ mode with no powers active on {1} {2}",
                     format_int_with_commas(instrument.ExpertNotesInChart),
                     DIFFICULTY_TO_NAME[hardest_difficulty],
                     INSTRUMENT_TO_NAME[instrument.Instrument]
                 )
             } else {
                 fc_description = format(
-                    "Full combo with all {0} notes on Sweet Home Alabama (Live) in Quickplay+ mode (no powers) on {1} {2}",
+                    "Full combo with all {0} notes on \"Sweet Home Alabama (Live)\" in Quickplay+ mode with no powers active on {1} {2}",
                     format_int_with_commas(instrument.ExpertNotesInChart),
                     DIFFICULTY_TO_NAME[hardest_difficulty],
                     INSTRUMENT_TO_NAME[instrument.Instrument]
@@ -28500,7 +29980,7 @@ for song in SONGS {
 
             leaderboard(
                 title = format("Sweet Home Alabama (Live) - Quickplay+ - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
-                description = format("Get the highest score on Sweet Home Alabama (Live) in Quickplay+ on {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
+                description = format("Get the highest score on \"Sweet Home Alabama (Live)\" in Quickplay+ on {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.QuickplayLeaderboardId,
                 // set = set,
                 start = leaderboard_quickplay_start_two_songs(song, other_song, instrument.Instrument),
@@ -28512,7 +29992,7 @@ for song in SONGS {
 
             leaderboard(
                 title = format("Sweet Home Alabama (Live) - Power Challenge (Score) - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
-                description = format("Get the highest score on Sweet Home Alabama (Live) in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                description = format("Get the highest score on \"Sweet Home Alabama (Live)\" in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.PowerChallengeScoreLeaderboardId,
                 // set = POWER_CHALLENGE_SUBSET,
                 start = leaderboard_power_challenge_start_two_songs(song, other_song, instrument.Instrument),
@@ -28524,7 +30004,7 @@ for song in SONGS {
 
             leaderboard(
                 title = format("Sweet Home Alabama (Live) - Power Challenge (Stars) - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
-                description = format("Get the most stars on Sweet Home Alabama (Live) in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                description = format("Get the most stars on \"Sweet Home Alabama (Live)\" in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.PowerChallengeStarLeaderboardId,
                 // set = POWER_CHALLENGE_SUBSET,
                 start = leaderboard_power_challenge_start_two_songs(song, other_song, instrument.Instrument),
@@ -28539,7 +30019,7 @@ for song in SONGS {
             achievement(
                 title = instrument.FiveStarAchievementMetadata.Title,
                 // title = format("{0} - {1} - {2} 5 Star", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument], DIFFICULTY_TO_NAME[hardest_difficulty]),
-                description = format("Get five stars on {0} in Quickplay+ mode (no powers) on {1} {2} with a score of at least {3}", song.Title, DIFFICULTY_TO_NAME[hardest_difficulty], INSTRUMENT_TO_NAME[instrument.Instrument], format_int_with_commas(instrument.ExpertBaseScore * 14 / 5)),
+                description = format("Get five stars on \"{0}\" in Quickplay+ mode with no powers active on {1} {2} with a score of at least {3}", song.Title, DIFFICULTY_TO_NAME[hardest_difficulty], INSTRUMENT_TO_NAME[instrument.Instrument], format_int_with_commas(instrument.ExpertBaseScore * 14 / 5)),
                 points = instrument.FiveStarAchievementMetadata.Points,
                 id = instrument.FiveStarAchievementMetadata.Id,
                 // set = set,
@@ -28547,9 +30027,9 @@ for song in SONGS {
             )
 
             if (instrument.Instrument == INSTRUMENT_VOCALS) {
-                fc_description_format = "Full combo with all {0} phrases on {1} in Quickplay+ mode (no powers) on {2} {3}"
+                fc_description_format = "Full combo with all {0} phrases on \"{1}\" in Quickplay+ mode with no powers active on {2} {3}"
             } else {
-                fc_description_format = "Full combo with all {0} notes on {1} in Quickplay+ mode (no powers) on {2} {3}"
+                fc_description_format = "Full combo with all {0} notes on \"{1}\" in Quickplay+ mode with no powers active on {2} {3}"
             }
 
             // achievement(
@@ -28563,7 +30043,7 @@ for song in SONGS {
 
             leaderboard(
                 title = format("{0} - Quickplay+ - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
-                description = format("Get the highest score on {0} in Quickplay+ on {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                description = format("Get the highest score on \"{0}\" in Quickplay+ on {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.QuickplayLeaderboardId,
                 // set = set,
                 start = leaderboard_quickplay_start(song, instrument.Instrument),
@@ -28573,29 +30053,29 @@ for song in SONGS {
                 format = "VALUE"
             )
 
-            // leaderboard(
-            //     title = format("{0} - Power Challenge (Score) - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
-            //     description = format("Get the highest score on {0} in Power Challenge on {1} {2}", song.Title, power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
-            //     id = instrument.PowerChallengeScoreLeaderboardId,
-            //     // set = POWER_CHALLENGE_SUBSET,
-            //     start = leaderboard_power_challenge_start(song, instrument.Instrument),
-            //     cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
-            //     submit = is_you_rock_reached_quickplay(),
-            //     value = band_score(),
-            //     format = "VALUE"
-            // )
+            leaderboard(
+                title = format("{0} - Power Challenge (Score) - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                description = format("Get the highest score on \"{0}\" in Power Challenge on {1} {2}", song.Title, power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                id = instrument.PowerChallengeScoreLeaderboardId,
+                // set = POWER_CHALLENGE_SUBSET,
+                start = leaderboard_power_challenge_start(song, instrument.Instrument),
+                cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
+                submit = is_you_rock_reached_quickplay(),
+                value = band_score(),
+                format = "VALUE"
+            )
 
-            // leaderboard(
-            //     title = format("{0} - Power Challenge (Stars) - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
-            //     description = format("Get the most stars on {0} in Power Challenge on {1} {2}", song.Title, power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
-            //     id = instrument.PowerChallengeStarLeaderboardId,
-            //     // set = POWER_CHALLENGE_SUBSET,
-            //     start = leaderboard_power_challenge_start(song, instrument.Instrument),
-            //     cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
-            //     submit = is_you_rock_reached_quickplay(),
-            //     value = band_stars_with_100_percent_star(instrument),
-            //     format = "VALUE"
-            // )
+            leaderboard(
+                title = format("{0} - Power Challenge (Stars) - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                description = format("Get the most stars on \"{0}\" in Power Challenge on {1} {2}", song.Title, power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                id = instrument.PowerChallengeStarLeaderboardId,
+                // set = POWER_CHALLENGE_SUBSET,
+                start = leaderboard_power_challenge_start(song, instrument.Instrument),
+                cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
+                submit = is_you_rock_reached_quickplay(),
+                value = band_stars_with_100_percent_star(instrument),
+                format = "VALUE"
+            )
 
             if (song.Source == SOURCE_GHWOR) {
                 assert(song.QuickplayDetailsAddr != -1, format("{0} does not have a QuickplayDetailsAddr", song.Title))
@@ -28612,7 +30092,7 @@ for song in SONGS {
                 if (song.Title == "Holy Wars... The Punishment Due" || song.Title == "This Day We Fight!") {
                     leaderboard(
                         title = format("{0} - Four-Power Quest - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
-                        description = format("Get the highest score on {0} in Quest mode on {1} with only four powers", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                        description = format("Get the highest score on \"{0}\" in Quest mode on {1} with only four powers", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                         id = instrument.FourPowerQuestLeaderboardId,
                         start = leaderboard_quest_start(song, instrument.Instrument) && !are_all_powers_active(),
                         cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
@@ -28625,7 +30105,7 @@ for song in SONGS {
                 if (substring(song.Title, offset = 0, length = 4) != "2112") {
                     leaderboard(
                         title = format("{0} - Dominate Quest - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
-                        description = format("Get the highest score on {0} in Quest mode on {1} with all eight powers", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                        description = format("Get the highest score on \"{0}\" in Quest mode on {1} with all eight powers", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                         id = instrument.DominateQuestLeaderboardId,
                         start = leaderboard_quest_start(song, instrument.Instrument) && are_all_powers_active(),
                         cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
@@ -28636,7 +30116,7 @@ for song in SONGS {
                 } else {
                     leaderboard(
                         title = format("{0} - Four-Power Quest - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
-                        description = format("Get the highest score on {0} in Quest mode on {1} with only four powers", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                        description = format("Get the highest score on \"{0}\" in Quest mode on {1} with only four powers", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                         id = instrument.FourPowerQuestLeaderboardId,
                         start = leaderboard_quest_start(song, instrument.Instrument),
                         cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
@@ -28694,7 +30174,7 @@ QUEST_ACHIEVEMENTS = [
     ),
     QuestAchievementMetadata(
         Song = array_filter(SONGS, s => s.Title == "Children Of The Grave")[0],
-        Description = "Complete Austin Tejas's chapter in Quest mode",
+        Description = "Complete Austin Tejas' chapter in Quest mode",
         Type = "progression",
         Metadata = AchievementMetadata(
             Title = "The Recluse",
@@ -29176,7 +30656,7 @@ CUSTOM_SONGS = [
                 ExpertNotesInChart = 352,
                 ExpertBaseScore = 19585,
                 FiveStarAchievementMetadata = AchievementMetadata(
-                    Title = "Barking up the Wrong Tree",
+                    Title = "Barking Up the Wrong Tree",
                     Id = 574356,
                     Points = 5
                 ),
@@ -29435,7 +30915,7 @@ for song in CUSTOM_SONGS {
         achievement(
             title = instrument.FiveStarAchievementMetadata.Title,
             // title = format("{0} - {1} - {2} 5 Star", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument], DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT]),
-            description = format("Get five stars on the custom song {0} in Quickplay+ mode on {1} {2} with a score of at least {3}", song.Title, DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT], INSTRUMENT_TO_NAME[instrument.Instrument], format_int_with_commas(instrument.ExpertBaseScore * 14 / 5)),
+            description = format("Get five stars on the custom song \"{0}\" in Quickplay+ mode on {1} {2} with a score of at least {3}", song.Title, DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT], INSTRUMENT_TO_NAME[instrument.Instrument], format_int_with_commas(instrument.ExpertBaseScore * 14 / 5)),
             points = instrument.FiveStarAchievementMetadata.Points,
             id = instrument.FiveStarAchievementMetadata.Id,
             trigger = five_star_custom_song_trigger(song, instrument.Instrument, instrument.ExpertBaseScore * 14 / 5)
@@ -29443,7 +30923,7 @@ for song in CUSTOM_SONGS {
 
         // achievement(
         //     title = format("{0} - {1} - {2} Full Combo", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument], DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT]),
-        //     description = format("Full combo with all {0} notes on the custom song {1} in Quickplay+ mode on {2} {3}", format_int_with_commas(instrument.ExpertNotesInChart), song.Title, DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT], INSTRUMENT_TO_NAME[instrument.Instrument]),
+        //     description = format("Full combo with all {0} notes on the custom song \"{1}\" in Quickplay+ mode on {2} {3}", format_int_with_commas(instrument.ExpertNotesInChart), song.Title, DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT], INSTRUMENT_TO_NAME[instrument.Instrument]),
         //     points = instrument.FullComboAchievementMetadata.Points,
         //     id = instrument.FullComboAchievementMetadata.Id,
         //     // set = FC_SUBSET,
@@ -29452,7 +30932,7 @@ for song in CUSTOM_SONGS {
 
         leaderboard(
             title = format("{0} - Quickplay+ - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
-            description = format("Get the highest score on the custom song {0} in Quickplay+ on {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
+            description = format("Get the highest score on the custom song \"{0}\" in Quickplay+ on {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
             id = instrument.QuickplayLeaderboardId,
             start = leaderboard_custom_song_start(song, instrument.Instrument),
             cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
@@ -29464,7 +30944,7 @@ for song in CUSTOM_SONGS {
 
     // achievement(
     //     title = format("{0} - Quickplay+ - Full Band - {1} 5 Star", song.Title, DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT]),
-    //     description = format("Get five stars on the custom song {0} in Quickplay+ mode with a full band of all 3 instruments", song.Title),
+    //     description = format("Get five stars on the custom song \"{0}\" in Quickplay+ mode with a full band of all 3 instruments", song.Title),
     //     points = song.FullBandFiveStarAchievementMetadata.Points,
     //     id = song.FullBandFiveStarAchievementMetadata.Id,
     //     // set = FULL_BAND_SUBSET,
@@ -29473,7 +30953,7 @@ for song in CUSTOM_SONGS {
 
     // leaderboard(
     //     title = format("{0} - Quickplay+ - Full Band", song.Title),
-    //     description = format("Get the highest score on the custom song {0} in Quickplay+ with a full band of all 3 instruments", song.Title),
+    //     description = format("Get the highest score on the custom song \"{0}\" in Quickplay+ with a full band of all 3 instruments", song.Title),
     //     id = song.FullBandLeaderboardId,
     //     // set = FULL_BAND_SUBSET,
     //     start = full_band_leaderboard_custom_song_start(song),
@@ -29524,7 +31004,7 @@ function six_star_achievement_trigger() {
 }
 
 achievement(
-    title = "Turn It Up To 6",
+    title = "Turn It Up to 6",
     description = "Hit 100% of the notes in any non-custom song on any instrument on either Hard or Expert in Quickplay+ mode",
     points = 10,
     id = 574363,
@@ -29559,7 +31039,7 @@ function five_star_your_own_custom_song_trigger() {
 
 achievement(
     title = "Project Spark",
-    description = "Five star your own GHTunes song on either Expert Guitar, Expert Bass, or Expert Drums (must have at least 500 notes). You also get brownie points if you post a video of your song to the RetroAchievements Discord.",
+    description = "Five star your own 500 notes or more GHTunes song on either Expert Guitar, Bass, or Drums. You also get brownie points if you post a video of your song to the RetroAchievements Discord.",
     points = 5,
     id = 574364,
     trigger = five_star_your_own_custom_song_trigger()
@@ -29615,7 +31095,7 @@ achievement(
 
 achievement(
     title = "Neversoft Salutes You",
-    description = "Earn a total of 3300 stars in Quickplay+ mode and unlock everything",
+    description = "Earn a total of 3,300 stars in Quickplay+ mode and unlock everything",
     points = 25,
     id = 574369,
     trigger = was_stars_reached(3300)

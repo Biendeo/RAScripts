@@ -5699,7 +5699,7 @@ GHWOR_SONGS = [
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
-                Title = "Waiting for You I Want to Just Tell You",
+                Title = "Waiting for You, I Want to Just Tell You",
                 Id = 576191,
                 Points = 5
             )

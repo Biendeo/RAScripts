@@ -34,7 +34,7 @@ function virtual_to_ra_address(x) => x & 0x1fffffff
 // #region CONSTANTS
 
 // Uncomment these when RATools stops panicking!
-// DLC_SUBSET = achievement_set("DLC", type = "BONUS", id = 1)
+DLC_SUBSET = achievement_set("DLC", type = "BONUS", id = 37916)
 // POWER_CHALLENGE_SUBSET = achievement_set("Power Challenge", type = "BONUS", id = 2)
 // FC_SUBSET = achievement_set("Expert(+) Full Combos", type = "BONUS", id = 3)
 // FULL_BAND_SUBSET = achievement_set("Full Band Quickplay+", type = "BONUS", id = 4)
@@ -5618,7 +5618,7 @@ GHWOR_SONGS = [
     ),
     Song(
         Title = "If You Want Peace... Prepare for War",
-        Artist = "Children of Bodom",
+        Artist = "Children Of Bodom",
         Source = SOURCE_GHWOR,
         Id = 0xbe8d55d7,
         QuickplayDetailsAddr = 0x132fe93c,
@@ -8061,7 +8061,7 @@ GHWOR_SONGS = [
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
-                Title = "I'm Constantly Devastated Just to Stay Alive",
+                Title = "Reassured That My Friends Will Reappear",
                 Id = 576216,
                 Points = 5
             )
@@ -9170,25 +9170,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 883,
-                ExpertBaseScore = 69062
+                ExpertBaseScore = 69062,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Take If You Want a Slice",
+                    Id = 577372,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153760,
+                PowerChallengeScoreLeaderboardId = 153761,
+                PowerChallengeStarLeaderboardId = 153762
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1170,
                 ExpertBaseScore = 109725,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Break If You like the Sound",
+                    Id = 577373,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153763,
+                PowerChallengeScoreLeaderboardId = 153764,
+                PowerChallengeStarLeaderboardId = 153765
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 57,
-                ExpertBaseScore = 31287
+                ExpertBaseScore = 31287,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Share If It Makes You Sleep",
+                    Id = 577374,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153766,
+                PowerChallengeScoreLeaderboardId = 153767,
+                PowerChallengeStarLeaderboardId = 153768
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 794,
-                ExpertBaseScore = 45280
+                ExpertBaseScore = 45280,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Cry If You Wanna Cry",
+                    Id = 577375,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153769,
+                PowerChallengeScoreLeaderboardId = 153770,
+                PowerChallengeStarLeaderboardId = 153771
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Hate If You Wanna Hate",
+                Id = 577376,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 153772,
+            Metadata = AchievementMetadata(
+                Title = "Chris Cornell Wave Voxtar Challenge",
+                Id = 577377,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Fell On Black Days",
@@ -9202,25 +9251,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 793,
-                ExpertBaseScore = 72762
+                ExpertBaseScore = 72762,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Whatsoever I Feared Has Come to Light",
+                    Id = 577378,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153773,
+                PowerChallengeScoreLeaderboardId = 153774,
+                PowerChallengeStarLeaderboardId = 153775
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 902,
                 ExpertBaseScore = 86725,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "What You Wanted to See Good Has Made You Blind",
+                    Id = 577379,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153776,
+                PowerChallengeScoreLeaderboardId = 153777,
+                PowerChallengeStarLeaderboardId = 153778
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 60,
-                ExpertBaseScore = 36671
+                ExpertBaseScore = 36671,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Whomsoever I've Cured, I've Sickened Now",
+                    Id = 577380,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153779,
+                PowerChallengeScoreLeaderboardId = 153780,
+                PowerChallengeStarLeaderboardId = 153781
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 582,
-                ExpertBaseScore = 38338
+                ExpertBaseScore = 38338,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Sure Don't Mind a Change",
+                    Id = 577381,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153782,
+                PowerChallengeScoreLeaderboardId = 153783,
+                PowerChallengeStarLeaderboardId = 153784
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Sunspots Have Faded",
+                Id = 577382,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 153785,
+            Metadata = AchievementMetadata(
+                Title = "Chris Cornell Black Days Voxtar Challenge",
+                Id = 577383,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Burden In My Hand",
@@ -9234,25 +9332,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1095,
-                ExpertBaseScore = 110350
+                ExpertBaseScore = 110350,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Follow Me Into the Desert",
+                    Id = 577384,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153786,
+                PowerChallengeScoreLeaderboardId = 153787,
+                PowerChallengeStarLeaderboardId = 153788
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1127,
                 ExpertBaseScore = 87250,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Fear Is Strong",
+                    Id = 577385,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153789,
+                PowerChallengeScoreLeaderboardId = 153790,
+                PowerChallengeStarLeaderboardId = 153791
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 54,
-                ExpertBaseScore = 36974
+                ExpertBaseScore = 36974,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Lost My Head Again",
+                    Id = 577386,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153792,
+                PowerChallengeScoreLeaderboardId = 153793,
+                PowerChallengeStarLeaderboardId = 153794
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 563,
-                ExpertBaseScore = 43864
+                ExpertBaseScore = 43864,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "The Moon Is Glued to a Picture of Heaven",
+                    Id = 577387,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153795,
+                PowerChallengeScoreLeaderboardId = 153796,
+                PowerChallengeStarLeaderboardId = 153797
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Sun Is Mine, Sun Is Mine",
+                Id = 577388,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 153798,
+            Metadata = AchievementMetadata(
+                Title = "Chris Cornell's Burden Voxtar Challenge",
+                Id = 577389,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Blow Up The Outside World",
@@ -9266,25 +9413,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 790,
-                ExpertBaseScore = 73105
+                ExpertBaseScore = 73105,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Nothing Seems to Kill Me",
+                    Id = 577390,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153799,
+                PowerChallengeScoreLeaderboardId = 153800,
+                PowerChallengeStarLeaderboardId = 153801
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 957,
                 ExpertBaseScore = 76175,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Want to Make It Understood",
+                    Id = 577391,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153802,
+                PowerChallengeScoreLeaderboardId = 153803,
+                PowerChallengeStarLeaderboardId = 153804
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 61,
-                ExpertBaseScore = 40237
+                ExpertBaseScore = 40237,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'd Give You Everything I Own",
+                    Id = 577392,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 153805,
+                PowerChallengeScoreLeaderboardId = 153806,
+                PowerChallengeStarLeaderboardId = 153807
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 725,
-                ExpertBaseScore = 42535
+                ExpertBaseScore = 42535,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Nothing Seems to Break Me",
+                    Id = 577393,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153808,
+                PowerChallengeScoreLeaderboardId = 153809,
+                PowerChallengeStarLeaderboardId = 153810
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Wishing Though I Never Could",
+                Id = 577394,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 153811,
+            Metadata = AchievementMetadata(
+                Title = "Chris Cornell Outside World Voxtar Challenge",
+                Id = 577395,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Blackout",
@@ -9298,25 +9494,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 635,
-                ExpertBaseScore = 47041
+                ExpertBaseScore = 47041,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Alone with a Sinking Feeling",
+                    Id = 577396,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153812,
+                PowerChallengeScoreLeaderboardId = 153813,
+                PowerChallengeStarLeaderboardId = 153814
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 970,
                 ExpertBaseScore = 72825,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "It's Written Upon Your Face",
+                    Id = 577397,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153815,
+                PowerChallengeScoreLeaderboardId = 153816,
+                PowerChallengeStarLeaderboardId = 153817
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 62,
-                ExpertBaseScore = 31079
+                ExpertBaseScore = 31079,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Push It Back Down",
+                    Id = 577398,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153818,
+                PowerChallengeScoreLeaderboardId = 153819,
+                PowerChallengeStarLeaderboardId = 153820
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 365,
-                ExpertBaseScore = 24415
+                ExpertBaseScore = 24415,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Floating Down as Colors Fill the Light",
+                    Id = 577399,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 153821,
+                PowerChallengeScoreLeaderboardId = 153822,
+                PowerChallengeStarLeaderboardId = 153823
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Blood in Your Eye",
+                Id = 577400,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Burning In The Skies",
@@ -9330,25 +9566,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 688,
-                ExpertBaseScore = 69303
+                ExpertBaseScore = 69303,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Used the Deadwood to Make the Fire Rise",
+                    Id = 577401,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153824,
+                PowerChallengeScoreLeaderboardId = 153825,
+                PowerChallengeStarLeaderboardId = 153826
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1554,
                 ExpertBaseScore = 100825,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Filled My Cup with the Risin' of the Sea",
+                    Id = 577402,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153827,
+                PowerChallengeScoreLeaderboardId = 153828,
+                PowerChallengeStarLeaderboardId = 153829
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 39,
-                ExpertBaseScore = 32570
+                ExpertBaseScore = 32570,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "We Held Our Breath When the Clouds Began to Form",
+                    Id = 577403,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 153830,
+                PowerChallengeScoreLeaderboardId = 153831,
+                PowerChallengeStarLeaderboardId = 153832
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 625,
-                ExpertBaseScore = 31892
+                ExpertBaseScore = 31892,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "We Were Made to Be Apart",
+                    Id = 577404,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153833,
+                PowerChallengeScoreLeaderboardId = 153834,
+                PowerChallengeStarLeaderboardId = 153835
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I'm Losing What I Don't Deserve",
+                Id = 577405,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "The Catalyst",
@@ -9362,25 +9638,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1068,
-                ExpertBaseScore = 82543
+                ExpertBaseScore = 82543,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "We're a Broken People Living Under Loaded Gun",
+                    Id = 577406,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153836,
+                PowerChallengeScoreLeaderboardId = 153837,
+                PowerChallengeStarLeaderboardId = 153838
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1357,
                 ExpertBaseScore = 97331,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "It Can't Be Outfought, It Can't Be Outdone",
+                    Id = 577407,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153839,
+                PowerChallengeScoreLeaderboardId = 153840,
+                PowerChallengeStarLeaderboardId = 153841
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 64,
-                ExpertBaseScore = 32825
+                ExpertBaseScore = 32825,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Transmissions Echoing Away",
+                    Id = 577408,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 153842,
+                PowerChallengeScoreLeaderboardId = 153843,
+                PowerChallengeStarLeaderboardId = 153844
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 808,
-                ExpertBaseScore = 41200
+                ExpertBaseScore = 41200,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Where Oceans Bleed Into the Sky",
+                    Id = 577409,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 153845,
+                PowerChallengeScoreLeaderboardId = 153846,
+                PowerChallengeStarLeaderboardId = 153847
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Memories in Cold Decay",
+                Id = 577410,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "The Messenger",
@@ -9394,14 +9710,38 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 370,
-                ExpertBaseScore = 37275
+                ExpertBaseScore = 37275,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "They'll Be Your Guide Back Home",
+                    Id = 577411,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153848,
+                PowerChallengeScoreLeaderboardId = 153849,
+                PowerChallengeStarLeaderboardId = 153850
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 27,
-                ExpertBaseScore = 22325
+                ExpertBaseScore = 22325,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Remember You're Loved and You Always Will Be",
+                    Id = 577412,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153851,
+                PowerChallengeScoreLeaderboardId = 153852,
+                PowerChallengeStarLeaderboardId = 153853
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Love Keeps Us Kind",
+                Id = 577413,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Waiting For The End",
@@ -9415,25 +9755,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 396,
-                ExpertBaseScore = 27975
+                ExpertBaseScore = 27975,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "This Is Not the End, This Is Not the Beginning",
+                    Id = 577414,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153854,
+                PowerChallengeScoreLeaderboardId = 153855,
+                PowerChallengeStarLeaderboardId = 153856
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 917,
                 ExpertBaseScore = 68069,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Wishing I Had Strength to Stand",
+                    Id = 577415,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153857,
+                PowerChallengeScoreLeaderboardId = 153858,
+                PowerChallengeStarLeaderboardId = 153859
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 54,
-                ExpertBaseScore = 33164
+                ExpertBaseScore = 33164,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Holding on to What I Haven't Got",
+                    Id = 577416,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153860,
+                PowerChallengeScoreLeaderboardId = 153861,
+                PowerChallengeStarLeaderboardId = 153862
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 202,
-                ExpertBaseScore = 11980
+                ExpertBaseScore = 11980,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "What Was Left When That Fire Was Gone?",
+                    Id = 577417,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153863,
+                PowerChallengeScoreLeaderboardId = 153864,
+                PowerChallengeStarLeaderboardId = 153865
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "We're Living at the Mercy of the Pain and the Fear",
+                Id = 577418,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Wretches And Kings",
@@ -9447,25 +9827,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 815,
-                ExpertBaseScore = 49084
+                ExpertBaseScore = 49084,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Static on the Way",
+                    Id = 577419,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153866,
+                PowerChallengeScoreLeaderboardId = 153867,
+                PowerChallengeStarLeaderboardId = 153868
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1098,
                 ExpertBaseScore = 80525,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "No More This Sun Shall Beat Onto You",
+                    Id = 577420,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153869,
+                PowerChallengeScoreLeaderboardId = 153870,
+                PowerChallengeStarLeaderboardId = 153871
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 74,
-                ExpertBaseScore = 26543
+                ExpertBaseScore = 26543,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Get Down and Obey Every Word",
+                    Id = 577421,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 153872,
+                PowerChallengeScoreLeaderboardId = 153873,
+                PowerChallengeStarLeaderboardId = 153874
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 63,
-                ExpertBaseScore = 4536
+                ExpertBaseScore = 4536,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Don't Fight the Power, Nobody Gets Hurt",
+                    Id = 577422,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 153875,
+                PowerChallengeScoreLeaderboardId = 153876,
+                PowerChallengeStarLeaderboardId = 153877
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "We, the Animals, Take Control",
+                Id = 577423,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Time Warp",
@@ -9479,25 +9899,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 891,
-                ExpertBaseScore = 84819
+                ExpertBaseScore = 84819,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "It's Just a Jump to the Left",
+                    Id = 577424,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153878,
+                PowerChallengeScoreLeaderboardId = 153879,
+                PowerChallengeStarLeaderboardId = 153880
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1152,
                 ExpertBaseScore = 109075,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "With Your Hands on Your Hips",
+                    Id = 577425,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153881,
+                PowerChallengeScoreLeaderboardId = 153882,
+                PowerChallengeStarLeaderboardId = 153883
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 67,
-                ExpertBaseScore = 27538
+                ExpertBaseScore = 27538,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Bring Your Knees in Tight",
+                    Id = 577426,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153884,
+                PowerChallengeScoreLeaderboardId = 153885,
+                PowerChallengeStarLeaderboardId = 153886
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 815,
-                ExpertBaseScore = 49317
+                ExpertBaseScore = 49317,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "And Then a Step to the Right",
+                    Id = 577427,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153887,
+                PowerChallengeScoreLeaderboardId = 153888,
+                PowerChallengeStarLeaderboardId = 153889
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "It's the Pelvic Thrust That Really Drives You Insane",
+                Id = 577428,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Sweet Transvestite",
@@ -9511,25 +9971,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 464,
-                ExpertBaseScore = 42949
+                ExpertBaseScore = 42949,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I See You've Met My Faithful Handyman",
+                    Id = 577429,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153890,
+                PowerChallengeScoreLeaderboardId = 153891,
+                PowerChallengeStarLeaderboardId = 153892
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 434,
                 ExpertBaseScore = 43886,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Don't Judge a Book by Its Cover",
+                    Id = 577430,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 153893,
+                PowerChallengeScoreLeaderboardId = 153894,
+                PowerChallengeStarLeaderboardId = 153895
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 56,
-                ExpertBaseScore = 18084
+                ExpertBaseScore = 18084,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'll Get You a Satanic Mechanic",
+                    Id = 577431,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153896,
+                PowerChallengeScoreLeaderboardId = 153897,
+                PowerChallengeStarLeaderboardId = 153898
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 408,
-                ExpertBaseScore = 21330
+                ExpertBaseScore = 21330,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Look like You're Both Pretty Groovy",
+                    Id = 577432,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153899,
+                PowerChallengeScoreLeaderboardId = 153900,
+                PowerChallengeStarLeaderboardId = 153901
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "From Transexual, Transylvania",
+                Id = 577433,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Hot Patootie",
@@ -9543,25 +10043,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 801,
-                ExpertBaseScore = 68000
+                ExpertBaseScore = 68000,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "It Don't Seem the Same Since Cosmic Light",
+                    Id = 577434,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153902,
+                PowerChallengeScoreLeaderboardId = 153903,
+                PowerChallengeStarLeaderboardId = 153904
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 965,
                 ExpertBaseScore = 96825,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "My Head It Used to Swim from the Perfume I Smelt",
+                    Id = 577435,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153905,
+                PowerChallengeScoreLeaderboardId = 153906,
+                PowerChallengeStarLeaderboardId = 153907
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 50,
-                ExpertBaseScore = 18440
+                ExpertBaseScore = 18440,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Buddy Holly Was Singing His Very Last Song",
+                    Id = 577436,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153908,
+                PowerChallengeScoreLeaderboardId = 153909,
+                PowerChallengeStarLeaderboardId = 153910
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 688,
-                ExpertBaseScore = 38326
+                ExpertBaseScore = 38326,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "A Saxophone Was Blowin' on a Rock 'n' Roll Show",
+                    Id = 577437,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153911,
+                PowerChallengeScoreLeaderboardId = 153912,
+                PowerChallengeStarLeaderboardId = 153913
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Really Love That Rock and Roll",
+                Id = 577438,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Tom Sawyer",
@@ -9575,25 +10115,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 777,
-                ExpertBaseScore = 66429
+                ExpertBaseScore = 66429,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "A Modern-Day Warrior, Mean Mean Stride",
+                    Id = 577439,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153914,
+                PowerChallengeScoreLeaderboardId = 153915,
+                PowerChallengeStarLeaderboardId = 153916
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1515,
                 ExpertBaseScore = 125125,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Don't Put Him Down as Arrogant",
+                    Id = 577440,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153917,
+                PowerChallengeScoreLeaderboardId = 153918,
+                PowerChallengeStarLeaderboardId = 153919
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 33,
-                ExpertBaseScore = 10854
+                ExpertBaseScore = 10854,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "His Mind Is Not for Rent to Any God or Government",
+                    Id = 577441,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153920,
+                PowerChallengeScoreLeaderboardId = 153921,
+                PowerChallengeStarLeaderboardId = 153922
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 525,
-                ExpertBaseScore = 40893
+                ExpertBaseScore = 40893,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "He Knows Changes Aren't Permanent",
+                    Id = 577442,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153923,
+                PowerChallengeScoreLeaderboardId = 153924,
+                PowerChallengeStarLeaderboardId = 153925
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Maybe as His Skies Are Wide",
+                Id = 577443,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_BASS,
+            LeaderboardId = 153926,
+            Metadata = AchievementMetadata(
+                Title = "Geddy Lee's Mississippi Voxbass Challenge",
+                Id = 577444,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Red Barchetta",
@@ -9607,25 +10196,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1233,
-                ExpertBaseScore = 91355
+                ExpertBaseScore = 91355,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Before the Motor Law",
+                    Id = 577445,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153927,
+                PowerChallengeScoreLeaderboardId = 153928,
+                PowerChallengeStarLeaderboardId = 153929
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1821,
                 ExpertBaseScore = 156137,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "As the Turbo Slows to Cross the Borderline",
+                    Id = 577446,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153930,
+                PowerChallengeScoreLeaderboardId = 153931,
+                PowerChallengeStarLeaderboardId = 153932
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 49,
-                ExpertBaseScore = 15390
+                ExpertBaseScore = 15390,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "To Dream with My Uncle at the Fireside",
+                    Id = 577447,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153933,
+                PowerChallengeScoreLeaderboardId = 153934,
+                PowerChallengeStarLeaderboardId = 153935
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 994,
-                ExpertBaseScore = 61218
+                ExpertBaseScore = 61218,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "The Blur of the Landscape",
+                    Id = 577448,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153936,
+                PowerChallengeScoreLeaderboardId = 153937,
+                PowerChallengeStarLeaderboardId = 153938
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Tires Spitting Gravel, I Commit My Weekly Crime",
+                Id = 577449,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_BASS,
+            LeaderboardId = 153939,
+            Metadata = AchievementMetadata(
+                Title = "Geddy Lee's Barchetta Voxbass Challenge",
+                Id = 577450,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Limelight",
@@ -9639,25 +10277,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 872,
-                ExpertBaseScore = 74582
+                ExpertBaseScore = 74582,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "In Touch with Some Reality Beyond the Gilded Cage",
+                    Id = 577451,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153940,
+                PowerChallengeScoreLeaderboardId = 153941,
+                PowerChallengeStarLeaderboardId = 153942
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1146,
                 ExpertBaseScore = 105197,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "One Must Put up Barriers to Keep Oneself Intact",
+                    Id = 577452,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153943,
+                PowerChallengeScoreLeaderboardId = 153944,
+                PowerChallengeStarLeaderboardId = 153945
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 31,
-                ExpertBaseScore = 19773
+                ExpertBaseScore = 19773,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Can't Pretend a Stranger Is a Long-Awaited Friend",
+                    Id = 577453,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153946,
+                PowerChallengeScoreLeaderboardId = 153947,
+                PowerChallengeStarLeaderboardId = 153948
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 755,
-                ExpertBaseScore = 42775
+                ExpertBaseScore = 42775,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "All the World's Indeed a Stage and We Are Merely Players",
+                    Id = 577454,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153949,
+                PowerChallengeScoreLeaderboardId = 153950,
+                PowerChallengeStarLeaderboardId = 153951
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "The Real Relation, The Underlying Theme",
+                Id = 577455,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_BASS,
+            LeaderboardId = 153952,
+            Metadata = AchievementMetadata(
+                Title = "Geddy Lee in the Limelight Voxbass Challenge",
+                Id = 577456,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "We're All Gonna Die",
@@ -9671,25 +10358,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 971,
-                ExpertBaseScore = 75580
+                ExpertBaseScore = 75580,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'll Say Anything That Fits",
+                    Id = 577457,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153953,
+                PowerChallengeScoreLeaderboardId = 153954,
+                PowerChallengeStarLeaderboardId = 153955
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 942,
                 ExpertBaseScore = 87950,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Pee on the Ground and Jump Around",
+                    Id = 577458,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153956,
+                PowerChallengeScoreLeaderboardId = 153957,
+                PowerChallengeStarLeaderboardId = 153958
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 52,
-                ExpertBaseScore = 18601
+                ExpertBaseScore = 18601,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Life Is Demanding but I'm Just a Bum",
+                    Id = 577459,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153959,
+                PowerChallengeScoreLeaderboardId = 153960,
+                PowerChallengeStarLeaderboardId = 153961
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 904,
-                ExpertBaseScore = 53812
+                ExpertBaseScore = 53812,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'm Getting Sick of Paying Bills",
+                    Id = 577460,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153962,
+                PowerChallengeScoreLeaderboardId = 153963,
+                PowerChallengeStarLeaderboardId = 153964
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "We Carry Our Vision Wherever We Go",
+                Id = 577461,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Hunted Down",
@@ -9703,25 +10430,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 751,
-                ExpertBaseScore = 54336
+                ExpertBaseScore = 54336,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "They Saw You Today as You Were Leaving",
+                    Id = 577462,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153965,
+                PowerChallengeScoreLeaderboardId = 153966,
+                PowerChallengeStarLeaderboardId = 153967
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 697,
                 ExpertBaseScore = 58250,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Dogs Lead the Chase as You Are Bleeding",
+                    Id = 577463,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153968,
+                PowerChallengeScoreLeaderboardId = 153969,
+                PowerChallengeStarLeaderboardId = 153970
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 24,
-                ExpertBaseScore = 15401
+                ExpertBaseScore = 15401,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Your Face Has a Different Exterior",
+                    Id = 577464,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 153971,
+                PowerChallengeScoreLeaderboardId = 153972,
+                PowerChallengeStarLeaderboardId = 153973
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 661,
-                ExpertBaseScore = 36094
+                ExpertBaseScore = 36094,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Smile as You Look in the Mirror",
+                    Id = 577465,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153974,
+                PowerChallengeScoreLeaderboardId = 153975,
+                PowerChallengeStarLeaderboardId = 153976
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Those Starved Dogs Howling",
+                Id = 577466,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Watch This",
@@ -9735,20 +10502,52 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 926,
-                ExpertBaseScore = 56691
+                ExpertBaseScore = 56691,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Crucify the Dead",
+                    Id = 577467,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153977,
+                PowerChallengeScoreLeaderboardId = 153978,
+                PowerChallengeStarLeaderboardId = 153979
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 913,
                 ExpertBaseScore = 77500,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Beautiful Dangerous",
+                    Id = 577468,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153980,
+                PowerChallengeScoreLeaderboardId = 153981,
+                PowerChallengeStarLeaderboardId = 153982
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 750,
-                ExpertBaseScore = 40711
+                ExpertBaseScore = 40711,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Hold On",
+                    Id = 577469,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153983,
+                PowerChallengeScoreLeaderboardId = 153984,
+                PowerChallengeStarLeaderboardId = 153985
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Back from Cali",
+                Id = 577470,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Nothing To Say",
@@ -9762,25 +10561,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1594,
-                ExpertBaseScore = 95760
+                ExpertBaseScore = 95760,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Fear Can't Be Overstated",
+                    Id = 577471,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153986,
+                PowerChallengeScoreLeaderboardId = 153987,
+                PowerChallengeStarLeaderboardId = 153988
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1448,
                 ExpertBaseScore = 128000,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Got a Feelin' We Ain't Meant to Live This Way",
+                    Id = 577472,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153989,
+                PowerChallengeScoreLeaderboardId = 153990,
+                PowerChallengeStarLeaderboardId = 153991
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 36,
-                ExpertBaseScore = 31429
+                ExpertBaseScore = 31429,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Singin' Our Songs of Yesterday",
+                    Id = 577473,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153992,
+                PowerChallengeScoreLeaderboardId = 153993,
+                PowerChallengeStarLeaderboardId = 153994
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1411,
-                ExpertBaseScore = 78322
+                ExpertBaseScore = 78322,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "But Love Will Keep You Blind",
+                    Id = 577474,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 153995,
+                PowerChallengeScoreLeaderboardId = 153996,
+                PowerChallengeStarLeaderboardId = 153997
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "That Life with a New Peace of Mind",
+                Id = 577475,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Elected",
@@ -9794,25 +10633,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 454,
-                ExpertBaseScore = 43580
+                ExpertBaseScore = 43580,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'm Top Prime Cut of Meat, I'm Your Choice",
+                    Id = 577476,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 153998,
+                PowerChallengeScoreLeaderboardId = 153999,
+                PowerChallengeStarLeaderboardId = 154000
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1246,
                 ExpertBaseScore = 129875,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Kids Want a Savior, They Don't Need a Fake",
+                    Id = 577477,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154001,
+                PowerChallengeScoreLeaderboardId = 154002,
+                PowerChallengeStarLeaderboardId = 154003
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 41,
-                ExpertBaseScore = 29030
+                ExpertBaseScore = 29030,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "This Candidate Is Taking the Country by Storm",
+                    Id = 577478,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154004,
+                PowerChallengeScoreLeaderboardId = 154005,
+                PowerChallengeStarLeaderboardId = 154006
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 949,
-                ExpertBaseScore = 50950
+                ExpertBaseScore = 50950,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Never Lied to You, I've Always Been Cool",
+                    Id = 577479,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154007,
+                PowerChallengeScoreLeaderboardId = 154008,
+                PowerChallengeStarLeaderboardId = 154009
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Respected, Selected, Call Collected",
+                Id = 577480,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Poison",
@@ -9826,25 +10705,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 755,
-                ExpertBaseScore = 49687
+                ExpertBaseScore = 49687,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Wanna Love You, But I Better Not Touch",
+                    Id = 577481,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154010,
+                PowerChallengeScoreLeaderboardId = 154011,
+                PowerChallengeStarLeaderboardId = 154012
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 844,
                 ExpertBaseScore = 73647,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Wanna Hold You, But My Senses Tell Me to Stop",
+                    Id = 577482,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154013,
+                PowerChallengeScoreLeaderboardId = 154014,
+                PowerChallengeStarLeaderboardId = 154015
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 45,
-                ExpertBaseScore = 25040
+                ExpertBaseScore = 25040,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Wanna Kiss You, But I Want It Too Much",
+                    Id = 577483,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154016,
+                PowerChallengeScoreLeaderboardId = 154017,
+                PowerChallengeStarLeaderboardId = 154018
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 574,
-                ExpertBaseScore = 35829
+                ExpertBaseScore = 35829,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Wanna Taste You, But Your Lips Are Venomous Poison",
+                    Id = 577484,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154019,
+                PowerChallengeScoreLeaderboardId = 154020,
+                PowerChallengeStarLeaderboardId = 154021
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Don't Wanna Break These Chains",
+                Id = 577485,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Talk Dirty To Me",
@@ -9858,25 +10777,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 927,
-                ExpertBaseScore = 76105
+                ExpertBaseScore = 76105,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Never Seen You Look So Good",
+                    Id = 577486,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154022,
+                PowerChallengeScoreLeaderboardId = 154023,
+                PowerChallengeStarLeaderboardId = 154024
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 966,
                 ExpertBaseScore = 99163,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Never Act the Way You Should",
+                    Id = 577487,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154025,
+                PowerChallengeScoreLeaderboardId = 154026,
+                PowerChallengeStarLeaderboardId = 154027
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 54,
-                ExpertBaseScore = 15250
+                ExpertBaseScore = 15250,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Never Ever Stay Out Late",
+                    Id = 577488,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154028,
+                PowerChallengeScoreLeaderboardId = 154029,
+                PowerChallengeStarLeaderboardId = 154030
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 776,
-                ExpertBaseScore = 41971
+                ExpertBaseScore = 41971,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Know That I Can Hardly Wait",
+                    Id = 577489,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154031,
+                PowerChallengeScoreLeaderboardId = 154032,
+                PowerChallengeStarLeaderboardId = 154033
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Lock the Cellar Door",
+                Id = 577490,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Love Song",
@@ -9890,25 +10849,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 797,
-                ExpertBaseScore = 67845
+                ExpertBaseScore = 67845,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Love Is Knockin' Outside Your Door",
+                    Id = 577491,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154034,
+                PowerChallengeScoreLeaderboardId = 154035,
+                PowerChallengeStarLeaderboardId = 154036
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 409,
                 ExpertBaseScore = 34062,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Time Is Sure to Mend Your Broken Heart",
+                    Id = 577492,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154037,
+                PowerChallengeScoreLeaderboardId = 154038,
+                PowerChallengeStarLeaderboardId = 154039
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 39,
-                ExpertBaseScore = 19822
+                ExpertBaseScore = 19822,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "So You Think That It's Over",
+                    Id = 577493,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154040,
+                PowerChallengeScoreLeaderboardId = 154041,
+                PowerChallengeStarLeaderboardId = 154042
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 287,
-                ExpertBaseScore = 20659
+                ExpertBaseScore = 20659,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'll Be Right There for You When You Need a Friend",
+                    Id = 577494,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154043,
+                PowerChallengeScoreLeaderboardId = 154044,
+                PowerChallengeStarLeaderboardId = 154045
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Love's Gonna Find a Way Back to You",
+                Id = 577495,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Bulletproof Heart",
@@ -9922,25 +10921,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1001,
-                ExpertBaseScore = 97975
+                ExpertBaseScore = 97975,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Gravity Don't Mean Too Much to Me",
+                    Id = 577496,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154046,
+                PowerChallengeScoreLeaderboardId = 154047,
+                PowerChallengeStarLeaderboardId = 154048
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1030,
                 ExpertBaseScore = 100262,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Are You Gonna Be the One to Save Us",
+                    Id = 577497,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154049,
+                PowerChallengeScoreLeaderboardId = 154050,
+                PowerChallengeStarLeaderboardId = 154051
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 71,
-                ExpertBaseScore = 26408
+                ExpertBaseScore = 26408,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Ain't Gonna Be the One Left Standing",
+                    Id = 577498,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154052,
+                PowerChallengeScoreLeaderboardId = 154053,
+                PowerChallengeStarLeaderboardId = 154054
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 978,
-                ExpertBaseScore = 51100
+                ExpertBaseScore = 51100,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Let's Blow a Hole in This Town",
+                    Id = 577499,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154055,
+                PowerChallengeScoreLeaderboardId = 154056,
+                PowerChallengeStarLeaderboardId = 154057
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "These Pigs Are After Me, After You",
+                Id = 577500,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Welcome To The Black Parade",
@@ -9954,25 +10993,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 964,
-                ExpertBaseScore = 95033
+                ExpertBaseScore = 95033,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "One Day, I'll Leave You a Phantom",
+                    Id = 577501,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154058,
+                PowerChallengeScoreLeaderboardId = 154059,
+                PowerChallengeStarLeaderboardId = 154060
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1513,
                 ExpertBaseScore = 112438,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "The Rise and Fall, The Bodies in the Streets",
+                    Id = 577502,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154061,
+                PowerChallengeScoreLeaderboardId = 154062,
+                PowerChallengeStarLeaderboardId = 154063
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 67,
-                ExpertBaseScore = 33706
+                ExpertBaseScore = 33706,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'm Unashamed, I'm Gonna Show My Scar",
+                    Id = 577503,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154064,
+                PowerChallengeScoreLeaderboardId = 154065,
+                PowerChallengeStarLeaderboardId = 154066
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 788,
-                ExpertBaseScore = 51144
+                ExpertBaseScore = 51144,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Your Weary Widow Marches",
+                    Id = 577504,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154067,
+                PowerChallengeScoreLeaderboardId = 154068,
+                PowerChallengeStarLeaderboardId = 154069
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "The Anthem Won't Explain It",
+                Id = 577505,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Teenagers",
@@ -9986,25 +11065,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 547,
-                ExpertBaseScore = 48071
+                ExpertBaseScore = 48071,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Another Cog in the Murder Machine",
+                    Id = 577506,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154070,
+                PowerChallengeScoreLeaderboardId = 154071,
+                PowerChallengeStarLeaderboardId = 154072
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 432,
                 ExpertBaseScore = 38675,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "They Sleep with a Gun and Keep an Eye on You",
+                    Id = 577507,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154073,
+                PowerChallengeScoreLeaderboardId = 154074,
+                PowerChallengeStarLeaderboardId = 154075
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 40,
-                ExpertBaseScore = 15947
+                ExpertBaseScore = 15947,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Darken Your Clothes or Strike a Violent Pose",
+                    Id = 577508,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154076,
+                PowerChallengeScoreLeaderboardId = 154077,
+                PowerChallengeStarLeaderboardId = 154078
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 361,
-                ExpertBaseScore = 18377
+                ExpertBaseScore = 18377,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "The Boys and Girls in the Clique",
+                    Id = 577509,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154079,
+                PowerChallengeScoreLeaderboardId = 154080,
+                PowerChallengeStarLeaderboardId = 154081
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "All Teenagers Scare the Living S*** Out of Me",
+                Id = 577510,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Hands All Over",
@@ -10018,25 +11137,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1386,
-                ExpertBaseScore = 105962
+                ExpertBaseScore = 105962,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Think We're Falling from Composure",
+                    Id = 577511,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154082,
+                PowerChallengeScoreLeaderboardId = 154083,
+                PowerChallengeStarLeaderboardId = 154084
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1507,
                 ExpertBaseScore = 134766,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Ruffling Feathers, Turning Eagles Into Vultures",
+                    Id = 577512,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154085,
+                PowerChallengeScoreLeaderboardId = 154086,
+                PowerChallengeStarLeaderboardId = 154087
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 48,
-                ExpertBaseScore = 37747
+                ExpertBaseScore = 37747,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Trees Fall Down like Dying Soldiers",
+                    Id = 577513,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154088,
+                PowerChallengeScoreLeaderboardId = 154089,
+                PowerChallengeStarLeaderboardId = 154090
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1478,
-                ExpertBaseScore = 81931
+                ExpertBaseScore = 81931,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Change Them Into Things You Want To",
+                    Id = 577514,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154091,
+                PowerChallengeScoreLeaderboardId = 154092,
+                PowerChallengeStarLeaderboardId = 154093
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Got My Arms Around",
+                Id = 577515,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154094,
+            Metadata = AchievementMetadata(
+                Title = "Chris Cornell Hands On Voxtar Challenge",
+                Id = 577516,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Helena",
@@ -10050,25 +11218,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1162,
-                ExpertBaseScore = 106065
+                ExpertBaseScore = 106065,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Burning On, Just like a Match You Strike to Incinerate",
+                    Id = 577517,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154095,
+                PowerChallengeScoreLeaderboardId = 154096,
+                PowerChallengeStarLeaderboardId = 154097
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 946,
                 ExpertBaseScore = 76142,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Things Are Better If I Stay",
+                    Id = 577518,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154098,
+                PowerChallengeScoreLeaderboardId = 154099,
+                PowerChallengeStarLeaderboardId = 154100
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 38,
-                ExpertBaseScore = 31886
+                ExpertBaseScore = 31886,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "We'll Meet Again When Both Our Cars Collide",
+                    Id = 577519,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154101,
+                PowerChallengeScoreLeaderboardId = 154102,
+                PowerChallengeStarLeaderboardId = 154103
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 970,
-                ExpertBaseScore = 48750
+                ExpertBaseScore = 48750,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "From Every Heart You Break",
+                    Id = 577520,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154104,
+                PowerChallengeScoreLeaderboardId = 154105,
+                PowerChallengeStarLeaderboardId = 154106
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "So Long and Goodnight",
+                Id = 577521,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Name",
@@ -10082,25 +11290,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1054,
-                ExpertBaseScore = 72400
+                ExpertBaseScore = 72400,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Still Can't Turn Away",
+                    Id = 577522,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154107,
+                PowerChallengeScoreLeaderboardId = 154108,
+                PowerChallengeStarLeaderboardId = 154109
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1038,
                 ExpertBaseScore = 78825,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "All the Dreams You Never Thought You'd Lose",
+                    Id = 577523,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154110,
+                PowerChallengeScoreLeaderboardId = 154111,
+                PowerChallengeStarLeaderboardId = 154112
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 32,
-                ExpertBaseScore = 15257
+                ExpertBaseScore = 15257,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Letters That You Never Meant to Send",
+                    Id = 577524,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154113,
+                PowerChallengeScoreLeaderboardId = 154114,
+                PowerChallengeStarLeaderboardId = 154115
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 453,
-                ExpertBaseScore = 27030
+                ExpertBaseScore = 27030,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Scars Are Souvenirs You Never Lose",
+                    Id = 577525,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154116,
+                PowerChallengeScoreLeaderboardId = 154117,
+                PowerChallengeStarLeaderboardId = 154118
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "You Could Hide Beside Me, Maybe for a While",
+                Id = 577526,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154119,
+            Metadata = AchievementMetadata(
+                Title = "John Rzeznik Voxtar Challenge",
+                Id = 577527,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Real World",
@@ -10114,25 +11371,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 749,
-                ExpertBaseScore = 56594
+                ExpertBaseScore = 56594,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Wonder What It's Like to Be a Rainmaker",
+                    Id = 577528,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154120,
+                PowerChallengeScoreLeaderboardId = 154121,
+                PowerChallengeStarLeaderboardId = 154122
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 909,
                 ExpertBaseScore = 81925,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Wonder What It's Like to Be a Superhero",
+                    Id = 577529,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154123,
+                PowerChallengeScoreLeaderboardId = 154124,
+                PowerChallengeStarLeaderboardId = 154125
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 618,
-                ExpertBaseScore = 19692
+                ExpertBaseScore = 19692,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Wonder What It's Like to Be the Head Honcho",
+                    Id = 577530,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154126,
+                PowerChallengeScoreLeaderboardId = 154127,
+                PowerChallengeStarLeaderboardId = 154128
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 485,
-                ExpertBaseScore = 28387
+                ExpertBaseScore = 28387,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "The Only Thing That Seems to Work at All Is You",
+                    Id = 577531,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154129,
+                PowerChallengeScoreLeaderboardId = 154130,
+                PowerChallengeStarLeaderboardId = 154131
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "If I Was Someone Else, Would This All Fall Apart?",
+                Id = 577532,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "What's The Frequency, Kenneth?",
@@ -10146,25 +11443,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 573,
-                ExpertBaseScore = 50964
+                ExpertBaseScore = 50964,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Tunnel Vision from the Outsider's Screen",
+                    Id = 577533,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154132,
+                PowerChallengeScoreLeaderboardId = 154133,
+                PowerChallengeStarLeaderboardId = 154134
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 786,
                 ExpertBaseScore = 72300,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Said That Irony Was the Shackles of Youth",
+                    Id = 577534,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154135,
+                PowerChallengeScoreLeaderboardId = 154136,
+                PowerChallengeStarLeaderboardId = 154137
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 25,
-                ExpertBaseScore = 13796
+                ExpertBaseScore = 13796,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Withdrawal in Disgust Is Not the Same as Apathy",
+                    Id = 577535,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154138,
+                PowerChallengeScoreLeaderboardId = 154139,
+                PowerChallengeStarLeaderboardId = 154140
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 599,
-                ExpertBaseScore = 34104
+                ExpertBaseScore = 34104,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Wore Our Expectations like an Armored Suit",
+                    Id = 577536,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154141,
+                PowerChallengeScoreLeaderboardId = 154142,
+                PowerChallengeStarLeaderboardId = 154143
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "You Wore a Shirt of Violent Green",
+                Id = 577537,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Sex And Candy",
@@ -10178,25 +11515,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 506,
-                ExpertBaseScore = 36659
+                ExpertBaseScore = 36659,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Hanging Around, Downtown by Myself",
+                    Id = 577538,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154144,
+                PowerChallengeScoreLeaderboardId = 154145,
+                PowerChallengeStarLeaderboardId = 154146
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 492,
                 ExpertBaseScore = 40725,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "There She Was, Like Disco Super-Fly",
+                    Id = 577539,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154147,
+                PowerChallengeScoreLeaderboardId = 154148,
+                PowerChallengeStarLeaderboardId = 154149
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 28,
-                ExpertBaseScore = 18402
+                ExpertBaseScore = 18402,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I've Had Too Much Caffeine and I Was Thinking About Myself",
+                    Id = 577540,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154150,
+                PowerChallengeScoreLeaderboardId = 154151,
+                PowerChallengeStarLeaderboardId = 154152
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 273,
-                ExpertBaseScore = 17098
+                ExpertBaseScore = 17098,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "There She Was, Like Disco Lemonade",
+                    Id = 577541,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154153,
+                PowerChallengeScoreLeaderboardId = 154154,
+                PowerChallengeStarLeaderboardId = 154155
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "This Surely Is a Dream",
+                Id = 577542,
+                Points = 3
+            )
+        )
     ),
     Song(
         Title = "Plowed",
@@ -10210,25 +11587,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 713,
-                ExpertBaseScore = 83480
+                ExpertBaseScore = 83480,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "In a World of Human Wreckage",
+                    Id = 577543,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154156,
+                PowerChallengeScoreLeaderboardId = 154157,
+                PowerChallengeStarLeaderboardId = 154158
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 810,
                 ExpertBaseScore = 80725,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Our Only Chance to Connect with a Dream",
+                    Id = 577544,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154159,
+                PowerChallengeScoreLeaderboardId = 154160,
+                PowerChallengeStarLeaderboardId = 154161
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 28,
-                ExpertBaseScore = 20719
+                ExpertBaseScore = 20719,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Guess This Is Reality",
+                    Id = 577545,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154162,
+                PowerChallengeScoreLeaderboardId = 154163,
+                PowerChallengeStarLeaderboardId = 154164
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1177,
-                ExpertBaseScore = 59425
+                ExpertBaseScore = 59425,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Hang a Life on Some Tragedy",
+                    Id = 577546,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154165,
+                PowerChallengeScoreLeaderboardId = 154166,
+                PowerChallengeStarLeaderboardId = 154167
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Say a Prayer for Me",
+                Id = 577547,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Detroit Rock City",
@@ -10242,25 +11659,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 381,
-                ExpertBaseScore = 38442
+                ExpertBaseScore = 38442,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Nine O'Clock, the Radio's the Only Light",
+                    Id = 577548,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154168,
+                PowerChallengeScoreLeaderboardId = 154169,
+                PowerChallengeStarLeaderboardId = 154170
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1421,
                 ExpertBaseScore = 106925,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Ten O'Clock and I Know I Gotta Hit the Road",
+                    Id = 577549,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154171,
+                PowerChallengeScoreLeaderboardId = 154172,
+                PowerChallengeStarLeaderboardId = 154173
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 32,
-                ExpertBaseScore = 10992
+                ExpertBaseScore = 10992,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Moving Fast, Down 95",
+                    Id = 577550,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154174,
+                PowerChallengeScoreLeaderboardId = 154175,
+                PowerChallengeStarLeaderboardId = 154176
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 527,
-                ExpertBaseScore = 32763
+                ExpertBaseScore = 32763,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Twelve O'Clock, I Gotta Rock",
+                    Id = 577551,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154177,
+                PowerChallengeScoreLeaderboardId = 154178,
+                PowerChallengeStarLeaderboardId = 154179
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Everybody's Gonna Move Their Feet",
+                Id = 577552,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154180,
+            Metadata = AchievementMetadata(
+                Title = "Paul Stanley in Detroit Voxtar Challenge",
+                Id = 577553,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Calling Dr. Love",
@@ -10274,25 +11740,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 570,
-                ExpertBaseScore = 40956
+                ExpertBaseScore = 40956,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Don't You Know You'll Be in Misery",
+                    Id = 577554,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154181,
+                PowerChallengeScoreLeaderboardId = 154182,
+                PowerChallengeStarLeaderboardId = 154183
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 919,
                 ExpertBaseScore = 70894,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You'll Let Me Through, There's Nothing You Can Do",
+                    Id = 577555,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154184,
+                PowerChallengeScoreLeaderboardId = 154185,
+                PowerChallengeStarLeaderboardId = 154186
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 38,
-                ExpertBaseScore = 16894
+                ExpertBaseScore = 16894,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "There Are No Bills, There Are No Fees",
+                    Id = 577556,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154187,
+                PowerChallengeScoreLeaderboardId = 154188,
+                PowerChallengeStarLeaderboardId = 154189
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 445,
-                ExpertBaseScore = 27769
+                ExpertBaseScore = 27769,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "The First Step of the Cure Is a Kiss",
+                    Id = 577557,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154190,
+                PowerChallengeScoreLeaderboardId = 154191,
+                PowerChallengeStarLeaderboardId = 154192
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I've Got the Cure You're Thinking Of",
+                Id = 577558,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_BASS,
+            LeaderboardId = 154193,
+            Metadata = AchievementMetadata(
+                Title = "Gene Simmons Voxbass Challenge",
+                Id = 577559,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Outshined",
@@ -10306,25 +11821,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 917,
-                ExpertBaseScore = 76377
+                ExpertBaseScore = 76377,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I've Kept the Movie Rollin', But the Story's Getting Old Now",
+                    Id = 577560,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154194,
+                PowerChallengeScoreLeaderboardId = 154195,
+                PowerChallengeStarLeaderboardId = 154196
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1257,
                 ExpertBaseScore = 106525,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'm Lookin' California and Feelin' Minnesota",
+                    Id = 577561,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154197,
+                PowerChallengeScoreLeaderboardId = 154198,
+                PowerChallengeStarLeaderboardId = 154199
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 59,
-                ExpertBaseScore = 38096
+                ExpertBaseScore = 38096,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'm Feelin' That I'm Sober Even Though I'm Drinking",
+                    Id = 577562,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154200,
+                PowerChallengeScoreLeaderboardId = 154201,
+                PowerChallengeStarLeaderboardId = 154202
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 850,
-                ExpertBaseScore = 47617
+                ExpertBaseScore = 47617,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "The Grass Is Always Greener Where the Dogs Are Shedding",
+                    Id = 577563,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154203,
+                PowerChallengeScoreLeaderboardId = 154204,
+                PowerChallengeStarLeaderboardId = 154205
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Show Me the Power",
+                Id = 577564,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Closer",
@@ -10338,25 +11893,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 911,
-                ExpertBaseScore = 69558
+                ExpertBaseScore = 69558,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Let Me Violate You",
+                    Id = 577565,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154206,
+                PowerChallengeScoreLeaderboardId = 154207,
+                PowerChallengeStarLeaderboardId = 154208
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1887,
                 ExpertBaseScore = 158025,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Let Me Desecrate You",
+                    Id = 577566,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154209,
+                PowerChallengeScoreLeaderboardId = 154210,
+                PowerChallengeStarLeaderboardId = 154211
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 34,
-                ExpertBaseScore = 12526
+                ExpertBaseScore = 12526,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Let Me Penetrate You",
+                    Id = 577567,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154212,
+                PowerChallengeScoreLeaderboardId = 154213,
+                PowerChallengeStarLeaderboardId = 154214
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 806,
-                ExpertBaseScore = 40769
+                ExpertBaseScore = 40769,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Let Me Complicate You",
+                    Id = 577568,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154215,
+                PowerChallengeScoreLeaderboardId = 154216,
+                PowerChallengeStarLeaderboardId = 154217
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "You Get Me Closer to God",
+                Id = 577569,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154218,
+            Metadata = AchievementMetadata(
+                Title = "Trent Reznor Closer Voxtar Challenge",
+                Id = 577570,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "The Hand That Feeds",
@@ -10370,25 +11974,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 559,
-                ExpertBaseScore = 41651
+                ExpertBaseScore = 41651,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Just How Deep Do You Believe?",
+                    Id = 577571,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154219,
+                PowerChallengeScoreLeaderboardId = 154220,
+                PowerChallengeStarLeaderboardId = 154221
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1271,
                 ExpertBaseScore = 96175,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Will You Chew Until It Bleeds?",
+                    Id = 577572,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154222,
+                PowerChallengeScoreLeaderboardId = 154223,
+                PowerChallengeStarLeaderboardId = 154224
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 40,
-                ExpertBaseScore = 18484
+                ExpertBaseScore = 18484,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Can You Get Up Off Your Knees?",
+                    Id = 577573,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154225,
+                PowerChallengeScoreLeaderboardId = 154226,
+                PowerChallengeStarLeaderboardId = 154227
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 596,
-                ExpertBaseScore = 29800
+                ExpertBaseScore = 29800,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Are You Brave Enough to See?",
+                    Id = 577574,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154228,
+                PowerChallengeScoreLeaderboardId = 154229,
+                PowerChallengeStarLeaderboardId = 154230
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Do You Wanna Change It?",
+                Id = 577575,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154231,
+            Metadata = AchievementMetadata(
+                Title = "Trent Reznor Feeding Voxtar Challenge",
+                Id = 577576,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Head Like A Hole",
@@ -10402,25 +12055,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 472,
-                ExpertBaseScore = 35254
+                ExpertBaseScore = 35254,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "God Money, I'll Do Anything for You",
+                    Id = 577577,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154232,
+                PowerChallengeScoreLeaderboardId = 154233,
+                PowerChallengeStarLeaderboardId = 154234
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 2333,
                 ExpertBaseScore = 176975,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "God Money, Just Tell Me What You Want Me To",
+                    Id = 577578,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154235,
+                PowerChallengeScoreLeaderboardId = 154236,
+                PowerChallengeStarLeaderboardId = 154237
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 58,
-                ExpertBaseScore = 27013
+                ExpertBaseScore = 27013,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "God Money, Nail Me up Against the Wall",
+                    Id = 577579,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154238,
+                PowerChallengeScoreLeaderboardId = 154239,
+                PowerChallengeStarLeaderboardId = 154240
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1429,
-                ExpertBaseScore = 72575
+                ExpertBaseScore = 72575,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "God Money, Don't Want Everything, He Wants It All",
+                    Id = 577580,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154241,
+                PowerChallengeScoreLeaderboardId = 154242,
+                PowerChallengeStarLeaderboardId = 154243
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I'd Rather Die than Give You Control",
+                Id = 577581,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154244,
+            Metadata = AchievementMetadata(
+                Title = "Trent Reznor Head Voxtar Challenge",
+                Id = 577582,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Buried Myself Alive",
@@ -10434,25 +12136,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1127,
-                ExpertBaseScore = 123874
+                ExpertBaseScore = 123874,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Almost Always Pick the Best Times to Drop the Worst Lines",
+                    Id = 577583,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154245,
+                PowerChallengeScoreLeaderboardId = 154246,
+                PowerChallengeStarLeaderboardId = 154247
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1089,
                 ExpertBaseScore = 86550,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Think I Made It a Game to Play Your Game and Let Myself Cry",
+                    Id = 577584,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154248,
+                PowerChallengeScoreLeaderboardId = 154249,
+                PowerChallengeStarLeaderboardId = 154250
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 40,
-                ExpertBaseScore = 31883
+                ExpertBaseScore = 31883,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Took Advantage of Myself and Felt Fine",
+                    Id = 577585,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154251,
+                PowerChallengeScoreLeaderboardId = 154252,
+                PowerChallengeStarLeaderboardId = 154253
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 703,
-                ExpertBaseScore = 44984
+                ExpertBaseScore = 44984,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "My Foot on Your Neck, I Finally Have You",
+                    Id = 577586,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154254,
+                PowerChallengeScoreLeaderboardId = 154255,
+                PowerChallengeStarLeaderboardId = 154256
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Guess It's Okay I Puked the Day Away",
+                Id = 577587,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "We've Got A Situatuion Here",
@@ -10466,25 +12208,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1412,
-                ExpertBaseScore = 120593
+                ExpertBaseScore = 120593,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "At the Steps to Her Door",
+                    Id = 577588,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154257,
+                PowerChallengeScoreLeaderboardId = 154258,
+                PowerChallengeStarLeaderboardId = 154259
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1264,
                 ExpertBaseScore = 98800,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Know I Forget",
+                    Id = 577589,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154260,
+                PowerChallengeScoreLeaderboardId = 154261,
+                PowerChallengeStarLeaderboardId = 154262
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 59,
-                ExpertBaseScore = 24476
+                ExpertBaseScore = 24476,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Didn't the Dogs Get the Scent",
+                    Id = 577590,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154263,
+                PowerChallengeScoreLeaderboardId = 154264,
+                PowerChallengeStarLeaderboardId = 154265
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1108,
-                ExpertBaseScore = 59945
+                ExpertBaseScore = 59945,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "When It Comes, It Takes Us in Its Arms",
+                    Id = 577591,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154266,
+                PowerChallengeScoreLeaderboardId = 154267,
+                PowerChallengeStarLeaderboardId = 154268
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Am the Cross-Bearer in the Cross-Hairs",
+                Id = 577592,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Rescue Me",
@@ -10498,25 +12280,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 622,
-                ExpertBaseScore = 57112
+                ExpertBaseScore = 57112,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "The Midnight Air Will Do You Well",
+                    Id = 577593,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154269,
+                PowerChallengeScoreLeaderboardId = 154270,
+                PowerChallengeStarLeaderboardId = 154271
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 624,
                 ExpertBaseScore = 56825,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'll Ask the Nurse for Bandages",
+                    Id = 577594,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154272,
+                PowerChallengeScoreLeaderboardId = 154273,
+                PowerChallengeStarLeaderboardId = 154274
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 43,
-                ExpertBaseScore = 17746
+                ExpertBaseScore = 17746,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Sit and Wait for the Same Bad News",
+                    Id = 577595,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154275,
+                PowerChallengeScoreLeaderboardId = 154276,
+                PowerChallengeStarLeaderboardId = 154277
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 560,
-                ExpertBaseScore = 34367
+                ExpertBaseScore = 34367,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I've Seen the Worst Case Scenario",
+                    Id = 577596,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154278,
+                PowerChallengeScoreLeaderboardId = 154279,
+                PowerChallengeStarLeaderboardId = 154280
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Wish I Could Breathe",
+                Id = 577597,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154281,
+            Metadata = AchievementMetadata(
+                Title = "JT Woodruff Voxtar Challenge",
+                Id = 577598,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Wings Of A Butterfly",
@@ -10530,25 +12361,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 654,
-                ExpertBaseScore = 52508
+                ExpertBaseScore = 52508,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Heaven Ablaze in Our Eyes",
+                    Id = 577599,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154282,
+                PowerChallengeScoreLeaderboardId = 154283,
+                PowerChallengeStarLeaderboardId = 154284
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 722,
                 ExpertBaseScore = 64300,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "The Blood on Our Hands Is the Wine",
+                    Id = 577600,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154285,
+                PowerChallengeScoreLeaderboardId = 154286,
+                PowerChallengeStarLeaderboardId = 154287
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 29,
-                ExpertBaseScore = 20278
+                ExpertBaseScore = 20278,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Gods Kneel Before Our Crime",
+                    Id = 577601,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154288,
+                PowerChallengeScoreLeaderboardId = 154289,
+                PowerChallengeStarLeaderboardId = 154290
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 552,
-                ExpertBaseScore = 31220
+                ExpertBaseScore = 31220,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Hell Freezing over in Our Eyes",
+                    Id = 577602,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154291,
+                PowerChallengeScoreLeaderboardId = 154292,
+                PowerChallengeStarLeaderboardId = 154293
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Come on and Show Them Your Love",
+                Id = 577603,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "All I Want",
@@ -10562,25 +12433,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1172,
-                ExpertBaseScore = 93226
+                ExpertBaseScore = 93226,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Like to Keep Things Honest",
+                    Id = 577604,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154294,
+                PowerChallengeScoreLeaderboardId = 154295,
+                PowerChallengeStarLeaderboardId = 154296
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 967,
                 ExpertBaseScore = 83675,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "My Head's Above the Water",
+                    Id = 577605,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154297,
+                PowerChallengeScoreLeaderboardId = 154298,
+                PowerChallengeStarLeaderboardId = 154299
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 48,
-                ExpertBaseScore = 22585
+                ExpertBaseScore = 22585,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'm Always Screaming My Lungs Out",
+                    Id = 577606,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154300,
+                PowerChallengeScoreLeaderboardId = 154301,
+                PowerChallengeStarLeaderboardId = 154302
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 975,
-                ExpertBaseScore = 49959
+                ExpertBaseScore = 49959,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Live Your Life for Yourself",
+                    Id = 577607,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154303,
+                PowerChallengeScoreLeaderboardId = 154304,
+                PowerChallengeStarLeaderboardId = 154305
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Hopes up High and Your Head Down Low",
+                Id = 577608,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Rusty Cage",
@@ -10594,25 +12505,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1110,
-                ExpertBaseScore = 62453
+                ExpertBaseScore = 62453,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Wired Me Awake",
+                    Id = 577609,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154306,
+                PowerChallengeScoreLeaderboardId = 154307,
+                PowerChallengeStarLeaderboardId = 154308
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 980,
                 ExpertBaseScore = 87600,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Tied My Lead and Pulled My Chain",
+                    Id = 577610,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154309,
+                PowerChallengeScoreLeaderboardId = 154310,
+                PowerChallengeStarLeaderboardId = 154311
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 38,
-                ExpertBaseScore = 20701
+                ExpertBaseScore = 20701,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Too Cold to Start a Fire",
+                    Id = 577611,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154312,
+                PowerChallengeScoreLeaderboardId = 154313,
+                PowerChallengeStarLeaderboardId = 154314
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 981,
-                ExpertBaseScore = 54602
+                ExpertBaseScore = 54602,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Hit Like a Phillips Head Into My Brain",
+                    Id = 577612,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154315,
+                PowerChallengeScoreLeaderboardId = 154316,
+                PowerChallengeStarLeaderboardId = 154317
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I'm Gonna Break",
+                Id = 577613,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154318,
+            Metadata = AchievementMetadata(
+                Title = "Chris Cornell Rusty Cage Voxtar Challenge",
+                Id = 577614,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "2nd Sucks",
@@ -10626,25 +12586,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 550,
-                ExpertBaseScore = 62988
+                ExpertBaseScore = 62988,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You're Afraid, Like I Make My Deals with the Devil",
+                    Id = 577615,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154319,
+                PowerChallengeScoreLeaderboardId = 154320,
+                PowerChallengeStarLeaderboardId = 154321
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 612,
                 ExpertBaseScore = 49900,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Need Nothing from No One, I Take What I Need",
+                    Id = 577616,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154322,
+                PowerChallengeScoreLeaderboardId = 154323,
+                PowerChallengeStarLeaderboardId = 154324
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 39,
-                ExpertBaseScore = 13684
+                ExpertBaseScore = 13684,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Speak the Truth and Everybody Else Knows It",
+                    Id = 577617,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154325,
+                PowerChallengeScoreLeaderboardId = 154326,
+                PowerChallengeStarLeaderboardId = 154327
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 504,
-                ExpertBaseScore = 27314
+                ExpertBaseScore = 27314,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Let's Keep It Real, This Is No Competition to Me",
+                    Id = 577618,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154328,
+                PowerChallengeScoreLeaderboardId = 154329,
+                PowerChallengeStarLeaderboardId = 154330
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Hold My Cards to My Chest",
+                Id = 577619,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Downfall Of Us All",
@@ -10658,25 +12658,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 818,
-                ExpertBaseScore = 94260
+                ExpertBaseScore = 94260,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Sold My Soul to the Open Road",
+                    Id = 577620,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154331,
+                PowerChallengeScoreLeaderboardId = 154332,
+                PowerChallengeStarLeaderboardId = 154333
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 906,
                 ExpertBaseScore = 72675,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "It's Not Easy Making a Name for Yourself",
+                    Id = 577621,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154334,
+                PowerChallengeScoreLeaderboardId = 154335,
+                PowerChallengeStarLeaderboardId = 154336
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 57,
-                ExpertBaseScore = 19472
+                ExpertBaseScore = 19472,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Did the Best That I Could to Try and Write You Songs",
+                    Id = 577622,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154337,
+                PowerChallengeScoreLeaderboardId = 154338,
+                PowerChallengeStarLeaderboardId = 154339
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 779,
-                ExpertBaseScore = 40212
+                ExpertBaseScore = 40212,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "When We Signed Three, Four, Five on That Dotted Line",
+                    Id = 577623,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154340,
+                PowerChallengeScoreLeaderboardId = 154341,
+                PowerChallengeStarLeaderboardId = 154342
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Meet Me Out past the Train Tracks",
+                Id = 577624,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Blooddrunk",
@@ -10690,25 +12730,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1512,
-                ExpertBaseScore = 88774
+                ExpertBaseScore = 88774,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Unquenchable Thirst Burns You Inside",
+                    Id = 577625,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154343,
+                PowerChallengeScoreLeaderboardId = 154344,
+                PowerChallengeStarLeaderboardId = 154345
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1678,
                 ExpertBaseScore = 117250,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Inexhaustible Craving for Something",
+                    Id = 577626,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154346,
+                PowerChallengeScoreLeaderboardId = 154347,
+                PowerChallengeStarLeaderboardId = 154348
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 46,
-                ExpertBaseScore = 11438
+                ExpertBaseScore = 11438,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Detoxing, Here Come the Withdrawals",
+                    Id = 577627,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154349,
+                PowerChallengeScoreLeaderboardId = 154350,
+                PowerChallengeStarLeaderboardId = 154351
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1122,
-                ExpertBaseScore = 59222
+                ExpertBaseScore = 59222,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Deep Within, Things Are Getting Hot",
+                    Id = 577628,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154352,
+                PowerChallengeScoreLeaderboardId = 154353,
+                PowerChallengeStarLeaderboardId = 154354
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "All the Pain Inside Will Fade",
+                Id = 577629,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154355,
+            Metadata = AchievementMetadata(
+                Title = "Alexi Laiho Blooddrunk Voxtar Challenge",
+                Id = 577630,
+                Points = 10
+            )
+        ))
     ),
     Song(
         Title = "Living Dead Beat",
@@ -10722,25 +12811,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 2054,
-                ExpertBaseScore = 124137
+                ExpertBaseScore = 124137,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Prepare for Another War",
+                    Id = 577631,
+                    Points = 10
+                ),
+                QuickplayLeaderboardId = 154356,
+                PowerChallengeScoreLeaderboardId = 154357,
+                PowerChallengeStarLeaderboardId = 154358
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1474,
                 ExpertBaseScore = 110125,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Bad to the Bone, Raised in the Gutter",
+                    Id = 577632,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154359,
+                PowerChallengeScoreLeaderboardId = 154360,
+                PowerChallengeStarLeaderboardId = 154361
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 35,
-                ExpertBaseScore = 13623
+                ExpertBaseScore = 13623,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Dig up Yourself from Your Grave",
+                    Id = 577633,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154362,
+                PowerChallengeScoreLeaderboardId = 154363,
+                PowerChallengeStarLeaderboardId = 154364
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1645,
-                ExpertBaseScore = 83895
+                ExpertBaseScore = 83895,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Not Afraid of Falling Down Below",
+                    Id = 577634,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154365,
+                PowerChallengeScoreLeaderboardId = 154366,
+                PowerChallengeStarLeaderboardId = 154367
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "As Long as the Twilight Veils",
+                Id = 577635,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154368,
+            Metadata = AchievementMetadata(
+                Title = "Alexi Laiho Living Voxtar Challenge",
+                Id = 577636,
+                Points = 10
+            )
+        ))
     ),
     Song(
         Title = "Was It Worth It",
@@ -10754,25 +12892,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1100,
-                ExpertBaseScore = 73189
+                ExpertBaseScore = 73189,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I've Been Dragged Through Mud Here",
+                    Id = 577637,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154369,
+                PowerChallengeScoreLeaderboardId = 154370,
+                PowerChallengeStarLeaderboardId = 154371
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1423,
                 ExpertBaseScore = 98900,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Withdrawal Kicking In, I Can't Shake It",
+                    Id = 577638,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154372,
+                PowerChallengeScoreLeaderboardId = 154373,
+                PowerChallengeStarLeaderboardId = 154374
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 25,
-                ExpertBaseScore = 14920
+                ExpertBaseScore = 14920,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Went Crazy and Far Beyond",
+                    Id = 577639,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154375,
+                PowerChallengeScoreLeaderboardId = 154376,
+                PowerChallengeStarLeaderboardId = 154377
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1344,
-                ExpertBaseScore = 68733
+                ExpertBaseScore = 68733,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'm Crying, Tears Made of Grit",
+                    Id = 577640,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154378,
+                PowerChallengeScoreLeaderboardId = 154379,
+                PowerChallengeStarLeaderboardId = 154380
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Hungover, But I'll Do It Again",
+                Id = 577641,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154381,
+            Metadata = AchievementMetadata(
+                Title = "Alexi Laiho's Worthwhile Voxtar Challenge",
+                Id = 577642,
+                Points = 10
+            )
+        ))
     ),
     Song(
         Title = "World On Fire",
@@ -10786,25 +12973,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1198,
-                ExpertBaseScore = 87637
+                ExpertBaseScore = 87637,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Recreation, A Man's Design",
+                    Id = 577643,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154382,
+                PowerChallengeScoreLeaderboardId = 154383,
+                PowerChallengeStarLeaderboardId = 154384
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1541,
                 ExpertBaseScore = 113097,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Hear the Prayers",
+                    Id = 577644,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154385,
+                PowerChallengeScoreLeaderboardId = 154386,
+                PowerChallengeStarLeaderboardId = 154387
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 44,
-                ExpertBaseScore = 21611
+                ExpertBaseScore = 21611,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Feel the Truth",
+                    Id = 577645,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154388,
+                PowerChallengeScoreLeaderboardId = 154389,
+                PowerChallengeStarLeaderboardId = 154390
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1428,
-                ExpertBaseScore = 77465
+                ExpertBaseScore = 77465,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Will Rise Through the Wind",
+                    Id = 577646,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154391,
+                PowerChallengeScoreLeaderboardId = 154392,
+                PowerChallengeStarLeaderboardId = 154393
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Future's Calling Us",
+                Id = 577647,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Get Your Gunn",
@@ -10818,25 +13045,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 638,
-                ExpertBaseScore = 54356
+                ExpertBaseScore = 54356,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "What You Sow, I Will Reap",
+                    Id = 577648,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154394,
+                PowerChallengeScoreLeaderboardId = 154395,
+                PowerChallengeStarLeaderboardId = 154396
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1045,
                 ExpertBaseScore = 94775,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "What You Won't Do, I Will",
+                    Id = 577649,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154397,
+                PowerChallengeScoreLeaderboardId = 154398,
+                PowerChallengeStarLeaderboardId = 154399
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 59,
-                ExpertBaseScore = 16644
+                ExpertBaseScore = 16644,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Record Me with Your Fist",
+                    Id = 577650,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154400,
+                PowerChallengeScoreLeaderboardId = 154401,
+                PowerChallengeStarLeaderboardId = 154402
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 813,
-                ExpertBaseScore = 43056
+                ExpertBaseScore = 43056,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Hate, Therefore I Am",
+                    Id = 577651,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154403,
+                PowerChallengeScoreLeaderboardId = 154404,
+                PowerChallengeStarLeaderboardId = 154405
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Pseudo-Morals Work Real Well",
+                Id = 577652,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Coma White",
@@ -10850,25 +13117,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1085,
-                ExpertBaseScore = 76777
+                ExpertBaseScore = 76777,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "She's Standing on an Overpass",
+                    Id = 577653,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154406,
+                PowerChallengeScoreLeaderboardId = 154407,
+                PowerChallengeStarLeaderboardId = 154408
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 834,
                 ExpertBaseScore = 77425,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Just Bleeding like a Polaroid",
+                    Id = 577654,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154409,
+                PowerChallengeScoreLeaderboardId = 154410,
+                PowerChallengeStarLeaderboardId = 154411
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 53,
-                ExpertBaseScore = 28244
+                ExpertBaseScore = 28244,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "All the Drugs in This World Won't Save Her from Herself",
+                    Id = 577655,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154412,
+                PowerChallengeScoreLeaderboardId = 154413,
+                PowerChallengeStarLeaderboardId = 154414
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 563,
-                ExpertBaseScore = 36871
+                ExpertBaseScore = 36871,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "A Pill to Make You Numb",
+                    Id = 577656,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154415,
+                PowerChallengeScoreLeaderboardId = 154416,
+                PowerChallengeStarLeaderboardId = 154417
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "You Were from a Perfect World",
+                Id = 577657,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Tourniquet",
@@ -10882,25 +13189,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 619,
-                ExpertBaseScore = 47819
+                ExpertBaseScore = 47819,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "She's Made of Hair and Bone and Little Teeth",
+                    Id = 577658,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154418,
+                PowerChallengeScoreLeaderboardId = 154419,
+                PowerChallengeStarLeaderboardId = 154420
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1195,
                 ExpertBaseScore = 90675,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Prosthetic Synthesis with Butterfly",
+                    Id = 577659,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154421,
+                PowerChallengeScoreLeaderboardId = 154422,
+                PowerChallengeStarLeaderboardId = 154423
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 34,
-                ExpertBaseScore = 27131
+                ExpertBaseScore = 27131,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Silver Tight like Spider Legs",
+                    Id = 577660,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154424,
+                PowerChallengeScoreLeaderboardId = 154425,
+                PowerChallengeStarLeaderboardId = 154426
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 912,
-                ExpertBaseScore = 51564
+                ExpertBaseScore = 51564,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "But Flies Will Lay Their Eggs",
+                    Id = 577661,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154427,
+                PowerChallengeScoreLeaderboardId = 154428,
+                PowerChallengeStarLeaderboardId = 154429
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Make Your Victim My Head",
+                Id = 577662,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Birth Ritual",
@@ -10914,25 +13261,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1264,
-                ExpertBaseScore = 100678
+                ExpertBaseScore = 100678,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Lying like Needles on Forest Earth",
+                    Id = 577663,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154430,
+                PowerChallengeScoreLeaderboardId = 154431,
+                PowerChallengeStarLeaderboardId = 154432
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1786,
                 ExpertBaseScore = 148325,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'm Sputtering Like Cold Machines",
+                    Id = 577664,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154433,
+                PowerChallengeScoreLeaderboardId = 154434,
+                PowerChallengeStarLeaderboardId = 154435
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 62,
-                ExpertBaseScore = 30064
+                ExpertBaseScore = 30064,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Can Drive My Tail to Watch the Circus",
+                    Id = 577665,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154436,
+                PowerChallengeScoreLeaderboardId = 154437,
+                PowerChallengeStarLeaderboardId = 154438
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1209,
-                ExpertBaseScore = 71646
+                ExpertBaseScore = 71646,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Everything Dies in Shyness",
+                    Id = 577666,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154439,
+                PowerChallengeScoreLeaderboardId = 154440,
+                PowerChallengeStarLeaderboardId = 154441
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Now You See Your Crime for Every Miracle",
+                Id = 577667,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Parade Of The Dead",
@@ -10946,25 +13333,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1348,
-                ExpertBaseScore = 77601
+                ExpertBaseScore = 77601,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Exterminate the Laws of Old",
+                    Id = 577668,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154442,
+                PowerChallengeScoreLeaderboardId = 154443,
+                PowerChallengeStarLeaderboardId = 154444
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 909,
                 ExpertBaseScore = 75732,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "The Asylum Marches On",
+                    Id = 577669,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154445,
+                PowerChallengeScoreLeaderboardId = 154446,
+                PowerChallengeStarLeaderboardId = 154447
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 27,
-                ExpertBaseScore = 22689
+                ExpertBaseScore = 22689,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Revenge and Retaliation",
+                    Id = 577670,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154448,
+                PowerChallengeScoreLeaderboardId = 154449,
+                PowerChallengeStarLeaderboardId = 154450
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1000,
-                ExpertBaseScore = 56276
+                ExpertBaseScore = 56276,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "The Masses and the Grave",
+                    Id = 577671,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154451,
+                PowerChallengeScoreLeaderboardId = 154452,
+                PowerChallengeStarLeaderboardId = 154453
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "The Undying Gods of Death",
+                Id = 577672,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154454,
+            Metadata = AchievementMetadata(
+                Title = "Zakk Wylde Parade Voxtar Challenge",
+                Id = 577673,
+                Points = 10
+            )
+        ))
     ),
     Song(
         Title = "Crazy Horse",
@@ -10978,25 +13414,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1498,
-                ExpertBaseScore = 80229
+                ExpertBaseScore = 80229,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Lightning from Above, Followed by Hail",
+                    Id = 577674,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154455,
+                PowerChallengeScoreLeaderboardId = 154456,
+                PowerChallengeStarLeaderboardId = 154457
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1402,
                 ExpertBaseScore = 109475,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Death from Above in the Wake of His Trail",
+                    Id = 577675,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154458,
+                PowerChallengeScoreLeaderboardId = 154459,
+                PowerChallengeStarLeaderboardId = 154460
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 25,
-                ExpertBaseScore = 19191
+                ExpertBaseScore = 19191,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "A Vision Sent This Child, Becomes a Man",
+                    Id = 577676,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154461,
+                PowerChallengeScoreLeaderboardId = 154462,
+                PowerChallengeStarLeaderboardId = 154463
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1147,
-                ExpertBaseScore = 60002
+                ExpertBaseScore = 60002,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Blood of the Past, Has Chose His Plan",
+                    Id = 577677,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154464,
+                PowerChallengeScoreLeaderboardId = 154465,
+                PowerChallengeStarLeaderboardId = 154466
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "A Vision Sent for the Heavens to See",
+                Id = 577678,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154467,
+            Metadata = AchievementMetadata(
+                Title = "Zakk Wylde Crazy Voxtar Challenge",
+                Id = 577679,
+                Points = 10
+            )
+        ))
     ),
     Song(
         Title = "Black Sunday",
@@ -11010,25 +13495,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1106,
-                ExpertBaseScore = 66049
+                ExpertBaseScore = 66049,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Destroyer of My Visions, Come and Enter Me",
+                    Id = 577680,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154468,
+                PowerChallengeScoreLeaderboardId = 154469,
+                PowerChallengeStarLeaderboardId = 154470
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 886,
                 ExpertBaseScore = 72200,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Fill Me with Your Strength Now, Limitless Unknown",
+                    Id = 577681,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154471,
+                PowerChallengeScoreLeaderboardId = 154472,
+                PowerChallengeStarLeaderboardId = 154473
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 27,
-                ExpertBaseScore = 15540
+                ExpertBaseScore = 15540,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "No Need for Remorse, No Need to Forgive",
+                    Id = 577682,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154474,
+                PowerChallengeScoreLeaderboardId = 154475,
+                PowerChallengeStarLeaderboardId = 154476
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 862,
-                ExpertBaseScore = 47423
+                ExpertBaseScore = 47423,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Redemption Set Me Free",
+                    Id = 577683,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154477,
+                PowerChallengeScoreLeaderboardId = 154478,
+                PowerChallengeStarLeaderboardId = 154479
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "God in My Hands, Staring Down on Me",
+                Id = 577684,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154480,
+            Metadata = AchievementMetadata(
+                Title = "Zakk Wylde on a Sunday Voxtar Challenge",
+                Id = 577685,
+                Points = 10
+            )
+        ))
     ),
     Song(
         Title = "Always",
@@ -11042,25 +13576,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 769,
-                ExpertBaseScore = 66589
+                ExpertBaseScore = 66589,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Am I Your One and Only Desire?",
+                    Id = 577686,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154481,
+                PowerChallengeScoreLeaderboardId = 154482,
+                PowerChallengeStarLeaderboardId = 154483
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 670,
                 ExpertBaseScore = 58500,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "As I Walk Out Your Door",
+                    Id = 577687,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154484,
+                PowerChallengeScoreLeaderboardId = 154485,
+                PowerChallengeStarLeaderboardId = 154486
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 39,
-                ExpertBaseScore = 31476
+                ExpertBaseScore = 31476,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Was It All Just a Part of Your Plan?",
+                    Id = 577688,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154487,
+                PowerChallengeScoreLeaderboardId = 154488,
+                PowerChallengeStarLeaderboardId = 154489
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 425,
-                ExpertBaseScore = 22209
+                ExpertBaseScore = 22209,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Can't Live Without You",
+                    Id = 577689,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154490,
+                PowerChallengeScoreLeaderboardId = 154491,
+                PowerChallengeStarLeaderboardId = 154492
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Now I'm Done with You",
+                Id = 577690,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Little Sister",
@@ -11074,25 +13648,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 783,
-                ExpertBaseScore = 59166
+                ExpertBaseScore = 59166,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'm Standin' Out Your Window",
+                    Id = 577691,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154493,
+                PowerChallengeScoreLeaderboardId = 154494,
+                PowerChallengeStarLeaderboardId = 154495
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 936,
                 ExpertBaseScore = 82000,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Wanna Show You All My Love",
+                    Id = 577692,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154496,
+                PowerChallengeScoreLeaderboardId = 154497,
+                PowerChallengeStarLeaderboardId = 154498
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 31,
-                ExpertBaseScore = 20285
+                ExpertBaseScore = 20285,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Slowly Dancin' Cheek to Cheek",
+                    Id = 577693,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154499,
+                PowerChallengeScoreLeaderboardId = 154500,
+                PowerChallengeStarLeaderboardId = 154501
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 735,
-                ExpertBaseScore = 36925
+                ExpertBaseScore = 36925,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "They Say I'll Only Do You Wrong",
+                    Id = 577694,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154502,
+                PowerChallengeScoreLeaderboardId = 154503,
+                PowerChallengeStarLeaderboardId = 154504
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "No More Livin' Life Behind a Shadow",
+                Id = 577695,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154505,
+            Metadata = AchievementMetadata(
+                Title = "Josh Homme Sibling Voxtar Challenge",
+                Id = 577696,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Psycho",
@@ -11106,25 +13729,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 624,
-                ExpertBaseScore = 77431
+                ExpertBaseScore = 77431,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "She Lays Down on the Fresh Lawn",
+                    Id = 577697,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154506,
+                PowerChallengeScoreLeaderboardId = 154507,
+                PowerChallengeStarLeaderboardId = 154508
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 861,
                 ExpertBaseScore = 82225,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Re-Appear When You Feel Magical",
+                    Id = 577698,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154509,
+                PowerChallengeScoreLeaderboardId = 154510,
+                PowerChallengeStarLeaderboardId = 154511
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 50,
-                ExpertBaseScore = 24849
+                ExpertBaseScore = 24849,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Know We're Gonna Win Again",
+                    Id = 577699,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154512,
+                PowerChallengeScoreLeaderboardId = 154513,
+                PowerChallengeStarLeaderboardId = 154514
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 589,
-                ExpertBaseScore = 31974
+                ExpertBaseScore = 31974,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "It Makes Me Wanna Rewind",
+                    Id = 577700,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154515,
+                PowerChallengeScoreLeaderboardId = 154516,
+                PowerChallengeStarLeaderboardId = 154517
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Maybe I'm the One",
+                Id = 577701,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154518,
+            Metadata = AchievementMetadata(
+                Title = "Wes Scantlin Voxtar Challenge",
+                Id = 577702,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Sic Transit Gloria... Glory Fades",
@@ -11138,25 +13810,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 942,
-                ExpertBaseScore = 60181
+                ExpertBaseScore = 60181,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Don't Recover from a Night like This",
+                    Id = 577703,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154519,
+                PowerChallengeScoreLeaderboardId = 154520,
+                PowerChallengeStarLeaderboardId = 154521
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 749,
                 ExpertBaseScore = 61325,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "She's Breathing Quiet and Smooth",
+                    Id = 577704,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154522,
+                PowerChallengeScoreLeaderboardId = 154523,
+                PowerChallengeStarLeaderboardId = 154524
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 52,
-                ExpertBaseScore = 18836
+                ExpertBaseScore = 18836,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "No Longer Cool, But a Boy in a Stitch",
+                    Id = 577705,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154525,
+                PowerChallengeScoreLeaderboardId = 154526,
+                PowerChallengeStarLeaderboardId = 154527
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 754,
-                ExpertBaseScore = 39499
+                ExpertBaseScore = 39499,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "He Is the Lamb, She Is the Slaughter",
+                    Id = 577706,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154528,
+                PowerChallengeScoreLeaderboardId = 154529,
+                PowerChallengeStarLeaderboardId = 154530
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Die Young and Save Yourself",
+                Id = 577707,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154531,
+            Metadata = AchievementMetadata(
+                Title = "Jesse Lacey Voxtar Challenge",
+                Id = 577708,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Headstrong",
@@ -11170,25 +13891,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 929,
-                ExpertBaseScore = 71581
+                ExpertBaseScore = 71581,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Contemplating Everything You Ever Said",
+                    Id = 577709,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154532,
+                PowerChallengeScoreLeaderboardId = 154533,
+                PowerChallengeStarLeaderboardId = 154534
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1134,
                 ExpertBaseScore = 100425,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "A Different Motive in Your Eyes",
+                    Id = 577710,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154535,
+                PowerChallengeScoreLeaderboardId = 154536,
+                PowerChallengeStarLeaderboardId = 154537
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 63,
-                ExpertBaseScore = 36315
+                ExpertBaseScore = 36315,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Conclusions Manifest",
+                    Id = 577711,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154538,
+                PowerChallengeScoreLeaderboardId = 154539,
+                PowerChallengeStarLeaderboardId = 154540
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 637,
-                ExpertBaseScore = 36815
+                ExpertBaseScore = 36815,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Decisions to Hide",
+                    Id = 577712,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154541,
+                PowerChallengeScoreLeaderboardId = 154542,
+                PowerChallengeStarLeaderboardId = 154543
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Back Off, I'll Take You On",
+                Id = 577713,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "She's A Genius",
@@ -11202,25 +13963,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 672,
-                ExpertBaseScore = 59796
+                ExpertBaseScore = 59796,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Don't Need an Education to Know the Class That You're In",
+                    Id = 577714,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154544,
+                PowerChallengeScoreLeaderboardId = 154545,
+                PowerChallengeStarLeaderboardId = 154546
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 658,
                 ExpertBaseScore = 66000,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "She Wakes up Scared of Getting Old",
+                    Id = 577715,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154547,
+                PowerChallengeScoreLeaderboardId = 154548,
+                PowerChallengeStarLeaderboardId = 154549
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 28,
-                ExpertBaseScore = 14485
+                ExpertBaseScore = 14485,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Nothing, But I'm Damn Sure It's More than You",
+                    Id = 577716,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154550,
+                PowerChallengeScoreLeaderboardId = 154551,
+                PowerChallengeStarLeaderboardId = 154552
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 540,
-                ExpertBaseScore = 27943
+                ExpertBaseScore = 27943,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Love Is When You Wanna Kiss and You Get Bit",
+                    Id = 577717,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154553,
+                PowerChallengeScoreLeaderboardId = 154554,
+                PowerChallengeStarLeaderboardId = 154555
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Think She's Serious",
+                Id = 577718,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154556,
+            Metadata = AchievementMetadata(
+                Title = "Nic Cester Voxtar Challenge",
+                Id = 577719,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Black Hole Sun",
@@ -11234,25 +14044,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 850,
-                ExpertBaseScore = 58458
+                ExpertBaseScore = 58458,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "In Disguises No One Knows",
+                    Id = 577720,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154557,
+                PowerChallengeScoreLeaderboardId = 154558,
+                PowerChallengeStarLeaderboardId = 154559
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 895,
                 ExpertBaseScore = 76450,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "In the Sun in My Disgrace",
+                    Id = 577721,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154560,
+                PowerChallengeScoreLeaderboardId = 154561,
+                PowerChallengeStarLeaderboardId = 154562
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 48,
-                ExpertBaseScore = 39285
+                ExpertBaseScore = 39285,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "No One Sings Like You Anymore",
+                    Id = 577722,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154563,
+                PowerChallengeScoreLeaderboardId = 154564,
+                PowerChallengeStarLeaderboardId = 154565
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 458,
-                ExpertBaseScore = 32961
+                ExpertBaseScore = 32961,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Times Are Gone for Honest Men",
+                    Id = 577723,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154566,
+                PowerChallengeScoreLeaderboardId = 154567,
+                PowerChallengeStarLeaderboardId = 154568
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Wash Away the Rain",
+                Id = 577724,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154569,
+            Metadata = AchievementMetadata(
+                Title = "Chris Cornell in the Sun Voxtar Challenge",
+                Id = 577725,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Hands Open",
@@ -11266,25 +14125,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 754,
-                ExpertBaseScore = 65600
+                ExpertBaseScore = 65600,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "It's Hard to Argue When You Won't Stop Makin' Sense",
+                    Id = 577726,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154570,
+                PowerChallengeScoreLeaderboardId = 154571,
+                PowerChallengeStarLeaderboardId = 154572
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 589,
                 ExpertBaseScore = 50550,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Why Would I Sabotage the Best Thing That I Have?",
+                    Id = 577727,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154573,
+                PowerChallengeScoreLeaderboardId = 154574,
+                PowerChallengeStarLeaderboardId = 154575
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 45,
-                ExpertBaseScore = 20634
+                ExpertBaseScore = 20634,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Put Sufjan Stevens on and We'll Play Your Favourite Song",
+                    Id = 577728,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154576,
+                PowerChallengeScoreLeaderboardId = 154577,
+                PowerChallengeStarLeaderboardId = 154578
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 645,
-                ExpertBaseScore = 32275
+                ExpertBaseScore = 32275,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Wanna Hear You Laugh like You Really Mean It",
+                    Id = 577729,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154579,
+                PowerChallengeScoreLeaderboardId = 154580,
+                PowerChallengeStarLeaderboardId = 154581
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I Just Keep Hopin'",
+                Id = 577730,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Sorrow",
@@ -11298,25 +14197,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 739,
-                ExpertBaseScore = 71266
+                ExpertBaseScore = 71266,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Curse the Day That I Was Born",
+                    Id = 577731,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154582,
+                PowerChallengeScoreLeaderboardId = 154583,
+                PowerChallengeStarLeaderboardId = 154584
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1198,
                 ExpertBaseScore = 105031,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Let Me Take You to the Herding Ground",
+                    Id = 577732,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154585,
+                PowerChallengeScoreLeaderboardId = 154586,
+                PowerChallengeStarLeaderboardId = 154587
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 24,
-                ExpertBaseScore = 20256
+                ExpertBaseScore = 20256,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Just to Settle a Bet That Could Not Be Won",
+                    Id = 577733,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154588,
+                PowerChallengeScoreLeaderboardId = 154589,
+                PowerChallengeStarLeaderboardId = 154590
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 1099,
-                ExpertBaseScore = 56452
+                ExpertBaseScore = 56452,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "When All Soldiers Lay Their Weapons Down",
+                    Id = 577734,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154591,
+                PowerChallengeScoreLeaderboardId = 154592,
+                PowerChallengeStarLeaderboardId = 154593
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "There Will Be Sorrow No More",
+                Id = 577735,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Supermassive Black Hole",
@@ -11330,25 +14269,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 686,
-                ExpertBaseScore = 37238
+                ExpertBaseScore = 37238,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Don't You Know I Suffer?",
+                    Id = 577736,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154594,
+                PowerChallengeScoreLeaderboardId = 154595,
+                PowerChallengeStarLeaderboardId = 154596
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 821,
                 ExpertBaseScore = 65200,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Caught Me Under False Pretenses",
+                    Id = 577737,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154597,
+                PowerChallengeScoreLeaderboardId = 154598,
+                PowerChallengeStarLeaderboardId = 154599
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 40,
-                ExpertBaseScore = 19996
+                ExpertBaseScore = 19996,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Thought I Was a Fool for No One",
+                    Id = 577738,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154600,
+                PowerChallengeScoreLeaderboardId = 154601,
+                PowerChallengeStarLeaderboardId = 154602
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 515,
-                ExpertBaseScore = 26376
+                ExpertBaseScore = 26376,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You're the Queen of the Superficial",
+                    Id = 577739,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154603,
+                PowerChallengeScoreLeaderboardId = 154604,
+                PowerChallengeStarLeaderboardId = 154605
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Glaciers Melting in the Dead of Night",
+                Id = 577740,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154606,
+            Metadata = AchievementMetadata(
+                Title = "Matt Bellamy Black Hole Voxtar Challenge",
+                Id = 577741,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "New Low",
@@ -11362,25 +14350,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 958,
-                ExpertBaseScore = 62690
+                ExpertBaseScore = 62690,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "This Box Is Getting Smaller",
+                    Id = 577742,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154607,
+                PowerChallengeScoreLeaderboardId = 154608,
+                PowerChallengeStarLeaderboardId = 154609
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 952,
                 ExpertBaseScore = 77625,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "All 52 Cards in a Row",
+                    Id = 577743,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154610,
+                PowerChallengeScoreLeaderboardId = 154611,
+                PowerChallengeStarLeaderboardId = 154612
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 53,
-                ExpertBaseScore = 21562
+                ExpertBaseScore = 21562,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Lock Myself Inside My Head",
+                    Id = 577744,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154613,
+                PowerChallengeScoreLeaderboardId = 154614,
+                PowerChallengeStarLeaderboardId = 154615
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 644,
-                ExpertBaseScore = 32820
+                ExpertBaseScore = 32820,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Yesterday Is Gone Dead on Me Anyway",
+                    Id = 577745,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154616,
+                PowerChallengeScoreLeaderboardId = 154617,
+                PowerChallengeStarLeaderboardId = 154618
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I've Been Up, but Mostly Down",
+                Id = 577746,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154619,
+            Metadata = AchievementMetadata(
+                Title = "Zack Lopez's New Low Voxtar Challenge",
+                Id = 577747,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Lifelong Dayshift",
@@ -11394,25 +14431,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1109,
-                ExpertBaseScore = 112232
+                ExpertBaseScore = 112232,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Sick of the Days 'Cuz They Just Don't Work",
+                    Id = 577748,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154620,
+                PowerChallengeScoreLeaderboardId = 154621,
+                PowerChallengeStarLeaderboardId = 154622
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1033,
                 ExpertBaseScore = 87425,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "So Take What You Need; With the Rest Don't Bother",
+                    Id = 577749,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154623,
+                PowerChallengeScoreLeaderboardId = 154624,
+                PowerChallengeStarLeaderboardId = 154625
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 41,
-                ExpertBaseScore = 13255
+                ExpertBaseScore = 13255,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Ain't the Only Mouth That You Gotta Feed",
+                    Id = 577750,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154626,
+                PowerChallengeScoreLeaderboardId = 154627,
+                PowerChallengeStarLeaderboardId = 154628
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 881,
-                ExpertBaseScore = 59782
+                ExpertBaseScore = 59782,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Ain't the Kind That Will Lose That Easy",
+                    Id = 577751,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154629,
+                PowerChallengeScoreLeaderboardId = 154630,
+                PowerChallengeStarLeaderboardId = 154631
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Your Life, It Ain't Worth Wasting Mine On",
+                Id = 577752,
+                Points = 4
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154632,
+            Metadata = AchievementMetadata(
+                Title = "Zack Lopez Lifelong Voxtar Challenge",
+                Id = 577753,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Sad To Know",
@@ -11426,25 +14512,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 771,
-                ExpertBaseScore = 86127
+                ExpertBaseScore = 86127,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "For All the Things You Never Did Learn",
+                    Id = 577754,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154633,
+                PowerChallengeScoreLeaderboardId = 154634,
+                PowerChallengeStarLeaderboardId = 154635
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 919,
                 ExpertBaseScore = 78475,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Better Cover up Lies",
+                    Id = 577755,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154636,
+                PowerChallengeScoreLeaderboardId = 154637,
+                PowerChallengeStarLeaderboardId = 154638
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 45,
-                ExpertBaseScore = 17765
+                ExpertBaseScore = 17765,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You Know That They're Callin' You",
+                    Id = 577756,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154639,
+                PowerChallengeScoreLeaderboardId = 154640,
+                PowerChallengeStarLeaderboardId = 154641
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 709,
-                ExpertBaseScore = 79709
+                ExpertBaseScore = 79709,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You're Just Yourself",
+                    Id = 577757,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154642,
+                PowerChallengeScoreLeaderboardId = 154643,
+                PowerChallengeStarLeaderboardId = 154644
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "This Life Belongs to Me",
+                Id = 577758,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154645,
+            Metadata = AchievementMetadata(
+                Title = "Zack Lopez Knowing Voxtar Challenge",
+                Id = 577759,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Ignorance",
@@ -11458,25 +14593,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1162,
-                ExpertBaseScore = 102218
+                ExpertBaseScore = 102218,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "It's a Circle, a Mean Cycle",
+                    Id = 577760,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154646,
+                PowerChallengeScoreLeaderboardId = 154647,
+                PowerChallengeStarLeaderboardId = 154648
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1078,
                 ExpertBaseScore = 93900,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Sentence Me to Another Life",
+                    Id = 577761,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154649,
+                PowerChallengeScoreLeaderboardId = 154650,
+                PowerChallengeStarLeaderboardId = 154651
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 70,
-                ExpertBaseScore = 13811
+                ExpertBaseScore = 13811,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "It's Not a War, No, It's Not a Rapture",
+                    Id = 577762,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154652,
+                PowerChallengeScoreLeaderboardId = 154653,
+                PowerChallengeStarLeaderboardId = 154654
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 695,
-                ExpertBaseScore = 38909
+                ExpertBaseScore = 38909,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'm Not the Same Kid from Your Memory",
+                    Id = 577763,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154655,
+                PowerChallengeScoreLeaderboardId = 154656,
+                PowerChallengeStarLeaderboardId = 154657
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "You Treat Me Just like Another Stranger",
+                Id = 577764,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "That's What You Get",
@@ -11490,25 +14665,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 699,
-                ExpertBaseScore = 72568
+                ExpertBaseScore = 72568,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I Don't Wanna Be the Blame, Not Anymore",
+                    Id = 577765,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154658,
+                PowerChallengeScoreLeaderboardId = 154659,
+                PowerChallengeStarLeaderboardId = 154660
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 978,
                 ExpertBaseScore = 83175,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Holding Onto Silly Things, I Never Learn",
+                    Id = 577766,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154661,
+                PowerChallengeScoreLeaderboardId = 154662,
+                PowerChallengeStarLeaderboardId = 154663
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 59,
-                ExpertBaseScore = 24790
+                ExpertBaseScore = 24790,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Why Do We Like to Hurt So Much?",
+                    Id = 577767,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154664,
+                PowerChallengeScoreLeaderboardId = 154665,
+                PowerChallengeStarLeaderboardId = 154666
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 645,
-                ExpertBaseScore = 33000
+                ExpertBaseScore = 33000,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "This Heart Will Start a Riot in Me",
+                    Id = 577768,
+                    Points = 3
+                ),
+                QuickplayLeaderboardId = 154667,
+                PowerChallengeScoreLeaderboardId = 154668,
+                PowerChallengeStarLeaderboardId = 154669
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "That's What You Get When You Let Your Heart Win",
+                Id = 577769,
+                Points = 4
+            )
+        )
     ),
     Song(
         Title = "Spoonman",
@@ -11522,25 +14737,74 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 840,
-                ExpertBaseScore = 69598
+                ExpertBaseScore = 69598,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Feel the Rhythm with Your Hands",
+                    Id = 577770,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154670,
+                PowerChallengeScoreLeaderboardId = 154671,
+                PowerChallengeStarLeaderboardId = 154672
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 1098,
                 ExpertBaseScore = 85025,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Speak the Rhythm on Your Own",
+                    Id = 577771,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154673,
+                PowerChallengeScoreLeaderboardId = 154674,
+                PowerChallengeStarLeaderboardId = 154675
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 56,
-                ExpertBaseScore = 21704
+                ExpertBaseScore = 21704,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "All My Friends Are Indians",
+                    Id = 577772,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154676,
+                PowerChallengeScoreLeaderboardId = 154677,
+                PowerChallengeStarLeaderboardId = 154678
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 993,
-                ExpertBaseScore = 62199
+                ExpertBaseScore = 62199,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "And All My Friends Are Skeletons",
+                    Id = 577773,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154679,
+                PowerChallengeScoreLeaderboardId = 154680,
+                PowerChallengeStarLeaderboardId = 154681
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "Come Together with Your Hands",
+                Id = 577774,
+                Points = 5
+            )
+        ),
+        VocalChallengeAchievement = Nullable(false, VocalChallengeAchievementMetadata(
+            Instrument = INSTRUMENT_GUITAR,
+            LeaderboardId = 154682,
+            Metadata = AchievementMetadata(
+                Title = "Chris Cornell Spoonman Voxtar Challenge",
+                Id = 577775,
+                Points = 5
+            )
+        ))
     ),
     Song(
         Title = "Across 5 Oceans",
@@ -11554,25 +14818,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 1053,
-                ExpertBaseScore = 78275
+                ExpertBaseScore = 78275,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Grey Skies Cover Michigan",
+                    Id = 577776,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154683,
+                PowerChallengeScoreLeaderboardId = 154684,
+                PowerChallengeStarLeaderboardId = 154685
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 956,
                 ExpertBaseScore = 77325,
-                ExpertPlusAvailable = true
+                ExpertPlusAvailable = true,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Star Crossed Lovers Torn Apart",
+                    Id = 577777,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154686,
+                PowerChallengeScoreLeaderboardId = 154687,
+                PowerChallengeStarLeaderboardId = 154688
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 53,
-                ExpertBaseScore = 25628
+                ExpertBaseScore = 25628,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Now Her Head's on Another Chest",
+                    Id = 577778,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154689,
+                PowerChallengeScoreLeaderboardId = 154690,
+                PowerChallengeStarLeaderboardId = 154691
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 638,
-                ExpertBaseScore = 32775
+                ExpertBaseScore = 32775,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Where'd You Go Zombie Girl?",
+                    Id = 577779,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154692,
+                PowerChallengeScoreLeaderboardId = 154693,
+                PowerChallengeStarLeaderboardId = 154694
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "I'm Not Getting Under Your Landslide",
+                Id = 577780,
+                Points = 5
+            )
+        )
     ),
     Song(
         Title = "Hey Superstar",
@@ -11586,25 +14890,65 @@ GHWOR_DLC_SONGS = [
             InstrumentMetadata(
                 Instrument = INSTRUMENT_GUITAR,
                 ExpertNotesInChart = 928,
-                ExpertBaseScore = 68850
+                ExpertBaseScore = 68850,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You're Such a Beautiful Gift from Above",
+                    Id = 577781,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154695,
+                PowerChallengeScoreLeaderboardId = 154696,
+                PowerChallengeStarLeaderboardId = 154697
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_DRUMS,
                 ExpertNotesInChart = 853,
                 ExpertBaseScore = 70400,
-                ExpertPlusAvailable = false
+                ExpertPlusAvailable = false,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "You'll Never Be Happy, Chasing All the Wrong Things",
+                    Id = 577782,
+                    Points = 5
+                ),
+                QuickplayLeaderboardId = 154698,
+                PowerChallengeScoreLeaderboardId = 154699,
+                PowerChallengeStarLeaderboardId = 154700
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
                 ExpertNotesInChart = 31,
-                ExpertBaseScore = 21954
+                ExpertBaseScore = 21954,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "I'm Such a Hideous, Ridiculous but Honest and Loyal Misfit",
+                    Id = 577783,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154701,
+                PowerChallengeScoreLeaderboardId = 154702,
+                PowerChallengeStarLeaderboardId = 154703
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_BASS,
                 ExpertNotesInChart = 773,
-                ExpertBaseScore = 42930
+                ExpertBaseScore = 42930,
+                FiveStarAchievementMetadata = AchievementMetadata(
+                    Title = "Then I Became Just Optional",
+                    Id = 577784,
+                    Points = 4
+                ),
+                QuickplayLeaderboardId = 154704,
+                PowerChallengeScoreLeaderboardId = 154705,
+                PowerChallengeStarLeaderboardId = 154706
             )
-        ]
+        ],
+        PowerChallengeAchievement = PowerChallengeAchievementMetadata(
+            StarTarget = 18,
+            Metadata = AchievementMetadata(
+                Title = "You'll See Who You Really Are",
+                Id = 577785,
+                Points = 4
+            )
+        )
     )
 ]
 
@@ -29667,9 +33011,8 @@ for song in SONGS {
     }
 
     // TODO: Until subsets are available.
-    if (song.Source == SOURCE_GHWOR) {
-    // assert(song.PowerChallengeAchievement.StarTarget != -1, format("{0} needs a Power Challenge star target", song.Title))
-
+    if (song.Source == SOURCE_GHWOR_DLC || song.Source == SOURCE_GHWOR) {
+    assert(song.PowerChallengeAchievement.StarTarget != -1, format("{0} needs a Power Challenge star target", song.Title))
     
     if (song.Source == SOURCE_GHWOR) {
         set = 0
@@ -29686,7 +33029,7 @@ for song in SONGS {
             description = format("Clear either version of \"Suicide & Redemption\" in Power Challenge mode with {0} stars on Expert or Expert+ difficulty with any instrument", song.PowerChallengeAchievement.StarTarget),
             points = song.PowerChallengeAchievement.Metadata.Points,
             id = song.PowerChallengeAchievement.Metadata.Id,
-            // set = POWER_CHALLENGE_SUBSET,
+            set = set,
             trigger = power_challenge_star_trigger_two_songs(song, other_song, song.PowerChallengeAchievement.StarTarget)
         )
 
@@ -29720,7 +33063,7 @@ for song in SONGS {
             description = format("Clear \"Sweet Home Alabama (Live)\" in Power Challenge mode with {0} stars on Expert or Expert+ difficulty with any instrument", song.PowerChallengeAchievement.StarTarget),
             points = song.PowerChallengeAchievement.Metadata.Points,
             id = song.PowerChallengeAchievement.Metadata.Id,
-            // set = POWER_CHALLENGE_SUBSET,
+            set = set,
             trigger = power_challenge_star_trigger_two_songs(song, other_song, song.PowerChallengeAchievement.StarTarget)
         )
 
@@ -29775,7 +33118,7 @@ for song in SONGS {
             description = format("Clear \"{0}\" in Power Challenge mode with {1} stars on Expert or Expert+ difficulty with any instrument", song.Title, song.PowerChallengeAchievement.StarTarget),
             points = song.PowerChallengeAchievement.Metadata.Points,
             id = song.PowerChallengeAchievement.Metadata.Id,
-            // set = POWER_CHALLENGE_SUBSET,
+            set = set,
             trigger = power_challenge_star_trigger(song, song.PowerChallengeAchievement.StarTarget)
         )
 
@@ -29817,6 +33160,7 @@ for song in SONGS {
             description = format("Clear \"{0}\" in Quickplay+ mode with 5 stars on both Expert {1} and Expert Vocals by yourself", song.Title, INSTRUMENT_TO_NAME[primary_instrument]),
             points = song.VocalChallengeAchievement.Value.Metadata.Points,
             id = song.VocalChallengeAchievement.Value.Metadata.Id,
+            set = set,
             trigger = five_star_with_vocals_trigger(song, primary_instrument, DIFFICULTY_EXPERT)
         )
 
@@ -29824,6 +33168,7 @@ for song in SONGS {
             title = format("{0} - Quickplay+ - {1} Challenge", song.Title, combined_instrument_name),
             description = format("Get the highest score on \"{0}\" in Quickplay+ on both Expert {1} and Expert Vocals by yourself", song.Title, INSTRUMENT_TO_NAME[primary_instrument]),
             id = song.VocalChallengeAchievement.Value.LeaderboardId,
+            set = set,
             start = leaderboard_quickplay_with_vocals_start(song, primary_instrument),
             cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
             submit = is_you_rock_reached_quickplay(),
@@ -29883,7 +33228,7 @@ for song in SONGS {
                 description = five_star_description,
                 points = instrument.FiveStarAchievementMetadata.Points,
                 id = instrument.FiveStarAchievementMetadata.Id,
-                // set = set,
+                set = set,
                 trigger = five_star_quickplay_trigger_two_songs(song, other_song, instrument.Instrument, hardest_difficulty, instrument.ExpertBaseScore * 14 / 5, other_song_instrument.ExpertBaseScore * 14 / 5)
             )
 
@@ -29900,7 +33245,7 @@ for song in SONGS {
                 title = format("Suicide & Redemption - Quickplay+ - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
                 description = format("Get the highest score on either version of \"Suicide & Redemption\" in Quickplay+ on {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.QuickplayLeaderboardId,
-                // set = set,
+                set = set,
                 start = leaderboard_quickplay_start_two_songs(song, other_song, instrument.Instrument),
                 cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                 submit = is_you_rock_reached_quickplay(),
@@ -29912,7 +33257,7 @@ for song in SONGS {
                 title = format("Suicide & Redemption - Power Challenge (Score) - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
                 description = format("Get the highest score on either version of \"Suicide & Redemption\" in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.PowerChallengeScoreLeaderboardId,
-                // set = POWER_CHALLENGE_SUBSET,
+                set = set,
                 start = leaderboard_power_challenge_start_two_songs(song, other_song, instrument.Instrument),
                 cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                 submit = is_you_rock_reached_quickplay(),
@@ -29924,7 +33269,7 @@ for song in SONGS {
                 title = format("Suicide & Redemption - Power Challenge (Stars) - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
                 description = format("Get the most stars on either version of \"Suicide & Redemption\" in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.PowerChallengeStarLeaderboardId,
-                // set = POWER_CHALLENGE_SUBSET,
+                set = set,
                 start = leaderboard_power_challenge_start_two_songs(song, other_song, instrument.Instrument),
                 cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                 submit = is_you_rock_reached_quickplay(),
@@ -29965,7 +33310,7 @@ for song in SONGS {
                 description = five_star_description,
                 points = instrument.FiveStarAchievementMetadata.Points,
                 id = instrument.FiveStarAchievementMetadata.Id,
-                // set = set,
+                set = set,
                 trigger = five_star_quickplay_trigger_two_songs(song, other_song, instrument.Instrument, hardest_difficulty, instrument.ExpertBaseScore * 14 / 5, other_song_instrument.ExpertBaseScore * 14 / 5)
             )
 
@@ -29982,7 +33327,7 @@ for song in SONGS {
                 title = format("Sweet Home Alabama (Live) - Quickplay+ - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
                 description = format("Get the highest score on \"Sweet Home Alabama (Live)\" in Quickplay+ on {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.QuickplayLeaderboardId,
-                // set = set,
+                set = set,
                 start = leaderboard_quickplay_start_two_songs(song, other_song, instrument.Instrument),
                 cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                 submit = is_you_rock_reached_quickplay(),
@@ -29994,7 +33339,7 @@ for song in SONGS {
                 title = format("Sweet Home Alabama (Live) - Power Challenge (Score) - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
                 description = format("Get the highest score on \"Sweet Home Alabama (Live)\" in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.PowerChallengeScoreLeaderboardId,
-                // set = POWER_CHALLENGE_SUBSET,
+                set = set,
                 start = leaderboard_power_challenge_start_two_songs(song, other_song, instrument.Instrument),
                 cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                 submit = is_you_rock_reached_quickplay(),
@@ -30006,7 +33351,7 @@ for song in SONGS {
                 title = format("Sweet Home Alabama (Live) - Power Challenge (Stars) - {0}", INSTRUMENT_TO_NAME[instrument.Instrument]),
                 description = format("Get the most stars on \"Sweet Home Alabama (Live)\" in Power Challenge on {0} {1}", power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.PowerChallengeStarLeaderboardId,
-                // set = POWER_CHALLENGE_SUBSET,
+                set = set,
                 start = leaderboard_power_challenge_start_two_songs(song, other_song, instrument.Instrument),
                 cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                 submit = is_you_rock_reached_quickplay(),
@@ -30022,7 +33367,7 @@ for song in SONGS {
                 description = format("Get five stars on \"{0}\" in Quickplay+ mode with no powers active on {1} {2} with a score of at least {3}", song.Title, DIFFICULTY_TO_NAME[hardest_difficulty], INSTRUMENT_TO_NAME[instrument.Instrument], format_int_with_commas(instrument.ExpertBaseScore * 14 / 5)),
                 points = instrument.FiveStarAchievementMetadata.Points,
                 id = instrument.FiveStarAchievementMetadata.Id,
-                // set = set,
+                set = set,
                 trigger = five_star_quickplay_trigger(song, instrument.Instrument, hardest_difficulty, instrument.ExpertBaseScore * 14 / 5)
             )
 
@@ -30045,7 +33390,7 @@ for song in SONGS {
                 title = format("{0} - Quickplay+ - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 description = format("Get the highest score on \"{0}\" in Quickplay+ on {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.QuickplayLeaderboardId,
-                // set = set,
+                set = set,
                 start = leaderboard_quickplay_start(song, instrument.Instrument),
                 cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                 submit = is_you_rock_reached_quickplay(),
@@ -30057,7 +33402,7 @@ for song in SONGS {
                 title = format("{0} - Power Challenge (Score) - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 description = format("Get the highest score on \"{0}\" in Power Challenge on {1} {2}", song.Title, power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.PowerChallengeScoreLeaderboardId,
-                // set = POWER_CHALLENGE_SUBSET,
+                set = set,
                 start = leaderboard_power_challenge_start(song, instrument.Instrument),
                 cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                 submit = is_you_rock_reached_quickplay(),
@@ -30069,7 +33414,7 @@ for song in SONGS {
                 title = format("{0} - Power Challenge (Stars) - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 description = format("Get the most stars on \"{0}\" in Power Challenge on {1} {2}", song.Title, power_challenge_hardest_difficulty, INSTRUMENT_TO_NAME[instrument.Instrument]),
                 id = instrument.PowerChallengeStarLeaderboardId,
-                // set = POWER_CHALLENGE_SUBSET,
+                set = set,
                 start = leaderboard_power_challenge_start(song, instrument.Instrument),
                 cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                 submit = is_you_rock_reached_quickplay(),

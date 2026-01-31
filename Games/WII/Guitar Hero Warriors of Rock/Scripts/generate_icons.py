@@ -254,7 +254,7 @@ def generate_song_achievements() -> None:
             if song.VocalChallengeAchievement is not None and not song.VocalChallengeAchievement.IsNull and song.VocalChallengeAchievement.Value.Instrument == instrument_metadata.Instrument:
                 voxtar_image = quickplay_five_star_image.copy()
                 voxtar_image.paste(INSTRUMENT_IMAGE["Vocals"], (18, -2), INSTRUMENT_IMAGE["Vocals"])
-                voxtar_image.save(f"Icons/Output/Core/Quickplay-VocalChallenge-{normalize_song_title_for_file(song)}.png")
+                voxtar_image.save(f"Icons/Output/{"Core/" if song.Source == SOURCE_GHWOR else "DLC/"}Quickplay-VocalChallenge-{normalize_song_title_for_file(song)}.png")
 
             # Uncomment if this can be figured out.
             # if song.Source == SOURCE_GHWOR:

@@ -37,7 +37,7 @@ function virtual_to_ra_address(x) => x & 0x1fffffff
 DLC_SUBSET = achievement_set("DLC", type = "BONUS", id = 37916)
 // POWER_CHALLENGE_SUBSET = achievement_set("Power Challenge", type = "BONUS", id = 2)
 // FC_SUBSET = achievement_set("Expert(+) Full Combos", type = "BONUS", id = 3)
-// FULL_BAND_SUBSET = achievement_set("Full Band Quickplay+", type = "BONUS", id = 4)
+FULL_BAND_SUBSET = achievement_set("Full Band Co-Op", type = "BONUS", id = 37908)
 
 INSTRUMENT_GUITAR = 0xbdc53cf2
 INSTRUMENT_BASS   = 0xcb9fb4cf
@@ -256,6 +256,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152811
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581373,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155783,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -350,6 +355,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152819
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581374,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155784,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -444,6 +454,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152827
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581375,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155785,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -538,6 +553,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152835
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581376,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155786,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -632,6 +652,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152843
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581377,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155787,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -718,6 +743,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152849
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581378,
+            Points = 10
+        ),
+        FullBandLeaderboardId = 155788,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -812,6 +842,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152857
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581379,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155789,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -906,6 +941,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152865
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581380,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155790,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -1000,6 +1040,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152873
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581381,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155791,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -1094,6 +1139,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152881
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581382,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155792,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -1188,6 +1238,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152889
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581383,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155793,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -1282,6 +1337,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152897
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581384,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155794,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -1385,6 +1445,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152905
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581385,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155795,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -1479,6 +1544,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152913
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581386,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155796,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -1573,6 +1643,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152921
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581387,
+            Points = 10
+        ),
+        FullBandLeaderboardId = 155797,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -1676,6 +1751,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152929
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581388,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155798,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -1779,6 +1859,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152937
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581389,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155799,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -1873,6 +1958,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152945
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581390,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155800,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -1967,6 +2057,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152953
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581391,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155801,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -2070,6 +2165,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152961
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581392,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155802,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -2164,6 +2264,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152969
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581393,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155803,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -2258,6 +2363,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152977
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581394,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155804,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -2352,6 +2462,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152985
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581395,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155805,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -2446,6 +2561,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 152993
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581396,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155806,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -2540,6 +2660,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153001
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581397,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155807,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -2643,6 +2768,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153009
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581398,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155808,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -2746,6 +2876,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153017
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581399,
+            Points = 10
+        ),
+        FullBandLeaderboardId = 155809,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -2840,6 +2975,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153025
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581400,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155810,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -2943,6 +3083,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153033
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581401,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155811,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -3037,6 +3182,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153041
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581402,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155812,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -3131,6 +3281,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153049
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581403,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155813,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -3229,6 +3384,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153057
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581404,
+            Points = 10
+        ),
+        FullBandLeaderboardId = 155814,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -3332,6 +3492,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153065
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581405,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155815,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -3435,6 +3600,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153073
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581406,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155816,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -3538,6 +3708,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153081
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581407,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155817,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -3632,6 +3807,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153089
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581408,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155818,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -3726,6 +3906,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153097
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581409,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155819,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -3820,6 +4005,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153105
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581410,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155820,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -3914,6 +4104,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153113
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581411,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155821,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -4017,6 +4212,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153121
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581412,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155822,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -4111,6 +4311,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153129
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581413,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155823,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -4205,6 +4410,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153137
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581414,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155824,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -4308,6 +4518,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153145
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581415,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155825,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -4402,6 +4617,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153153
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581416,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155826,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -4505,6 +4725,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153161
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581417,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155827,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -4608,6 +4833,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153169
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581418,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155828,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -4711,6 +4941,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153177
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581419,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155829,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -4805,6 +5040,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153185
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581420,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155830,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -4908,6 +5148,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153193
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581421,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155831,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -5011,6 +5256,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153201
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581422,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155832,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -5114,6 +5364,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153209
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581423,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155833,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -5208,6 +5463,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153217
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581424,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155834,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -5302,6 +5562,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153225
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581425,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155835,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -5405,6 +5670,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153233
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581426,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155836,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -5508,6 +5778,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153241
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581427,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155837,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -5602,6 +5877,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153249
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581428,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155838,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -5696,6 +5976,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153257
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581429,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155839,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -5799,6 +6084,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153265
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581430,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155840,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -5893,6 +6183,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153273
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581431,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155841,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -5987,6 +6282,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153281
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581432,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155842,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -6081,6 +6381,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153289
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581433,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155843,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -6175,6 +6480,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153297
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581434,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155844,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -6278,6 +6588,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153305
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581435,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155845,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -6381,6 +6696,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153313
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581436,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155846,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -6470,6 +6790,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153321
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581437,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155847,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -6533,6 +6858,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153325
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581438,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155848,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -6622,6 +6952,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153333
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581439,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155849,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -6720,6 +7055,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153341
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581440,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155850,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -6809,6 +7149,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153349
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581441,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155851,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -6898,6 +7243,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153357
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581442,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155852,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -6987,6 +7337,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153365
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581443,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155853,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -7090,6 +7445,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153373
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581444,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155854,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -7193,6 +7553,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153381
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581445,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155855,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -7296,6 +7661,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153389
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581446,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155856,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -7390,6 +7760,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153397
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581447,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155857,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -7493,6 +7868,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153405
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581448,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155858,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -7596,6 +7976,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153413
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581449,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155859,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -7682,6 +8067,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153419
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581450,
+            Points = 10
+        ),
+        FullBandLeaderboardId = 155860,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -7776,6 +8166,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153427
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581451,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155861,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -7870,6 +8265,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153435
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581452,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155862,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -7964,6 +8364,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153443
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581453,
+            Points = 10
+        ),
+        FullBandLeaderboardId = 155863,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -8058,6 +8463,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153451
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581454,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155864,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -8161,6 +8571,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153459
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581455,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155865,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -8259,6 +8674,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153467
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581456,
+            Points = 10
+        ),
+        FullBandLeaderboardId = 155866,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 19,
             Metadata = AchievementMetadata(
@@ -8362,6 +8782,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153475
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581457,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155867,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -8456,6 +8881,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153483
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581458,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155868,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -8550,6 +8980,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153491
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581459,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155869,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -8644,6 +9079,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153499
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581460,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155870,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -8738,6 +9178,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153507
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581461,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155871,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -8841,6 +9286,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153515
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581462,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155872,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -8935,6 +9385,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153523
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581463,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155873,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9029,6 +9484,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153531
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581464,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155874,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9132,6 +9592,11 @@ GHWOR_SONGS = [
                 PowerChallengeStarLeaderboardId = 153539
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581465,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155875,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9221,6 +9686,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153771
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581466,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155876,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9302,6 +9772,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153784
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581467,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155877,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9383,6 +9858,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153797
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581468,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155878,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9464,6 +9944,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153810
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581469,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155879,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9545,6 +10030,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153823
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581470,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155880,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9617,6 +10107,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153835
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581471,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155881,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9689,6 +10184,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153847
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581472,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155882,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9734,6 +10234,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153853
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581473,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155883,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9806,6 +10311,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153865
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581474,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155884,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9878,6 +10388,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153877
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581475,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155885,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -9950,6 +10465,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153889
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581476,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155886,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10022,6 +10542,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153901
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581477,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155887,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10094,6 +10619,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153913
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581478,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155888,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10166,6 +10696,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153925
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581479,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155889,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10247,6 +10782,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153938
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581480,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155890,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10328,6 +10868,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153951
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581481,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155891,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10409,6 +10954,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153964
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581482,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155892,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10481,6 +11031,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153976
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581483,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155893,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10540,6 +11095,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153985
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581484,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155894,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10612,6 +11172,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 153997
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581485,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155895,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10684,6 +11249,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154009
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581486,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155896,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10756,6 +11326,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154021
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581487,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155897,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10828,6 +11403,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154033
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581488,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155898,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10900,6 +11480,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154045
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581489,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155899,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -10972,6 +11557,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154057
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581490,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155900,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11044,6 +11634,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154069
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581491,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155901,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11116,6 +11711,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154081
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581492,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155902,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11188,6 +11788,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154093
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581493,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155903,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11269,6 +11874,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154106
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581494,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155904,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11341,6 +11951,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154118
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581495,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155905,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11422,6 +12037,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154131
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581496,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155906,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11494,6 +12114,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154143
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581497,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155907,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11566,6 +12191,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154155
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581498,
+            Points = 3
+        ),
+        FullBandLeaderboardId = 155908,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11638,6 +12268,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154167
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581499,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155909,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11710,6 +12345,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154179
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581500,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155910,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11791,6 +12431,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154192
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581501,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155911,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11872,6 +12517,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154205
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581502,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155912,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -11944,6 +12594,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154217
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581503,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155913,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12025,6 +12680,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154230
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581504,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155914,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12106,6 +12766,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154243
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581505,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155915,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12187,6 +12852,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154256
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581506,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155916,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12259,6 +12929,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154268
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581507,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155917,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12331,6 +13006,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154280
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581508,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155918,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12412,6 +13092,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154293
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581509,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155919,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12484,6 +13169,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154305
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581510,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155920,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12556,6 +13246,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154317
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581511,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155921,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12637,6 +13332,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154330
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581512,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155922,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12709,6 +13409,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154342
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581513,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155923,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12781,6 +13486,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154354
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581514,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155924,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12862,6 +13572,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154367
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581515,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155925,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -12943,6 +13658,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154380
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581516,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155926,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13024,6 +13744,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154393
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581517,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155927,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13096,6 +13821,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154405
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581518,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155928,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13168,6 +13898,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154417
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581519,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155929,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13240,6 +13975,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154429
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581520,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155930,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13312,6 +14052,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154441
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581521,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155931,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13384,6 +14129,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154453
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581522,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155932,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13465,6 +14215,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154466
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581523,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155933,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13546,6 +14301,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154479
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581524,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155934,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13627,6 +14387,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154492
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581525,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155935,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13699,6 +14464,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154504
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581526,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155936,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13780,6 +14550,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154517
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581527,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155937,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13861,6 +14636,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154530
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581528,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155938,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -13942,6 +14722,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154543
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581529,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155939,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14014,6 +14799,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154555
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581530,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155940,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14095,6 +14885,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154568
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581531,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155941,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14176,6 +14971,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154581
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581532,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155942,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14248,6 +15048,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154593
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581533,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155943,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14320,6 +15125,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154605
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581534,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155944,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14401,10 +15211,15 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154618
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581535,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155945,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
-                Title = "I've Been Up, but Mostly Down",
+                Title = "I've Been Up, But Mostly Down",
                 Id = 577746,
                 Points = 4
             )
@@ -14482,6 +15297,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154631
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581536,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155946,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14563,6 +15383,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154644
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581537,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155947,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14644,6 +15469,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154657
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581538,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155948,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14716,6 +15546,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154669
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581539,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155949,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14788,6 +15623,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154681
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581540,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155950,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14869,6 +15709,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154694
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581541,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155951,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -14941,6 +15786,11 @@ GHWOR_DLC_SONGS = [
                 PowerChallengeStarLeaderboardId = 154706
             )
         ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581542,
+            Points = 4
+        ),
+        FullBandLeaderboardId = 155952,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
             StarTarget = 18,
             Metadata = AchievementMetadata(
@@ -33122,26 +33972,26 @@ for song in SONGS {
             trigger = power_challenge_star_trigger(song, song.PowerChallengeAchievement.StarTarget)
         )
 
-        // achievement(
-        //     title = format("{0} - Full Band - {1} 5 Star", song.Title, full_band_difficulty_name),
-        //     description = format("Get five stars on \"{0}\" in Quickplay+ mode with no powers active on {1} with a full band of all {2} instruments", song.Title, full_band_difficulty_name, length(song.Instruments)),
-        //     points = song.FullBandFiveStarAchievementMetadata.Points,
-        //     id = song.FullBandFiveStarAchievementMetadata.Id,
-        //     // set = FULL_BAND_SUBSET,
-        //     trigger = full_band_five_star_quickplay_trigger(song)
-        // )
+        achievement(
+            title = format("{0} - Full Band - {1} 5 Star", song.Title, full_band_difficulty_name),
+            description = format("Get five stars on \"{0}\" in Quickplay+ mode with no powers active on {1} with a full band of all {2} instruments", song.Title, full_band_difficulty_name, length(song.Instruments)),
+            points = song.FullBandFiveStarAchievementMetadata.Points,
+            id = song.FullBandFiveStarAchievementMetadata.Id,
+            set = FULL_BAND_SUBSET,
+            trigger = full_band_five_star_quickplay_trigger(song)
+        )
 
-        // leaderboard(
-        //     title = format("{0} - Quickplay+ - Full Band", song.Title),
-        //     description = format("Get the highest score on \"{0}\" in Quickplay+ with a full band of all {1} instruments", song.Title, length(song.Instruments)),
-        //     id = song.FullBandLeaderboardId,
-        //     // set = FULL_BAND_SUBSET,
-        //     start = full_band_leaderboard_quickplay_start(song),
-        //     cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
-        //     submit = is_you_rock_reached_quickplay(),
-        //     value = band_score(),
-        //     format = "VALUE"
-        // )
+        leaderboard(
+            title = format("{0} - Quickplay+ - Full Band", song.Title),
+            description = format("Get the highest score on \"{0}\" in Quickplay+ with a full band of all {1} instruments", song.Title, length(song.Instruments)),
+            id = song.FullBandLeaderboardId,
+            set = FULL_BAND_SUBSET,
+            start = full_band_leaderboard_quickplay_start(song),
+            cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
+            submit = is_you_rock_reached_quickplay(),
+            value = band_score(),
+            format = "VALUE"
+        )
     }
 
     if (song.VocalChallengeAchievement.IsNull == false) {
@@ -33636,7 +34486,7 @@ class CustomSong {
     Id = -1
     Instruments = []
     FullBandFiveStarAchievementMetadata = AchievementMetadata()
-    FullBandLeaderboardId = -1
+    FullBandLeaderboardId = 0
 }
 
 CUSTOM_SONGS = [
@@ -33679,7 +34529,12 @@ CUSTOM_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152325
             )
-        ]
+        ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581543,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155953
     ),
     CustomSong(
         Title = "Brandenburg",
@@ -33720,7 +34575,12 @@ CUSTOM_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152328
             )
-        ]
+        ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581544,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155954
     ),
     CustomSong(
         Title = "Chopin Revolution",
@@ -33761,7 +34621,12 @@ CUSTOM_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152331
             )
-        ]
+        ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581545,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155955
     ),
     CustomSong(
         Title = "Deluge of Fire",
@@ -33802,7 +34667,12 @@ CUSTOM_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152334
             )
-        ]
+        ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581546,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155956
     ),
     CustomSong(
         Title = "Echo",
@@ -33843,7 +34713,12 @@ CUSTOM_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152337
             )
-        ]
+        ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581547,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155957
     ),
     CustomSong(
         Title = "Feed Forward",
@@ -33884,7 +34759,12 @@ CUSTOM_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152340
             )
-        ]
+        ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581548,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155958
     ),
     CustomSong(
         Title = "Moonlit",
@@ -33925,7 +34805,12 @@ CUSTOM_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152343
             )
-        ]
+        ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581549,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155959
     ),
     CustomSong(
         Title = "Paint the Fires",
@@ -33966,7 +34851,12 @@ CUSTOM_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152346
             )
-        ]
+        ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581550,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155960
     ),
     CustomSong(
         Title = "Points of Oak",
@@ -34007,7 +34897,12 @@ CUSTOM_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152349
             )
-        ]
+        ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581551,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155961
     ),
     CustomSong(
         Title = "Pwnaphone",
@@ -34048,7 +34943,12 @@ CUSTOM_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152352
             )
-        ]
+        ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581552,
+            Points = 10
+        ),
+        FullBandLeaderboardId = 155962
     ),
     CustomSong(
         Title = "Raving Mad",
@@ -34089,7 +34989,12 @@ CUSTOM_SONGS = [
                 ),
                 QuickplayLeaderboardId = 152355
             )
-        ]
+        ],
+        FullBandFiveStarAchievementMetadata = AchievementMetadata(
+            Id = 581553,
+            Points = 5
+        ),
+        FullBandLeaderboardId = 155963
     )
 ]
 
@@ -34287,26 +35192,32 @@ for song in CUSTOM_SONGS {
         )
     }
 
-    // achievement(
-    //     title = format("{0} - Quickplay+ - Full Band - {1} 5 Star", song.Title, DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT]),
-    //     description = format("Get five stars on the custom song \"{0}\" in Quickplay+ mode with a full band of all 3 instruments", song.Title),
-    //     points = song.FullBandFiveStarAchievementMetadata.Points,
-    //     id = song.FullBandFiveStarAchievementMetadata.Id,
-    //     // set = FULL_BAND_SUBSET,
-    //     trigger = full_band_five_star_custom_song_trigger(song)
-    // )
+    title = song.Title
+    if (song.Title == "If You Want Peace... Prepare for War") {
+        // This is just to avoid going over the character limit for this song by one.
+        title = "If You Want Peace...Prepare for War"
+    }
 
-    // leaderboard(
-    //     title = format("{0} - Quickplay+ - Full Band", song.Title),
-    //     description = format("Get the highest score on the custom song \"{0}\" in Quickplay+ with a full band of all 3 instruments", song.Title),
-    //     id = song.FullBandLeaderboardId,
-    //     // set = FULL_BAND_SUBSET,
-    //     start = full_band_leaderboard_custom_song_start(song),
-    //     cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
-    //     submit = is_you_rock_reached_quickplay(),
-    //     value = band_score(),
-    //     format = "VALUE"
-    // )
+    achievement(
+        title = format("{0} - Quickplay+ - Full Band - {1} 5 Star", title, DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT]),
+        description = format("Get five stars on the custom song \"{0}\" in Quickplay+ mode with a full band of all 3 instruments", song.Title),
+        points = song.FullBandFiveStarAchievementMetadata.Points,
+        id = song.FullBandFiveStarAchievementMetadata.Id,
+        set = FULL_BAND_SUBSET,
+        trigger = full_band_five_star_custom_song_trigger(song)
+    )
+
+    leaderboard(
+        title = format("{0} - Quickplay+ - Full Band", song.Title),
+        description = format("Get the highest score on the custom song \"{0}\" in Quickplay+ with a full band of all 3 instruments", song.Title),
+        id = song.FullBandLeaderboardId,
+        set = FULL_BAND_SUBSET,
+        start = full_band_leaderboard_custom_song_start(song),
+        cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
+        submit = is_you_rock_reached_quickplay(),
+        value = band_score(),
+        format = "VALUE"
+    )
 }
 
 // #endregion

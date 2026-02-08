@@ -3,9 +3,11 @@ import os, json, requests, shutil, sys, uuid
 from io import BytesIO
 from typing import Any
 
+from tqdm import tqdm
+
 from PIL import Image, ImageChops
 
-from constants import get_all_songs, normalize_song_title_for_file, INSTRUMENT_GUITAR, INSTRUMENT_DRUMS, INSTRUMENT_VOCALS, INSTRUMENT_BASS, SOURCE_GHWOR
+from constants import get_all_songs, normalize_song_title_for_file, INSTRUMENT_GUITAR, INSTRUMENT_DRUMS, INSTRUMENT_VOCALS, INSTRUMENT_BASS, SOURCE_GHWOR, SOURCE_GHWOR_DLC
 
 songs = get_all_songs()
 
@@ -67,6 +69,17 @@ MANUAL_ACHIEVEMENT_MAPPINGS = {
     574367: "Icons/Output/Core/Misc-Star-1000.png",
     574368: "Icons/Output/Core/Misc-Star-2000.png",
     574369: "Icons/Output/Core/Misc-Star-3300.png",
+    581543: "Icons/Output/Co-Op/CustomSong-BarrenMountain-Band.png",
+    581544: "Icons/Output/Co-Op/CustomSong-Brandenburg-Band.png",
+    581545: "Icons/Output/Co-Op/CustomSong-ChopinRevolution-Band.png",
+    581546: "Icons/Output/Co-Op/CustomSong-DelugeOfFire-Band.png",
+    581547: "Icons/Output/Co-Op/CustomSong-Echo-Band.png",
+    581548: "Icons/Output/Co-Op/CustomSong-FeedForward-Band.png",
+    581549: "Icons/Output/Co-Op/CustomSong-Moonlit-Band.png",
+    581550: "Icons/Output/Co-Op/CustomSong-PaintTheFires-Band.png",
+    581551: "Icons/Output/Co-Op/CustomSong-PointsOfOak-Band.png",
+    581552: "Icons/Output/Co-Op/CustomSong-Pwnaphone-Band.png",
+    581553: "Icons/Output/Co-Op/CustomSong-RavingMad-Band.png"
 }
 
 def main() -> None:
@@ -85,12 +98,14 @@ def get_song_achievement_mappings() -> dict[int, str]:
     achievement_mappings: dict[int, str] = {}
 
     for song in songs:
-        if song.Source != SOURCE_GHWOR:
-            folder = "DLC/"
-            # TODO: Remove when all sets are uploaded.
-            continue
-        else:
+        if song.Source == SOURCE_GHWOR:
             folder = "Core/"
+        elif song.Source == SOURCE_GHWOR_DLC:
+            folder = "DLC/"
+        else:
+            continue
+        achievement_mappings[song.PowerChallengeAchievement.Metadata.Id] = f"Icons/Output/{folder}PowerChallenge-{normalize_song_title_for_file(song)}.png"
+        achievement_mappings[song.FullBandFiveStarAchievementMetadata.Id] = f"Icons/Output/Co-Op/Quickplay-{normalize_song_title_for_file(song)}-Band.png"
         if song.QuestDominateAchievement and not song.QuestDominateAchievement.IsNull:
             achievement_mappings[song.QuestDominateAchievement.Value.Id] = f"Icons/Output/{folder}Quest-Song-{normalize_song_title_for_file(song)}.png"
         if song.VocalChallengeAchievement and not song.VocalChallengeAchievement.IsNull:
@@ -105,7 +120,9 @@ def get_song_achievement_mappings() -> dict[int, str]:
 
 def verify_icon_counts(achievement_mappings: dict[int, str]) -> None:
     EXPECTED_ICON_COUNTS = {
-        "Icons/Output/Core": 541
+        "Icons/Output/Core": 634,
+        "Icons/Output/DLC": 414,
+        "Icons/Output/Co-Op": 181
     }
 
     for start, count in EXPECTED_ICON_COUNTS.items():
@@ -123,8 +140,13 @@ def verify_icons_exist(achievement_mappings: dict[int, str]) -> None:
 def generate_user_text_and_files(achievement_mappings: dict[int, str], ra_info: dict[str, Any]) -> None:
     os.makedirs("Icons/local", exist_ok=True)
     text_to_copy: list[str] = []
-    for id, path in achievement_mappings.items():
-        original_achievement = [a for a in ra_info["Sets"][0]["Achievements"] if a["ID"] == id][0]
+    all_achievements = [a for s in ra_info["Sets"] for a in s["Achievements"]]
+    for id, path in tqdm(achievement_mappings.items()):
+        matching_achievements = [a for a in all_achievements if a["ID"] == id]
+        if len(matching_achievements) != 1:
+            tqdm.write(f"Achievement {id} could not be found!?")
+            sys.exit(1)
+        original_achievement = [a for a in all_achievements if a["ID"] == id][0]
 
         if original_achievement["BadgeURL"] != "https://media.retroachievements.org/Badge/00000.png":
             # Verify the new icon is any different.
@@ -132,14 +154,15 @@ def generate_user_text_and_files(achievement_mappings: dict[int, str], ra_info: 
             server_image = Image.open(BytesIO(response.content)).convert("RGB")
             local_iamge = Image.open(path).convert("RGB")
             if not ImageChops.difference(server_image, local_iamge).getbbox():
-                print(f"{original_achievement["BadgeURL"]} is identical to {path}, skipping...")
+                tqdm.write(f"{original_achievement["BadgeURL"]} is identical to {path}, skipping...")
                 continue
         new_id = str(uuid.uuid4())
         shutil.copyfile(path, f"Icons/local/{new_id}.png")
-        text_to_copy.append(f"{id}:\"{original_achievement["MemAddr"]}\":\"{original_achievement["Title"]}\":\"{original_achievement["Description"]}\"::::{original_achievement["Author"]}:{original_achievement["Points"]}:::::local\\{new_id}.png")
-    print("\nCopy this to 34685-User.txt:")
-    for line in text_to_copy:
-        print(line)
+        text_to_copy.append(f"{id}:\"{original_achievement["MemAddr"]}\":\"{original_achievement["Title"]}\":\"{original_achievement["Description"].replace("\"", "\\\"")}\"::::{original_achievement["Author"]}:{original_achievement["Points"]}:::::local\\{new_id}.png")
+    print("Writing to out.txt")
+    with open("out.txt", "w") as f:
+        for line in text_to_copy:
+            f.write(f"{line}\n")
 
 if __name__ == "__main__":
     main()

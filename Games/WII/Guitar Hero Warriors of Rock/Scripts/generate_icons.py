@@ -6,7 +6,7 @@ from PIL import ImageFilter
 from PIL import Image as PILImage
 from PIL.Image import Image
 
-from constants import get_all_songs, normalize_song_title_for_file, INSTRUMENT_GUITAR, INSTRUMENT_DRUMS, INSTRUMENT_VOCALS, INSTRUMENT_BASS, SOURCE_GHWOR, Song 
+from constants import get_all_songs, normalize_song_title_for_file, INSTRUMENT_GUITAR, INSTRUMENT_DRUMS, INSTRUMENT_VOCALS, INSTRUMENT_BASS, SOURCE_GHWOR, SOURCE_GHWOR_DLC, Song 
 
 songs = get_all_songs()
 
@@ -169,7 +169,7 @@ CHARACTER_IMAGE = { k: FONT_ATLAS.crop((v[0], v[1], v[0] + v[2], v[1] + v[3])) f
 
 def main() -> None:
     shutil.rmtree("Icons/Output")
-    for directory in ["Core", "Co-Op", "PowerChallenge", "FC", "DLC"]:
+    for directory in ["Core", "Co-Op", "FC", "DLC"]:
         os.makedirs(f"Icons/Output/{directory}", exist_ok=True)
     generate_song_achievements()
     generate_custom_song_achievements()
@@ -212,6 +212,8 @@ def generate_song_achievements() -> None:
     suicide_and_redemption_combined_song.Caption = "S&R"
 
     for song in tqdm(list(itertools.chain(songs, [suicide_and_redemption_combined_song]))):
+        if song.Source != SOURCE_GHWOR and song.Source != SOURCE_GHWOR_DLC:
+            continue
         if song.Title == "Sweet Home Alabama (Live) (GH5)":
             # All of the icons are handled by the GHWT version.
             continue
@@ -220,6 +222,7 @@ def generate_song_achievements() -> None:
             tqdm.write(f"{song.Title} has no album art")
             continue
         song_art = get_song_art(song)
+        subset = "Core/" if song.Source == SOURCE_GHWOR else "DLC/"
         for instrument_metadata in song.Instruments:
             if (
                 (song.Title == "Suicide & Redemption J.H." or song.Title == "Suicide & Redemption K.H.")
@@ -245,7 +248,7 @@ def generate_song_achievements() -> None:
             quickplay_five_star_image.paste(QUICKPLAY_STAR_IMAGE, (22, 44), QUICKPLAY_STAR_IMAGE)
             quickplay_five_star_image.paste(QUICKPLAY_STAR_IMAGE, (34, 44), QUICKPLAY_STAR_IMAGE)
             quickplay_five_star_image.paste(QUICKPLAY_STAR_IMAGE, (46, 44), QUICKPLAY_STAR_IMAGE)
-            quickplay_five_star_image.save(f"Icons/Output/{"Core/" if song.Source == SOURCE_GHWOR else "DLC/"}Quickplay-{normalize_song_title_for_file(song)}-{instrument_name}.png")
+            quickplay_five_star_image.save(f"Icons/Output/{subset}Quickplay-{normalize_song_title_for_file(song)}-{instrument_name}.png")
 
             quickplay_fc_image = song_and_instrument_art.copy()
             quickplay_fc_image.paste(FC_IMAGE, (0, 37), FC_IMAGE)
@@ -254,7 +257,7 @@ def generate_song_achievements() -> None:
             if song.VocalChallengeAchievement is not None and not song.VocalChallengeAchievement.IsNull and song.VocalChallengeAchievement.Value.Instrument == instrument_metadata.Instrument:
                 voxtar_image = quickplay_five_star_image.copy()
                 voxtar_image.paste(INSTRUMENT_IMAGE["Vocals"], (18, -2), INSTRUMENT_IMAGE["Vocals"])
-                voxtar_image.save(f"Icons/Output/{"Core/" if song.Source == SOURCE_GHWOR else "DLC/"}Quickplay-VocalChallenge-{normalize_song_title_for_file(song)}.png")
+                voxtar_image.save(f"Icons/Output/{subset}Quickplay-VocalChallenge-{normalize_song_title_for_file(song)}.png")
 
             # Uncomment if this can be figured out.
             # if song.Source == SOURCE_GHWOR:
@@ -281,7 +284,7 @@ def generate_song_achievements() -> None:
             power_challenge_art = song_art.copy()
             power_challenge_art.paste(DIFFICULTY_IMAGE["Expert"], (38, -2), DIFFICULTY_IMAGE["Expert"])
             power_challenge_art.paste(POWER_CHALLENGE_STAR_IMAGE, (-2, -2), POWER_CHALLENGE_STAR_IMAGE)
-            power_challenge_art.save(f"Icons/Output/PowerChallenge/{normalize_song_title_for_file(song)}.png")
+            power_challenge_art.save(f"Icons/Output/{subset}PowerChallenge-{normalize_song_title_for_file(song)}.png")
 
             if song.Source == SOURCE_GHWOR and not song.Title.startswith("2112"):
                 quest_art = song_art.copy()

@@ -77,6 +77,15 @@ class Song:
     PowerChallengeAchievement: Optional[PowerChallengeAchievementMetadata] = None
     QuestDominateAchievement: Optional[Nullable[AchievementMetadata]] = None
     VocalChallengeAchievement: Optional[Nullable[VocalChallengeAchievementMetadata]] = None
+
+@dataclass
+class CustomSong:
+    Title: str
+    Artist: str
+    Id: int
+    Instruments: list[InstrumentMetadata]
+    FullBandFiveStarAchievementMetadata: Optional[AchievementMetadata] = None
+    FullBandLeaderboardId: int = -1
     
 def get_all_songs() -> list[Song]:
     with open("Guitar Hero Warriors of Rock.rascript", "r") as f:
@@ -108,6 +117,37 @@ def get_all_songs() -> list[Song]:
             current_buffer = ""
                
     return songs
+    
+def get_all_custom_songs() -> list[CustomSong]:
+    with open("Guitar Hero Warriors of Rock.rascript", "r") as f:
+        lines = f.readlines()
+        FIRST_LINE = "CUSTOM_SONGS = [\n"
+        start_line_index = lines.index(FIRST_LINE)
+        end_line_index = lines.index("IS_IN_CUSTOM_SONG_ADDR = 0x00be0d98\n", start_line_index)
+        custom_song_info_buffer = lines[start_line_index:end_line_index]
+
+    custom_songs: list[Song] = []
+    current_buffer = ""
+    REMOVE_BEGINNING_OF_ARRAY_REGEX = re.compile(r"^([A-Z0-9_]+ = )")
+    REMOVE_COMMENTS_REGEX = re.compile(r"( \/\/.+)$")
+    REPLACE_TRUE_SPACE_REGEX = re.compile(r"( true)")
+    REPLACE_FALSE_SPACE_REGEX = re.compile(r"( false)")
+    REPLACE_TRUE_BRACKET_REGEX = re.compile(r"(\(true)")
+    REPLACE_FALSE_BRACKET_REGEX = re.compile(r"(\(false)")
+
+    for line in custom_song_info_buffer:
+        line = re.sub(REMOVE_BEGINNING_OF_ARRAY_REGEX, "", line)
+        line = re.sub(REMOVE_COMMENTS_REGEX, "", line)
+        line = re.sub(REPLACE_TRUE_SPACE_REGEX, " True", line)
+        line = re.sub(REPLACE_FALSE_SPACE_REGEX, " False", line)
+        line = re.sub(REPLACE_TRUE_BRACKET_REGEX, "(True", line)
+        line = re.sub(REPLACE_FALSE_BRACKET_REGEX, "(False", line)
+        current_buffer += line
+        if line == "\n":
+            custom_songs += eval("".join(current_buffer))
+            current_buffer = ""
+               
+    return custom_songs
 
 NORMALIZED_SONG_RE = re.compile(r":|-|\.|,|\(|\)| |\?|'|\"")
 

@@ -36,7 +36,7 @@ function virtual_to_ra_address(x) => x & 0x1fffffff
 // Uncomment these when RATools stops panicking!
 DLC_SUBSET = achievement_set("DLC", type = "BONUS", id = 37916)
 // POWER_CHALLENGE_SUBSET = achievement_set("Power Challenge", type = "BONUS", id = 2)
-// FC_SUBSET = achievement_set("Expert(+) Full Combos", type = "BONUS", id = 3)
+FC_SUBSET = achievement_set("Expert(+) Full Combos", type = "BONUS", id = 37909)
 FULL_BAND_SUBSET = achievement_set("Full Band Co-Op", type = "BONUS", id = 37908)
 
 INSTRUMENT_GUITAR = 0xbdc53cf2
@@ -195,6 +195,10 @@ GHWOR_SONGS = [
                     Id = 573830,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581574,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -213,6 +217,10 @@ GHWOR_SONGS = [
                     Id = 573831,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581575,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -230,6 +238,10 @@ GHWOR_SONGS = [
                     Id = 573832,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581576,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -246,6 +258,10 @@ GHWOR_SONGS = [
                     Title = "I Love That You're Never Satisfied",
                     Id = 573833,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581577,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -294,6 +310,10 @@ GHWOR_SONGS = [
                     Id = 573835,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581578,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -312,6 +332,10 @@ GHWOR_SONGS = [
                     Id = 573836,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581579,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -329,6 +353,10 @@ GHWOR_SONGS = [
                     Id = 573837,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581580,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -345,6 +373,10 @@ GHWOR_SONGS = [
                     Title = "An Old Man Wandering Lonely",
                     Id = 573838,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581581,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -393,6 +425,10 @@ GHWOR_SONGS = [
                     Id = 573840,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581582,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -411,6 +447,10 @@ GHWOR_SONGS = [
                     Id = 573841,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581583,
+                    Points = 100
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -428,6 +468,10 @@ GHWOR_SONGS = [
                     Id = 573842,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581584,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -444,6 +488,10 @@ GHWOR_SONGS = [
                     Title = "Too Many Doses, and I'm Starting to Get an Attraction",
                     Id = 573843,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581585,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -492,6 +540,10 @@ GHWOR_SONGS = [
                     Id = 573845,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581586,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -510,6 +562,10 @@ GHWOR_SONGS = [
                     Id = 573846,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581587,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -527,6 +583,10 @@ GHWOR_SONGS = [
                     Id = 573847,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581588,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -543,6 +603,10 @@ GHWOR_SONGS = [
                     Title = "When I Want Something, Man, I Don't Wanna Pay for It",
                     Id = 573848,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581589,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -591,6 +655,10 @@ GHWOR_SONGS = [
                     Id = 573851,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581590,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -609,6 +677,10 @@ GHWOR_SONGS = [
                     Id = 573852,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581591,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -626,6 +698,10 @@ GHWOR_SONGS = [
                     Id = 573853,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581592,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -642,6 +718,10 @@ GHWOR_SONGS = [
                     Title = "Feeding on the Blood That's Running from a Black Day",
                     Id = 573854,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581593,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -699,6 +779,10 @@ GHWOR_SONGS = [
                     Id = 573856,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581594,
+                    Points = 100
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -717,6 +801,10 @@ GHWOR_SONGS = [
                     Id = 573857,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581595,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [6, 7, 8]
                 ),
@@ -733,6 +821,10 @@ GHWOR_SONGS = [
                     Title = "Dead Art in Plainfield",
                     Id = 573858,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581596,
+                    Points = 25
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4, 5]
@@ -781,6 +873,10 @@ GHWOR_SONGS = [
                     Id = 573860,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581597,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -799,6 +895,10 @@ GHWOR_SONGS = [
                     Id = 573861,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581598,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -816,6 +916,10 @@ GHWOR_SONGS = [
                     Id = 573862,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581599,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -832,6 +936,10 @@ GHWOR_SONGS = [
                     Title = "Hand Grenade Pins in Every Line",
                     Id = 573863,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581600,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -880,6 +988,10 @@ GHWOR_SONGS = [
                     Id = 573865,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581601,
+                    Points = 50 // TODO: Lemon says 50 on this one, I thought 25.
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -898,6 +1010,10 @@ GHWOR_SONGS = [
                     Id = 573866,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581602,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [6, 7]
                 ),
@@ -915,6 +1031,10 @@ GHWOR_SONGS = [
                     Id = 573867,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581603,
+                    Points = 2
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [8]
                 ),
@@ -931,6 +1051,10 @@ GHWOR_SONGS = [
                     Title = "Gonna Multiply the Tainted Blood",
                     Id = 573868,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581604,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4, 5]
@@ -979,6 +1103,10 @@ GHWOR_SONGS = [
                     Id = 573870,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581605,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -997,6 +1125,10 @@ GHWOR_SONGS = [
                     Id = 573871,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581606,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -1012,6 +1144,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "You're All by Yourself, but You're Not Alone",
                     Id = 573872,
+                    Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581607,
                     Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -1030,6 +1166,10 @@ GHWOR_SONGS = [
                     Title = "Push Me Again",
                     Id = 573873,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581608,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -1078,6 +1218,10 @@ GHWOR_SONGS = [
                     Id = 573875,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581609,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -1096,6 +1240,10 @@ GHWOR_SONGS = [
                     Id = 573876,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581610,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [4, 5]
                 ),
@@ -1113,6 +1261,10 @@ GHWOR_SONGS = [
                     Id = 573877,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581611,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [6, 7, 8]
                 ),
@@ -1129,6 +1281,10 @@ GHWOR_SONGS = [
                     Title = "I Sometimes Wish I'd Never Been Born at All",
                     Id = 573878,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581612,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3]
@@ -1177,6 +1333,10 @@ GHWOR_SONGS = [
                     Id = 573880,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581613,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -1195,6 +1355,10 @@ GHWOR_SONGS = [
                     Id = 573881,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581614,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -1212,6 +1376,10 @@ GHWOR_SONGS = [
                     Id = 573882,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581615,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -1228,6 +1396,10 @@ GHWOR_SONGS = [
                     Title = "Warning Came, No One Cared",
                     Id = 573883,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581616,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -1276,6 +1448,10 @@ GHWOR_SONGS = [
                     Id = 573886,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581617,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -1294,6 +1470,10 @@ GHWOR_SONGS = [
                     Id = 573887,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581618,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -1311,6 +1491,10 @@ GHWOR_SONGS = [
                     Id = 573888,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581619,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -1326,6 +1510,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "Home on the Highway",
                     Id = 573889,
+                    Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581620,
                     Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -1384,6 +1572,10 @@ GHWOR_SONGS = [
                     Id = 573891,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581621,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -1402,6 +1594,10 @@ GHWOR_SONGS = [
                     Id = 573892,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581622,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -1419,6 +1615,10 @@ GHWOR_SONGS = [
                     Id = 573893,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581623,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -1435,6 +1635,10 @@ GHWOR_SONGS = [
                     Title = "A Dream May Last Just Seconds",
                     Id = 573894,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581624,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -1483,6 +1687,10 @@ GHWOR_SONGS = [
                     Id = 573896,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581625,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -1501,6 +1709,10 @@ GHWOR_SONGS = [
                     Id = 573897,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581626,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -1518,6 +1730,10 @@ GHWOR_SONGS = [
                     Id = 573898,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581627,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -1533,6 +1749,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "I Got That Green Light Baby",
                     Id = 573899,
+                    Points = 10
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581628,
                     Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -1582,6 +1802,10 @@ GHWOR_SONGS = [
                     Id = 573902,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581629,
+                    Points = 100
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -1600,6 +1824,10 @@ GHWOR_SONGS = [
                     Id = 573903,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581630,
+                    Points = 100
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -1617,6 +1845,10 @@ GHWOR_SONGS = [
                     Id = 573904,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581631,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -1633,6 +1865,10 @@ GHWOR_SONGS = [
                     Title = "Annihilation Must Be Swift",
                     Id = 573905,
                     Points = 10
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581632,
+                    Points = 25
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -1690,6 +1926,10 @@ GHWOR_SONGS = [
                     Id = 573908,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581633,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -1708,6 +1948,10 @@ GHWOR_SONGS = [
                     Id = 573909,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581634,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -1725,6 +1969,10 @@ GHWOR_SONGS = [
                     Id = 573910,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581635,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -1741,6 +1989,10 @@ GHWOR_SONGS = [
                     Title = "I'm Your Wild Girl",
                     Id = 573911,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581636,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -1798,6 +2050,10 @@ GHWOR_SONGS = [
                     Id = 573913,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581637,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -1816,6 +2072,10 @@ GHWOR_SONGS = [
                     Id = 573914,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581638,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -1833,6 +2093,10 @@ GHWOR_SONGS = [
                     Id = 573915,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581639,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -1849,6 +2113,10 @@ GHWOR_SONGS = [
                     Title = "They'll Fight the World Until They've Won",
                     Id = 573916,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581640,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -1897,6 +2165,10 @@ GHWOR_SONGS = [
                     Id = 573918,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581641,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -1915,6 +2187,10 @@ GHWOR_SONGS = [
                     Id = 573919,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581642,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -1932,6 +2208,10 @@ GHWOR_SONGS = [
                     Id = 573920,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581643,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -1948,6 +2228,10 @@ GHWOR_SONGS = [
                     Title = "Love Is Sweet Misery",
                     Id = 573921,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581644,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -1996,6 +2280,10 @@ GHWOR_SONGS = [
                     Id = 573924,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581645,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -2014,6 +2302,10 @@ GHWOR_SONGS = [
                     Id = 573925,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581646,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -2031,6 +2323,10 @@ GHWOR_SONGS = [
                     Id = 573926,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581647,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -2047,6 +2343,10 @@ GHWOR_SONGS = [
                     Title = "I Don't Wanna Forget How Your Voice Sounds",
                     Id = 573927,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581648,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -2104,6 +2404,10 @@ GHWOR_SONGS = [
                     Id = 573929,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581649,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -2122,6 +2426,10 @@ GHWOR_SONGS = [
                     Id = 573930,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581650,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -2137,6 +2445,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "So Sensual, as Step by Step by Step, I Separate",
                     Id = 573931,
+                    Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581651,
                     Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -2155,6 +2467,10 @@ GHWOR_SONGS = [
                     Title = "We're Swept Into the Shadows",
                     Id = 573932,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581652,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -2203,6 +2519,10 @@ GHWOR_SONGS = [
                     Id = 573934,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581653,
+                    Points = 25 // TODO: Lemon says this is 25, I thought 50, but I also think Modern Day Cowboy's more a 25.
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -2221,6 +2541,10 @@ GHWOR_SONGS = [
                     Id = 573935,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581654,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6, 7]
                 ),
@@ -2238,6 +2562,10 @@ GHWOR_SONGS = [
                     Id = 573936,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581655,
+                    Points = 2
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [8]
                 ),
@@ -2254,6 +2582,10 @@ GHWOR_SONGS = [
                     Title = "Shape the Con Before It Shapes You",
                     Id = 573937,
                     Points = 10
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581656,
+                    Points = 25
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -2302,6 +2634,10 @@ GHWOR_SONGS = [
                     Id = 573939,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581657,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -2320,6 +2656,10 @@ GHWOR_SONGS = [
                     Id = 573940,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581658,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -2337,6 +2677,10 @@ GHWOR_SONGS = [
                     Id = 573941,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581659,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -2353,6 +2697,10 @@ GHWOR_SONGS = [
                     Title = "Cut the Conversation, Just Open Your Mouth",
                     Id = 573942,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581660,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -2401,6 +2749,10 @@ GHWOR_SONGS = [
                     Id = 573944,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581661,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -2419,6 +2771,10 @@ GHWOR_SONGS = [
                     Id = 573945,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581662,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -2436,6 +2792,10 @@ GHWOR_SONGS = [
                     Id = 573946,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581663,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -2451,6 +2811,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "Prayers That Need No Answer Now",
                     Id = 573947,
+                    Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581664,
                     Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -2500,6 +2864,10 @@ GHWOR_SONGS = [
                     Id = 573949,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581665,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -2518,6 +2886,10 @@ GHWOR_SONGS = [
                     Id = 573950,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581666,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -2535,6 +2907,10 @@ GHWOR_SONGS = [
                     Id = 573951,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581667,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -2551,6 +2927,10 @@ GHWOR_SONGS = [
                     Title = "Together We'll Make History",
                     Id = 573952,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581668,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -2599,6 +2979,10 @@ GHWOR_SONGS = [
                     Id = 573955,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581669,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -2615,6 +2999,10 @@ GHWOR_SONGS = [
                     Title = "They Point the Cannon at You",
                     Id = 573956,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581670,
+                    Points = 5
                 ),
                 ExpertPlusAvailable = false,
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -2634,6 +3022,10 @@ GHWOR_SONGS = [
                     Id = 573957,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581671,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -2650,6 +3042,10 @@ GHWOR_SONGS = [
                     Title = "Some Folks Are Born Silver Spoon in Hand",
                     Id = 573958,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581672,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -2707,6 +3103,10 @@ GHWOR_SONGS = [
                     Id = 573961,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581673,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -2725,6 +3125,10 @@ GHWOR_SONGS = [
                     Id = 573962,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581674,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -2742,6 +3146,10 @@ GHWOR_SONGS = [
                     Id = 573963,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581675,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -2758,6 +3166,10 @@ GHWOR_SONGS = [
                     Title = "You Know All the Answers Must Come from Within",
                     Id = 573964,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581676,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -2815,6 +3227,10 @@ GHWOR_SONGS = [
                     Id = 573966,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581677,
+                    Points = 100
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -2833,6 +3249,10 @@ GHWOR_SONGS = [
                     Id = 573967,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581678,
+                    Points = 100
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -2850,6 +3270,10 @@ GHWOR_SONGS = [
                     Id = 573968,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581679,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -2866,6 +3290,10 @@ GHWOR_SONGS = [
                     Title = "When the Glory of the Master's Time Has Come",
                     Id = 573969,
                     Points = 10
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581680,
+                    Points = 25
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -2914,6 +3342,10 @@ GHWOR_SONGS = [
                     Id = 573972,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581681,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -2932,6 +3364,10 @@ GHWOR_SONGS = [
                     Id = 573973,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581682,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -2949,6 +3385,10 @@ GHWOR_SONGS = [
                     Id = 573974,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581683,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -2965,6 +3405,10 @@ GHWOR_SONGS = [
                     Title = "Drive You Around the Corner",
                     Id = 573975,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581684,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -3022,6 +3466,10 @@ GHWOR_SONGS = [
                     Id = 573977,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581685,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -3040,6 +3488,10 @@ GHWOR_SONGS = [
                     Id = 573978,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581686,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -3057,6 +3509,10 @@ GHWOR_SONGS = [
                     Id = 573979,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581687,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -3073,6 +3529,10 @@ GHWOR_SONGS = [
                     Title = "Spit in the Face of the Ugly Clown",
                     Id = 573980,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581688,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -3121,6 +3581,10 @@ GHWOR_SONGS = [
                     Id = 573982,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581689,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -3139,6 +3603,10 @@ GHWOR_SONGS = [
                     Id = 573983,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581690,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -3156,6 +3624,10 @@ GHWOR_SONGS = [
                     Id = 573984,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581691,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -3172,6 +3644,10 @@ GHWOR_SONGS = [
                     Title = "Can I Get My Punk Ass off the Street",
                     Id = 573985,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581692,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -3220,6 +3696,10 @@ GHWOR_SONGS = [
                     Id = 573987,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581693,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -3238,6 +3718,10 @@ GHWOR_SONGS = [
                     Id = 573988,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581694,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -3255,6 +3739,10 @@ GHWOR_SONGS = [
                     Id = 573989,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581695,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -3271,6 +3759,10 @@ GHWOR_SONGS = [
                     Title = "Projecting All My Anger",
                     Id = 573990,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581696,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -3319,6 +3811,10 @@ GHWOR_SONGS = [
                     Id = 573993,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581697,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -3338,6 +3834,10 @@ GHWOR_SONGS = [
                     Id = 573994,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581698,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -3356,6 +3856,10 @@ GHWOR_SONGS = [
                     Id = 573995,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581699,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -3373,6 +3877,10 @@ GHWOR_SONGS = [
                     Title = "Next Thing You Know, They'll Take My Thoughts Away",
                     Id = 573996,
                     Points = 10
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581700,
+                    Points = 25
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -3431,6 +3939,10 @@ GHWOR_SONGS = [
                     Id = 573999,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581701,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -3449,6 +3961,10 @@ GHWOR_SONGS = [
                     Id = 574000,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581702,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -3466,6 +3982,10 @@ GHWOR_SONGS = [
                     Id = 574001,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581703,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -3482,6 +4002,10 @@ GHWOR_SONGS = [
                     Title = "I Couldn't Cut It as a Poor Man Stealing",
                     Id = 574002,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581704,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -3539,6 +4063,10 @@ GHWOR_SONGS = [
                     Id = 574005,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581705,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -3557,6 +4085,10 @@ GHWOR_SONGS = [
                     Id = 574006,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581706,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [4, 5]
                 ),
@@ -3574,6 +4106,10 @@ GHWOR_SONGS = [
                     Id = 574007,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581707,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [6, 7, 8]
                 ),
@@ -3589,6 +4125,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "Hotel, Taco Bell",
                     Id = 574008,
+                    Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581708,
                     Points = 3
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -3647,6 +4187,10 @@ GHWOR_SONGS = [
                     Id = 574010,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581709,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -3665,6 +4209,10 @@ GHWOR_SONGS = [
                     Id = 574011,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581710,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -3682,6 +4230,10 @@ GHWOR_SONGS = [
                     Id = 574012,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581711,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -3698,6 +4250,10 @@ GHWOR_SONGS = [
                     Title = "Force-Fed to Make Us Heed",
                     Id = 574013,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581712,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -3746,6 +4302,10 @@ GHWOR_SONGS = [
                     Id = 574015,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581713,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -3764,6 +4324,10 @@ GHWOR_SONGS = [
                     Id = 574016,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581714,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -3781,6 +4345,10 @@ GHWOR_SONGS = [
                     Id = 574017,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581715,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -3797,6 +4365,10 @@ GHWOR_SONGS = [
                     Title = "Well, If You Wanted Honesty, That's All You Had to Say",
                     Id = 574018,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581716,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -3845,6 +4417,10 @@ GHWOR_SONGS = [
                     Id = 574020,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581717,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -3863,6 +4439,10 @@ GHWOR_SONGS = [
                     Id = 574021,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581718,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -3880,6 +4460,10 @@ GHWOR_SONGS = [
                     Id = 574022,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581719,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -3896,6 +4480,10 @@ GHWOR_SONGS = [
                     Title = "Stolen Land, They Can't Fight It",
                     Id = 574023,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581720,
+                    Points = 25
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -3944,6 +4532,10 @@ GHWOR_SONGS = [
                     Id = 574025,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581721,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -3962,6 +4554,10 @@ GHWOR_SONGS = [
                     Id = 574026,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581722,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -3977,6 +4573,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "Breathin' Is the Hardest Thing to Do",
                     Id = 574027,
+                    Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581723,
                     Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -3995,6 +4595,10 @@ GHWOR_SONGS = [
                     Title = "Feelin' like a Hand in Rusted Shame",
                     Id = 574028,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581724,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -4043,6 +4647,10 @@ GHWOR_SONGS = [
                     Id = 574031,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581725,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -4061,6 +4669,10 @@ GHWOR_SONGS = [
                     Id = 574032,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581726,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -4078,6 +4690,10 @@ GHWOR_SONGS = [
                     Id = 574033,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581727,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -4094,6 +4710,10 @@ GHWOR_SONGS = [
                     Title = "If You're Bored, Then You're Probably Boring",
                     Id = 574034,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581728,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -4151,6 +4771,10 @@ GHWOR_SONGS = [
                     Id = 574036,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581729,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -4169,6 +4793,10 @@ GHWOR_SONGS = [
                     Id = 574037,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581730,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -4186,6 +4814,10 @@ GHWOR_SONGS = [
                     Id = 574038,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581731,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -4202,6 +4834,10 @@ GHWOR_SONGS = [
                     Title = "Fortunes Are Lost on the Women I've Seen",
                     Id = 574039,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581732,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -4250,6 +4886,10 @@ GHWOR_SONGS = [
                     Id = 574041,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581733,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -4268,6 +4908,10 @@ GHWOR_SONGS = [
                     Id = 574042,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581734,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -4285,6 +4929,10 @@ GHWOR_SONGS = [
                     Id = 574043,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581735,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -4300,6 +4948,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "Such a Lack of Diplomacy",
                     Id = 574044,
+                    Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581736,
                     Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -4349,6 +5001,10 @@ GHWOR_SONGS = [
                     Id = 574047,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581737,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -4367,6 +5023,10 @@ GHWOR_SONGS = [
                     Id = 574048,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581738,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -4384,6 +5044,10 @@ GHWOR_SONGS = [
                     Id = 574049,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581739,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -4400,6 +5064,10 @@ GHWOR_SONGS = [
                     Title = "Buddy, You Don't Even Know Her",
                     Id = 574050,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581740,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -4457,6 +5125,10 @@ GHWOR_SONGS = [
                     Id = 574052,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581741,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -4475,6 +5147,10 @@ GHWOR_SONGS = [
                     Id = 574053,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581742,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -4492,6 +5168,10 @@ GHWOR_SONGS = [
                     Id = 574054,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581743,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -4508,6 +5188,10 @@ GHWOR_SONGS = [
                     Title = "I Think I Thought I Saw You Try",
                     Id = 574055,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581744,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -4556,6 +5240,10 @@ GHWOR_SONGS = [
                     Id = 574058,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581745,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -4574,6 +5262,10 @@ GHWOR_SONGS = [
                     Id = 574059,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581746,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -4591,6 +5283,10 @@ GHWOR_SONGS = [
                     Id = 574060,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581747,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -4607,6 +5303,10 @@ GHWOR_SONGS = [
                     Title = "I'll Be a Gambler, Baby",
                     Id = 574061,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581748,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -4664,6 +5364,10 @@ GHWOR_SONGS = [
                     Id = 574064,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581749,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -4682,6 +5386,10 @@ GHWOR_SONGS = [
                     Id = 574065,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581750,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -4699,6 +5407,10 @@ GHWOR_SONGS = [
                     Id = 574066,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581751,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -4715,6 +5427,10 @@ GHWOR_SONGS = [
                     Title = "We Won't Let You Kill the Laughter",
                     Id = 574067,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581752,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -4772,6 +5488,10 @@ GHWOR_SONGS = [
                     Id = 574070,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581753,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -4790,6 +5510,10 @@ GHWOR_SONGS = [
                     Id = 574071,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581754,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -4807,6 +5531,10 @@ GHWOR_SONGS = [
                     Id = 574072,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581755,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -4823,6 +5551,10 @@ GHWOR_SONGS = [
                     Title = "Deaf, Dumb, Dirty, Starting to Deserve This",
                     Id = 574073,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581756,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -4880,6 +5612,10 @@ GHWOR_SONGS = [
                     Id = 574075,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581757,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -4898,6 +5634,10 @@ GHWOR_SONGS = [
                     Id = 574076,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581758,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -4915,6 +5655,10 @@ GHWOR_SONGS = [
                     Id = 574077,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581759,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -4931,6 +5675,10 @@ GHWOR_SONGS = [
                     Title = "Sundown, Don't Be Hangin' 'Round",
                     Id = 574078,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581760,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -4979,6 +5727,10 @@ GHWOR_SONGS = [
                     Id = 574081,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581761,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -4997,6 +5749,10 @@ GHWOR_SONGS = [
                     Id = 574082,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581762,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -5014,6 +5770,10 @@ GHWOR_SONGS = [
                     Id = 574083,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581763,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -5030,6 +5790,10 @@ GHWOR_SONGS = [
                     Title = "We Got to Move These Color TVs",
                     Id = 574084,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581764,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -5087,6 +5851,10 @@ GHWOR_SONGS = [
                     Id = 574087,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581765,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -5105,6 +5873,10 @@ GHWOR_SONGS = [
                     Id = 574088,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581766,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -5122,6 +5894,10 @@ GHWOR_SONGS = [
                     Id = 574089,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581767,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -5138,6 +5914,10 @@ GHWOR_SONGS = [
                     Title = "Concentration, Never Hard to Break It",
                     Id = 574090,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581768,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -5195,6 +5975,10 @@ GHWOR_SONGS = [
                     Id = 574093,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581769,
+                    Points = 50 // TODO: It's so borderline...
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -5213,6 +5997,10 @@ GHWOR_SONGS = [
                     Id = 574094,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581770,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -5230,6 +6018,10 @@ GHWOR_SONGS = [
                     Id = 574095,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581771,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -5246,6 +6038,10 @@ GHWOR_SONGS = [
                     Title = "That Side's Yours and This Side's Mine",
                     Id = 574096,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581772,
+                    Points = 25
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -5303,6 +6099,10 @@ GHWOR_SONGS = [
                     Id = 574098,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581773,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -5321,6 +6121,10 @@ GHWOR_SONGS = [
                     Id = 574099,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581774,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6, 7]
                 ),
@@ -5338,6 +6142,10 @@ GHWOR_SONGS = [
                     Id = 574100,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581775,
+                    Points = 2
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [8]
                 ),
@@ -5354,6 +6162,10 @@ GHWOR_SONGS = [
                     Title = "All Blood Runs the Same",
                     Id = 574101,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581776,
+                    Points = 25
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -5402,6 +6214,10 @@ GHWOR_SONGS = [
                     Id = 574103,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581777,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -5420,6 +6236,10 @@ GHWOR_SONGS = [
                     Id = 574104,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581778,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -5437,6 +6257,10 @@ GHWOR_SONGS = [
                     Id = 574105,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581779,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -5453,6 +6277,10 @@ GHWOR_SONGS = [
                     Title = "My Dog Bit Me on the Leg Today",
                     Id = 574106,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581780,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -5501,6 +6329,10 @@ GHWOR_SONGS = [
                     Id = 574109,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581781,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -5519,6 +6351,10 @@ GHWOR_SONGS = [
                     Id = 574110,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581782,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -5536,6 +6372,10 @@ GHWOR_SONGS = [
                     Id = 574111,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581783,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -5552,6 +6392,10 @@ GHWOR_SONGS = [
                     Title = "The Beat Is Insincere",
                     Id = 574112,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581784,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -5609,6 +6453,10 @@ GHWOR_SONGS = [
                     Id = 574115,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581785,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -5627,6 +6475,10 @@ GHWOR_SONGS = [
                     Id = 574116,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581786,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -5644,6 +6496,10 @@ GHWOR_SONGS = [
                     Id = 574117,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581787,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -5660,6 +6516,10 @@ GHWOR_SONGS = [
                     Title = "Wake Me, I'm Ready",
                     Id = 574118,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581788,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -5717,6 +6577,10 @@ GHWOR_SONGS = [
                     Id = 574120,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581789,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -5735,6 +6599,10 @@ GHWOR_SONGS = [
                     Id = 574121,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581790,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -5752,6 +6620,10 @@ GHWOR_SONGS = [
                     Id = 574122,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581791,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -5768,6 +6640,10 @@ GHWOR_SONGS = [
                     Title = "I Am Frowning All the Time",
                     Id = 574123,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581792,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -5816,6 +6692,10 @@ GHWOR_SONGS = [
                     Id = 574125,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581793,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -5834,6 +6714,10 @@ GHWOR_SONGS = [
                     Id = 574126,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581794,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [4, 5, 6]
                 ),
@@ -5851,6 +6735,10 @@ GHWOR_SONGS = [
                     Id = 574127,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581795,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -5867,6 +6755,10 @@ GHWOR_SONGS = [
                     Title = "Red Light, Yellow Light, Green Light Go",
                     Id = 574128,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581796,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3]
@@ -5915,6 +6807,10 @@ GHWOR_SONGS = [
                     Id = 574131,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581797,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -5933,6 +6829,10 @@ GHWOR_SONGS = [
                     Id = 574132,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581798,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [6, 7]
                 ),
@@ -5950,6 +6850,10 @@ GHWOR_SONGS = [
                     Id = 574133,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581799,
+                    Points = 2
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [8]
                 ),
@@ -5966,6 +6870,10 @@ GHWOR_SONGS = [
                     Title = "You'll Bite the Scythe",
                     Id = 574134,
                     Points = 10
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581800,
+                    Points = 50
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4, 5]
@@ -6023,6 +6931,10 @@ GHWOR_SONGS = [
                     Id = 574136,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581801,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -6041,6 +6953,10 @@ GHWOR_SONGS = [
                     Id = 574137,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581802,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -6058,6 +6974,10 @@ GHWOR_SONGS = [
                     Id = 574138,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581803,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -6074,6 +6994,10 @@ GHWOR_SONGS = [
                     Title = "There Are Cracks in the Road We Laid",
                     Id = 574139,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581804,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -6122,6 +7046,10 @@ GHWOR_SONGS = [
                     Id = 574141,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581805,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -6140,6 +7068,10 @@ GHWOR_SONGS = [
                     Id = 574142,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581806,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -6157,6 +7089,10 @@ GHWOR_SONGS = [
                     Id = 574143,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581807,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -6173,6 +7109,10 @@ GHWOR_SONGS = [
                     Title = "Deny Any Wrongdoing",
                     Id = 574144,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581808,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -6221,6 +7161,10 @@ GHWOR_SONGS = [
                     Id = 574146,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581809,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -6239,6 +7183,10 @@ GHWOR_SONGS = [
                     Id = 574147,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581810,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -6256,6 +7204,10 @@ GHWOR_SONGS = [
                     Id = 574148,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581811,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -6272,6 +7224,10 @@ GHWOR_SONGS = [
                     Title = "Confirmed in Fate",
                     Id = 574149,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581812,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -6320,6 +7276,10 @@ GHWOR_SONGS = [
                     Id = 574151,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581813,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -6338,6 +7298,10 @@ GHWOR_SONGS = [
                     Id = 574152,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581814,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -6355,6 +7319,10 @@ GHWOR_SONGS = [
                     Id = 574153,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581815,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -6371,6 +7339,10 @@ GHWOR_SONGS = [
                     Title = "Lawman Has Put an End to My Running",
                     Id = 574154,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581816,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -6419,6 +7391,10 @@ GHWOR_SONGS = [
                     Id = 574157,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581817,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -6437,6 +7413,10 @@ GHWOR_SONGS = [
                     Id = 574158,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581818,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -6454,6 +7434,10 @@ GHWOR_SONGS = [
                     Id = 574159,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581819,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -6469,6 +7453,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "Little Sister Makes a Move for the Door",
                     Id = 574160,
+                    Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581820,
                     Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -6527,6 +7515,10 @@ GHWOR_SONGS = [
                     Id = 574163,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581821,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -6545,6 +7537,10 @@ GHWOR_SONGS = [
                     Id = 574164,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581822,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -6562,6 +7558,10 @@ GHWOR_SONGS = [
                     Id = 574165,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581823,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -6578,6 +7578,10 @@ GHWOR_SONGS = [
                     Title = "Got Styrofoam Boxes for the Ozone Layer",
                     Id = 574166,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581824,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -6635,6 +7639,10 @@ GHWOR_SONGS = [
                     Id = 574167,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581825,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -6653,6 +7661,10 @@ GHWOR_SONGS = [
                     Id = 574168,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581826,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [6, 7]
                 ),
@@ -6670,6 +7682,10 @@ GHWOR_SONGS = [
                     Id = 574169,
                     Points = 2
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581827,
+                    Points = 3
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [8]
                 ),
@@ -6686,6 +7702,10 @@ GHWOR_SONGS = [
                     Title = "Plugging Into My Machine for the Day",
                     Id = 574170,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581828,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4, 5]
@@ -6729,6 +7749,10 @@ GHWOR_SONGS = [
                     Id = 574172,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581829,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -6747,6 +7771,10 @@ GHWOR_SONGS = [
                     Id = 574173,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581830,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -6764,6 +7792,10 @@ GHWOR_SONGS = [
                     Id = 574174,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581831,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -6780,6 +7812,10 @@ GHWOR_SONGS = [
                     Title = "Never Need to Wonder How or Why",
                     Id = 574175,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581832,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -6817,7 +7853,7 @@ GHWOR_SONGS = [
         Title = "2112 Pt. 3 - Discovery",
         Artist = "Rush",
         Source = SOURCE_GHWOR,
-        Id = 0xe4af510d,
+        Id = 0xe41f510d,
         QuickplayDetailsAddr = 0x13302b0c,
         AudioFileName = "Music/Rush2112P3.bik",
         AlbumArt = "Rush-2112",
@@ -6831,6 +7867,10 @@ GHWOR_SONGS = [
                     Title = "It's Got Wires That Vibrate and Give Music",
                     Id = 574176,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581833,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
@@ -6848,6 +7888,10 @@ GHWOR_SONGS = [
                     Title = "I Can't Wait to Share This New Wonder",
                     Id = 574177,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581834,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4, 5]
@@ -6891,6 +7935,10 @@ GHWOR_SONGS = [
                     Id = 574179,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581835,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -6909,6 +7957,10 @@ GHWOR_SONGS = [
                     Id = 574180,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581836,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -6926,6 +7978,10 @@ GHWOR_SONGS = [
                     Id = 574181,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581837,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -6942,6 +7998,10 @@ GHWOR_SONGS = [
                     Title = "Forget About Your Silly Whim",
                     Id = 574182,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581838,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -6994,6 +8054,10 @@ GHWOR_SONGS = [
                     Id = 574183,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581839,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -7012,6 +8076,10 @@ GHWOR_SONGS = [
                     Id = 574184,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581840,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -7029,6 +8097,10 @@ GHWOR_SONGS = [
                     Id = 574185,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581841,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -7045,6 +8117,10 @@ GHWOR_SONGS = [
                     Title = "Through Astral Nights, Galactic Days",
                     Id = 574186,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581842,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -7088,6 +8164,10 @@ GHWOR_SONGS = [
                     Id = 574187,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581843,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -7106,6 +8186,10 @@ GHWOR_SONGS = [
                     Id = 574188,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581844,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -7123,6 +8207,10 @@ GHWOR_SONGS = [
                     Id = 574189,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581845,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -7139,6 +8227,10 @@ GHWOR_SONGS = [
                     Title = "This Cold and Empty Life",
                     Id = 574190,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581846,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -7182,6 +8274,10 @@ GHWOR_SONGS = [
                     Id = 574191,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581847,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -7200,6 +8296,10 @@ GHWOR_SONGS = [
                     Id = 574192,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581848,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [6, 7]
                 ),
@@ -7215,6 +8315,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "With My Death I May Pass Into the World of My Dream",
                     Id = 574193,
+                    Points = 2
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581849,
                     Points = 2
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -7233,6 +8337,10 @@ GHWOR_SONGS = [
                     Title = "We Have Assumed Control",
                     Id = 574194,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581850,
+                    Points = 25
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4, 5]
@@ -7276,6 +8384,10 @@ GHWOR_SONGS = [
                     Id = 574197,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581851,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -7294,6 +8406,10 @@ GHWOR_SONGS = [
                     Id = 574198,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581852,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -7311,6 +8427,10 @@ GHWOR_SONGS = [
                     Id = 574199,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581853,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -7327,6 +8447,10 @@ GHWOR_SONGS = [
                     Title = "Like Memories of Dyin' Days That Deafen Us Like Hurricanes",
                     Id = 574200,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581854,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -7384,6 +8508,10 @@ GHWOR_SONGS = [
                     Id = 574203,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581855,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -7402,6 +8530,10 @@ GHWOR_SONGS = [
                     Id = 574204,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581856,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -7419,6 +8551,10 @@ GHWOR_SONGS = [
                     Id = 574205,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581857,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -7435,6 +8571,10 @@ GHWOR_SONGS = [
                     Title = "Spider Plays the Fool to Lure the Fly",
                     Id = 574206,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581858,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -7492,6 +8632,10 @@ GHWOR_SONGS = [
                     Id = 574209,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581859,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -7510,6 +8654,10 @@ GHWOR_SONGS = [
                     Id = 574210,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581860,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -7527,6 +8675,10 @@ GHWOR_SONGS = [
                     Id = 574211,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581861,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -7543,6 +8695,10 @@ GHWOR_SONGS = [
                     Title = "I May Be Dumb, but I'm Not a Dweeb",
                     Id = 574212,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581862,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -7600,6 +8756,10 @@ GHWOR_SONGS = [
                     Id = 574214,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581863,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -7618,6 +8778,10 @@ GHWOR_SONGS = [
                     Id = 574215,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581864,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -7635,6 +8799,10 @@ GHWOR_SONGS = [
                     Id = 574216,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581865,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -7651,6 +8819,10 @@ GHWOR_SONGS = [
                     Title = "I'll Show You Places You Won't Ever Want to Leave",
                     Id = 574217,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581866,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -7699,6 +8871,10 @@ GHWOR_SONGS = [
                     Id = 574220,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581867,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -7717,6 +8893,10 @@ GHWOR_SONGS = [
                     Id = 574221,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581868,
+                    Points = 5
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -7734,6 +8914,10 @@ GHWOR_SONGS = [
                     Id = 574222,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581869,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -7750,6 +8934,10 @@ GHWOR_SONGS = [
                     Title = "Every Single One's Got a Story to Tell",
                     Id = 574223,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581870,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -7807,6 +8995,10 @@ GHWOR_SONGS = [
                     Id = 574226,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581871,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -7825,6 +9017,10 @@ GHWOR_SONGS = [
                     Id = 574227,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581872,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -7842,6 +9038,10 @@ GHWOR_SONGS = [
                     Id = 574228,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581873,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -7858,6 +9058,10 @@ GHWOR_SONGS = [
                     Title = "Them Cufflinks, The Stick Pin",
                     Id = 574229,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581874,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -7915,6 +9119,10 @@ GHWOR_SONGS = [
                     Id = 574232,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581875,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -7933,6 +9141,10 @@ GHWOR_SONGS = [
                     Id = 574233,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581876,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -7950,6 +9162,10 @@ GHWOR_SONGS = [
                     Id = 574234,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581877,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -7966,6 +9182,10 @@ GHWOR_SONGS = [
                     Title = "I Submit, My Incentive Is Romanced",
                     Id = 574235,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581878,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -8023,6 +9243,10 @@ GHWOR_SONGS = [
                     Id = 574237,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581879,
+                    Points = 100
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -8041,6 +9265,10 @@ GHWOR_SONGS = [
                     Id = 574238,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581880,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [6, 7, 8]
                 ),
@@ -8057,6 +9285,10 @@ GHWOR_SONGS = [
                     Title = "Sisters",
                     Id = 574239,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581881,
+                    Points = 25
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4, 5]
@@ -8105,6 +9337,10 @@ GHWOR_SONGS = [
                     Id = 574241,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581882,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -8123,6 +9359,10 @@ GHWOR_SONGS = [
                     Id = 574242,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581883,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -8140,6 +9380,10 @@ GHWOR_SONGS = [
                     Id = 574243,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581884,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -8156,6 +9400,10 @@ GHWOR_SONGS = [
                     Title = "Wealth and Fame, He's Ignored",
                     Id = 574244,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581885,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -8204,6 +9452,10 @@ GHWOR_SONGS = [
                     Id = 574246,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581886,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -8222,6 +9474,10 @@ GHWOR_SONGS = [
                     Id = 574247,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581887,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -8239,6 +9495,10 @@ GHWOR_SONGS = [
                     Id = 574248,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581888,
+                    Points = 25 // TODO: This is the 4th highest song, and I've definitely given the rest 50.
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -8255,6 +9515,10 @@ GHWOR_SONGS = [
                     Title = "You Say You Got a Friend That She's Wilder than You",
                     Id = 574249,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581889,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -8303,6 +9567,10 @@ GHWOR_SONGS = [
                     Id = 574251,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581890,
+                    Points = 100
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -8321,6 +9589,10 @@ GHWOR_SONGS = [
                     Id = 574252,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581891,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -8338,6 +9610,10 @@ GHWOR_SONGS = [
                     Id = 574253,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581892,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -8354,6 +9630,10 @@ GHWOR_SONGS = [
                     Title = "Even Still You Keep on Fighting",
                     Id = 574254,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581893,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -8402,6 +9682,10 @@ GHWOR_SONGS = [
                     Id = 574257,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581894,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -8420,6 +9704,10 @@ GHWOR_SONGS = [
                     Id = 574258,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581895,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -8437,6 +9725,10 @@ GHWOR_SONGS = [
                     Id = 574259,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581896,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -8453,6 +9745,10 @@ GHWOR_SONGS = [
                     Title = "They're So Far Gone, We're Out of Reach",
                     Id = 574260,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581897,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -8510,6 +9806,10 @@ GHWOR_SONGS = [
                     Id = 574262,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581898,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -8528,6 +9828,10 @@ GHWOR_SONGS = [
                     Id = 574263,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581899,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -8545,6 +9849,10 @@ GHWOR_SONGS = [
                     Id = 574264,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581900,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -8561,6 +9869,10 @@ GHWOR_SONGS = [
                     Title = "Suicidal Imbecile",
                     Id = 574265,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581901,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -8609,6 +9921,10 @@ GHWOR_SONGS = [
                     Id = 574268,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581902,
+                    Points = 100
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -8628,6 +9944,10 @@ GHWOR_SONGS = [
                     Id = 574269,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581903,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -8646,6 +9966,10 @@ GHWOR_SONGS = [
                     Id = 574270,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581904,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -8663,6 +9987,10 @@ GHWOR_SONGS = [
                     Title = "Willing to Die and I Will After You for What I Believe",
                     Id = 574271,
                     Points = 10
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581905,
+                    Points = 50
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -8721,6 +10049,10 @@ GHWOR_SONGS = [
                     Id = 574273,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581906,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -8739,6 +10071,10 @@ GHWOR_SONGS = [
                     Id = 574274,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581907,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -8756,6 +10092,10 @@ GHWOR_SONGS = [
                     Id = 574275,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581908,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -8772,6 +10112,10 @@ GHWOR_SONGS = [
                     Title = "'Cause There's No Second Chance",
                     Id = 574276,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581909,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -8820,6 +10164,10 @@ GHWOR_SONGS = [
                     Id = 574278,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581910,
+                    Points = 100
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -8838,6 +10186,10 @@ GHWOR_SONGS = [
                     Id = 574279,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581911,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -8855,6 +10207,10 @@ GHWOR_SONGS = [
                     Id = 574280,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581912,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -8871,6 +10227,10 @@ GHWOR_SONGS = [
                     Title = "You Broke Me Into Pieces",
                     Id = 574281,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581913,
+                    Points = 25
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -8919,6 +10279,10 @@ GHWOR_SONGS = [
                     Id = 574283,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581914,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -8937,6 +10301,10 @@ GHWOR_SONGS = [
                     Id = 574284,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581915,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -8954,6 +10322,10 @@ GHWOR_SONGS = [
                     Id = 574285,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581916,
+                    Points = 50
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -8970,6 +10342,10 @@ GHWOR_SONGS = [
                     Title = "There's a Canopy of Greed Holdin' Me Down",
                     Id = 574286,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581917,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -9018,6 +10394,10 @@ GHWOR_SONGS = [
                     Id = 574288,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581918,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -9036,6 +10416,10 @@ GHWOR_SONGS = [
                     Id = 574289,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581919,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -9053,6 +10437,10 @@ GHWOR_SONGS = [
                     Id = 574290,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581920,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -9069,6 +10457,10 @@ GHWOR_SONGS = [
                     Title = "Who's Ridin' Who at the End of the Race?",
                     Id = 574291,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581921,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -9117,6 +10509,10 @@ GHWOR_SONGS = [
                     Id = 574294,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581922,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -9135,6 +10531,10 @@ GHWOR_SONGS = [
                     Id = 574295,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581923,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -9152,6 +10552,10 @@ GHWOR_SONGS = [
                     Id = 574296,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581924,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -9168,6 +10572,10 @@ GHWOR_SONGS = [
                     Title = "It's Time the Fat Cats Had a Heart Attack",
                     Id = 574297,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581925,
+                    Points = 10
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -9225,6 +10633,10 @@ GHWOR_SONGS = [
                     Id = 574299,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581926,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -9243,6 +10655,10 @@ GHWOR_SONGS = [
                     Id = 574300,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581927,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -9260,6 +10676,10 @@ GHWOR_SONGS = [
                     Id = 574301,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581928,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -9275,6 +10695,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "Feiner Schweiß Tropft Auf Das Knie",
                     Id = 574302,
+                    Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581929,
                     Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -9324,6 +10748,10 @@ GHWOR_SONGS = [
                     Id = 574304,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581930,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -9342,6 +10770,10 @@ GHWOR_SONGS = [
                     Id = 574305,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581931,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -9359,6 +10791,10 @@ GHWOR_SONGS = [
                     Id = 574306,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581932,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -9375,6 +10811,10 @@ GHWOR_SONGS = [
                     Title = "You Don't Know Us, You Don't Belong",
                     Id = 574307,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581933,
+                    Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [3, 4]
@@ -9423,6 +10863,10 @@ GHWOR_SONGS = [
                     Id = 574310,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581934,
+                    Points = 10
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -9441,6 +10885,10 @@ GHWOR_SONGS = [
                     Id = 574311,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581935,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [5, 6]
                 ),
@@ -9458,6 +10906,10 @@ GHWOR_SONGS = [
                     Id = 574312,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581936,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -9473,6 +10925,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "I'm Not on the Make, I Just Need a Break",
                     Id = 574313,
+                    Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581937,
                     Points = 5
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -9531,6 +10987,10 @@ GHWOR_SONGS = [
                     Id = 574316,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581938,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [0, 1, 2]
                 ),
@@ -9549,6 +11009,10 @@ GHWOR_SONGS = [
                     Id = 574317,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581939,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [4, 5, 6]
                 ),
@@ -9566,6 +11030,10 @@ GHWOR_SONGS = [
                     Id = 574318,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581940,
+                    Points = 25
+                ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
                     ChallengeIndicies = [7, 8]
                 ),
@@ -9581,6 +11049,10 @@ GHWOR_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "Don't Think You're Having All the Fun",
                     Id = 574319,
+                    Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581941,
                     Points = 3
                 ),
                 StarChallengeAchievement = StarChallengeAchievementMetadata(
@@ -9641,6 +11113,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577372,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581942,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153760,
                 PowerChallengeScoreLeaderboardId = 153761,
                 PowerChallengeStarLeaderboardId = 153762
@@ -9655,6 +11131,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577373,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581943,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153763,
                 PowerChallengeScoreLeaderboardId = 153764,
                 PowerChallengeStarLeaderboardId = 153765
@@ -9668,6 +11148,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577374,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581944,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153766,
                 PowerChallengeScoreLeaderboardId = 153767,
                 PowerChallengeStarLeaderboardId = 153768
@@ -9680,6 +11164,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Cry If You Wanna Cry",
                     Id = 577375,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581945,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 153769,
                 PowerChallengeScoreLeaderboardId = 153770,
@@ -9727,6 +11215,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577378,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581946,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153773,
                 PowerChallengeScoreLeaderboardId = 153774,
                 PowerChallengeStarLeaderboardId = 153775
@@ -9741,6 +11233,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577379,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581947,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153776,
                 PowerChallengeScoreLeaderboardId = 153777,
                 PowerChallengeStarLeaderboardId = 153778
@@ -9754,6 +11250,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577380,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581948,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153779,
                 PowerChallengeScoreLeaderboardId = 153780,
                 PowerChallengeStarLeaderboardId = 153781
@@ -9766,6 +11266,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I Sure Don't Mind a Change",
                     Id = 577381,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581949,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 153782,
                 PowerChallengeScoreLeaderboardId = 153783,
@@ -9813,6 +11317,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577384,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581950,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153786,
                 PowerChallengeScoreLeaderboardId = 153787,
                 PowerChallengeStarLeaderboardId = 153788
@@ -9827,6 +11335,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577385,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581951,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153789,
                 PowerChallengeScoreLeaderboardId = 153790,
                 PowerChallengeStarLeaderboardId = 153791
@@ -9840,6 +11352,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577386,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581952,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153792,
                 PowerChallengeScoreLeaderboardId = 153793,
                 PowerChallengeStarLeaderboardId = 153794
@@ -9852,6 +11368,10 @@ GHWOR_DLC_SONGS = [
                     Title = "The Moon Is Glued to a Picture of Heaven",
                     Id = 577387,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581953,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 153795,
                 PowerChallengeScoreLeaderboardId = 153796,
@@ -9899,6 +11419,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577390,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581954,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 153799,
                 PowerChallengeScoreLeaderboardId = 153800,
                 PowerChallengeStarLeaderboardId = 153801
@@ -9913,6 +11437,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577391,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581955,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 153802,
                 PowerChallengeScoreLeaderboardId = 153803,
                 PowerChallengeStarLeaderboardId = 153804
@@ -9926,6 +11454,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577392,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581956,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153805,
                 PowerChallengeScoreLeaderboardId = 153806,
                 PowerChallengeStarLeaderboardId = 153807
@@ -9938,6 +11470,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Nothing Seems to Break Me",
                     Id = 577393,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581957,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 153808,
                 PowerChallengeScoreLeaderboardId = 153809,
@@ -9985,6 +11521,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577396,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581958,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153812,
                 PowerChallengeScoreLeaderboardId = 153813,
                 PowerChallengeStarLeaderboardId = 153814
@@ -9999,6 +11539,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577397,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581959,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153815,
                 PowerChallengeScoreLeaderboardId = 153816,
                 PowerChallengeStarLeaderboardId = 153817
@@ -10012,6 +11556,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577398,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581960,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153818,
                 PowerChallengeScoreLeaderboardId = 153819,
                 PowerChallengeStarLeaderboardId = 153820
@@ -10024,6 +11572,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Floating Down as Colors Fill the Light",
                     Id = 577399,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581961,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 153821,
                 PowerChallengeScoreLeaderboardId = 153822,
@@ -10062,6 +11614,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577401,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581962,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153824,
                 PowerChallengeScoreLeaderboardId = 153825,
                 PowerChallengeStarLeaderboardId = 153826
@@ -10076,6 +11632,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577402,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581963,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153827,
                 PowerChallengeScoreLeaderboardId = 153828,
                 PowerChallengeStarLeaderboardId = 153829
@@ -10089,6 +11649,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577403,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581964,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153830,
                 PowerChallengeScoreLeaderboardId = 153831,
                 PowerChallengeStarLeaderboardId = 153832
@@ -10101,6 +11665,10 @@ GHWOR_DLC_SONGS = [
                     Title = "We Were Made to Be Apart",
                     Id = 577404,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581965,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 153833,
                 PowerChallengeScoreLeaderboardId = 153834,
@@ -10139,6 +11707,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577406,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581966,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153836,
                 PowerChallengeScoreLeaderboardId = 153837,
                 PowerChallengeStarLeaderboardId = 153838
@@ -10153,6 +11725,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577407,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581967,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153839,
                 PowerChallengeScoreLeaderboardId = 153840,
                 PowerChallengeStarLeaderboardId = 153841
@@ -10164,7 +11740,11 @@ GHWOR_DLC_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "Transmissions Echoing Away",
                     Id = 577408,
-                    Points = 3
+                    Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581968,
+                    Points = 25
                 ),
                 QuickplayLeaderboardId = 153842,
                 PowerChallengeScoreLeaderboardId = 153843,
@@ -10177,6 +11757,10 @@ GHWOR_DLC_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "Where Oceans Bleed Into the Sky",
                     Id = 577409,
+                    Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581969,
                     Points = 3
                 ),
                 QuickplayLeaderboardId = 153845,
@@ -10216,6 +11800,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577411,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581970,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 153848,
                 PowerChallengeScoreLeaderboardId = 153849,
                 PowerChallengeStarLeaderboardId = 153850
@@ -10228,6 +11816,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Remember You're Loved and You Always Will Be",
                     Id = 577412,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581971,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 153851,
                 PowerChallengeScoreLeaderboardId = 153852,
@@ -10266,6 +11858,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577414,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581972,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 153854,
                 PowerChallengeScoreLeaderboardId = 153855,
                 PowerChallengeStarLeaderboardId = 153856
@@ -10280,6 +11876,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577415,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581973,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153857,
                 PowerChallengeScoreLeaderboardId = 153858,
                 PowerChallengeStarLeaderboardId = 153859
@@ -10293,6 +11893,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577416,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581974,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153860,
                 PowerChallengeScoreLeaderboardId = 153861,
                 PowerChallengeStarLeaderboardId = 153862
@@ -10305,6 +11909,10 @@ GHWOR_DLC_SONGS = [
                     Title = "What Was Left When That Fire Was Gone?",
                     Id = 577417,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581975,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 153863,
                 PowerChallengeScoreLeaderboardId = 153864,
@@ -10343,6 +11951,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577419,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581976,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153866,
                 PowerChallengeScoreLeaderboardId = 153867,
                 PowerChallengeStarLeaderboardId = 153868
@@ -10357,6 +11969,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577420,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581977,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153869,
                 PowerChallengeScoreLeaderboardId = 153870,
                 PowerChallengeStarLeaderboardId = 153871
@@ -10370,6 +11986,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577421,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581978,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 153872,
                 PowerChallengeScoreLeaderboardId = 153873,
                 PowerChallengeStarLeaderboardId = 153874
@@ -10381,6 +12001,10 @@ GHWOR_DLC_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "Don't Fight the Power, Nobody Gets Hurt",
                     Id = 577422,
+                    Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581979,
                     Points = 3
                 ),
                 QuickplayLeaderboardId = 153875,
@@ -10420,6 +12044,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577424,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581980,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153878,
                 PowerChallengeScoreLeaderboardId = 153879,
                 PowerChallengeStarLeaderboardId = 153880
@@ -10434,6 +12062,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577425,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581981,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153881,
                 PowerChallengeScoreLeaderboardId = 153882,
                 PowerChallengeStarLeaderboardId = 153883
@@ -10447,6 +12079,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577426,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581982,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153884,
                 PowerChallengeScoreLeaderboardId = 153885,
                 PowerChallengeStarLeaderboardId = 153886
@@ -10459,6 +12095,10 @@ GHWOR_DLC_SONGS = [
                     Title = "And Then a Step to the Right",
                     Id = 577427,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581983,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 153887,
                 PowerChallengeScoreLeaderboardId = 153888,
@@ -10497,6 +12137,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577429,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581984,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153890,
                 PowerChallengeScoreLeaderboardId = 153891,
                 PowerChallengeStarLeaderboardId = 153892
@@ -10511,6 +12155,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577430,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581985,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 153893,
                 PowerChallengeScoreLeaderboardId = 153894,
                 PowerChallengeStarLeaderboardId = 153895
@@ -10524,6 +12172,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577431,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581986,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153896,
                 PowerChallengeScoreLeaderboardId = 153897,
                 PowerChallengeStarLeaderboardId = 153898
@@ -10536,6 +12188,10 @@ GHWOR_DLC_SONGS = [
                     Title = "You Look like You're Both Pretty Groovy",
                     Id = 577432,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581987,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 153899,
                 PowerChallengeScoreLeaderboardId = 153900,
@@ -10574,6 +12230,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577434,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581988,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153902,
                 PowerChallengeScoreLeaderboardId = 153903,
                 PowerChallengeStarLeaderboardId = 153904
@@ -10588,6 +12248,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577435,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581989,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153905,
                 PowerChallengeScoreLeaderboardId = 153906,
                 PowerChallengeStarLeaderboardId = 153907
@@ -10601,6 +12265,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577436,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581990,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153908,
                 PowerChallengeScoreLeaderboardId = 153909,
                 PowerChallengeStarLeaderboardId = 153910
@@ -10613,6 +12281,10 @@ GHWOR_DLC_SONGS = [
                     Title = "A Saxophone Was Blowin' on a Rock 'n' Roll Show",
                     Id = 577437,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581991,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 153911,
                 PowerChallengeScoreLeaderboardId = 153912,
@@ -10651,6 +12323,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577439,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581992,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153914,
                 PowerChallengeScoreLeaderboardId = 153915,
                 PowerChallengeStarLeaderboardId = 153916
@@ -10665,6 +12341,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577440,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581993,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 153917,
                 PowerChallengeScoreLeaderboardId = 153918,
                 PowerChallengeStarLeaderboardId = 153919
@@ -10678,6 +12358,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577441,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581994,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153920,
                 PowerChallengeScoreLeaderboardId = 153921,
                 PowerChallengeStarLeaderboardId = 153922
@@ -10690,6 +12374,10 @@ GHWOR_DLC_SONGS = [
                     Title = "He Knows Changes Aren't Permanent",
                     Id = 577442,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581995,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 153923,
                 PowerChallengeScoreLeaderboardId = 153924,
@@ -10737,6 +12425,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577445,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581996,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153927,
                 PowerChallengeScoreLeaderboardId = 153928,
                 PowerChallengeStarLeaderboardId = 153929
@@ -10751,6 +12443,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577446,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581997,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 153930,
                 PowerChallengeScoreLeaderboardId = 153931,
                 PowerChallengeStarLeaderboardId = 153932
@@ -10764,6 +12460,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577447,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581998,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153933,
                 PowerChallengeScoreLeaderboardId = 153934,
                 PowerChallengeStarLeaderboardId = 153935
@@ -10776,6 +12476,10 @@ GHWOR_DLC_SONGS = [
                     Title = "The Blur of the Landscape",
                     Id = 577448,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 581999,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 153936,
                 PowerChallengeScoreLeaderboardId = 153937,
@@ -10823,6 +12527,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577451,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582000,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153940,
                 PowerChallengeScoreLeaderboardId = 153941,
                 PowerChallengeStarLeaderboardId = 153942
@@ -10837,6 +12545,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577452,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582001,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153943,
                 PowerChallengeScoreLeaderboardId = 153944,
                 PowerChallengeStarLeaderboardId = 153945
@@ -10850,6 +12562,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577453,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582002,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153946,
                 PowerChallengeScoreLeaderboardId = 153947,
                 PowerChallengeStarLeaderboardId = 153948
@@ -10862,6 +12578,10 @@ GHWOR_DLC_SONGS = [
                     Title = "All the World's Indeed a Stage and We Are Merely Players",
                     Id = 577454,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582003,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 153949,
                 PowerChallengeScoreLeaderboardId = 153950,
@@ -10909,6 +12629,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577457,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582004,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153953,
                 PowerChallengeScoreLeaderboardId = 153954,
                 PowerChallengeStarLeaderboardId = 153955
@@ -10923,6 +12647,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577458,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582005,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153956,
                 PowerChallengeScoreLeaderboardId = 153957,
                 PowerChallengeStarLeaderboardId = 153958
@@ -10936,6 +12664,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577459,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582006,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153959,
                 PowerChallengeScoreLeaderboardId = 153960,
                 PowerChallengeStarLeaderboardId = 153961
@@ -10947,6 +12679,10 @@ GHWOR_DLC_SONGS = [
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "I'm Getting Sick of Paying Bills",
                     Id = 577460,
+                    Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582007,
                     Points = 5
                 ),
                 QuickplayLeaderboardId = 153962,
@@ -10986,6 +12722,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577462,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582008,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153965,
                 PowerChallengeScoreLeaderboardId = 153966,
                 PowerChallengeStarLeaderboardId = 153967
@@ -11000,6 +12740,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577463,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582009,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153968,
                 PowerChallengeScoreLeaderboardId = 153969,
                 PowerChallengeStarLeaderboardId = 153970
@@ -11013,6 +12757,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577464,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582010,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153971,
                 PowerChallengeScoreLeaderboardId = 153972,
                 PowerChallengeStarLeaderboardId = 153973
@@ -11025,6 +12773,10 @@ GHWOR_DLC_SONGS = [
                     Title = "You Smile as You Look in the Mirror",
                     Id = 577465,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582011,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 153974,
                 PowerChallengeScoreLeaderboardId = 153975,
@@ -11063,6 +12815,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577467,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582012,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 153977,
                 PowerChallengeScoreLeaderboardId = 153978,
                 PowerChallengeStarLeaderboardId = 153979
@@ -11077,6 +12833,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577468,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582013,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153980,
                 PowerChallengeScoreLeaderboardId = 153981,
                 PowerChallengeStarLeaderboardId = 153982
@@ -11089,6 +12849,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I Hold On",
                     Id = 577469,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582014,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 153983,
                 PowerChallengeScoreLeaderboardId = 153984,
@@ -11127,6 +12891,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577471,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582015,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 153986,
                 PowerChallengeScoreLeaderboardId = 153987,
                 PowerChallengeStarLeaderboardId = 153988
@@ -11141,6 +12909,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577472,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582016,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 153989,
                 PowerChallengeScoreLeaderboardId = 153990,
                 PowerChallengeStarLeaderboardId = 153991
@@ -11154,6 +12926,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577473,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582017,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153992,
                 PowerChallengeScoreLeaderboardId = 153993,
                 PowerChallengeStarLeaderboardId = 153994
@@ -11166,6 +12942,10 @@ GHWOR_DLC_SONGS = [
                     Title = "But Love Will Keep You Blind",
                     Id = 577474,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582018,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 153995,
                 PowerChallengeScoreLeaderboardId = 153996,
@@ -11204,6 +12984,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577476,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582019,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 153998,
                 PowerChallengeScoreLeaderboardId = 153999,
                 PowerChallengeStarLeaderboardId = 154000
@@ -11218,6 +13002,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577477,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582020,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154001,
                 PowerChallengeScoreLeaderboardId = 154002,
                 PowerChallengeStarLeaderboardId = 154003
@@ -11231,6 +13019,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577478,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582021,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154004,
                 PowerChallengeScoreLeaderboardId = 154005,
                 PowerChallengeStarLeaderboardId = 154006
@@ -11243,6 +13035,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I Never Lied to You, I've Always Been Cool",
                     Id = 577479,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582022,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154007,
                 PowerChallengeScoreLeaderboardId = 154008,
@@ -11281,6 +13077,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577481,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582023,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154010,
                 PowerChallengeScoreLeaderboardId = 154011,
                 PowerChallengeStarLeaderboardId = 154012
@@ -11295,6 +13095,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577482,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582024,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154013,
                 PowerChallengeScoreLeaderboardId = 154014,
                 PowerChallengeStarLeaderboardId = 154015
@@ -11308,6 +13112,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577483,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582025,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154016,
                 PowerChallengeScoreLeaderboardId = 154017,
                 PowerChallengeStarLeaderboardId = 154018
@@ -11320,6 +13128,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I Wanna Taste You, But Your Lips Are Venomous Poison",
                     Id = 577484,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582026,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154019,
                 PowerChallengeScoreLeaderboardId = 154020,
@@ -11358,6 +13170,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577486,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582027,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154022,
                 PowerChallengeScoreLeaderboardId = 154023,
                 PowerChallengeStarLeaderboardId = 154024
@@ -11372,6 +13188,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577487,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582028,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154025,
                 PowerChallengeScoreLeaderboardId = 154026,
                 PowerChallengeStarLeaderboardId = 154027
@@ -11385,6 +13205,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577488,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582029,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154028,
                 PowerChallengeScoreLeaderboardId = 154029,
                 PowerChallengeStarLeaderboardId = 154030
@@ -11397,6 +13221,10 @@ GHWOR_DLC_SONGS = [
                     Title = "You Know That I Can Hardly Wait",
                     Id = 577489,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582030,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154031,
                 PowerChallengeScoreLeaderboardId = 154032,
@@ -11435,6 +13263,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577491,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582031,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154034,
                 PowerChallengeScoreLeaderboardId = 154035,
                 PowerChallengeStarLeaderboardId = 154036
@@ -11449,6 +13281,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577492,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582032,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 154037,
                 PowerChallengeScoreLeaderboardId = 154038,
                 PowerChallengeStarLeaderboardId = 154039
@@ -11462,6 +13298,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577493,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582033,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154040,
                 PowerChallengeScoreLeaderboardId = 154041,
                 PowerChallengeStarLeaderboardId = 154042
@@ -11474,6 +13314,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I'll Be Right There for You When You Need a Friend",
                     Id = 577494,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582034,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154043,
                 PowerChallengeScoreLeaderboardId = 154044,
@@ -11512,6 +13356,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577496,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582035,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154046,
                 PowerChallengeScoreLeaderboardId = 154047,
                 PowerChallengeStarLeaderboardId = 154048
@@ -11526,6 +13374,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577497,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582036,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154049,
                 PowerChallengeScoreLeaderboardId = 154050,
                 PowerChallengeStarLeaderboardId = 154051
@@ -11539,6 +13391,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577498,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582037,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154052,
                 PowerChallengeScoreLeaderboardId = 154053,
                 PowerChallengeStarLeaderboardId = 154054
@@ -11551,6 +13407,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Let's Blow a Hole in This Town",
                     Id = 577499,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582038,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154055,
                 PowerChallengeScoreLeaderboardId = 154056,
@@ -11589,6 +13449,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577501,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582039,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154058,
                 PowerChallengeScoreLeaderboardId = 154059,
                 PowerChallengeStarLeaderboardId = 154060
@@ -11603,6 +13467,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577502,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582040,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154061,
                 PowerChallengeScoreLeaderboardId = 154062,
                 PowerChallengeStarLeaderboardId = 154063
@@ -11616,6 +13484,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577503,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582041,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154064,
                 PowerChallengeScoreLeaderboardId = 154065,
                 PowerChallengeStarLeaderboardId = 154066
@@ -11628,6 +13500,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Your Weary Widow Marches",
                     Id = 577504,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582042,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154067,
                 PowerChallengeScoreLeaderboardId = 154068,
@@ -11666,6 +13542,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577506,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582043,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154070,
                 PowerChallengeScoreLeaderboardId = 154071,
                 PowerChallengeStarLeaderboardId = 154072
@@ -11680,6 +13560,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577507,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582044,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154073,
                 PowerChallengeScoreLeaderboardId = 154074,
                 PowerChallengeStarLeaderboardId = 154075
@@ -11693,6 +13577,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577508,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582045,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154076,
                 PowerChallengeScoreLeaderboardId = 154077,
                 PowerChallengeStarLeaderboardId = 154078
@@ -11705,6 +13593,10 @@ GHWOR_DLC_SONGS = [
                     Title = "The Boys and Girls in the Clique",
                     Id = 577509,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582046,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154079,
                 PowerChallengeScoreLeaderboardId = 154080,
@@ -11743,6 +13635,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577511,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582047,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154082,
                 PowerChallengeScoreLeaderboardId = 154083,
                 PowerChallengeStarLeaderboardId = 154084
@@ -11757,6 +13653,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577512,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582048,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154085,
                 PowerChallengeScoreLeaderboardId = 154086,
                 PowerChallengeStarLeaderboardId = 154087
@@ -11770,6 +13670,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577513,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582049,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154088,
                 PowerChallengeScoreLeaderboardId = 154089,
                 PowerChallengeStarLeaderboardId = 154090
@@ -11782,6 +13686,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Change Them Into Things You Want To",
                     Id = 577514,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582050,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154091,
                 PowerChallengeScoreLeaderboardId = 154092,
@@ -11829,6 +13737,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577517,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582051,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154095,
                 PowerChallengeScoreLeaderboardId = 154096,
                 PowerChallengeStarLeaderboardId = 154097
@@ -11843,6 +13755,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577518,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582052,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154098,
                 PowerChallengeScoreLeaderboardId = 154099,
                 PowerChallengeStarLeaderboardId = 154100
@@ -11856,6 +13772,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577519,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582053,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154101,
                 PowerChallengeScoreLeaderboardId = 154102,
                 PowerChallengeStarLeaderboardId = 154103
@@ -11868,6 +13788,10 @@ GHWOR_DLC_SONGS = [
                     Title = "From Every Heart You Break",
                     Id = 577520,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582054,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154104,
                 PowerChallengeScoreLeaderboardId = 154105,
@@ -11906,6 +13830,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577522,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582055,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154107,
                 PowerChallengeScoreLeaderboardId = 154108,
                 PowerChallengeStarLeaderboardId = 154109
@@ -11920,6 +13848,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577523,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582056,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 154110,
                 PowerChallengeScoreLeaderboardId = 154111,
                 PowerChallengeStarLeaderboardId = 154112
@@ -11933,6 +13865,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577524,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582057,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154113,
                 PowerChallengeScoreLeaderboardId = 154114,
                 PowerChallengeStarLeaderboardId = 154115
@@ -11945,6 +13881,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Scars Are Souvenirs You Never Lose",
                     Id = 577525,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582058,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154116,
                 PowerChallengeScoreLeaderboardId = 154117,
@@ -11992,6 +13932,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577528,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582059,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154120,
                 PowerChallengeScoreLeaderboardId = 154121,
                 PowerChallengeStarLeaderboardId = 154122
@@ -12006,6 +13950,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577529,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582060,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154123,
                 PowerChallengeScoreLeaderboardId = 154124,
                 PowerChallengeStarLeaderboardId = 154125
@@ -12019,6 +13967,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577530,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582061,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154126,
                 PowerChallengeScoreLeaderboardId = 154127,
                 PowerChallengeStarLeaderboardId = 154128
@@ -12031,6 +13983,10 @@ GHWOR_DLC_SONGS = [
                     Title = "The Only Thing That Seems to Work at All Is You",
                     Id = 577531,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582062,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154129,
                 PowerChallengeScoreLeaderboardId = 154130,
@@ -12069,6 +14025,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577533,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582063,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154132,
                 PowerChallengeScoreLeaderboardId = 154133,
                 PowerChallengeStarLeaderboardId = 154134
@@ -12083,6 +14043,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577534,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582064,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154135,
                 PowerChallengeScoreLeaderboardId = 154136,
                 PowerChallengeStarLeaderboardId = 154137
@@ -12096,6 +14060,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577535,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582065,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154138,
                 PowerChallengeScoreLeaderboardId = 154139,
                 PowerChallengeStarLeaderboardId = 154140
@@ -12108,6 +14076,10 @@ GHWOR_DLC_SONGS = [
                     Title = "You Wore Our Expectations like an Armored Suit",
                     Id = 577536,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582066,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154141,
                 PowerChallengeScoreLeaderboardId = 154142,
@@ -12146,6 +14118,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577538,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582067,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 154144,
                 PowerChallengeScoreLeaderboardId = 154145,
                 PowerChallengeStarLeaderboardId = 154146
@@ -12160,6 +14136,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577539,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582068,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 154147,
                 PowerChallengeScoreLeaderboardId = 154148,
                 PowerChallengeStarLeaderboardId = 154149
@@ -12173,6 +14153,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577540,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582069,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154150,
                 PowerChallengeScoreLeaderboardId = 154151,
                 PowerChallengeStarLeaderboardId = 154152
@@ -12185,6 +14169,10 @@ GHWOR_DLC_SONGS = [
                     Title = "There She Was, Like Disco Lemonade",
                     Id = 577541,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582070,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154153,
                 PowerChallengeScoreLeaderboardId = 154154,
@@ -12223,6 +14211,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577543,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582071,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154156,
                 PowerChallengeScoreLeaderboardId = 154157,
                 PowerChallengeStarLeaderboardId = 154158
@@ -12237,6 +14229,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577544,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582072,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154159,
                 PowerChallengeScoreLeaderboardId = 154160,
                 PowerChallengeStarLeaderboardId = 154161
@@ -12250,6 +14246,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577545,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582073,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154162,
                 PowerChallengeScoreLeaderboardId = 154163,
                 PowerChallengeStarLeaderboardId = 154164
@@ -12262,6 +14262,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Hang a Life on Some Tragedy",
                     Id = 577546,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582074,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154165,
                 PowerChallengeScoreLeaderboardId = 154166,
@@ -12300,6 +14304,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577548,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582075,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154168,
                 PowerChallengeScoreLeaderboardId = 154169,
                 PowerChallengeStarLeaderboardId = 154170
@@ -12314,6 +14322,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577549,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582076,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154171,
                 PowerChallengeScoreLeaderboardId = 154172,
                 PowerChallengeStarLeaderboardId = 154173
@@ -12327,6 +14339,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577550,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582077,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154174,
                 PowerChallengeScoreLeaderboardId = 154175,
                 PowerChallengeStarLeaderboardId = 154176
@@ -12339,6 +14355,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Twelve O'Clock, I Gotta Rock",
                     Id = 577551,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582078,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154177,
                 PowerChallengeScoreLeaderboardId = 154178,
@@ -12386,6 +14406,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577554,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582079,
+                    Points = 25 // TODO: This is borderline 10 but I feel it's got some tougher solos.
+                ),
                 QuickplayLeaderboardId = 154181,
                 PowerChallengeScoreLeaderboardId = 154182,
                 PowerChallengeStarLeaderboardId = 154183
@@ -12400,6 +14424,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577555,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582080,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154184,
                 PowerChallengeScoreLeaderboardId = 154185,
                 PowerChallengeStarLeaderboardId = 154186
@@ -12413,6 +14441,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577556,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582081,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154187,
                 PowerChallengeScoreLeaderboardId = 154188,
                 PowerChallengeStarLeaderboardId = 154189
@@ -12425,6 +14457,10 @@ GHWOR_DLC_SONGS = [
                     Title = "The First Step of the Cure Is a Kiss",
                     Id = 577557,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582082,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154190,
                 PowerChallengeScoreLeaderboardId = 154191,
@@ -12472,6 +14508,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577560,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582083,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154194,
                 PowerChallengeScoreLeaderboardId = 154195,
                 PowerChallengeStarLeaderboardId = 154196
@@ -12486,6 +14526,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577561,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582084,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154197,
                 PowerChallengeScoreLeaderboardId = 154198,
                 PowerChallengeStarLeaderboardId = 154199
@@ -12499,6 +14543,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577562,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582085,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154200,
                 PowerChallengeScoreLeaderboardId = 154201,
                 PowerChallengeStarLeaderboardId = 154202
@@ -12511,6 +14559,10 @@ GHWOR_DLC_SONGS = [
                     Title = "The Grass Is Always Greener Where the Dogs Are Shedding",
                     Id = 577563,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582086,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154203,
                 PowerChallengeScoreLeaderboardId = 154204,
@@ -12549,6 +14601,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577565,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582087,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154206,
                 PowerChallengeScoreLeaderboardId = 154207,
                 PowerChallengeStarLeaderboardId = 154208
@@ -12563,6 +14619,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577566,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582088,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154209,
                 PowerChallengeScoreLeaderboardId = 154210,
                 PowerChallengeStarLeaderboardId = 154211
@@ -12576,6 +14636,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577567,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582089,
+                    Points = 25 // TODO: This is borderline 10 because it ends well before the song is done, but the notes are short and slidey.
+                ),
                 QuickplayLeaderboardId = 154212,
                 PowerChallengeScoreLeaderboardId = 154213,
                 PowerChallengeStarLeaderboardId = 154214
@@ -12588,6 +14652,10 @@ GHWOR_DLC_SONGS = [
                     Title = "You Let Me Complicate You",
                     Id = 577568,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582090,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154215,
                 PowerChallengeScoreLeaderboardId = 154216,
@@ -12635,6 +14703,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577571,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582091,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154219,
                 PowerChallengeScoreLeaderboardId = 154220,
                 PowerChallengeStarLeaderboardId = 154221
@@ -12649,6 +14721,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577572,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582092,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154222,
                 PowerChallengeScoreLeaderboardId = 154223,
                 PowerChallengeStarLeaderboardId = 154224
@@ -12662,6 +14738,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577573,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582093,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154225,
                 PowerChallengeScoreLeaderboardId = 154226,
                 PowerChallengeStarLeaderboardId = 154227
@@ -12674,6 +14754,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Are You Brave Enough to See?",
                     Id = 577574,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582094,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154228,
                 PowerChallengeScoreLeaderboardId = 154229,
@@ -12721,6 +14805,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577577,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582095,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154232,
                 PowerChallengeScoreLeaderboardId = 154233,
                 PowerChallengeStarLeaderboardId = 154234
@@ -12735,6 +14823,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577578,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582096,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154235,
                 PowerChallengeScoreLeaderboardId = 154236,
                 PowerChallengeStarLeaderboardId = 154237
@@ -12748,6 +14840,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577579,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582097,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154238,
                 PowerChallengeScoreLeaderboardId = 154239,
                 PowerChallengeStarLeaderboardId = 154240
@@ -12760,6 +14856,10 @@ GHWOR_DLC_SONGS = [
                     Title = "God Money, Don't Want Everything, He Wants It All",
                     Id = 577580,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582098,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154241,
                 PowerChallengeScoreLeaderboardId = 154242,
@@ -12807,6 +14907,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577583,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582099,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154245,
                 PowerChallengeScoreLeaderboardId = 154246,
                 PowerChallengeStarLeaderboardId = 154247
@@ -12821,6 +14925,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577584,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582100,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154248,
                 PowerChallengeScoreLeaderboardId = 154249,
                 PowerChallengeStarLeaderboardId = 154250
@@ -12834,6 +14942,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577585,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582101,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154251,
                 PowerChallengeScoreLeaderboardId = 154252,
                 PowerChallengeStarLeaderboardId = 154253
@@ -12846,6 +14958,10 @@ GHWOR_DLC_SONGS = [
                     Title = "My Foot on Your Neck, I Finally Have You",
                     Id = 577586,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582102,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154254,
                 PowerChallengeScoreLeaderboardId = 154255,
@@ -12884,6 +15000,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577588,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582103,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154257,
                 PowerChallengeScoreLeaderboardId = 154258,
                 PowerChallengeStarLeaderboardId = 154259
@@ -12898,6 +15018,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577589,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582104,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154260,
                 PowerChallengeScoreLeaderboardId = 154261,
                 PowerChallengeStarLeaderboardId = 154262
@@ -12911,6 +15035,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577590,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582105,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154263,
                 PowerChallengeScoreLeaderboardId = 154264,
                 PowerChallengeStarLeaderboardId = 154265
@@ -12923,6 +15051,10 @@ GHWOR_DLC_SONGS = [
                     Title = "When It Comes, It Takes Us in Its Arms",
                     Id = 577591,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582106,
+                    Points = 25
                 ),
                 QuickplayLeaderboardId = 154266,
                 PowerChallengeScoreLeaderboardId = 154267,
@@ -12961,6 +15093,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577593,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582107,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154269,
                 PowerChallengeScoreLeaderboardId = 154270,
                 PowerChallengeStarLeaderboardId = 154271
@@ -12975,6 +15111,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577594,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582108,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154272,
                 PowerChallengeScoreLeaderboardId = 154273,
                 PowerChallengeStarLeaderboardId = 154274
@@ -12988,6 +15128,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577595,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582109,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154275,
                 PowerChallengeScoreLeaderboardId = 154276,
                 PowerChallengeStarLeaderboardId = 154277
@@ -13000,6 +15144,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I've Seen the Worst Case Scenario",
                     Id = 577596,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582110,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154278,
                 PowerChallengeScoreLeaderboardId = 154279,
@@ -13047,6 +15195,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577599,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582111,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154282,
                 PowerChallengeScoreLeaderboardId = 154283,
                 PowerChallengeStarLeaderboardId = 154284
@@ -13061,6 +15213,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577600,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582112,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154285,
                 PowerChallengeScoreLeaderboardId = 154286,
                 PowerChallengeStarLeaderboardId = 154287
@@ -13074,6 +15230,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577601,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582113,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154288,
                 PowerChallengeScoreLeaderboardId = 154289,
                 PowerChallengeStarLeaderboardId = 154290
@@ -13086,6 +15246,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Hell Freezing over in Our Eyes",
                     Id = 577602,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582114,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154291,
                 PowerChallengeScoreLeaderboardId = 154292,
@@ -13124,6 +15288,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577604,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582115,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154294,
                 PowerChallengeScoreLeaderboardId = 154295,
                 PowerChallengeStarLeaderboardId = 154296
@@ -13138,6 +15306,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577605,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582116,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154297,
                 PowerChallengeScoreLeaderboardId = 154298,
                 PowerChallengeStarLeaderboardId = 154299
@@ -13151,6 +15323,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577606,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582117,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154300,
                 PowerChallengeScoreLeaderboardId = 154301,
                 PowerChallengeStarLeaderboardId = 154302
@@ -13163,6 +15339,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Live Your Life for Yourself",
                     Id = 577607,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582118,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154303,
                 PowerChallengeScoreLeaderboardId = 154304,
@@ -13201,6 +15381,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577609,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582119,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154306,
                 PowerChallengeScoreLeaderboardId = 154307,
                 PowerChallengeStarLeaderboardId = 154308
@@ -13215,6 +15399,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577610,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582120,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154309,
                 PowerChallengeScoreLeaderboardId = 154310,
                 PowerChallengeStarLeaderboardId = 154311
@@ -13228,6 +15416,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577611,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582121,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154312,
                 PowerChallengeScoreLeaderboardId = 154313,
                 PowerChallengeStarLeaderboardId = 154314
@@ -13240,6 +15432,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Hit Like a Phillips Head Into My Brain",
                     Id = 577612,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582122,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154315,
                 PowerChallengeScoreLeaderboardId = 154316,
@@ -13287,6 +15483,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577615,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582123,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154319,
                 PowerChallengeScoreLeaderboardId = 154320,
                 PowerChallengeStarLeaderboardId = 154321
@@ -13301,6 +15501,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577616,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582124,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154322,
                 PowerChallengeScoreLeaderboardId = 154323,
                 PowerChallengeStarLeaderboardId = 154324
@@ -13314,6 +15518,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577617,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582125,
+                    Points = 2
+                ),
                 QuickplayLeaderboardId = 154325,
                 PowerChallengeScoreLeaderboardId = 154326,
                 PowerChallengeStarLeaderboardId = 154327
@@ -13326,6 +15534,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Let's Keep It Real, This Is No Competition to Me",
                     Id = 577618,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582126,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154328,
                 PowerChallengeScoreLeaderboardId = 154329,
@@ -13364,6 +15576,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577620,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582127,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154331,
                 PowerChallengeScoreLeaderboardId = 154332,
                 PowerChallengeStarLeaderboardId = 154333
@@ -13378,6 +15594,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577621,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582128,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154334,
                 PowerChallengeScoreLeaderboardId = 154335,
                 PowerChallengeStarLeaderboardId = 154336
@@ -13391,6 +15611,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577622,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582129,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154337,
                 PowerChallengeScoreLeaderboardId = 154338,
                 PowerChallengeStarLeaderboardId = 154339
@@ -13403,6 +15627,10 @@ GHWOR_DLC_SONGS = [
                     Title = "When We Signed Three, Four, Five on That Dotted Line",
                     Id = 577623,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582130,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154340,
                 PowerChallengeScoreLeaderboardId = 154341,
@@ -13441,6 +15669,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577625,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582131,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154343,
                 PowerChallengeScoreLeaderboardId = 154344,
                 PowerChallengeStarLeaderboardId = 154345
@@ -13455,6 +15687,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577626,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582132,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154346,
                 PowerChallengeScoreLeaderboardId = 154347,
                 PowerChallengeStarLeaderboardId = 154348
@@ -13468,6 +15704,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577627,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582133,
+                    Points = 2
+                ),
                 QuickplayLeaderboardId = 154349,
                 PowerChallengeScoreLeaderboardId = 154350,
                 PowerChallengeStarLeaderboardId = 154351
@@ -13480,6 +15720,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Deep Within, Things Are Getting Hot",
                     Id = 577628,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582134,
+                    Points = 25
                 ),
                 QuickplayLeaderboardId = 154352,
                 PowerChallengeScoreLeaderboardId = 154353,
@@ -13527,6 +15771,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577631,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582135,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 154356,
                 PowerChallengeScoreLeaderboardId = 154357,
                 PowerChallengeStarLeaderboardId = 154358
@@ -13541,6 +15789,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577632,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582136,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154359,
                 PowerChallengeScoreLeaderboardId = 154360,
                 PowerChallengeStarLeaderboardId = 154361
@@ -13554,6 +15806,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577633,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582137,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154362,
                 PowerChallengeScoreLeaderboardId = 154363,
                 PowerChallengeStarLeaderboardId = 154364
@@ -13566,6 +15822,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Not Afraid of Falling Down Below",
                     Id = 577634,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582138,
+                    Points = 25
                 ),
                 QuickplayLeaderboardId = 154365,
                 PowerChallengeScoreLeaderboardId = 154366,
@@ -13613,6 +15873,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577637,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582139,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154369,
                 PowerChallengeScoreLeaderboardId = 154370,
                 PowerChallengeStarLeaderboardId = 154371
@@ -13627,6 +15891,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577638,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582140,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154372,
                 PowerChallengeScoreLeaderboardId = 154373,
                 PowerChallengeStarLeaderboardId = 154374
@@ -13640,6 +15908,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577639,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582141,
+                    Points = 3
+                ),
                 QuickplayLeaderboardId = 154375,
                 PowerChallengeScoreLeaderboardId = 154376,
                 PowerChallengeStarLeaderboardId = 154377
@@ -13652,6 +15924,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I'm Crying, Tears Made of Grit",
                     Id = 577640,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582142,
+                    Points = 25
                 ),
                 QuickplayLeaderboardId = 154378,
                 PowerChallengeScoreLeaderboardId = 154379,
@@ -13699,6 +15975,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577643,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582143,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 154382,
                 PowerChallengeScoreLeaderboardId = 154383,
                 PowerChallengeStarLeaderboardId = 154384
@@ -13713,6 +15993,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577644,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582144,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 154385,
                 PowerChallengeScoreLeaderboardId = 154386,
                 PowerChallengeStarLeaderboardId = 154387
@@ -13726,6 +16010,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577645,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582145,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154388,
                 PowerChallengeScoreLeaderboardId = 154389,
                 PowerChallengeStarLeaderboardId = 154390
@@ -13738,6 +16026,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I Will Rise Through the Wind",
                     Id = 577646,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582146,
+                    Points = 25
                 ),
                 QuickplayLeaderboardId = 154391,
                 PowerChallengeScoreLeaderboardId = 154392,
@@ -13776,6 +16068,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577648,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582147,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154394,
                 PowerChallengeScoreLeaderboardId = 154395,
                 PowerChallengeStarLeaderboardId = 154396
@@ -13790,6 +16086,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577649,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582148,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154397,
                 PowerChallengeScoreLeaderboardId = 154398,
                 PowerChallengeStarLeaderboardId = 154399
@@ -13803,6 +16103,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577650,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582149,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154400,
                 PowerChallengeScoreLeaderboardId = 154401,
                 PowerChallengeStarLeaderboardId = 154402
@@ -13815,6 +16119,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I Hate, Therefore I Am",
                     Id = 577651,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582150,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154403,
                 PowerChallengeScoreLeaderboardId = 154404,
@@ -13853,6 +16161,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577653,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582151,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 154406,
                 PowerChallengeScoreLeaderboardId = 154407,
                 PowerChallengeStarLeaderboardId = 154408
@@ -13867,6 +16179,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577654,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582152,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 154409,
                 PowerChallengeScoreLeaderboardId = 154410,
                 PowerChallengeStarLeaderboardId = 154411
@@ -13880,6 +16196,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577655,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582153,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154412,
                 PowerChallengeScoreLeaderboardId = 154413,
                 PowerChallengeStarLeaderboardId = 154414
@@ -13892,6 +16212,10 @@ GHWOR_DLC_SONGS = [
                     Title = "A Pill to Make You Numb",
                     Id = 577656,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582154,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154415,
                 PowerChallengeScoreLeaderboardId = 154416,
@@ -13930,6 +16254,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577658,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582155,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154418,
                 PowerChallengeScoreLeaderboardId = 154419,
                 PowerChallengeStarLeaderboardId = 154420
@@ -13944,6 +16272,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577659,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582156,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154421,
                 PowerChallengeScoreLeaderboardId = 154422,
                 PowerChallengeStarLeaderboardId = 154423
@@ -13957,6 +16289,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577660,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582157,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154424,
                 PowerChallengeScoreLeaderboardId = 154425,
                 PowerChallengeStarLeaderboardId = 154426
@@ -13969,6 +16305,10 @@ GHWOR_DLC_SONGS = [
                     Title = "But Flies Will Lay Their Eggs",
                     Id = 577661,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582158,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154427,
                 PowerChallengeScoreLeaderboardId = 154428,
@@ -14007,6 +16347,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577663,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582159,
+                    Points = 10 // TODO: This feels borderline 25.
+                ),
                 QuickplayLeaderboardId = 154430,
                 PowerChallengeScoreLeaderboardId = 154431,
                 PowerChallengeStarLeaderboardId = 154432
@@ -14021,6 +16365,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577664,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582160,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154433,
                 PowerChallengeScoreLeaderboardId = 154434,
                 PowerChallengeStarLeaderboardId = 154435
@@ -14034,6 +16382,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577665,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582161,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154436,
                 PowerChallengeScoreLeaderboardId = 154437,
                 PowerChallengeStarLeaderboardId = 154438
@@ -14046,6 +16398,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Everything Dies in Shyness",
                     Id = 577666,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582162,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154439,
                 PowerChallengeScoreLeaderboardId = 154440,
@@ -14084,6 +16440,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577668,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582163,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 154442,
                 PowerChallengeScoreLeaderboardId = 154443,
                 PowerChallengeStarLeaderboardId = 154444
@@ -14098,6 +16458,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577669,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582164,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154445,
                 PowerChallengeScoreLeaderboardId = 154446,
                 PowerChallengeStarLeaderboardId = 154447
@@ -14111,6 +16475,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577670,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582165,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154448,
                 PowerChallengeScoreLeaderboardId = 154449,
                 PowerChallengeStarLeaderboardId = 154450
@@ -14123,6 +16491,10 @@ GHWOR_DLC_SONGS = [
                     Title = "The Masses and the Grave",
                     Id = 577671,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582166,
+                    Points = 25 // TODO: This feels borderline 10.
                 ),
                 QuickplayLeaderboardId = 154451,
                 PowerChallengeScoreLeaderboardId = 154452,
@@ -14170,6 +16542,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577674,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582167,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154455,
                 PowerChallengeScoreLeaderboardId = 154456,
                 PowerChallengeStarLeaderboardId = 154457
@@ -14184,6 +16560,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577675,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582168,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154458,
                 PowerChallengeScoreLeaderboardId = 154459,
                 PowerChallengeStarLeaderboardId = 154460
@@ -14197,6 +16577,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577676,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582169,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154461,
                 PowerChallengeScoreLeaderboardId = 154462,
                 PowerChallengeStarLeaderboardId = 154463
@@ -14209,6 +16593,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Blood of the Past, Has Chose His Plan",
                     Id = 577677,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582170,
+                    Points = 25
                 ),
                 QuickplayLeaderboardId = 154464,
                 PowerChallengeScoreLeaderboardId = 154465,
@@ -14256,6 +16644,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577680,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582171,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 154468,
                 PowerChallengeScoreLeaderboardId = 154469,
                 PowerChallengeStarLeaderboardId = 154470
@@ -14270,6 +16662,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577681,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582172,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154471,
                 PowerChallengeScoreLeaderboardId = 154472,
                 PowerChallengeStarLeaderboardId = 154473
@@ -14283,6 +16679,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577682,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582173,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154474,
                 PowerChallengeScoreLeaderboardId = 154475,
                 PowerChallengeStarLeaderboardId = 154476
@@ -14295,6 +16695,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Redemption Set Me Free",
                     Id = 577683,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582174,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154477,
                 PowerChallengeScoreLeaderboardId = 154478,
@@ -14342,6 +16746,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577686,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582175,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 154481,
                 PowerChallengeScoreLeaderboardId = 154482,
                 PowerChallengeStarLeaderboardId = 154483
@@ -14356,6 +16764,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577687,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582176,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 154484,
                 PowerChallengeScoreLeaderboardId = 154485,
                 PowerChallengeStarLeaderboardId = 154486
@@ -14369,6 +16781,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577688,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582177,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154487,
                 PowerChallengeScoreLeaderboardId = 154488,
                 PowerChallengeStarLeaderboardId = 154489
@@ -14381,6 +16797,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I Can't Live Without You",
                     Id = 577689,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582178,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154490,
                 PowerChallengeScoreLeaderboardId = 154491,
@@ -14419,6 +16839,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577691,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582179,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154493,
                 PowerChallengeScoreLeaderboardId = 154494,
                 PowerChallengeStarLeaderboardId = 154495
@@ -14433,6 +16857,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577692,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582180,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154496,
                 PowerChallengeScoreLeaderboardId = 154497,
                 PowerChallengeStarLeaderboardId = 154498
@@ -14446,6 +16874,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577693,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582181,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154499,
                 PowerChallengeScoreLeaderboardId = 154500,
                 PowerChallengeStarLeaderboardId = 154501
@@ -14458,6 +16890,10 @@ GHWOR_DLC_SONGS = [
                     Title = "They Say I'll Only Do You Wrong",
                     Id = 577694,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582182,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154502,
                 PowerChallengeScoreLeaderboardId = 154503,
@@ -14505,6 +16941,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577697,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582183,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154506,
                 PowerChallengeScoreLeaderboardId = 154507,
                 PowerChallengeStarLeaderboardId = 154508
@@ -14519,6 +16959,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577698,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582184,
+                    Points = 10 // TODO: There's two rather fast drum rolls that might make this more a 25.
+                ),
                 QuickplayLeaderboardId = 154509,
                 PowerChallengeScoreLeaderboardId = 154510,
                 PowerChallengeStarLeaderboardId = 154511
@@ -14532,6 +16976,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577699,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582185,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154512,
                 PowerChallengeScoreLeaderboardId = 154513,
                 PowerChallengeStarLeaderboardId = 154514
@@ -14544,6 +16992,10 @@ GHWOR_DLC_SONGS = [
                     Title = "It Makes Me Wanna Rewind",
                     Id = 577700,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582186,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154515,
                 PowerChallengeScoreLeaderboardId = 154516,
@@ -14591,6 +17043,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577703,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582187,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154519,
                 PowerChallengeScoreLeaderboardId = 154520,
                 PowerChallengeStarLeaderboardId = 154521
@@ -14605,6 +17061,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577704,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582188,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154522,
                 PowerChallengeScoreLeaderboardId = 154523,
                 PowerChallengeStarLeaderboardId = 154524
@@ -14618,6 +17078,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577705,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582189,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154525,
                 PowerChallengeScoreLeaderboardId = 154526,
                 PowerChallengeStarLeaderboardId = 154527
@@ -14630,6 +17094,10 @@ GHWOR_DLC_SONGS = [
                     Title = "He Is the Lamb, She Is the Slaughter",
                     Id = 577706,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582190,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154528,
                 PowerChallengeScoreLeaderboardId = 154529,
@@ -14677,6 +17145,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577709,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582191,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154532,
                 PowerChallengeScoreLeaderboardId = 154533,
                 PowerChallengeStarLeaderboardId = 154534
@@ -14691,6 +17163,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577710,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582192,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154535,
                 PowerChallengeScoreLeaderboardId = 154536,
                 PowerChallengeStarLeaderboardId = 154537
@@ -14704,6 +17180,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577711,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582193,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154538,
                 PowerChallengeScoreLeaderboardId = 154539,
                 PowerChallengeStarLeaderboardId = 154540
@@ -14716,6 +17196,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Decisions to Hide",
                     Id = 577712,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582194,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154541,
                 PowerChallengeScoreLeaderboardId = 154542,
@@ -14754,6 +17238,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577714,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582195,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154544,
                 PowerChallengeScoreLeaderboardId = 154545,
                 PowerChallengeStarLeaderboardId = 154546
@@ -14768,6 +17256,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577715,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582196,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154547,
                 PowerChallengeScoreLeaderboardId = 154548,
                 PowerChallengeStarLeaderboardId = 154549
@@ -14781,6 +17273,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577716,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582197,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154550,
                 PowerChallengeScoreLeaderboardId = 154551,
                 PowerChallengeStarLeaderboardId = 154552
@@ -14793,6 +17289,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Love Is When You Wanna Kiss and You Get Bit",
                     Id = 577717,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582198,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154553,
                 PowerChallengeScoreLeaderboardId = 154554,
@@ -14840,6 +17340,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577720,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582199,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154557,
                 PowerChallengeScoreLeaderboardId = 154558,
                 PowerChallengeStarLeaderboardId = 154559
@@ -14854,6 +17358,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577721,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582200,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154560,
                 PowerChallengeScoreLeaderboardId = 154561,
                 PowerChallengeStarLeaderboardId = 154562
@@ -14867,6 +17375,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577722,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582201,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154563,
                 PowerChallengeScoreLeaderboardId = 154564,
                 PowerChallengeStarLeaderboardId = 154565
@@ -14879,6 +17391,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Times Are Gone for Honest Men",
                     Id = 577723,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582202,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154566,
                 PowerChallengeScoreLeaderboardId = 154567,
@@ -14926,6 +17442,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577726,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582203,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 154570,
                 PowerChallengeScoreLeaderboardId = 154571,
                 PowerChallengeStarLeaderboardId = 154572
@@ -14940,6 +17460,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577727,
                     Points = 3
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582204,
+                    Points = 5
+                ),
                 QuickplayLeaderboardId = 154573,
                 PowerChallengeScoreLeaderboardId = 154574,
                 PowerChallengeStarLeaderboardId = 154575
@@ -14953,6 +17477,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577728,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582205,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154576,
                 PowerChallengeScoreLeaderboardId = 154577,
                 PowerChallengeStarLeaderboardId = 154578
@@ -14965,6 +17493,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I Wanna Hear You Laugh like You Really Mean It",
                     Id = 577729,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582206,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154579,
                 PowerChallengeScoreLeaderboardId = 154580,
@@ -15003,6 +17535,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577731,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582207,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154582,
                 PowerChallengeScoreLeaderboardId = 154583,
                 PowerChallengeStarLeaderboardId = 154584
@@ -15017,6 +17553,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577732,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582208,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154585,
                 PowerChallengeScoreLeaderboardId = 154586,
                 PowerChallengeStarLeaderboardId = 154587
@@ -15030,6 +17570,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577733,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582209,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154588,
                 PowerChallengeScoreLeaderboardId = 154589,
                 PowerChallengeStarLeaderboardId = 154590
@@ -15042,6 +17586,10 @@ GHWOR_DLC_SONGS = [
                     Title = "When All Soldiers Lay Their Weapons Down",
                     Id = 577734,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582210,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154591,
                 PowerChallengeScoreLeaderboardId = 154592,
@@ -15080,6 +17628,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577736,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582211,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154594,
                 PowerChallengeScoreLeaderboardId = 154595,
                 PowerChallengeStarLeaderboardId = 154596
@@ -15094,6 +17646,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577737,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582212,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154597,
                 PowerChallengeScoreLeaderboardId = 154598,
                 PowerChallengeStarLeaderboardId = 154599
@@ -15107,6 +17663,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577738,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582213,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154600,
                 PowerChallengeScoreLeaderboardId = 154601,
                 PowerChallengeStarLeaderboardId = 154602
@@ -15119,6 +17679,10 @@ GHWOR_DLC_SONGS = [
                     Title = "You're the Queen of the Superficial",
                     Id = 577739,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582214,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154603,
                 PowerChallengeScoreLeaderboardId = 154604,
@@ -15166,6 +17730,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577742,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582215,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154607,
                 PowerChallengeScoreLeaderboardId = 154608,
                 PowerChallengeStarLeaderboardId = 154609
@@ -15180,6 +17748,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577743,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582216,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154610,
                 PowerChallengeScoreLeaderboardId = 154611,
                 PowerChallengeStarLeaderboardId = 154612
@@ -15193,6 +17765,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577744,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582217,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154613,
                 PowerChallengeScoreLeaderboardId = 154614,
                 PowerChallengeStarLeaderboardId = 154615
@@ -15205,6 +17781,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Yesterday Is Gone Dead on Me Anyway",
                     Id = 577745,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582218,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154616,
                 PowerChallengeScoreLeaderboardId = 154617,
@@ -15252,6 +17832,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577748,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582219,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154620,
                 PowerChallengeScoreLeaderboardId = 154621,
                 PowerChallengeStarLeaderboardId = 154622
@@ -15266,6 +17850,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577749,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582220,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154623,
                 PowerChallengeScoreLeaderboardId = 154624,
                 PowerChallengeStarLeaderboardId = 154625
@@ -15279,6 +17867,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577750,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582221,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154626,
                 PowerChallengeScoreLeaderboardId = 154627,
                 PowerChallengeStarLeaderboardId = 154628
@@ -15291,6 +17883,10 @@ GHWOR_DLC_SONGS = [
                     Title = "You Ain't the Kind That Will Lose That Easy",
                     Id = 577751,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582222,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154629,
                 PowerChallengeScoreLeaderboardId = 154630,
@@ -15338,6 +17934,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577754,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582223,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154633,
                 PowerChallengeScoreLeaderboardId = 154634,
                 PowerChallengeStarLeaderboardId = 154635
@@ -15352,6 +17952,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577755,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582224,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154636,
                 PowerChallengeScoreLeaderboardId = 154637,
                 PowerChallengeStarLeaderboardId = 154638
@@ -15365,6 +17969,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577756,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582225,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154639,
                 PowerChallengeScoreLeaderboardId = 154640,
                 PowerChallengeStarLeaderboardId = 154641
@@ -15377,6 +17985,10 @@ GHWOR_DLC_SONGS = [
                     Title = "You're Just Yourself",
                     Id = 577757,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582226,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154642,
                 PowerChallengeScoreLeaderboardId = 154643,
@@ -15424,6 +18036,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577760,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582227,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154646,
                 PowerChallengeScoreLeaderboardId = 154647,
                 PowerChallengeStarLeaderboardId = 154648
@@ -15438,6 +18054,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577761,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582228,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154649,
                 PowerChallengeScoreLeaderboardId = 154650,
                 PowerChallengeStarLeaderboardId = 154651
@@ -15451,6 +18071,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577762,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582229,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154652,
                 PowerChallengeScoreLeaderboardId = 154653,
                 PowerChallengeStarLeaderboardId = 154654
@@ -15463,6 +18087,10 @@ GHWOR_DLC_SONGS = [
                     Title = "I'm Not the Same Kid from Your Memory",
                     Id = 577763,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582230,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154655,
                 PowerChallengeScoreLeaderboardId = 154656,
@@ -15501,6 +18129,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577765,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582231,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154658,
                 PowerChallengeScoreLeaderboardId = 154659,
                 PowerChallengeStarLeaderboardId = 154660
@@ -15515,6 +18147,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577766,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582232,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154661,
                 PowerChallengeScoreLeaderboardId = 154662,
                 PowerChallengeStarLeaderboardId = 154663
@@ -15528,6 +18164,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577767,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582233,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154664,
                 PowerChallengeScoreLeaderboardId = 154665,
                 PowerChallengeStarLeaderboardId = 154666
@@ -15540,6 +18180,10 @@ GHWOR_DLC_SONGS = [
                     Title = "This Heart Will Start a Riot in Me",
                     Id = 577768,
                     Points = 3
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582234,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154667,
                 PowerChallengeScoreLeaderboardId = 154668,
@@ -15578,6 +18222,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577770,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582235,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154670,
                 PowerChallengeScoreLeaderboardId = 154671,
                 PowerChallengeStarLeaderboardId = 154672
@@ -15592,6 +18240,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577771,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582236,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154673,
                 PowerChallengeScoreLeaderboardId = 154674,
                 PowerChallengeStarLeaderboardId = 154675
@@ -15605,6 +18257,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577772,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582237,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154676,
                 PowerChallengeScoreLeaderboardId = 154677,
                 PowerChallengeStarLeaderboardId = 154678
@@ -15617,6 +18273,10 @@ GHWOR_DLC_SONGS = [
                     Title = "And All My Friends Are Skeletons",
                     Id = 577773,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582238,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 154679,
                 PowerChallengeScoreLeaderboardId = 154680,
@@ -15664,6 +18324,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577776,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582239,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154683,
                 PowerChallengeScoreLeaderboardId = 154684,
                 PowerChallengeStarLeaderboardId = 154685
@@ -15678,6 +18342,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577777,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582240,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154686,
                 PowerChallengeScoreLeaderboardId = 154687,
                 PowerChallengeStarLeaderboardId = 154688
@@ -15691,6 +18359,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577778,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582241,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 154689,
                 PowerChallengeScoreLeaderboardId = 154690,
                 PowerChallengeStarLeaderboardId = 154691
@@ -15703,6 +18375,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Where'd You Go Zombie Girl?",
                     Id = 577779,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582242,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154692,
                 PowerChallengeScoreLeaderboardId = 154693,
@@ -15741,6 +18417,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577781,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582243,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154695,
                 PowerChallengeScoreLeaderboardId = 154696,
                 PowerChallengeStarLeaderboardId = 154697
@@ -15755,6 +18435,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577782,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582244,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154698,
                 PowerChallengeScoreLeaderboardId = 154699,
                 PowerChallengeStarLeaderboardId = 154700
@@ -15768,6 +18452,10 @@ GHWOR_DLC_SONGS = [
                     Id = 577783,
                     Points = 4
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582245,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 154701,
                 PowerChallengeScoreLeaderboardId = 154702,
                 PowerChallengeStarLeaderboardId = 154703
@@ -15780,6 +18468,10 @@ GHWOR_DLC_SONGS = [
                     Title = "Then I Became Just Optional",
                     Id = 577784,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582246,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 154704,
                 PowerChallengeScoreLeaderboardId = 154705,
@@ -32763,7 +35455,11 @@ class Player {
     function VocalPhrasesHit() => float_be(this.StartAddress + 0x0aa8)
     function VocalPhrasesPassed() => float_be(this.StartAddress + 0x0abc)
     function VocalPhrasesInChart() => float_be(this.StartAddress + 0x0acc)
+    // function AreCheatsOn() => this.NoteShuffleCheatValue() + this.MirrorModeCheatValue() + this.AllTapsCheatValue() + this.AutoKickCheatValue() + this.AllHOPOsCheatValue() + this.FreeDrumCheatValue() >= 1
+    // TODO: Re-enable
     function AreCheatsOn() => this.BotValue() + this.NoteShuffleCheatValue() + this.MirrorModeCheatValue() + this.AllTapsCheatValue() + this.AutoKickCheatValue() + this.AllHOPOsCheatValue() + this.FreeDrumCheatValue() >= 1
+    // function RichPresenceActiveWithCheats() => (this.NoteShuffleCheatValue() + this.MirrorModeCheatValue() + this.AllTapsCheatValue() + this.AutoKickCheatValue() + this.AllHOPOsCheatValue() + this.FreeDrumCheatValue()) * this.IsActiveValue()
+    // TODO: Re-enable
     function RichPresenceActiveWithCheats() => (this.BotValue() + this.NoteShuffleCheatValue() + this.MirrorModeCheatValue() + this.AllTapsCheatValue() + this.AutoKickCheatValue() + this.AllHOPOsCheatValue() + this.FreeDrumCheatValue()) * this.IsActiveValue()
 }
 
@@ -32866,8 +35562,10 @@ function is_no_fail_on() => dword_be(virtual_to_ra_address(dword_be(NO_FAIL_CHEA
 YOU_ROCK_DETECTOR_ADDR = 0x006a7fcc
 // function is_you_rock_reached() => dword_be(YOU_ROCK_DETECTOR_ADDR) == 0x6361725f
 
-END_SONG_DETECTOR_QUICKPLAY_ADDR = 0x00beeb5c
-function is_you_rock_reached_quickplay() => dword_be(END_SONG_DETECTOR_QUICKPLAY_ADDR) == 1 && prev(dword_be(END_SONG_DETECTOR_QUICKPLAY_ADDR)) == 0
+// END_SONG_DETECTOR_QUICKPLAY_ADDR = 0x00beeb5c
+END_SONG_DETECTOR_QUICKPLAY_ADDR = 0x12b502a8
+function end_song_detector_quickplay() => dword_be(virtual_to_ra_address(dword_be(END_SONG_DETECTOR_QUICKPLAY_ADDR)) + 0xc)
+function is_you_rock_reached_quickplay() => end_song_detector_quickplay() == 1 && prev(end_song_detector_quickplay()) == 0
 
 END_SONG_DETECTOR_QUEST_ADDR = 0x12b46d68
 function is_you_rock_reached_quest() => dword_be(virtual_to_ra_address(dword_be(END_SONG_DETECTOR_QUEST_ADDR)) + 0xc) == 1
@@ -32945,10 +35643,15 @@ function power_challenge_star_trigger_two_songs(song_1, song_2, stars) {
 function five_star_quickplay_trigger(song, instrument, difficulty, target_score) {
     player_trigger_whens = always_false()
     for player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
+        if (difficulty == DIFFICULTY_EXPERT_PLUS) {
+            difficulty_condition = player.Difficulty() == difficulty
+        } else {
+            difficulty_condition = player.DifficultyIgnoringExpertPlus() == difficulty
+        }
         player_trigger_whens = player_trigger_whens
         || (
             player.IsActive()
-            && player.Difficulty() == difficulty
+            && difficulty_condition
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
         )
@@ -33037,23 +35740,23 @@ function full_band_five_star_quickplay_trigger(song) {
             for player_2 in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
                 if (player_1 != player_2) {
                     if (song.Instruments[0].ExpertPlusAvailable) {
-                        player_1_difficulty = DIFFICULTY_EXPERT_PLUS
+                        player_1_difficulty_condition = player_1.Difficulty() == DIFFICULTY_EXPERT_PLUS
                     } else {
-                        player_1_difficulty = DIFFICULTY_EXPERT
+                        player_1_difficulty_condition = player_1.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                     }
                     if (song.Instruments[1].ExpertPlusAvailable) {
-                        player_2_difficulty = DIFFICULTY_EXPERT_PLUS
+                        player_2_difficulty_condition = player_2.Difficulty() == DIFFICULTY_EXPERT_PLUS
                     } else {
-                        player_2_difficulty = DIFFICULTY_EXPERT
+                        player_2_difficulty_condition = player_2.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                     }
                     player_trigger_whens = player_trigger_whens
                     || (
                         player_1.IsActive()
-                        && player_1.Difficulty() == player_1_difficulty
+                        && player_1_difficulty_condition
                         && player_1.Instrument() == song.Instruments[0].Instrument
                         && !player_1.AreCheatsOn()
                         && player_2.IsActive()
-                        && player_2.Difficulty() == player_2_difficulty
+                        && player_2_difficulty_condition
                         && player_2.Instrument() == song.Instruments[1].Instrument
                         && !player_2.AreCheatsOn()
                     )
@@ -33066,32 +35769,32 @@ function full_band_five_star_quickplay_trigger(song) {
                 for player_3 in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
                     if (player_1 != player_2 && player_1 != player_3 && player_2 != player_3) {
                         if (song.Instruments[0].ExpertPlusAvailable) {
-                            player_1_difficulty = DIFFICULTY_EXPERT_PLUS
+                            player_1_difficulty_condition = player_1.Difficulty() == DIFFICULTY_EXPERT_PLUS
                         } else {
-                            player_1_difficulty = DIFFICULTY_EXPERT
+                            player_1_difficulty_condition = player_1.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                         }
                         if (song.Instruments[1].ExpertPlusAvailable) {
-                            player_2_difficulty = DIFFICULTY_EXPERT_PLUS
+                            player_2_difficulty_condition = player_2.Difficulty() == DIFFICULTY_EXPERT_PLUS
                         } else {
-                            player_2_difficulty = DIFFICULTY_EXPERT
+                            player_2_difficulty_condition = player_2.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                         }
                         if (song.Instruments[2].ExpertPlusAvailable) {
-                            player_3_difficulty = DIFFICULTY_EXPERT_PLUS
+                            player_3_difficulty_condition = player_3.Difficulty() == DIFFICULTY_EXPERT_PLUS
                         } else {
-                            player_3_difficulty = DIFFICULTY_EXPERT
+                            player_3_difficulty_condition = player_3.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                         }
                         player_trigger_whens = player_trigger_whens
                         || (
                             player_1.IsActive()
-                            && player_1.Difficulty() == player_1_difficulty
+                            && player_1_difficulty_condition
                             && player_1.Instrument() == song.Instruments[0].Instrument
                             && !player_1.AreCheatsOn()
                             && player_2.IsActive()
-                            && player_2.Difficulty() == player_2_difficulty
+                            && player_2_difficulty_condition
                             && player_2.Instrument() == song.Instruments[1].Instrument
                             && !player_2.AreCheatsOn()
                             && player_3.IsActive()
-                            && player_3.Difficulty() == player_3_difficulty
+                            && player_3_difficulty_condition
                             && player_3.Instrument() == song.Instruments[2].Instrument
                             && !player_3.AreCheatsOn()
                         )
@@ -33106,41 +35809,41 @@ function full_band_five_star_quickplay_trigger(song) {
                     for player_4 in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
                         if (player_1 != player_2 && player_1 != player_3 && player_1 != player_4 && player_2 != player_3 && player_2 != player_4 && player_3 != player_4) {
                             if (song.Instruments[0].ExpertPlusAvailable) {
-                                player_1_difficulty = DIFFICULTY_EXPERT_PLUS
+                                player_1_difficulty_condition = player_1.Difficulty() == DIFFICULTY_EXPERT_PLUS
                             } else {
-                                player_1_difficulty = DIFFICULTY_EXPERT
+                                player_1_difficulty_condition = player_1.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                             }
                             if (song.Instruments[1].ExpertPlusAvailable) {
-                                player_2_difficulty = DIFFICULTY_EXPERT_PLUS
+                                player_2_difficulty_condition = player_2.Difficulty() == DIFFICULTY_EXPERT_PLUS
                             } else {
-                                player_2_difficulty = DIFFICULTY_EXPERT
+                                player_2_difficulty_condition = player_2.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                             }
                             if (song.Instruments[2].ExpertPlusAvailable) {
-                                player_3_difficulty = DIFFICULTY_EXPERT_PLUS
+                                player_3_difficulty_condition = player_3.Difficulty() == DIFFICULTY_EXPERT_PLUS
                             } else {
-                                player_3_difficulty = DIFFICULTY_EXPERT
+                                player_3_difficulty_condition = player_3.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                             }
                             if (song.Instruments[3].ExpertPlusAvailable) {
-                                player_4_difficulty = DIFFICULTY_EXPERT_PLUS
+                                player_4_difficulty_condition = player_4.Difficulty() == DIFFICULTY_EXPERT_PLUS
                             } else {
-                                player_4_difficulty = DIFFICULTY_EXPERT
+                                player_4_difficulty_condition = player_4.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                             }
                             player_trigger_whens = player_trigger_whens
                             || (
                                 player_1.IsActive()
-                                && player_1.Difficulty() == player_1_difficulty
+                                && player_1_difficulty_condition
                                 && player_1.Instrument() == song.Instruments[0].Instrument
                                 && !player_1.AreCheatsOn()
                                 && player_2.IsActive()
-                                && player_2.Difficulty() == player_2_difficulty
+                                && player_2_difficulty_condition
                                 && player_2.Instrument() == song.Instruments[1].Instrument
                                 && !player_2.AreCheatsOn()
                                 && player_3.IsActive()
-                                && player_3.Difficulty() == player_3_difficulty
+                                && player_3_difficulty_condition
                                 && player_3.Instrument() == song.Instruments[2].Instrument
                                 && !player_3.AreCheatsOn()
                                 && player_4.IsActive()
-                                && player_4.Difficulty() == player_4_difficulty
+                                && player_4_difficulty_condition
                                 && player_4.Instrument() == song.Instruments[3].Instrument
                                 && !player_4.AreCheatsOn()
                             )
@@ -33164,10 +35867,15 @@ function full_band_five_star_quickplay_trigger(song) {
 function five_star_quickplay_trigger_two_songs(song_1, song_2, instrument, difficulty, target_score_1, target_score_2) {
     player_trigger_whens = always_false()
     for player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
+        if (difficulty == DIFFICULTY_EXPERT_PLUS) {
+            difficulty_condition = player.Difficulty() == difficulty
+        } else {
+            difficulty_condition = player.DifficultyIgnoringExpertPlus() == difficulty
+        }
         player_trigger_whens = player_trigger_whens
         || (
             player.IsActive()
-            && player.Difficulty() == difficulty
+            && difficulty_condition
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
         )
@@ -33193,23 +35901,23 @@ function full_band_five_star_quickplay_trigger_two_songs(song_1, song_2) {
             for player_2 in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
                 if (player_1 != player_2) {
                     if (song_1.Instruments[0].ExpertPlusAvailable) {
-                        player_1_difficulty = DIFFICULTY_EXPERT_PLUS
+                        player_1_difficulty_condition = player_1.Difficulty() == DIFFICULTY_EXPERT_PLUS
                     } else {
-                        player_1_difficulty = DIFFICULTY_EXPERT
+                        player_1_difficulty_condition = player_1.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                     }
                     if (song_1.Instruments[1].ExpertPlusAvailable) {
-                        player_2_difficulty = DIFFICULTY_EXPERT_PLUS
+                        player_2_difficulty_condition = player_2.Difficulty() == DIFFICULTY_EXPERT_PLUS
                     } else {
-                        player_2_difficulty = DIFFICULTY_EXPERT
+                        player_2_difficulty_condition = player_2.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                     }
                     player_trigger_whens = player_trigger_whens
                     || (
                         player_1.IsActive()
-                        && player_1.Difficulty() == player_1_difficulty
+                        && player_1_difficulty_condition
                         && player_1.Instrument() == song_1.Instruments[0].Instrument
                         && !player_1.AreCheatsOn()
                         && player_2.IsActive()
-                        && player_2.Difficulty() == player_2_difficulty
+                        && player_2_difficulty_condition
                         && player_2.Instrument() == song_1.Instruments[1].Instrument
                         && !player_2.AreCheatsOn()
                     )
@@ -33222,32 +35930,32 @@ function full_band_five_star_quickplay_trigger_two_songs(song_1, song_2) {
                 for player_3 in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
                     if (player_1 != player_2 && player_1 != player_3 && player_2 != player_3) {
                         if (song_1.Instruments[0].ExpertPlusAvailable) {
-                            player_1_difficulty = DIFFICULTY_EXPERT_PLUS
+                            player_1_difficulty_condition = player_1.Difficulty() == DIFFICULTY_EXPERT_PLUS
                         } else {
-                            player_1_difficulty = DIFFICULTY_EXPERT
+                            player_1_difficulty_condition = player_1.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                         }
                         if (song_1.Instruments[1].ExpertPlusAvailable) {
-                            player_2_difficulty = DIFFICULTY_EXPERT_PLUS
+                            player_2_difficulty_condition = player_2.Difficulty() == DIFFICULTY_EXPERT_PLUS
                         } else {
-                            player_2_difficulty = DIFFICULTY_EXPERT
+                            player_2_difficulty_condition = player_2.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                         }
                         if (song_1.Instruments[2].ExpertPlusAvailable) {
-                            player_3_difficulty = DIFFICULTY_EXPERT_PLUS
+                            player_3_difficulty_condition = player_3.Difficulty() == DIFFICULTY_EXPERT_PLUS
                         } else {
-                            player_3_difficulty = DIFFICULTY_EXPERT
+                            player_3_difficulty_condition = player_3.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                         }
                         player_trigger_whens = player_trigger_whens
                         || (
                             player_1.IsActive()
-                            && player_1.Difficulty() == player_1_difficulty
+                            && player_1_difficulty_condition
                             && player_1.Instrument() == song_1.Instruments[0].Instrument
                             && !player_1.AreCheatsOn()
                             && player_2.IsActive()
-                            && player_2.Difficulty() == player_2_difficulty
+                            && player_2_difficulty_condition
                             && player_2.Instrument() == song_1.Instruments[1].Instrument
                             && !player_2.AreCheatsOn()
                             && player_3.IsActive()
-                            && player_3.Difficulty() == player_3_difficulty
+                            && player_3_difficulty_condition
                             && player_3.Instrument() == song_1.Instruments[2].Instrument
                             && !player_3.AreCheatsOn()
                         )
@@ -33262,41 +35970,41 @@ function full_band_five_star_quickplay_trigger_two_songs(song_1, song_2) {
                     for player_4 in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
                         if (player_1 != player_2 && player_1 != player_3 && player_1 != player_4 && player_2 != player_3 && player_2 != player_4 && player_3 != player_4) {
                             if (song_1.Instruments[0].ExpertPlusAvailable) {
-                                player_1_difficulty = DIFFICULTY_EXPERT_PLUS
+                                player_1_difficulty_condition = player_1.Difficulty() == DIFFICULTY_EXPERT_PLUS
                             } else {
-                                player_1_difficulty = DIFFICULTY_EXPERT
+                                player_1_difficulty_condition = player_1.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                             }
                             if (song_1.Instruments[1].ExpertPlusAvailable) {
-                                player_2_difficulty = DIFFICULTY_EXPERT_PLUS
+                                player_2_difficulty_condition = player_2.Difficulty() == DIFFICULTY_EXPERT_PLUS
                             } else {
-                                player_2_difficulty = DIFFICULTY_EXPERT
+                                player_2_difficulty_condition = player_2.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                             }
                             if (song_1.Instruments[2].ExpertPlusAvailable) {
-                                player_3_difficulty = DIFFICULTY_EXPERT_PLUS
+                                player_3_difficulty_condition = player_3.Difficulty() == DIFFICULTY_EXPERT_PLUS
                             } else {
-                                player_3_difficulty = DIFFICULTY_EXPERT
+                                player_3_difficulty_condition = player_3.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                             }
                             if (song_1.Instruments[3].ExpertPlusAvailable) {
-                                player_4_difficulty = DIFFICULTY_EXPERT_PLUS
+                                player_4_difficulty_condition = player_4.Difficulty() == DIFFICULTY_EXPERT_PLUS
                             } else {
-                                player_4_difficulty = DIFFICULTY_EXPERT
+                                player_4_difficulty_condition = player_4.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                             }
                             player_trigger_whens = player_trigger_whens
                             || (
                                 player_1.IsActive()
-                                && player_1.Difficulty() == player_1_difficulty
+                                && player_1_difficulty_condition
                                 && player_1.Instrument() == song_1.Instruments[0].Instrument
                                 && !player_1.AreCheatsOn()
                                 && player_2.IsActive()
-                                && player_2.Difficulty() == player_2_difficulty
+                                && player_2_difficulty_condition
                                 && player_2.Instrument() == song_1.Instruments[1].Instrument
                                 && !player_2.AreCheatsOn()
                                 && player_3.IsActive()
-                                && player_3.Difficulty() == player_3_difficulty
+                                && player_3_difficulty_condition
                                 && player_3.Instrument() == song_1.Instruments[2].Instrument
                                 && !player_3.AreCheatsOn()
                                 && player_4.IsActive()
-                                && player_4.Difficulty() == player_4_difficulty
+                                && player_4_difficulty_condition
                                 && player_4.Instrument() == song_1.Instruments[3].Instrument
                                 && !player_4.AreCheatsOn()
                             )
@@ -33324,15 +36032,20 @@ function five_star_with_vocals_trigger(song, primary_instrument, difficulty) {
     player_trigger_whens = always_false()
     for vocal_player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
         for primary_instrument_player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
+            if (difficulty == DIFFICULTY_EXPERT_PLUS) {
+                difficulty_condition = primary_instrument_player.Difficulty() == difficulty
+            } else {
+                difficulty_condition = primary_instrument_player.DifficultyIgnoringExpertPlus() == difficulty
+            }
             if (vocal_player != primary_instrument_player) {
                 player_trigger_whens = player_trigger_whens
                 || (
                     vocal_player.IsActive()
-                    && vocal_player.Difficulty() == DIFFICULTY_EXPERT
+                    && vocal_player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                     && vocal_player.Instrument() == INSTRUMENT_VOCALS
                     && !vocal_player.AreCheatsOn()
                     && primary_instrument_player.IsActive()
-                    && primary_instrument_player.Difficulty() == difficulty
+                    && difficulty_condition
                     && primary_instrument_player.Instrument() == primary_instrument
                     && !primary_instrument_player.AreCheatsOn()
                 )
@@ -33354,10 +36067,15 @@ function full_combo_trigger(song, instrument, difficulty, notes_in_chart) {
     player_trigger_whens = always_false()
     if (instrument == INSTRUMENT_VOCALS) {
         for player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
+            if (difficulty == DIFFICULTY_EXPERT_PLUS) {
+                difficulty_condition = player.Difficulty() == difficulty
+            } else {
+                difficulty_condition = player.DifficultyIgnoringExpertPlus() == difficulty
+            }
             player_trigger_whens = player_trigger_whens
             || (
                 player.IsActive()
-                && player.Difficulty() == difficulty
+                && difficulty_condition
                 && player.Instrument() == instrument
                 && !player.AreCheatsOn()
                 && player.VocalPhrasesHit() == player.VocalPhrasesPassed()
@@ -33369,10 +36087,15 @@ function full_combo_trigger(song, instrument, difficulty, notes_in_chart) {
         }
     } else {
         for player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
+            if (difficulty == DIFFICULTY_EXPERT_PLUS) {
+                difficulty_condition = player.Difficulty() == difficulty
+            } else {
+                difficulty_condition = player.DifficultyIgnoringExpertPlus() == difficulty
+            }
             player_trigger_whens = player_trigger_whens
             || (
                 player.IsActive()
-                && player.Difficulty() == difficulty
+                && difficulty_condition
                 && player.Instrument() == instrument
                 && !player.AreCheatsOn()
                 && player.NotesHit() == player.NotesPassed()
@@ -33398,10 +36121,15 @@ function full_combo_trigger_two_songs(song_1, song_2, instrument, difficulty, no
     player_trigger_whens = always_false()
     if (instrument == INSTRUMENT_VOCALS) {
         for player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
+            if (difficulty == DIFFICULTY_EXPERT_PLUS) {
+                difficulty_condition = player.Difficulty() == difficulty
+            } else {
+                difficulty_condition = player.DifficultyIgnoringExpertPlus() == difficulty
+            }
             player_trigger_whens = player_trigger_whens
             || (
                 player.IsActive()
-                && player.Difficulty() == difficulty
+                && difficulty_condition
                 && player.Instrument() == instrument
                 && !player.AreCheatsOn()
                 && player.VocalPhrasesHit() == player.VocalPhrasesPassed()
@@ -33425,10 +36153,15 @@ function full_combo_trigger_two_songs(song_1, song_2, instrument, difficulty, no
         }
     } else {
         for player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
+            if (difficulty == DIFFICULTY_EXPERT_PLUS) {
+                difficulty_condition = player.Difficulty() == difficulty
+            } else {
+                difficulty_condition = player.DifficultyIgnoringExpertPlus() == difficulty
+            }
             player_trigger_whens = player_trigger_whens
             || (
                 player.IsActive()
-                && player.Difficulty() == difficulty
+                && difficulty_condition
                 && player.Instrument() == instrument
                 && !player.AreCheatsOn()
                 && player.NotesHit() == player.NotesPassed()
@@ -33470,7 +36203,7 @@ function leaderboard_quickplay_start(song, instrument) {
         player_trigger_whens = player_trigger_whens
         || (
             player.IsActive()
-            && player.Difficulty() != DIFFICULTY_BEGINNER
+            && player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
             && player.NotesHit() == 0
@@ -33497,12 +36230,12 @@ function full_band_leaderboard_quickplay_start(song) {
                     player_trigger_whens = player_trigger_whens
                     || (
                         player_1.IsActive()
-                        && player_1.Difficulty() != DIFFICULTY_BEGINNER
+                        && player_1.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                         && player_1.Instrument() == song.Instruments[0].Instrument
                         && !player_1.AreCheatsOn()
                         && player_1.NotesHit() == 0
                         && player_2.IsActive()
-                        && player_2.Difficulty() != DIFFICULTY_BEGINNER
+                        && player_2.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                         && player_2.Instrument() == song.Instruments[1].Instrument
                         && !player_2.AreCheatsOn()
                         && player_2.NotesHit() == 0
@@ -33518,17 +36251,17 @@ function full_band_leaderboard_quickplay_start(song) {
                         player_trigger_whens = player_trigger_whens
                         || (
                             player_1.IsActive()
-                            && player_1.Difficulty() != DIFFICULTY_BEGINNER
+                            && player_1.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                             && player_1.Instrument() == song.Instruments[0].Instrument
                             && !player_1.AreCheatsOn()
                             && player_1.NotesHit() == 0
                             && player_2.IsActive()
-                            && player_2.Difficulty() != DIFFICULTY_BEGINNER
+                            && player_2.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                             && player_2.Instrument() == song.Instruments[1].Instrument
                             && !player_2.AreCheatsOn()
                             && player_2.NotesHit() == 0
                             && player_3.IsActive()
-                            && player_3.Difficulty() != DIFFICULTY_BEGINNER
+                            && player_3.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                             && player_3.Instrument() == song.Instruments[2].Instrument
                             && !player_3.AreCheatsOn()
                             && player_3.NotesHit() == 0
@@ -33546,22 +36279,22 @@ function full_band_leaderboard_quickplay_start(song) {
                             player_trigger_whens = player_trigger_whens
                             || (
                                 player_1.IsActive()
-                                && player_1.Difficulty() != DIFFICULTY_BEGINNER
+                                && player_1.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                                 && player_1.Instrument() == song.Instruments[0].Instrument
                                 && !player_1.AreCheatsOn()
                                 && player_1.NotesHit() == 0
                                 && player_2.IsActive()
-                                && player_2.Difficulty() != DIFFICULTY_BEGINNER
+                                && player_2.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                                 && player_2.Instrument() == song.Instruments[1].Instrument
                                 && !player_2.AreCheatsOn()
                                 && player_2.NotesHit() == 0
                                 && player_3.IsActive()
-                                && player_3.Difficulty() != DIFFICULTY_BEGINNER
+                                && player_3.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                                 && player_3.Instrument() == song.Instruments[2].Instrument
                                 && !player_3.AreCheatsOn()
                                 && player_3.NotesHit() == 0
                                 && player_4.IsActive()
-                                && player_4.Difficulty() != DIFFICULTY_BEGINNER
+                                && player_4.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                                 && player_4.Instrument() == song.Instruments[3].Instrument
                                 && !player_4.AreCheatsOn()
                                 && player_4.NotesHit() == 0
@@ -33590,7 +36323,7 @@ function leaderboard_quickplay_start_two_songs(song_1, song_2, instrument) {
         player_trigger_whens = player_trigger_whens
         || (
             player.IsActive()
-            && player.Difficulty() != DIFFICULTY_BEGINNER
+            && player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
             && player.NotesHit() == 0
@@ -33621,12 +36354,12 @@ function full_band_leaderboard_quickplay_start_two_songs(song_1, song_2) {
                     player_trigger_whens = player_trigger_whens
                     || (
                         player_1.IsActive()
-                        && player_1.Difficulty() != DIFFICULTY_BEGINNER
+                        && player_1.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                         && player_1.Instrument() == song_1.Instruments[0].Instrument
                         && !player_1.AreCheatsOn()
                         && player_1.NotesHit() == 0
                         && player_2.IsActive()
-                        && player_2.Difficulty() != DIFFICULTY_BEGINNER
+                        && player_2.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                         && player_2.Instrument() == song_1.Instruments[1].Instrument
                         && !player_2.AreCheatsOn()
                         && player_2.NotesHit() == 0
@@ -33642,17 +36375,17 @@ function full_band_leaderboard_quickplay_start_two_songs(song_1, song_2) {
                         player_trigger_whens = player_trigger_whens
                         || (
                             player_1.IsActive()
-                            && player_1.Difficulty() != DIFFICULTY_BEGINNER
+                            && player_1.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                             && player_1.Instrument() == song_1.Instruments[0].Instrument
                             && !player_1.AreCheatsOn()
                             && player_1.NotesHit() == 0
                             && player_2.IsActive()
-                            && player_2.Difficulty() != DIFFICULTY_BEGINNER
+                            && player_2.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                             && player_2.Instrument() == song_1.Instruments[1].Instrument
                             && !player_2.AreCheatsOn()
                             && player_2.NotesHit() == 0
                             && player_3.IsActive()
-                            && player_3.Difficulty() != DIFFICULTY_BEGINNER
+                            && player_3.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                             && player_3.Instrument() == song_1.Instruments[2].Instrument
                             && !player_3.AreCheatsOn()
                             && player_3.NotesHit() == 0
@@ -33670,22 +36403,22 @@ function full_band_leaderboard_quickplay_start_two_songs(song_1, song_2) {
                             player_trigger_whens = player_trigger_whens
                             || (
                                 player_1.IsActive()
-                                && player_1.Difficulty() != DIFFICULTY_BEGINNER
+                                && player_1.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                                 && player_1.Instrument() == song_1.Instruments[0].Instrument
                                 && !player_1.AreCheatsOn()
                                 && player_1.NotesHit() == 0
                                 && player_2.IsActive()
-                                && player_2.Difficulty() != DIFFICULTY_BEGINNER
+                                && player_2.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                                 && player_2.Instrument() == song_1.Instruments[1].Instrument
                                 && !player_2.AreCheatsOn()
                                 && player_2.NotesHit() == 0
                                 && player_3.IsActive()
-                                && player_3.Difficulty() != DIFFICULTY_BEGINNER
+                                && player_3.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                                 && player_3.Instrument() == song_1.Instruments[2].Instrument
                                 && !player_3.AreCheatsOn()
                                 && player_3.NotesHit() == 0
                                 && player_4.IsActive()
-                                && player_4.Difficulty() != DIFFICULTY_BEGINNER
+                                && player_4.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                                 && player_4.Instrument() == song_1.Instruments[3].Instrument
                                 && !player_4.AreCheatsOn()
                                 && player_4.NotesHit() == 0
@@ -33719,12 +36452,12 @@ function leaderboard_quickplay_with_vocals_start(song, primary_instrument) {
                 player_trigger_whens = player_trigger_whens
                 || (
                     vocal_player.IsActive()
-                    && vocal_player.Difficulty() == DIFFICULTY_EXPERT
+                    && vocal_player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                     && vocal_player.Instrument() == INSTRUMENT_VOCALS
                     && !vocal_player.AreCheatsOn()
                     && vocal_player.NotesHit() == 0
                     && primary_instrument_player.IsActive()
-                    && primary_instrument_player.Difficulty() == DIFFICULTY_EXPERT // Big assumption that we're not applying this to Expert+ but in practise none of these are drum leaderboards.
+                    && primary_instrument_player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT // Big assumption that we're not applying this to Expert+ but in practise none of these are drum leaderboards.
                     && primary_instrument_player.Instrument() == primary_instrument
                     && !primary_instrument_player.AreCheatsOn()
                     && primary_instrument_player.NotesHit() == 0
@@ -33801,7 +36534,7 @@ function leaderboard_quest_start(song, instrument) {
         player_trigger_whens = player_trigger_whens
         || (
             player.IsActive()
-            && player.Difficulty() != DIFFICULTY_BEGINNER
+            && player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
             && player.NotesHit() == 0
@@ -33860,7 +36593,7 @@ for song in SONGS {
         )
     }
 
-    // TODO: Until subsets are available.
+    // NOTE: We're only handling these sources for now.
     if (song.Source == SOURCE_GHWOR_DLC || song.Source == SOURCE_GHWOR) {
     assert(song.PowerChallengeAchievement.StarTarget != -1, format("{0} needs a Power Challenge star target", song.Title))
     
@@ -33889,7 +36622,7 @@ for song in SONGS {
             description = format("Get five stars on \"{0}\" in Quickplay+ mode with no powers active on {1} with a full band of all 3 instruments", song.Title, full_band_difficulty_name),
             points = song.FullBandFiveStarAchievementMetadata.Points,
             id = song.FullBandFiveStarAchievementMetadata.Id,
-            // set = FULL_BAND_SUBSET,
+            set = FULL_BAND_SUBSET,
             trigger = full_band_five_star_quickplay_trigger(song)
         )
 
@@ -33897,7 +36630,7 @@ for song in SONGS {
             title = format("{0} - Quickplay+ - Full Band", song.Title),
             description = format("Get the highest score on {0} in Quickplay+ with a full band of all 3 instruments", song.Title),
             id = song.FullBandLeaderboardId,
-            // set = FULL_BAND_SUBSET,
+            set = FULL_BAND_SUBSET,
             start = full_band_leaderboard_quickplay_start(song),
             cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
             submit = is_you_rock_reached_quickplay(),
@@ -33922,7 +36655,7 @@ for song in SONGS {
             description = format("Get five stars on \"Sweet Home Alabama (Live)\" in Quickplay+ mode with no powers active on {0} with a full band of all 4 instruments", full_band_difficulty_name),
             points = song.FullBandFiveStarAchievementMetadata.Points,
             id = song.FullBandFiveStarAchievementMetadata.Id,
-            // set = FULL_BAND_SUBSET,
+            set = FULL_BAND_SUBSET,
             trigger = full_band_five_star_quickplay_trigger_two_songs(song, other_song)
         )
 
@@ -33930,7 +36663,7 @@ for song in SONGS {
             title = "Sweet Home Alabama (Live) - Quickplay+ - Full Band",
             description = "Get the highest score on \"Sweet Home Alabama (Live)\" in Quickplay+ with a full band of all 4 instruments",
             id = song.FullBandLeaderboardId,
-            // set = FULL_BAND_SUBSET,
+            set = FULL_BAND_SUBSET,
             start = full_band_leaderboard_quickplay_start_two_songs(song, other_song),
             cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
             submit = is_you_rock_reached_quickplay(),
@@ -33944,7 +36677,7 @@ for song in SONGS {
             description = format("Get five stars on \"{0}\" in Quickplay+ mode with no powers active on {1} with a full band of all 3 instruments", song.Title, full_band_difficulty_name),
             points = song.FullBandFiveStarAchievementMetadata.Points,
             id = song.FullBandFiveStarAchievementMetadata.Id,
-            // set = FULL_BAND_SUBSET,
+            set = FULL_BAND_SUBSET,
             trigger = full_band_five_star_quickplay_trigger(song)
         )
 
@@ -33952,7 +36685,7 @@ for song in SONGS {
             title = format("{0} - Quickplay+ - Full Band", song.Title),
             description = format("Get the highest score on \"{0}\" in Quickplay+ with a full band of all 3 instruments", song.Title),
             id = song.FullBandLeaderboardId,
-            // set = FULL_BAND_SUBSET,
+            set = FULL_BAND_SUBSET,
             start = full_band_leaderboard_quickplay_start(song),
             cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
             submit = is_you_rock_reached_quickplay(),
@@ -33972,8 +36705,14 @@ for song in SONGS {
             trigger = power_challenge_star_trigger(song, song.PowerChallengeAchievement.StarTarget)
         )
 
+        corrected_title = song.Title
+        if (song.Title == "If You Want Peace... Prepare for War") {
+            // This is just to avoid going over the character limit for this song by one.
+            corrected_title = "If You Want Peace...Prepare for War"
+        }
+
         achievement(
-            title = format("{0} - Full Band - {1} 5 Star", song.Title, full_band_difficulty_name),
+            title = format("{0} - Full Band - {1} 5 Star", corrected_title, full_band_difficulty_name),
             description = format("Get five stars on \"{0}\" in Quickplay+ mode with no powers active on {1} with a full band of all {2} instruments", song.Title, full_band_difficulty_name, length(song.Instruments)),
             points = song.FullBandFiveStarAchievementMetadata.Points,
             id = song.FullBandFiveStarAchievementMetadata.Id,
@@ -34083,11 +36822,11 @@ for song in SONGS {
             )
 
             achievement(
-                title = format("Suicide & Redemption - {0} - {1} Full Combo", INSTRUMENT_TO_NAME[instrument.Instrument], DIFFICULTY_TO_NAME[hardest_difficulty]),
+                title = format("Suicide & Redemption - {0} - {1} FC", INSTRUMENT_TO_NAME[instrument.Instrument], DIFFICULTY_TO_NAME[hardest_difficulty]),
                 description = fc_description,
                 points = instrument.FullComboAchievementMetadata.Points,
                 id = instrument.FullComboAchievementMetadata.Id,
-                // set = FC_SUBSET,
+                set = FC_SUBSET,
                 trigger = full_combo_trigger_two_songs(song, other_song, instrument.Instrument, hardest_difficulty, instrument.ExpertNotesInChart, other_song_instrument.ExpertNotesInChart)
             )
 
@@ -34165,11 +36904,11 @@ for song in SONGS {
             )
 
             achievement(
-                title = format("Sweet Home Alabama (Live) - {0} - {1} Full Combo", INSTRUMENT_TO_NAME[instrument.Instrument], DIFFICULTY_TO_NAME[hardest_difficulty]),
+                title = format("Sweet Home Alabama (Live) - {0} - {1} FC", INSTRUMENT_TO_NAME[instrument.Instrument], DIFFICULTY_TO_NAME[hardest_difficulty]),
                 description = fc_description,
                 points = instrument.FullComboAchievementMetadata.Points,
                 id = instrument.FullComboAchievementMetadata.Id,
-                // set = FC_SUBSET,
+                set = FC_SUBSET,
                 trigger = full_combo_trigger_two_songs(song, other_song, instrument.Instrument, hardest_difficulty, instrument.ExpertNotesInChart, other_song_instrument.ExpertNotesInChart)
             )
 
@@ -34227,14 +36966,14 @@ for song in SONGS {
                 fc_description_format = "Full combo with all {0} notes on \"{1}\" in Quickplay+ mode with no powers active on {2} {3}"
             }
 
-            // achievement(
-            //     title = format("{0} - {1} - {2} Full Combo", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument], DIFFICULTY_TO_NAME[hardest_difficulty]),
-            //     description = format(fc_description_format, format_int_with_commas(instrument.ExpertNotesInChart), song.Title, DIFFICULTY_TO_NAME[hardest_difficulty], INSTRUMENT_TO_NAME[instrument.Instrument]),
-            //     points = instrument.FullComboAchievementMetadata.Points,
-            //     id = instrument.FullComboAchievementMetadata.Id,
-            //     // set = FC_SUBSET,
-            //     trigger = full_combo_trigger(song, instrument.Instrument, hardest_difficulty, instrument.ExpertNotesInChart)
-            // )
+            achievement(
+                title = format("{0} - {1} - {2} FC", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument], DIFFICULTY_TO_NAME[hardest_difficulty]),
+                description = format(fc_description_format, format_int_with_commas(instrument.ExpertNotesInChart), song.Title, DIFFICULTY_TO_NAME[hardest_difficulty], INSTRUMENT_TO_NAME[instrument.Instrument]),
+                points = instrument.FullComboAchievementMetadata.Points,
+                id = instrument.FullComboAchievementMetadata.Id,
+                set = FC_SUBSET,
+                trigger = full_combo_trigger(song, instrument.Instrument, hardest_difficulty, instrument.ExpertNotesInChart)
+            )
 
             leaderboard(
                 title = format("{0} - Quickplay+ - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
@@ -34322,7 +37061,7 @@ for song in SONGS {
                 }
             }
         }
-    }} // TODO: The bottom of the previous todo
+    }} // NOTE: The bottom of the big .Source condition.
 }
 
 // #endregion
@@ -34504,6 +37243,10 @@ CUSTOM_SONGS = [
                     Id = 574330,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582247,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 152323
             ),
             InstrumentMetadata(
@@ -34516,6 +37259,10 @@ CUSTOM_SONGS = [
                     Id = 574331,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582248,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 152324
             ),
             InstrumentMetadata(
@@ -34526,6 +37273,10 @@ CUSTOM_SONGS = [
                     Title = "Stokowski's Fantasia",
                     Id = 574332,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582249,
+                    Points = 25
                 ),
                 QuickplayLeaderboardId = 152325
             )
@@ -34550,6 +37301,10 @@ CUSTOM_SONGS = [
                     Id = 574333,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582250,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 152326
             ),
             InstrumentMetadata(
@@ -34562,6 +37317,10 @@ CUSTOM_SONGS = [
                     Id = 574334,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582251,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 152327
             ),
             InstrumentMetadata(
@@ -34572,6 +37331,10 @@ CUSTOM_SONGS = [
                     Title = "Baroque in Elegance",
                     Id = 574335,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582252,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 152328
             )
@@ -34596,6 +37359,10 @@ CUSTOM_SONGS = [
                     Id = 574336,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582253,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 152329
             ),
             InstrumentMetadata(
@@ -34608,6 +37375,10 @@ CUSTOM_SONGS = [
                     Id = 574337,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582254,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 152330
             ),
             InstrumentMetadata(
@@ -34618,6 +37389,10 @@ CUSTOM_SONGS = [
                     Title = "Revolutionary",
                     Id = 574338,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582255,
+                    Points = 25
                 ),
                 QuickplayLeaderboardId = 152331
             )
@@ -34642,6 +37417,10 @@ CUSTOM_SONGS = [
                     Id = 574339,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582256,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 152332
             ),
             InstrumentMetadata(
@@ -34654,6 +37433,10 @@ CUSTOM_SONGS = [
                     Id = 574340,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582257,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 152333
             ),
             InstrumentMetadata(
@@ -34664,6 +37447,10 @@ CUSTOM_SONGS = [
                     Title = "Mastering the Inferno",
                     Id = 574341,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582258,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 152334
             )
@@ -34688,6 +37475,10 @@ CUSTOM_SONGS = [
                     Id = 574342,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582259,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 152335
             ),
             InstrumentMetadata(
@@ -34700,6 +37491,10 @@ CUSTOM_SONGS = [
                     Id = 574343,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582260,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 152336
             ),
             InstrumentMetadata(
@@ -34710,6 +37505,10 @@ CUSTOM_SONGS = [
                     Title = "Resonator",
                     Id = 574344,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582261,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 152337
             )
@@ -34734,6 +37533,10 @@ CUSTOM_SONGS = [
                     Id = 574345,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582262,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 152338
             ),
             InstrumentMetadata(
@@ -34746,6 +37549,10 @@ CUSTOM_SONGS = [
                     Id = 574346,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582263,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 152339
             ),
             InstrumentMetadata(
@@ -34756,6 +37563,10 @@ CUSTOM_SONGS = [
                     Title = "Quarter Note Queen",
                     Id = 574347,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582264,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 152340
             )
@@ -34780,6 +37591,10 @@ CUSTOM_SONGS = [
                     Id = 574348,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582265,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 152341
             ),
             InstrumentMetadata(
@@ -34792,6 +37607,10 @@ CUSTOM_SONGS = [
                     Id = 574349,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582266,
+                    Points = 10
+                ),
                 QuickplayLeaderboardId = 152342
             ),
             InstrumentMetadata(
@@ -34802,6 +37621,10 @@ CUSTOM_SONGS = [
                     Title = "Titled by Rellstab",
                     Id = 574350,
                     Points = 4
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582267,
+                    Points = 5
                 ),
                 QuickplayLeaderboardId = 152343
             )
@@ -34826,6 +37649,10 @@ CUSTOM_SONGS = [
                     Id = 574351,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582268,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 152344
             ),
             InstrumentMetadata(
@@ -34838,6 +37665,10 @@ CUSTOM_SONGS = [
                     Id = 574352,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582269,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 152345
             ),
             InstrumentMetadata(
@@ -34848,6 +37679,10 @@ CUSTOM_SONGS = [
                     Title = "Open To Fret Champ",
                     Id = 574353,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582270,
+                    Points = 25
                 ),
                 QuickplayLeaderboardId = 152346
             )
@@ -34872,6 +37707,10 @@ CUSTOM_SONGS = [
                     Id = 574354,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582271,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 152347
             ),
             InstrumentMetadata(
@@ -34884,6 +37723,10 @@ CUSTOM_SONGS = [
                     Id = 574355,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582272,
+                    Points = 25
+                ),
                 QuickplayLeaderboardId = 152348
             ),
             InstrumentMetadata(
@@ -34894,6 +37737,10 @@ CUSTOM_SONGS = [
                     Title = "Barking Up the Wrong Tree",
                     Id = 574356,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582273,
+                    Points = 10
                 ),
                 QuickplayLeaderboardId = 152349
             )
@@ -34918,6 +37765,10 @@ CUSTOM_SONGS = [
                     Id = 574357,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582274,
+                    Points = 100
+                ),
                 QuickplayLeaderboardId = 152350
             ),
             InstrumentMetadata(
@@ -34930,6 +37781,10 @@ CUSTOM_SONGS = [
                     Id = 574358,
                     Points = 10
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582275,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 152351
             ),
             InstrumentMetadata(
@@ -34940,6 +37795,10 @@ CUSTOM_SONGS = [
                     Title = "More Lines than a Downhill Jam",
                     Id = 574359,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582276,
+                    Points = 50
                 ),
                 QuickplayLeaderboardId = 152352
             )
@@ -34964,6 +37823,10 @@ CUSTOM_SONGS = [
                     Id = 574360,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582277,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 152353
             ),
             InstrumentMetadata(
@@ -34976,6 +37839,10 @@ CUSTOM_SONGS = [
                     Id = 574361,
                     Points = 5
                 ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582278,
+                    Points = 50
+                ),
                 QuickplayLeaderboardId = 152354
             ),
             InstrumentMetadata(
@@ -34986,6 +37853,10 @@ CUSTOM_SONGS = [
                     Title = "Everyone Is Raving",
                     Id = 574362,
                     Points = 5
+                ),
+                FullComboAchievementMetadata = AchievementMetadata(
+                    Id = 582279,
+                    Points = 50
                 ),
                 QuickplayLeaderboardId = 152355
             )
@@ -35010,7 +37881,7 @@ function five_star_custom_song_trigger(song, instrument, target_score) {
         player_trigger_whens = player_trigger_whens
         || (
             player.IsActive()
-            && player.Difficulty() == DIFFICULTY_EXPERT
+            && player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
         )
@@ -35032,7 +37903,7 @@ function full_combo_custom_song_trigger(song, instrument, notes_in_chart) {
         player_trigger_whens = player_trigger_whens
         || (
             player.IsActive()
-            && player.Difficulty() == DIFFICULTY_EXPERT
+            && player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
             && player.NotesHit() == player.NotesPassed()
@@ -35059,7 +37930,7 @@ function leaderboard_custom_song_start(song, instrument) {
         player_trigger_whens = player_trigger_whens
         || (
             player.IsActive()
-            && player.Difficulty() != DIFFICULTY_EASY
+            && player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
             && player.NotesHit() == 0
@@ -35086,15 +37957,15 @@ function full_band_five_star_custom_song_trigger(song) {
                     player_trigger_whens = player_trigger_whens
                     || (
                         guitar_player.IsActive()
-                        && guitar_player.Difficulty() == DIFFICULTY_EXPERT
+                        && guitar_player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                         && guitar_player.Instrument() == INSTRUMENT_GUITAR
                         && !guitar_player.AreCheatsOn()
                         && drums_player.IsActive()
-                        && drums_player.Difficulty() == DIFFICULTY_EXPERT
+                        && drums_player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                         && drums_player.Instrument() == INSTRUMENT_DRUMS
                         && !drums_player.AreCheatsOn()
                         && bass_player.IsActive()
-                        && bass_player.Difficulty() == DIFFICULTY_EXPERT
+                        && bass_player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
                         && bass_player.Instrument() == INSTRUMENT_BASS
                         && !bass_player.AreCheatsOn()
                     )
@@ -35122,17 +37993,17 @@ function full_band_leaderboard_custom_song_start(song) {
                     player_trigger_whens = player_trigger_whens
                     || (
                         guitar_player.IsActive()
-                        && guitar_player.Difficulty() != DIFFICULTY_BEGINNER
+                        && guitar_player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                         && guitar_player.Instrument() == INSTRUMENT_GUITAR
                         && !guitar_player.AreCheatsOn()
                         && guitar_player.NotesHit() == 0
                         && drums_player.IsActive()
-                        && drums_player.Difficulty() != DIFFICULTY_BEGINNER
+                        && drums_player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                         && drums_player.Instrument() == INSTRUMENT_DRUMS
                         && !drums_player.AreCheatsOn()
                         && drums_player.NotesHit() == 0
                         && bass_player.IsActive()
-                        && bass_player.Difficulty() != DIFFICULTY_BEGINNER
+                        && bass_player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
                         && bass_player.Instrument() == INSTRUMENT_BASS
                         && !bass_player.AreCheatsOn()
                         && bass_player.NotesHit() == 0
@@ -35171,14 +38042,14 @@ for song in CUSTOM_SONGS {
             trigger = five_star_custom_song_trigger(song, instrument.Instrument, instrument.ExpertBaseScore * 14 / 5)
         )
 
-        // achievement(
-        //     title = format("{0} - {1} - {2} Full Combo", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument], DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT]),
-        //     description = format("Full combo with all {0} notes on the custom song \"{1}\" in Quickplay+ mode on {2} {3}", format_int_with_commas(instrument.ExpertNotesInChart), song.Title, DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT], INSTRUMENT_TO_NAME[instrument.Instrument]),
-        //     points = instrument.FullComboAchievementMetadata.Points,
-        //     id = instrument.FullComboAchievementMetadata.Id,
-        //     // set = FC_SUBSET,
-        //     trigger = full_combo_custom_song_trigger(song, instrument.Instrument, instrument.ExpertNotesInChart)
-        // )
+        achievement(
+            title = format("{0} - {1} - {2} FC", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument], DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT]),
+            description = format("Full combo with all {0} notes on the custom song \"{1}\" in Quickplay+ mode on {2} {3}", format_int_with_commas(instrument.ExpertNotesInChart), song.Title, DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT], INSTRUMENT_TO_NAME[instrument.Instrument]),
+            points = instrument.FullComboAchievementMetadata.Points,
+            id = instrument.FullComboAchievementMetadata.Id,
+            set = FC_SUBSET,
+            trigger = full_combo_custom_song_trigger(song, instrument.Instrument, instrument.ExpertNotesInChart)
+        )
 
         leaderboard(
             title = format("{0} - Quickplay+ - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
@@ -35192,14 +38063,8 @@ for song in CUSTOM_SONGS {
         )
     }
 
-    title = song.Title
-    if (song.Title == "If You Want Peace... Prepare for War") {
-        // This is just to avoid going over the character limit for this song by one.
-        title = "If You Want Peace...Prepare for War"
-    }
-
     achievement(
-        title = format("{0} - Quickplay+ - Full Band - {1} 5 Star", title, DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT]),
+        title = format("{0} - Quickplay+ - Full Band - {1} 5 Star", song.Title, DIFFICULTY_TO_NAME[DIFFICULTY_EXPERT]),
         description = format("Get five stars on the custom song \"{0}\" in Quickplay+ mode with a full band of all 3 instruments", song.Title),
         points = song.FullBandFiveStarAchievementMetadata.Points,
         id = song.FullBandFiveStarAchievementMetadata.Id,
@@ -35273,7 +38138,7 @@ function five_star_your_own_custom_song_trigger() {
         player_trigger_whens = player_trigger_whens
         || (
             player.IsActive()
-            && player.Difficulty() == DIFFICULTY_EXPERT
+            && player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
             && !player.AreCheatsOn()
             && player.NotesPassed() >= 500
         )
@@ -35414,7 +38279,7 @@ SINGLE_STREAK_ADDR = 0x00e7e3dc
 function single_streak() => dword_be(SINGLE_STREAK_ADDR)
 function single_or_band_streak() => (((number_of_active_players() + 2) % 4) / 3) * single_streak() + band_streak()
 
-rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quest_mode() && song_id() == SUDDEN_DEATH_FINALE_ID, "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Quest mode, Song: Sudden Death (Finale), Score: {10}, Streak: {11}",
+rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quest_mode() && song_id() == SUDDEN_DEATH_FINALE_ID, "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Quest, Song: Sudden Death (Finale), Score: {10}, Streak: {11}",
     rich_presence_lookup("Difficulty", PLAYER_1.Difficulty() * PLAYER_1.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
     rich_presence_lookup("Instrument", PLAYER_1.Instrument() * PLAYER_1.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
     rich_presence_lookup("Difficulty", PLAYER_2.Difficulty() * PLAYER_2.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
@@ -35430,23 +38295,7 @@ rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && 
 )
 
 
-rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quest_mode(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Quest mode, Song: {10}, Score: {11}, Streak: {12}",
-    rich_presence_lookup("Difficulty", PLAYER_1.Difficulty() * PLAYER_1.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
-    rich_presence_lookup("Instrument", PLAYER_1.Instrument() * PLAYER_1.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
-    rich_presence_lookup("Difficulty", PLAYER_2.Difficulty() * PLAYER_2.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
-    rich_presence_lookup("Instrument", PLAYER_2.Instrument() * PLAYER_2.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
-    rich_presence_lookup("Difficulty", PLAYER_3.Difficulty() * PLAYER_3.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
-    rich_presence_lookup("Instrument", PLAYER_3.Instrument() * PLAYER_3.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
-    rich_presence_lookup("Difficulty", PLAYER_4.Difficulty() * PLAYER_4.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
-    rich_presence_lookup("Instrument", PLAYER_4.Instrument() * PLAYER_4.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
-    rich_presence_lookup("CheatDetector", ((no_fail_value() + 1) / 2) + PLAYER_1.RichPresenceActiveWithCheats() + PLAYER_2.RichPresenceActiveWithCheats() + PLAYER_3.RichPresenceActiveWithCheats() + PLAYER_4.RichPresenceActiveWithCheats(), CHEAT_DETECTOR_RP, fallback = " [CHEATS ON]"),
-    rich_presence_lookup("PauseSpamDetector", leaderboards_disabled_due_to_pausing_value(), PAUSE_SPAM_DETECTOR_RP, fallback = ""),
-    rich_presence_lookup("Song", song_id(), SONG_TO_NAME, fallback = "???"),
-    rich_presence_macro("Number", band_score()),
-    rich_presence_macro("Number", single_or_band_streak())
-)
-
-rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quickplay_mode() && in_power_challenge(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Power Challenge mode, Song: {10}, Score: {11}, Streak: {12}",
+rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quest_mode(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Quest, Song: {10}, Score: {11}, Streak: {12}",
     rich_presence_lookup("Difficulty", PLAYER_1.Difficulty() * PLAYER_1.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
     rich_presence_lookup("Instrument", PLAYER_1.Instrument() * PLAYER_1.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
     rich_presence_lookup("Difficulty", PLAYER_2.Difficulty() * PLAYER_2.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
@@ -35462,7 +38311,7 @@ rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && 
     rich_presence_macro("Number", single_or_band_streak())
 )
 
-rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quickplay_mode() && !in_power_challenge() && !is_in_custom_song(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Quickplay+ mode, Song: {10}, Score: {11}, Streak: {12}",
+rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quickplay_mode() && in_power_challenge(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Power Challenge, Song: {10}, Score: {11}, Streak: {12}",
     rich_presence_lookup("Difficulty", PLAYER_1.Difficulty() * PLAYER_1.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
     rich_presence_lookup("Instrument", PLAYER_1.Instrument() * PLAYER_1.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
     rich_presence_lookup("Difficulty", PLAYER_2.Difficulty() * PLAYER_2.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
@@ -35478,7 +38327,23 @@ rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && 
     rich_presence_macro("Number", single_or_band_streak())
 )
 
-rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quickplay_mode() && !in_power_challenge() && is_in_custom_song(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Quickplay+ mode, Custom Song: {10}, Score: {11}, Streak: {12}",
+rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quickplay_mode() && !in_power_challenge() && !is_in_custom_song(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Quickplay+, Song: {10}, Score: {11}, Streak: {12}",
+    rich_presence_lookup("Difficulty", PLAYER_1.Difficulty() * PLAYER_1.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
+    rich_presence_lookup("Instrument", PLAYER_1.Instrument() * PLAYER_1.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
+    rich_presence_lookup("Difficulty", PLAYER_2.Difficulty() * PLAYER_2.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
+    rich_presence_lookup("Instrument", PLAYER_2.Instrument() * PLAYER_2.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
+    rich_presence_lookup("Difficulty", PLAYER_3.Difficulty() * PLAYER_3.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
+    rich_presence_lookup("Instrument", PLAYER_3.Instrument() * PLAYER_3.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
+    rich_presence_lookup("Difficulty", PLAYER_4.Difficulty() * PLAYER_4.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
+    rich_presence_lookup("Instrument", PLAYER_4.Instrument() * PLAYER_4.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
+    rich_presence_lookup("CheatDetector", ((no_fail_value() + 1) / 2) + PLAYER_1.RichPresenceActiveWithCheats() + PLAYER_2.RichPresenceActiveWithCheats() + PLAYER_3.RichPresenceActiveWithCheats() + PLAYER_4.RichPresenceActiveWithCheats(), CHEAT_DETECTOR_RP, fallback = " [CHEATS ON]"),
+    rich_presence_lookup("PauseSpamDetector", leaderboards_disabled_due_to_pausing_value(), PAUSE_SPAM_DETECTOR_RP, fallback = ""),
+    rich_presence_lookup("Song", song_id(), SONG_TO_NAME, fallback = "???"),
+    rich_presence_macro("Number", band_score()),
+    rich_presence_macro("Number", single_or_band_streak())
+)
+
+rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quickplay_mode() && !in_power_challenge() && is_in_custom_song(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Quickplay+, Custom Song: {10}, Score: {11}, Streak: {12}",
     rich_presence_lookup("Difficulty", PLAYER_1.Difficulty() * PLAYER_1.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
     rich_presence_lookup("Instrument", PLAYER_1.Instrument() * PLAYER_1.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
     rich_presence_lookup("Difficulty", PLAYER_2.Difficulty() * PLAYER_2.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
@@ -35494,7 +38359,7 @@ rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && 
     rich_presence_macro("Number", single_or_band_streak())
 )
 
-rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_competitive_mode(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}- Competitive mode, Song: {9}, Score: {10}, Streak: {11}",
+rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_competitive_mode(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}- Competitive, Song: {9}, Score: {10}, Streak: {11}",
     rich_presence_lookup("Difficulty", PLAYER_1.Difficulty() * PLAYER_1.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
     rich_presence_lookup("Instrument", PLAYER_1.Instrument() * PLAYER_1.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
     rich_presence_lookup("Difficulty", PLAYER_2.Difficulty() * PLAYER_2.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
@@ -35509,7 +38374,7 @@ rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && 
     rich_presence_macro("Number", single_or_band_streak())
 )
 
-rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_practice_mode(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8} - Practice mode, Song: {9}, Score: {10}, Streak: {11}",
+rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_practice_mode(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8} - Practice, Song: {9}, Score: {10}, Streak: {11}",
     rich_presence_lookup("Difficulty", PLAYER_1.Difficulty() * PLAYER_1.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
     rich_presence_lookup("Instrument", PLAYER_1.Instrument() * PLAYER_1.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
     rich_presence_lookup("Difficulty", PLAYER_2.Difficulty() * PLAYER_2.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),

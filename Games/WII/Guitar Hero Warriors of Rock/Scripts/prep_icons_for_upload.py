@@ -7,9 +7,10 @@ from tqdm import tqdm
 
 from PIL import Image, ImageChops
 
-from constants import get_all_songs, normalize_song_title_for_file, INSTRUMENT_GUITAR, INSTRUMENT_DRUMS, INSTRUMENT_VOCALS, INSTRUMENT_BASS, SOURCE_GHWOR, SOURCE_GHWOR_DLC
+from constants import get_all_songs, get_all_custom_songs, normalize_song_title_for_file, INSTRUMENT_GUITAR, INSTRUMENT_DRUMS, INSTRUMENT_VOCALS, INSTRUMENT_BASS, SOURCE_GHWOR, SOURCE_GHWOR_DLC
 
 songs = get_all_songs()
+custom_songs = get_all_custom_songs()
 
 INSTRUMENT_TO_NAME = {
     INSTRUMENT_GUITAR: "Guitar",
@@ -29,57 +30,13 @@ MANUAL_ACHIEVEMENT_MAPPINGS = {
     574327: "Icons/Output/Core/Quest-Milestone-TheVigil.png",
     574328: "Icons/Output/Core/Quest-Milestone-TheEternal.png",
     574329: "Icons/Output/Core/Quest-Milestone-SaviorOfRock.png",
-    574330: "Icons/Output/Core/CustomSong-BarrenMountain-Guitar.png",
-    574331: "Icons/Output/Core/CustomSong-BarrenMountain-Drums.png",
-    574332: "Icons/Output/Core/CustomSong-BarrenMountain-Bass.png",
-    574333: "Icons/Output/Core/CustomSong-Brandenburg-Guitar.png",
-    574334: "Icons/Output/Core/CustomSong-Brandenburg-Drums.png",
-    574335: "Icons/Output/Core/CustomSong-Brandenburg-Bass.png",
-    574336: "Icons/Output/Core/CustomSong-ChopinRevolution-Guitar.png",
-    574337: "Icons/Output/Core/CustomSong-ChopinRevolution-Drums.png",
-    574338: "Icons/Output/Core/CustomSong-ChopinRevolution-Bass.png",
-    574339: "Icons/Output/Core/CustomSong-DelugeOfFire-Guitar.png",
-    574340: "Icons/Output/Core/CustomSong-DelugeOfFire-Drums.png",
-    574341: "Icons/Output/Core/CustomSong-DelugeOfFire-Bass.png",
-    574342: "Icons/Output/Core/CustomSong-Echo-Guitar.png",
-    574343: "Icons/Output/Core/CustomSong-Echo-Drums.png",
-    574344: "Icons/Output/Core/CustomSong-Echo-Bass.png",
-    574345: "Icons/Output/Core/CustomSong-FeedForward-Guitar.png",
-    574346: "Icons/Output/Core/CustomSong-FeedForward-Drums.png",
-    574347: "Icons/Output/Core/CustomSong-FeedForward-Bass.png",
-    574348: "Icons/Output/Core/CustomSong-Moonlit-Guitar.png",
-    574349: "Icons/Output/Core/CustomSong-Moonlit-Drums.png",
-    574350: "Icons/Output/Core/CustomSong-Moonlit-Bass.png",
-    574351: "Icons/Output/Core/CustomSong-PaintTheFires-Guitar.png",
-    574352: "Icons/Output/Core/CustomSong-PaintTheFires-Drums.png",
-    574353: "Icons/Output/Core/CustomSong-PaintTheFires-Bass.png",
-    574354: "Icons/Output/Core/CustomSong-PointsOfOak-Guitar.png",
-    574355: "Icons/Output/Core/CustomSong-PointsOfOak-Drums.png",
-    574356: "Icons/Output/Core/CustomSong-PointsOfOak-Bass.png",
-    574357: "Icons/Output/Core/CustomSong-Pwnaphone-Guitar.png",
-    574358: "Icons/Output/Core/CustomSong-Pwnaphone-Drums.png",
-    574359: "Icons/Output/Core/CustomSong-Pwnaphone-Bass.png",
-    574360: "Icons/Output/Core/CustomSong-RavingMad-Guitar.png",
-    574361: "Icons/Output/Core/CustomSong-RavingMad-Drums.png",
-    574362: "Icons/Output/Core/CustomSong-RavingMad-Bass.png",
     574363: "Icons/Output/Core/Misc-PerfectSong.png",
     574364: "Icons/Output/Core/Misc-FiveStarCustom.png",
     574365: "Icons/Output/Core/Misc-Star-100.png",
     574366: "Icons/Output/Core/Misc-Star-500.png",
     574367: "Icons/Output/Core/Misc-Star-1000.png",
     574368: "Icons/Output/Core/Misc-Star-2000.png",
-    574369: "Icons/Output/Core/Misc-Star-3300.png",
-    581543: "Icons/Output/Co-Op/CustomSong-BarrenMountain-Band.png",
-    581544: "Icons/Output/Co-Op/CustomSong-Brandenburg-Band.png",
-    581545: "Icons/Output/Co-Op/CustomSong-ChopinRevolution-Band.png",
-    581546: "Icons/Output/Co-Op/CustomSong-DelugeOfFire-Band.png",
-    581547: "Icons/Output/Co-Op/CustomSong-Echo-Band.png",
-    581548: "Icons/Output/Co-Op/CustomSong-FeedForward-Band.png",
-    581549: "Icons/Output/Co-Op/CustomSong-Moonlit-Band.png",
-    581550: "Icons/Output/Co-Op/CustomSong-PaintTheFires-Band.png",
-    581551: "Icons/Output/Co-Op/CustomSong-PointsOfOak-Band.png",
-    581552: "Icons/Output/Co-Op/CustomSong-Pwnaphone-Band.png",
-    581553: "Icons/Output/Co-Op/CustomSong-RavingMad-Band.png"
+    574369: "Icons/Output/Core/Misc-Star-3300.png"
 }
 
 def main() -> None:
@@ -115,6 +72,22 @@ def get_song_achievement_mappings() -> dict[int, str]:
                 print(f"{song.Title} - {INSTRUMENT_TO_NAME[instrument.Instrument]} does not have a Five Star Achievement metadata")
             else:
                 achievement_mappings[instrument.FiveStarAchievementMetadata.Id] = f"Icons/Output/{folder}Quickplay-{normalize_song_title_for_file(song)}-{INSTRUMENT_TO_NAME[instrument.Instrument]}.png"
+            if not instrument.FullComboAchievementMetadata:
+                print(f"{song.Title} - {INSTRUMENT_TO_NAME[instrument.Instrument]} does not have a Full Combo Achievement metadata")
+            else:
+                achievement_mappings[instrument.FullComboAchievementMetadata.Id] = f"Icons/Output/FC/{normalize_song_title_for_file(song)}-{INSTRUMENT_TO_NAME[instrument.Instrument]}.png"
+
+    for custom_song in custom_songs:
+        achievement_mappings[custom_song.FullBandFiveStarAchievementMetadata.Id] = f"Icons/Output/Co-Op/CustomSong-{normalize_song_title_for_file(custom_song)}-Band.png"
+        for instrument in custom_song.Instruments:
+            if not instrument.FiveStarAchievementMetadata:
+                print(f"{custom_song.Title} - {INSTRUMENT_TO_NAME[instrument.Instrument]} does not have a Five Star Achievement metadata")
+            else:
+                achievement_mappings[instrument.FiveStarAchievementMetadata.Id] = f"Icons/Output/Core/CustomSong-{normalize_song_title_for_file(custom_song)}-{INSTRUMENT_TO_NAME[instrument.Instrument]}.png"
+            if not instrument.FullComboAchievementMetadata:
+                print(f"{custom_song.Title} - {INSTRUMENT_TO_NAME[instrument.Instrument]} does not have a Full Combo Achievement metadata")
+            else:
+                achievement_mappings[instrument.FullComboAchievementMetadata.Id] = f"Icons/Output/FC/CustomSong-{normalize_song_title_for_file(custom_song)}-{INSTRUMENT_TO_NAME[instrument.Instrument]}.png"
 
     return achievement_mappings
 
@@ -122,7 +95,8 @@ def verify_icon_counts(achievement_mappings: dict[int, str]) -> None:
     EXPECTED_ICON_COUNTS = {
         "Icons/Output/Core": 634,
         "Icons/Output/DLC": 414,
-        "Icons/Output/Co-Op": 181
+        "Icons/Output/Co-Op": 181,
+        "Icons/Output/FC": 706,
     }
 
     for start, count in EXPECTED_ICON_COUNTS.items():
@@ -142,6 +116,8 @@ def generate_user_text_and_files(achievement_mappings: dict[int, str], ra_info: 
     text_to_copy: list[str] = []
     all_achievements = [a for s in ra_info["Sets"] for a in s["Achievements"]]
     for id, path in tqdm(achievement_mappings.items()):
+        if not path.startswith("Icons/Output/FC"):
+            continue
         matching_achievements = [a for a in all_achievements if a["ID"] == id]
         if len(matching_achievements) != 1:
             tqdm.write(f"Achievement {id} could not be found!?")

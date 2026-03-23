@@ -14983,7 +14983,7 @@ GHWOR_DLC_SONGS = [
         )
     ),
     Song(
-        Title = "We've Got A Situatuion Here",
+        Title = "We've Got A Situation Here",
         Artist = "The Damned Things",
         Source = SOURCE_GHWOR_DLC,
         Id = 0x5d5c4f72,
@@ -35525,7 +35525,7 @@ function multiplier(x) => dword_be(MULTIPLIER_ADDR + ((x - 1) * 0x10))
 ANKH_SLOTS_ADDR = 0x12c8f63c
 function ankh_slots() => dword_be(ANKH_SLOTS_ADDR)
 
-function are_no_powers_active() => star_power_max() == 4
+function are_no_powers_active() => star_power_max() == 2
     && minimum_streak() == 1
     && johnny_stars() == 1
     && star_power_gain() == 1.0
@@ -35538,10 +35538,10 @@ function are_no_powers_active() => star_power_max() == 4
 function are_all_powers_active() => star_power_max() == 6
     && minimum_streak() == 2
     && johnny_stars() == 2
-    && star_power_gain() == 6.0
+    && star_power_gain() == 4.0
     && star_power_earned_per_streak() == 10.0
     && rock_meter_start_override() == 2.0
-    && streak_guardian_shields() == 5
+    && streak_guardian_shields() == 2
     && multiplier(6) == 6
     && ankh_slots() == 5
 
@@ -35603,6 +35603,15 @@ function power_challenge_star_trigger(song, stars) {
             player.IsActive()
             && player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
             && !player.AreCheatsOn()
+            && (
+                (
+                    player.Instrument() == INSTRUMENT_VOCALS
+                    && band_stars_progress() + player.VocalPhrasesHit() / player.VocalPhrasesInChart() >= stars
+                ) || (
+                    player.Instrument() != INSTRUMENT_VOCALS
+                    && band_stars_progress() + player.NotesHit() / player.NotesInChart() >= stars
+                )
+            )
         )
     }
     return number_of_active_players() == 1
@@ -35612,7 +35621,6 @@ function power_challenge_star_trigger(song, stars) {
         && !is_no_fail_on()
         && !are_leaderboards_disabled_due_to_pausing()
         && is_you_rock_reached_quickplay()
-        && band_stars_progress() >= stars
         && player_trigger_whens
 }
 
@@ -36099,6 +36107,7 @@ function full_combo_trigger(song, instrument, difficulty, notes_in_chart) {
                 && player.Instrument() == instrument
                 && !player.AreCheatsOn()
                 && player.NotesHit() == player.NotesPassed()
+                && player.NotesHit() == player.Streak()
                 && trigger_when(
                     player.NotesHit() == notes_in_chart
                     && prev(player.NotesHit()) == notes_in_chart - 1
@@ -36165,6 +36174,7 @@ function full_combo_trigger_two_songs(song_1, song_2, instrument, difficulty, no
                 && player.Instrument() == instrument
                 && !player.AreCheatsOn()
                 && player.NotesHit() == player.NotesPassed()
+                && player.NotesHit() == player.Streak()
                 && (
                     (
                         song_id() == song_1.Id
@@ -36213,8 +36223,8 @@ function leaderboard_quickplay_start(song, instrument) {
         && song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.1
-        && song_position() >= 0.1
+        && prev(song_position()) < 0.2
+        && song_position() >= 0.2
         && is_in_quickplay_mode()
         && !in_power_challenge()
         && !is_no_fail_on()
@@ -36309,8 +36319,8 @@ function full_band_leaderboard_quickplay_start(song) {
         && song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.1
-        && song_position() >= 0.1
+        && prev(song_position()) < 0.2
+        && song_position() >= 0.2
         && is_in_quickplay_mode()
         && !in_power_challenge()
         && !is_no_fail_on()
@@ -36336,8 +36346,8 @@ function leaderboard_quickplay_start_two_songs(song_1, song_2, instrument) {
         )
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.1
-        && song_position() >= 0.1
+        && prev(song_position()) < 0.2
+        && song_position() >= 0.2
         && is_in_quickplay_mode()
         && !in_power_challenge()
         && !is_no_fail_on()
@@ -36436,8 +36446,8 @@ function full_band_leaderboard_quickplay_start_two_songs(song_1, song_2) {
         )
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.1
-        && song_position() >= 0.1
+        && prev(song_position()) < 0.2
+        && song_position() >= 0.2
         && is_in_quickplay_mode()
         && !in_power_challenge()
         && !is_no_fail_on()
@@ -36469,8 +36479,8 @@ function leaderboard_quickplay_with_vocals_start(song, primary_instrument) {
         && song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.1
-        && song_position() >= 0.1
+        && prev(song_position()) < 0.2
+        && song_position() >= 0.2
         && is_in_quickplay_mode()
         && !in_power_challenge()
         && !is_no_fail_on()
@@ -36493,8 +36503,8 @@ function leaderboard_power_challenge_start(song, instrument) {
         && song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.1
-        && song_position() >= 0.1
+        && prev(song_position()) < 0.2
+        && song_position() >= 0.2
         && is_in_quickplay_mode()
         && in_power_challenge()
         && !is_no_fail_on()
@@ -36520,8 +36530,8 @@ function leaderboard_power_challenge_start_two_songs(song_1, song_2, instrument)
         )
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.1
-        && song_position() >= 0.1
+        && prev(song_position()) < 0.2
+        && song_position() >= 0.2
         && is_in_quickplay_mode()
         && in_power_challenge()
         && !is_no_fail_on()
@@ -36548,8 +36558,8 @@ function leaderboard_quest_start(song, instrument) {
         && song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.1
-        && song_position() >= 0.1
+        && prev(song_position()) < 0.2
+        && song_position() >= 0.2
         && is_in_quest_mode()
         && !is_no_fail_on()
         && player_trigger_whens
@@ -37907,6 +37917,7 @@ function full_combo_custom_song_trigger(song, instrument, notes_in_chart) {
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
             && player.NotesHit() == player.NotesPassed()
+            && player.NotesHit() == player.Streak()
             && trigger_when(
                 player.NotesHit() == notes_in_chart
                 && prev(player.NotesHit()) == notes_in_chart - 1
@@ -37941,8 +37952,8 @@ function leaderboard_custom_song_start(song, instrument) {
         && custom_song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.1
-        && song_position() >= 0.1
+        && prev(song_position()) < 0.2
+        && song_position() >= 0.2
         && is_in_quickplay_mode()
         && !is_no_fail_on()
         && player_trigger_whens
@@ -38018,8 +38029,8 @@ function full_band_leaderboard_custom_song_start(song) {
         && custom_song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.1
-        && song_position() >= 0.1
+        && prev(song_position()) < 0.2
+        && song_position() >= 0.2
         && is_in_quickplay_mode()
         && !is_no_fail_on()
         && player_trigger_whens
@@ -38178,7 +38189,8 @@ achievement(
 function was_stars_reached(stars) {
     return is_in_quickplay_mode()
         && is_you_rock_reached_quickplay()
-        && prev(profile_stars()) < stars
+        && prior(profile_stars()) < stars
+        && disable_when(repeated(10, prior(profile_stars()) != prev(profile_stars())), until = prior(profile_stars()) == prev(profile_stars())) // Give it a 10 frame buffer between when the stars update and when the You Rock triggers.
         && measured(profile_stars() >= stars)
 }
 

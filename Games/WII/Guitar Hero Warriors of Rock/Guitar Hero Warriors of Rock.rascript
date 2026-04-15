@@ -508,7 +508,7 @@ GHWOR_SONGS = [
         ),
         FullBandLeaderboardId = 155785,
         PowerChallengeAchievement = PowerChallengeAchievementMetadata(
-            StarTarget = 19,
+            StarTarget = 19, // TODO: Absolutely impossible on guitar, needs to be 15.
             Metadata = AchievementMetadata(
                 Title = "He Who Makes a Beast Out of Himself",
                 Id = 576137,
@@ -1139,7 +1139,7 @@ GHWOR_SONGS = [
             ),
             InstrumentMetadata(
                 Instrument = INSTRUMENT_VOCALS,
-                ExpertNotesInChart = 62,
+                ExpertNotesInChart = 71,
                 ExpertBaseScore = 25993,
                 FiveStarAchievementMetadata = AchievementMetadata(
                     Title = "You're All by Yourself, but You're Not Alone",
@@ -35451,16 +35451,24 @@ class Player {
     function IsFreeDrumCheatOn() => this.FreeDrumCheatValue() == 1
     function NotesHit() => dword_be(this.StartAddress + 0x07f8)
     function NotesPassed() => dword_be(this.StartAddress + 0x082c)
+    function HighestStreak() => dword_be(this.StartAddress + 0x083c)
     function NotesInChart() => dword_be(this.StartAddress + 0x0868)
+    function StarPowerMax() => dword_be(this.StartAddress + 0x0948)
+    function MinimumStreak() => dword_be(this.StartAddress + 0x0958)
+    function JohnnyStars() => dword_be(this.StartAddress + 0x0968)
+    function StarPowerGain() => float_be(this.StartAddress + 0x0978)
+    function StarPowerEarnedPerStreak() => float_be(this.StartAddress + 0x0988)
+    function RockMeterStartOverride() => float_be(this.StartAddress + 0x0998)
+    function StreakGuardianShields() => dword_be(this.StartAddress + 0x09c0)
+    function Multiplier(x) => dword_be(this.StartAddress + 0x09f0 + ((x - 1) * 0x10))
     function VocalPhrasesHit() => float_be(this.StartAddress + 0x0aa8)
     function VocalPhrasesPassed() => float_be(this.StartAddress + 0x0abc)
     function VocalPhrasesInChart() => float_be(this.StartAddress + 0x0acc)
-    // function AreCheatsOn() => this.NoteShuffleCheatValue() + this.MirrorModeCheatValue() + this.AllTapsCheatValue() + this.AutoKickCheatValue() + this.AllHOPOsCheatValue() + this.FreeDrumCheatValue() >= 1
-    // TODO: Re-enable
     function AreCheatsOn() => this.BotValue() + this.NoteShuffleCheatValue() + this.MirrorModeCheatValue() + this.AllTapsCheatValue() + this.AutoKickCheatValue() + this.AllHOPOsCheatValue() + this.FreeDrumCheatValue() >= 1
-    // function RichPresenceActiveWithCheats() => (this.NoteShuffleCheatValue() + this.MirrorModeCheatValue() + this.AllTapsCheatValue() + this.AutoKickCheatValue() + this.AllHOPOsCheatValue() + this.FreeDrumCheatValue()) * this.IsActiveValue()
-    // TODO: Re-enable
     function RichPresenceActiveWithCheats() => (this.BotValue() + this.NoteShuffleCheatValue() + this.MirrorModeCheatValue() + this.AllTapsCheatValue() + this.AutoKickCheatValue() + this.AllHOPOsCheatValue() + this.FreeDrumCheatValue()) * this.IsActiveValue()
+    function AreNoPowersOn() => this.StarPowerMax() == 2 && this.MinimumStreak() == 1 && this.StarPowerGain() == 1.0 && this.StarPowerEarnedPerStreak() == 0.0 && this.RockMeterStartOverride() == 0.0 && this.StreakGuardianShields() == 0 && this.Multiplier(5) == 0
+    function ArePowersOn() => (this.StarPowerMax() + this.MinimumStreak() + this.StarPowerGain() + this.StarPowerEarnedPerStreak() + this.RockMeterStartOverride() + this.StreakGuardianShields() + this.Multiplier(5)) != 4
+    // TODO: Ankhs are global rather than per player. We can ignore ankh checking though as the only time the power is active with no other powers is in Quest mode.
 }
 
 PLAYER_1 = Player(0x12c4d7e0)
@@ -35498,55 +35506,59 @@ function band_stars_with_100_percent_star(instrument) {
 BAND_STREAK_ADDR = 0x00e7e354
 function band_streak() => dword_be(BAND_STREAK_ADDR)
 
-STAR_POWER_MAX_ADDR = 0x12c4e128
-function star_power_max() => dword_be(STAR_POWER_MAX_ADDR)
-
-MINIMUM_STREAK_ADDR  = 0x12c4e138
-function minimum_streak() => dword_be(MINIMUM_STREAK_ADDR)
-
-JOHNNY_STARS_ADDR = 0x12c4e148
-function johnny_stars() => dword_be(JOHNNY_STARS_ADDR)
-
-STAR_POWER_GAIN_ADDR = 0x12c4e158
-function star_power_gain() => float_be(STAR_POWER_GAIN_ADDR)
-
-STAR_POWER_EARNED_PER_STREAK_ADDR = 0x12c4e168
-function star_power_earned_per_streak() => float_be(STAR_POWER_EARNED_PER_STREAK_ADDR)
-
-ROCK_METER_START_OVERRIDE_ADDR = 0x12c4e178
-function rock_meter_start_override() => float_be(ROCK_METER_START_OVERRIDE_ADDR)
-
-STREAK_GUARDIAN_SHIELDS_ADDR = 0x12c4e1a0
-function streak_guardian_shields() => dword_be(STREAK_GUARDIAN_SHIELDS_ADDR)
-
-MULTIPLIER_ADDR = 0x12c4e1d0
-function multiplier(x) => dword_be(MULTIPLIER_ADDR + ((x - 1) * 0x10))
-
 ANKH_SLOTS_ADDR = 0x12c8f63c
 function ankh_slots() => dword_be(ANKH_SLOTS_ADDR)
 
-function are_no_powers_active() => star_power_max() == 2
-    && minimum_streak() == 1
-    && johnny_stars() == 1
-    && star_power_gain() == 1.0
-    && star_power_earned_per_streak() == 0.0
-    && rock_meter_start_override() == 0.0
-    && streak_guardian_shields() == 0
-    && multiplier(5) == 0
-    && ankh_slots() == 0
+function are_no_powers_active_for_player(player) { 
+    return player.IsActive()
+        && player.StarPowerMax() == 2
+        && player.MinimumStreak() == 1
+        && player.JohnnyStars() == 1
+        && player.StarPowerGain() == 1.0
+        && player.StarPowerEarnedPerStreak() == 0.0
+        && player.RockMeterStartOverride() == 0.0
+        && player.StreakGuardianShields() == 0
+        && player.Multiplier(5) == 0
+        && ankh_slots() == 0
+}
 
-function are_all_powers_active() => star_power_max() == 6
-    && minimum_streak() == 2
-    && johnny_stars() == 2
-    && star_power_gain() == 4.0
-    && star_power_earned_per_streak() == 10.0
-    && rock_meter_start_override() == 2.0
-    && streak_guardian_shields() == 2
-    && multiplier(6) == 6
-    && ankh_slots() == 5
 
+function are_no_powers_active() { 
+    return PLAYER_1.StarPowerMax() == 2
+        && PLAYER_1.MinimumStreak() == 1
+        && PLAYER_1.JohnnyStars() == 1
+        && PLAYER_1.StarPowerGain() == 1.0
+        && PLAYER_1.StarPowerEarnedPerStreak() == 0.0
+        && PLAYER_1.RockMeterStartOverride() == 0.0
+        && PLAYER_1.StreakGuardianShields() == 0
+        && PLAYER_1.Multiplier(5) == 0
+        && ankh_slots() == 0
+}
+
+function are_all_powers_active_for_player(player) {
+    return player.IsActive()
+        && player.StarPowerMax() == 6
+        && player.MinimumStreak() == 2
+        && player.JohnnyStars() == 2
+        && player.StarPowerGain() == 4.0
+        && player.StarPowerEarnedPerStreak() == 10.0
+        && player.RockMeterStartOverride() == 2.0
+        && player.StreakGuardianShields() == 2
+        && player.Multiplier(6) == 6
+        && ankh_slots() == 5
+}
+
+function are_at_least_two_powers_active_for_player(player) {
+    return player.IsActive()
+        && player.StarPowerMax() == 6
+        && player.MinimumStreak() == 2
+}
+
+IS_IN_QUICKPLAY_CHALLENGE_ADDR = 0x12bd51f4
 ACTIVE_CHALLENGE_ID_ADDR = 0x12b3ad44
+// TODO: This needs to handle any player having powers.
 function in_power_challenge() => !are_no_powers_active() && dword_be(virtual_to_ra_address(dword_be(ACTIVE_CHALLENGE_ID_ADDR)) + 0xc) == 0x6e9c0358
+// function in_power_challenge() => dword_be(IS_IN_QUICKPLAY_CHALLENGE_ADDR) == 0x01 && dword_be(virtual_to_ra_address(dword_be(ACTIVE_CHALLENGE_ID_ADDR)) + 0xc) == 0x6e9c0358
 
 PROFILE_STARS_ADDR = 0x12c4e0d8
 function profile_stars() => dword_be(PROFILE_STARS_ADDR)
@@ -35565,7 +35577,7 @@ YOU_ROCK_DETECTOR_ADDR = 0x006a7fcc
 // END_SONG_DETECTOR_QUICKPLAY_ADDR = 0x00beeb5c
 END_SONG_DETECTOR_QUICKPLAY_ADDR = 0x12b502a8
 function end_song_detector_quickplay() => dword_be(virtual_to_ra_address(dword_be(END_SONG_DETECTOR_QUICKPLAY_ADDR)) + 0xc)
-function is_you_rock_reached_quickplay() => end_song_detector_quickplay() == 1 && prev(end_song_detector_quickplay()) == 0
+function is_you_rock_reached_quickplay() => end_song_detector_quickplay() == (prev(end_song_detector_quickplay()) + 1)
 
 END_SONG_DETECTOR_QUEST_ADDR = 0x12b46d68
 function is_you_rock_reached_quest() => dword_be(virtual_to_ra_address(dword_be(END_SONG_DETECTOR_QUEST_ADDR)) + 0xc) == 1
@@ -35609,15 +35621,15 @@ function power_challenge_star_trigger(song, stars) {
                     && band_stars_progress() + player.VocalPhrasesHit() / player.VocalPhrasesInChart() >= stars
                 ) || (
                     player.Instrument() != INSTRUMENT_VOCALS
-                    && band_stars_progress() + player.NotesHit() / player.NotesInChart() >= stars
+                    && band_stars_progress() + player.HighestStreak() / player.NotesInChart() >= stars
                 )
             )
+            && player.ArePowersOn()
         )
     }
     return number_of_active_players() == 1
         && song_id() == song.Id
         && is_in_quickplay_mode()
-        && in_power_challenge()
         && !is_no_fail_on()
         && !are_leaderboards_disabled_due_to_pausing()
         && is_you_rock_reached_quickplay()
@@ -35632,6 +35644,7 @@ function power_challenge_star_trigger_two_songs(song_1, song_2, stars) {
             player.IsActive()
             && player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
             && !player.AreCheatsOn()
+            && player.ArePowersOn()
         )
     }
     return number_of_active_players() == 1
@@ -35640,7 +35653,6 @@ function power_challenge_star_trigger_two_songs(song_1, song_2, stars) {
             || song_id() == song_2.Id
         )
         && is_in_quickplay_mode()
-        && in_power_challenge()
         && !is_no_fail_on()
         && !are_leaderboards_disabled_due_to_pausing()
         && is_you_rock_reached_quickplay()
@@ -35662,12 +35674,12 @@ function five_star_quickplay_trigger(song, instrument, difficulty, target_score)
             && difficulty_condition
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
+            && player.AreNoPowersOn()
         )
     }
     return number_of_active_players() == 1
         && song_id() == song.Id
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && !are_leaderboards_disabled_due_to_pausing()
         && is_you_rock_reached_quickplay()
@@ -35706,7 +35718,7 @@ function star_challenge_trigger(song, instrument) {
         player_trigger_whens = player_trigger_whens
         && (
             !player.IsActive()
-            || !player.AreCheatsOn()
+            || (!player.AreCheatsOn() && player.AreNoPowersOn())
         )
     }
 
@@ -35864,7 +35876,8 @@ function full_band_five_star_quickplay_trigger(song) {
     return number_of_active_players() == length(song.Instruments)
         && song_id() == song.Id
         && is_in_quickplay_mode()
-        && !in_power_challenge()
+        // NOTE: I had an explicit Power Challenge detection here but I don't think people can activate it with more than one player.
+        // && !in_power_challenge()
         && !is_no_fail_on()
         && !are_leaderboards_disabled_due_to_pausing()
         && is_you_rock_reached_quickplay()
@@ -35886,6 +35899,7 @@ function five_star_quickplay_trigger_two_songs(song_1, song_2, instrument, diffi
             && difficulty_condition
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
+            && player.AreNoPowersOn()
         )
     }
     return number_of_active_players() == 1
@@ -35894,7 +35908,6 @@ function five_star_quickplay_trigger_two_songs(song_1, song_2, instrument, diffi
             || (song_id() == song_2.Id && band_score() >= target_score_2)
         )
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && !are_leaderboards_disabled_due_to_pausing()
         && is_you_rock_reached_quickplay()
@@ -36028,7 +36041,6 @@ function full_band_five_star_quickplay_trigger_two_songs(song_1, song_2) {
             || song_id() == song_2.Id
         )
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && !are_leaderboards_disabled_due_to_pausing()
         && is_you_rock_reached_quickplay()
@@ -36063,7 +36075,6 @@ function five_star_with_vocals_trigger(song, primary_instrument, difficulty) {
     return number_of_active_players() == 2
         && song_id() == song.Id
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && !are_leaderboards_disabled_due_to_pausing()
         && is_you_rock_reached_quickplay()
@@ -36080,13 +36091,18 @@ function full_combo_trigger(song, instrument, difficulty, notes_in_chart) {
             } else {
                 difficulty_condition = player.DifficultyIgnoringExpertPlus() == difficulty
             }
+            vocal_phrases_passed_edge_case = player.VocalPhrasesHit() == player.VocalPhrasesPassed()
+            if (song.Title == "Theme From Spiderman") {
+                vocal_phrases_passed_edge_case = (player.VocalPhrasesHit() + 1 == player.VocalPhrasesPassed())
+            }
             player_trigger_whens = player_trigger_whens
             || (
                 player.IsActive()
                 && difficulty_condition
                 && player.Instrument() == instrument
                 && !player.AreCheatsOn()
-                && player.VocalPhrasesHit() == player.VocalPhrasesPassed()
+                && player.AreNoPowersOn()
+                && vocal_phrases_passed_edge_case
                 && trigger_when(
                     player.VocalPhrasesHit() == notes_in_chart
                     && prev(player.VocalPhrasesHit()) == notes_in_chart - 1.0
@@ -36106,6 +36122,7 @@ function full_combo_trigger(song, instrument, difficulty, notes_in_chart) {
                 && difficulty_condition
                 && player.Instrument() == instrument
                 && !player.AreCheatsOn()
+                && player.AreNoPowersOn()
                 && player.NotesHit() == player.NotesPassed()
                 && player.NotesHit() == player.Streak()
                 && trigger_when(
@@ -36120,7 +36137,6 @@ function full_combo_trigger(song, instrument, difficulty, notes_in_chart) {
         && is_in_song()
         && !is_game_between_screens()
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && !are_leaderboards_disabled_due_to_pausing()
         && player_trigger_whens
@@ -36141,6 +36157,7 @@ function full_combo_trigger_two_songs(song_1, song_2, instrument, difficulty, no
                 && difficulty_condition
                 && player.Instrument() == instrument
                 && !player.AreCheatsOn()
+                && player.AreNoPowersOn()
                 && player.VocalPhrasesHit() == player.VocalPhrasesPassed()
                 && (
                     (
@@ -36173,6 +36190,7 @@ function full_combo_trigger_two_songs(song_1, song_2, instrument, difficulty, no
                 && difficulty_condition
                 && player.Instrument() == instrument
                 && !player.AreCheatsOn()
+                && player.AreNoPowersOn()
                 && player.NotesHit() == player.NotesPassed()
                 && player.NotesHit() == player.Streak()
                 && (
@@ -36198,7 +36216,6 @@ function full_combo_trigger_two_songs(song_1, song_2, instrument, difficulty, no
         && is_in_song()
         && !is_game_between_screens()
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && !are_leaderboards_disabled_due_to_pausing()
         && player_trigger_whens
@@ -36216,6 +36233,7 @@ function leaderboard_quickplay_start(song, instrument) {
             && player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
+            && player.AreNoPowersOn()
             && player.NotesHit() == 0
         )
     }
@@ -36223,10 +36241,9 @@ function leaderboard_quickplay_start(song, instrument) {
         && song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.2
-        && song_position() >= 0.2
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && player_trigger_whens
 }
@@ -36319,10 +36336,9 @@ function full_band_leaderboard_quickplay_start(song) {
         && song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.2
-        && song_position() >= 0.2
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && player_trigger_whens
 }
@@ -36336,6 +36352,7 @@ function leaderboard_quickplay_start_two_songs(song_1, song_2, instrument) {
             && player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
+            && player.AreNoPowersOn()
             && player.NotesHit() == 0
         )
     }
@@ -36346,10 +36363,9 @@ function leaderboard_quickplay_start_two_songs(song_1, song_2, instrument) {
         )
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.2
-        && song_position() >= 0.2
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && player_trigger_whens
 }
@@ -36446,10 +36462,9 @@ function full_band_leaderboard_quickplay_start_two_songs(song_1, song_2) {
         )
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.2
-        && song_position() >= 0.2
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && player_trigger_whens
 }
@@ -36479,10 +36494,9 @@ function leaderboard_quickplay_with_vocals_start(song, primary_instrument) {
         && song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.2
-        && song_position() >= 0.2
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && player_trigger_whens
 }
@@ -36496,6 +36510,7 @@ function leaderboard_power_challenge_start(song, instrument) {
             && player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
+            && player.ArePowersOn()
             && player.NotesHit() == 0
         )
     }
@@ -36503,10 +36518,9 @@ function leaderboard_power_challenge_start(song, instrument) {
         && song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.2
-        && song_position() >= 0.2
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
         && is_in_quickplay_mode()
-        && in_power_challenge()
         && !is_no_fail_on()
         && player_trigger_whens
 }
@@ -36520,6 +36534,7 @@ function leaderboard_power_challenge_start_two_songs(song_1, song_2, instrument)
             && player.DifficultyIgnoringExpertPlus() == DIFFICULTY_EXPERT
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
+            && player.ArePowersOn()
             && player.NotesHit() == 0
         )
     }
@@ -36530,10 +36545,9 @@ function leaderboard_power_challenge_start_two_songs(song_1, song_2, instrument)
         )
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.2
-        && song_position() >= 0.2
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
         && is_in_quickplay_mode()
-        && in_power_challenge()
         && !is_no_fail_on()
         && player_trigger_whens
 }
@@ -36548,6 +36562,8 @@ function leaderboard_quest_start(song, instrument) {
             && player.Instrument() == instrument
             && !player.AreCheatsOn()
             && player.NotesHit() == 0
+            // NOTE: For all songs not Megadeth in the setlist, we can just spot two particular powers to know the game is beaten.
+            && are_at_least_two_powers_active_for_player(player)
         )
     }
     song_check = song_id() == song.Id
@@ -36558,8 +36574,83 @@ function leaderboard_quest_start(song, instrument) {
         && song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.2
-        && song_position() >= 0.2
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
+        && is_in_quest_mode()
+        && !is_no_fail_on()
+        && player_trigger_whens
+}
+
+function leaderboard_quest_four_power_megadeth_start(song, instrument) {
+    player_trigger_whens = always_false()
+    for player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
+        player_trigger_whens = player_trigger_whens
+        || (
+            player.IsActive()
+            && player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
+            && player.Instrument() == instrument
+            && !player.AreCheatsOn()
+            && player.NotesHit() == 0
+            // NOTE: Since "Holy Wars" and "This Day We Fight" could be played with either four or eight powers, we need this distinction
+            && !are_all_powers_active_for_player(player)
+        )
+    }
+    return number_of_active_players() == 1
+        && song_id() == song.Id
+        && is_in_song()
+        && !is_game_between_screens()
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
+        && is_in_quest_mode()
+        && !is_no_fail_on()
+        && player_trigger_whens
+}
+
+
+function leaderboard_quest_eight_power_megadeth_start(song, instrument) {
+    player_trigger_whens = always_false()
+    for player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
+        player_trigger_whens = player_trigger_whens
+        || (
+            player.IsActive()
+            && player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
+            && player.Instrument() == instrument
+            && !player.AreCheatsOn()
+            && player.NotesHit() == 0
+            // NOTE: Since "Holy Wars" and "This Day We Fight" could be played with either four or eight powers, we need this distinction
+            && are_all_powers_active_for_player(player)
+        )
+    }
+    return number_of_active_players() == 1
+        && song_id() == song.Id
+        && is_in_song()
+        && !is_game_between_screens()
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
+        && is_in_quest_mode()
+        && !is_no_fail_on()
+        && player_trigger_whens
+}
+
+
+function leaderboard_quest_rush_start(song, instrument) {
+    player_trigger_whens = always_false()
+    for player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
+        player_trigger_whens = player_trigger_whens
+        || (
+            player.IsActive()
+            && player.DifficultyIgnoringExpertPlus() != DIFFICULTY_BEGINNER
+            && player.Instrument() == instrument
+            && !player.AreCheatsOn()
+            && player.NotesHit() == 0
+        )
+    }
+    return number_of_active_players() == 1
+        && song_id() == song.Id
+        && is_in_song()
+        && !is_game_between_screens()
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
         && is_in_quest_mode()
         && !is_no_fail_on()
         && player_trigger_whens
@@ -37038,20 +37129,29 @@ for song in SONGS {
                         title = format("{0} - Four-Power Quest - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                         description = format("Get the highest score on \"{0}\" in Quest mode on {1} with only four powers", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                         id = instrument.FourPowerQuestLeaderboardId,
-                        start = leaderboard_quest_start(song, instrument.Instrument) && !are_all_powers_active(),
+                        start = leaderboard_quest_four_power_megadeth_start(song, instrument.Instrument),
                         cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                         submit = is_you_rock_reached_quest(),
                         value = band_score(),
                         format = "VALUE"
                     )
-                }
 
-                if (substring(song.Title, offset = 0, length = 4) != "2112") {
                     leaderboard(
                         title = format("{0} - Dominate Quest - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                         description = format("Get the highest score on \"{0}\" in Quest mode on {1} with all eight powers", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                         id = instrument.DominateQuestLeaderboardId,
-                        start = leaderboard_quest_start(song, instrument.Instrument) && are_all_powers_active(),
+                        start = leaderboard_quest_eight_power_megadeth_start(song, instrument.Instrument),
+                        cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
+                        submit = is_you_rock_reached_quest(),
+                        value = band_score(),
+                        format = "VALUE"
+                    )
+                } else if (substring(song.Title, offset = 0, length = 4) != "2112") {
+                    leaderboard(
+                        title = format("{0} - Dominate Quest - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                        description = format("Get the highest score on \"{0}\" in Quest mode on {1} with all eight powers", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
+                        id = instrument.DominateQuestLeaderboardId,
+                        start = leaderboard_quest_start(song, instrument.Instrument),
                         cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                         submit = is_you_rock_reached_quest(),
                         value = band_score(),
@@ -37062,7 +37162,7 @@ for song in SONGS {
                         title = format("{0} - Four-Power Quest - {1}", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                         description = format("Get the highest score on \"{0}\" in Quest mode on {1} with only four powers", song.Title, INSTRUMENT_TO_NAME[instrument.Instrument]),
                         id = instrument.FourPowerQuestLeaderboardId,
-                        start = leaderboard_quest_start(song, instrument.Instrument),
+                        start = leaderboard_quest_rush_start(song, instrument.Instrument),
                         cancel = (!was_in_song() && !is_saving()) || are_leaderboards_disabled_due_to_pausing() || song_position() < 0.0,
                         submit = is_you_rock_reached_quest(),
                         value = band_score(),
@@ -37203,7 +37303,16 @@ function quest_clear_trigger(song) {
     } else if (song.Title == "2112 Pt. 7 - Grand Finale") {
         extra_condition = song_id() == song.Id
     } else {
-        extra_condition = song_id() == song.Id && !are_all_powers_active()
+        extra_condition = song_id() == song.Id
+        player_trigger_whens = always_false()
+        for player in [PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4] {
+            player_trigger_whens = player_trigger_whens
+            || (
+                player.IsActive()
+                && !player.AreCheatsOn()
+                && !are_at_least_two_powers_active_for_player(player)
+            )
+        }
     }
     return number_of_active_players() == 1
         && is_in_quest_mode()
@@ -37952,8 +38061,8 @@ function leaderboard_custom_song_start(song, instrument) {
         && custom_song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.2
-        && song_position() >= 0.2
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
         && is_in_quickplay_mode()
         && !is_no_fail_on()
         && player_trigger_whens
@@ -38029,8 +38138,8 @@ function full_band_leaderboard_custom_song_start(song) {
         && custom_song_id() == song.Id
         && is_in_song()
         && !is_game_between_screens()
-        && prev(song_position()) < 0.2
-        && song_position() >= 0.2
+        && prev(song_position()) < 0.5
+        && song_position() >= 0.5
         && is_in_quickplay_mode()
         && !is_no_fail_on()
         && player_trigger_whens
@@ -38112,7 +38221,8 @@ function six_star_achievement_trigger() {
             )
             && player.Instrument() == INSTRUMENT_VOCALS
             && !player.AreCheatsOn()
-            && player.VocalPhrasesHit() == player.VocalPhrasesPassed()
+            && player.AreNoPowersOn()
+            && player.VocalPhrasesHit() == player.VocalPhrasesPassed() // NOTE: Sorry Theme From Spiderman edge case. :(
         )
         || (
             player.IsActive()
@@ -38122,12 +38232,13 @@ function six_star_achievement_trigger() {
             )
             && player.Instrument() != INSTRUMENT_VOCALS
             && !player.AreCheatsOn()
+            && player.AreNoPowersOn()
+            // TODO: Does the 6-star get earned on FCs? This might need to be max streak then.
             && player.NotesHit() == player.NotesPassed()
         )
     }
     return number_of_active_players() == 1
         && is_in_quickplay_mode()
-        && !in_power_challenge()
         && !is_no_fail_on()
         && !are_leaderboards_disabled_due_to_pausing()
         && is_you_rock_reached_quickplay()
@@ -38323,7 +38434,7 @@ rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && 
     rich_presence_macro("Number", single_or_band_streak())
 )
 
-rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quickplay_mode() && in_power_challenge(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Power Challenge, Song: {10}, Score: {11}, Streak: {12}",
+rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quickplay_mode() && ((PLAYER_1.IsActive() && PLAYER_1.ArePowersOn()) || (PLAYER_2.IsActive() && PLAYER_2.ArePowersOn()) || (PLAYER_3.IsActive() && PLAYER_3.ArePowersOn()) || (PLAYER_4.IsActive() && PLAYER_4.ArePowersOn())), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Power Challenge, Song: {10}, Score: {11}, Streak: {12}",
     rich_presence_lookup("Difficulty", PLAYER_1.Difficulty() * PLAYER_1.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
     rich_presence_lookup("Instrument", PLAYER_1.Instrument() * PLAYER_1.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
     rich_presence_lookup("Difficulty", PLAYER_2.Difficulty() * PLAYER_2.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
@@ -38355,7 +38466,7 @@ rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && 
     rich_presence_macro("Number", single_or_band_streak())
 )
 
-rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quickplay_mode() && !in_power_challenge() && is_in_custom_song(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Quickplay+, Custom Song: {10}, Score: {11}, Streak: {12}",
+rich_presence_conditional_display(is_in_song() && !is_game_between_screens() && is_in_quickplay_mode() && is_in_custom_song(), "[{0}{1}|{2}{3}|{4}{5}|{6}{7}]{8}{9} - Quickplay+, Custom Song: {10}, Score: {11}, Streak: {12}",
     rich_presence_lookup("Difficulty", PLAYER_1.Difficulty() * PLAYER_1.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
     rich_presence_lookup("Instrument", PLAYER_1.Instrument() * PLAYER_1.IsActiveValue(), INSTRUMENT_TO_RP, fallback = "?"),
     rich_presence_lookup("Difficulty", PLAYER_2.Difficulty() * PLAYER_2.IsActiveValue(), DIFFICULTY_TO_RP, fallback = "?"),
